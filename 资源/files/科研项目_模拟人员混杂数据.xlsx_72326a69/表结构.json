@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "source_file_id": "72326a69-1d8e-4345-ad4f-81ef013bee3d",
+  "display_name": "科研项目_模拟人员混杂数据.xlsx",
+  "generated_at": "2026-06-01T03:24:02.426258+00:00",
+  "summary": "工作簿包含两个工作表，'人员名单'工作表记录员工编码和姓名，'混杂数据'工作表记录科研项目及其团队成员。",
+  "sheets": [
+    {
+      "sheet_name": "人员名单",
+      "tables": [
+        {
+          "table_id": "main",
+          "label": "人员名单表",
+          "header_config": {
+            "mode": "simple",
+            "header_row": 1,
+            "header_start_row": null,
+            "header_end_row": null,
+            "data_start_row": 2,
+            "skip_rows": 0,
+            "header_merge_char": "_"
+          },
+          "columns": [
+            {
+              "name": "员工编码",
+              "col_letter": "A",
+              "col_index": 1,
+              "inferred_type": "number"
+            },
+            {
+              "name": "员工姓名",
+              "col_letter": "B",
+              "col_index": 2,
+              "inferred_type": "string"
+            }
+          ],
+          "read_hints": {
+            "data_region": {
+              "start_row": 1,
+              "start_col": 1,
+              "end_row": null,
+              "end_col": 2
+            },
+            "notes": "标题占1行，无合并表头"
+          },
+          "pandas_read": {
+            "sheet_name": "人员名单",
+            "header": 0,
+            "skiprows": null,
+            "usecols": "A:B",
+            "comment": "从'人员名单'工作表读取数据，第1行作为表头，不跳过行，读取A列到B列"
+          }
+        }
+      ]
+    },
+    {
+      "sheet_name": "混杂数据",
+      "tables": [
+        {
+          "table_id": "main",
+          "label": "科研项目团队表",
+          "header_config": {
+            "mode": "simple",
+            "header_row": 1,
+            "header_start_row": null,
+            "header_end_row": null,
+            "data_start_row": 2,
+            "skip_rows": 0,
+            "header_merge_char": "_"
+          },
+          "columns": [
+            {
+              "name": "科研项目",
+              "col_letter": "A",
+              "col_index": 1,
+              "inferred_type": "string"
+            },
+            {
+              "name": "团队",
+              "col_letter": "B",
+              "col_index": 2,
+              "inferred_type": "string"
+            }
+          ],
+          "read_hints": {
+            "data_region": {
+              "start_row": 1,
+              "start_col": 1,
+              "end_row": null,
+              "end_col": 2
+            },
+            "notes": "标题占1行，无合并表头"
+          },
+          "pandas_read": {
+            "sheet_name": "混杂数据",
+            "header": 0,
+            "skiprows": null,
+            "usecols": "A:B",
+            "comment": "从'混杂数据'工作表读取数据，第1行作为表头，不跳过行，读取A列到B列"
+          }
+        }
+      ]
+    }
+  ]
+}

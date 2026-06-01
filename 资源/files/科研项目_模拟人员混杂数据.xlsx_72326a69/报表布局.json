@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "kind": "chinese_complex_report",
+  "managed_file_id": "72326a69-1d8e-4345-ad4f-81ef013bee3d",
+  "reportId": "scientific_research_project_mixed_data",
+  "title": "科研项目模拟人员混杂数据",
+  "summary": "报表包含两个工作表，'人员名单'工作表记录员工编码和姓名，'混杂数据'工作表记录科研项目及其对应的团队成员。两个工作表均为简单的二维表格布局，无多级表头、合并单元格区域和列分组。",
+  "layoutSheet": "人员名单、混杂数据",
+  "freeze": {
+    "row": 1,
+    "col": 0
+  },
+  "headerRowCount": 1,
+  "headerCells": [],
+  "regions": {
+    "columnHeader": {
+      "rows": [
+        1
+      ],
+      "merges": []
+    },
+    "dataBody": {
+      "startRow": 2,
+      "startCol": 1
+    }
+  },
+  "columns": [
+    {
+      "id": "col_employee_code",
+      "field": "employee_code",
+      "label": "员工编码",
+      "parentId": null,
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_employee_name",
+      "field": "employee_name",
+      "label": "员工姓名",
+      "parentId": null,
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_project",
+      "field": "project",
+      "label": "科研项目",
+      "parentId": null,
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_team",
+      "field": "team",
+      "label": "团队",
+      "parentId": null,
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    }
+  ],
+  "columnGroups": [],
+  "features": {
+    "mergedHeaders": false,
+    "subtotal": {
+      "enabled": false
+    }
+  },
+  "wideTable": {
+    "totalFields": 4,
+    "defaultVisibleColumns": 4,
+    "columnPicker": false
+  },
+  "generated_at": "2026-06-01T03:24:38.129361+00:00",
+  "source": "ai"
+}

@@ -1,0 +1,29 @@
+{
+  "file_id": "72326a69-1d8e-4345-ad4f-81ef013bee3d",
+  "display_name": "科研项目_模拟人员混杂数据.xlsx",
+  "stored_filename": "72326a69-1d8e-4345-ad4f-81ef013bee3d.xlsx",
+  "relative_dir": "DEMO_102",
+  "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "file_ext": ".xlsx",
+  "size_bytes": 12300,
+  "storage_rel_path": "uploads/managed/DEMO_102/72326a69-1d8e-4345-ad4f-81ef013bee3d.xlsx",
+  "checksum_sha256": "580b8bfd9c5ee20e4cbc1a55410cec9cf14e422147dbf443c6f508fdacebd5d3",
+  "scope": "admin",
+  "is_active": true,
+  "owner_user_id": "u__admin__0001",
+  "owner_org_id": null,
+  "updated_at": "2026-06-01T03:23:23.280781",
+  "has_native_digest": true,
+  "has_ai_structure": true,
+  "has_report_layout": true,
+  "registered": true,
+  "pulledAt": "2026-06-01T12:38:51.762Z",
+  "localDir": "D:\\src2025\\ads2025\\dazi-work\\资源\\files\\科研项目_模拟人员混杂数据.xlsx_72326a69",
+  "files": [
+    "原文件.xlsx",
+    "原生解析.md",
+    "表结构.json",
+    "报表布局.json",
+    "文件信息.json"
+  ]
+}
