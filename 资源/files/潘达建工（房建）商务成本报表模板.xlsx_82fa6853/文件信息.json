@@ -1,0 +1,31 @@
+{
+  "file_id": "82fa6853-b789-48e8-a5e8-fff0a4f694fb",
+  "display_name": "潘达建工（房建）商务成本报表模板.xlsx",
+  "stored_filename": "82fa6853-b789-48e8-a5e8-fff0a4f694fb.xlsx",
+  "relative_dir": "DEMO_102",
+  "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "file_ext": ".xlsx",
+  "size_bytes": 106843,
+  "storage_rel_path": "uploads/managed/DEMO_102/82fa6853-b789-48e8-a5e8-fff0a4f694fb.xlsx",
+  "checksum_sha256": "b002bd97b85a51807b66df8e5714725059d474c2b4800446a2af119039d631f0",
+  "scope": "admin",
+  "is_active": true,
+  "owner_user_id": "u__admin__0001",
+  "owner_org_id": null,
+  "updated_at": "2026-06-01T03:40:38.828172",
+  "has_native_digest": true,
+  "has_ai_structure": false,
+  "has_report_layout": true,
+  "registered": true,
+  "pulledAt": "2026-06-01T12:36:19.749Z",
+  "localDir": "D:\\src2025\\ads2025\\dazi-work\\资源\\files\\潘达建工（房建）商务成本报表模板.xlsx_82fa6853",
+  "files": [
+    "原文件.xlsx",
+    "原生解析.md",
+    "报表布局.json",
+    "文件信息.json"
+  ],
+  "notes": [
+    "表结构未生成：请先在平台完成「原生解析」与「AI 表结构」后再拉取，或仅使用原生解析.md 交给 AI"
+  ]
+}

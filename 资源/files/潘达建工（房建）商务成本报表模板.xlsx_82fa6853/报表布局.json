@@ -1,0 +1,429 @@
+{
+  "version": 1,
+  "kind": "chinese_complex_report",
+  "managed_file_id": "82fa6853-b789-48e8-a5e8-fff0a4f694fb",
+  "reportId": "PandaConstructionBusinessCostReport",
+  "title": "潘达建工（房建）商务成本报表模板",
+  "summary": "该报表包含多个工作表，涵盖封面、目录、编制说明、各报表表格等内容。部分报表存在多级表头，如项目月度商务管理汇总表、项目月度业主产值表等，表头有多行，存在合并单元格区域以展示不同的分组信息，如业主产值、业主收款等分组。数据从表头下方开始记录。",
+  "layoutSheet": "项目月度商务管理汇总表-表3",
+  "freeze": {
+    "row": 3,
+    "col": 0
+  },
+  "headerRowCount": 1,
+  "headerCells": [],
+  "regions": {
+    "columnHeader": {
+      "rows": [
+        3,
+        4,
+        5
+      ],
+      "merges": []
+    },
+    "dataBody": {
+      "startRow": 7,
+      "startCol": 1
+    }
+  },
+  "columns": [
+    {
+      "id": "col_seq",
+      "field": "seq",
+      "label": "序号",
+      "parentId": null,
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_project_name",
+      "field": "project_name",
+      "label": "工程名称",
+      "parentId": null,
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_customer_system",
+      "field": "basic_info_customer_system",
+      "label": "客户体系",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_project_status",
+      "field": "basic_info_project_status",
+      "label": "项目状态",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_increase_stock",
+      "field": "basic_info_increase_stock",
+      "label": "增/存量",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_management_rate",
+      "field": "basic_info_management_rate",
+      "label": "管理费率",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_profession",
+      "field": "basic_info_profession",
+      "label": "专业",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_large_customer",
+      "field": "basic_info_large_customer",
+      "label": "大客户",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_operation_mode",
+      "field": "basic_info_operation_mode",
+      "label": "经营模式",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_partner",
+      "field": "basic_info_partner",
+      "label": "合伙人",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_region",
+      "field": "basic_info_region",
+      "label": "区域",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_project_scale",
+      "field": "basic_info_project_scale",
+      "label": "工程规模",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_planned_start_time",
+      "field": "basic_info_planned_start_time",
+      "label": "计划开工时间",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_planned_completion_time",
+      "field": "basic_info_planned_completion_time",
+      "label": "计划竣工时间",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_actual_start_date",
+      "field": "basic_info_actual_start_date",
+      "label": "实际开工日期",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_actual_completion_date",
+      "field": "basic_info_actual_completion_date",
+      "label": "实际竣工日期",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_contract_number",
+      "field": "basic_info_contract_number",
+      "label": "合同编号（PKPM编号）",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_contract_name",
+      "field": "basic_info_contract_name",
+      "label": "合同名称",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_contract_amount_including",
+      "field": "basic_info_contract_amount_including",
+      "label": "合同金额（包括暂列金额、暂估价、甲供材）",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_contract_amount_excluding",
+      "field": "basic_info_contract_amount_excluding",
+      "label": "合同金额（不包括暂列金额、暂估价、甲供材）",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_basic_info_owner_name",
+      "field": "basic_info_owner_name",
+      "label": "甲方名称",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_owner_output_value_last_year",
+      "field": "owner_output_value_last_year",
+      "label": "开工至上年度产值",
+      "parentId": "grp_owner_output_value",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_owner_output_value_this_year_confirmed",
+      "field": "owner_output_value_this_year_confirmed",
+      "label": "本年度累计实际完成产值-业主已确认",
+      "parentId": "grp_owner_output_value_this_year",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_owner_output_value_this_year_unconfirmed",
+      "field": "owner_output_value_this_year_unconfirmed",
+      "label": "本年度累计实际完成产值-业主待确认",
+      "parentId": "grp_owner_output_value_this_year",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_owner_output_value_this_year_total",
+      "field": "owner_output_value_this_year_total",
+      "label": "本年度累计实际完成产值-合计",
+      "parentId": "grp_owner_output_value_this_year",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_owner_output_value_this_month_confirmed",
+      "field": "owner_output_value_this_month_confirmed",
+      "label": "其中:本月实际完成产值-业主已确认",
+      "parentId": "grp_owner_output_value_this_month",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_owner_output_value_this_month_unconfirmed",
+      "field": "owner_output_value_this_month_unconfirmed",
+      "label": "其中:本月实际完成产值-业主待确认",
+      "parentId": "grp_owner_output_value_this_month",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_owner_output_value_this_month_total",
+      "field": "owner_output_value_this_month_total",
+      "label": "其中:本月实际完成产值-合计",
+      "parentId": "grp_owner_output_value_this_month",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_owner_output_value_total_confirmed",
+      "field": "owner_output_value_total_confirmed",
+      "label": "自开工累计实际完成产值-业主已确认",
+      "parentId": "grp_owner_output_value_total",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_owner_output_value_total_unconfirmed",
+      "field": "owner_output_value_total_unconfirmed",
+      "label": "自开工累计实际完成产值-业主待确认",
+      "parentId": "grp_owner_output_value_total",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_owner_output_value_total_total",
+      "field": "owner_output_value_total_total",
+      "label": "自开工累计实际完成产值-合计",
+      "parentId": "grp_owner_output_value_total",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_owner_receivable_amount",
+      "field": "owner_receivable_amount",
+      "label": "应收工程款（合约）",
+      "parentId": "grp_owner_receivables",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_owner_receivable_ratio",
+      "field": "owner_receivable_ratio",
+      "label": "应收比例（%）",
+      "parentId": "grp_owner_receivables",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_owner_received_amount",
+      "field": "owner_received_amount",
+      "label": "已收工程款",
+      "parentId": "grp_owner_receivables",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    }
+  ],
+  "columnGroups": [
+    {
+      "id": "grp_basic_info",
+      "label": "基 本 信 息",
+      "children": [
+        "col_basic_info_customer_system",
+        "col_basic_info_project_status",
+        "col_basic_info_increase_stock",
+        "col_basic_info_management_rate",
+        "col_basic_info_profession",
+        "col_basic_info_large_customer",
+        "col_basic_info_operation_mode",
+        "col_basic_info_partner",
+        "col_basic_info_region",
+        "col_basic_info_project_scale",
+        "col_basic_info_planned_start_time",
+        "col_basic_info_planned_completion_time",
+        "col_basic_info_actual_start_date",
+        "col_basic_info_actual_completion_date",
+        "col_basic_info_contract_number",
+        "col_basic_info_contract_name",
+        "col_basic_info_contract_amount_including",
+        "col_basic_info_contract_amount_excluding",
+        "col_basic_info_owner_name"
+      ]
+    },
+    {
+      "id": "grp_owner_output_value",
+      "label": "业主产值",
+      "children": [
+        "col_owner_output_value_last_year",
+        "col_owner_output_value_this_year_confirmed",
+        "col_owner_output_value_this_year_unconfirmed",
+        "col_owner_output_value_this_year_total",
+        "col_owner_output_value_this_month_confirmed",
+        "col_owner_output_value_this_month_unconfirmed",
+        "col_owner_output_value_this_month_total",
+        "col_owner_output_value_total_confirmed",
+        "col_owner_output_value_total_unconfirmed",
+        "col_owner_output_value_total_total"
+      ]
+    },
+    {
+      "id": "grp_owner_output_value_this_year",
+      "label": "本年度累计实际完成产值",
+      "children": [
+        "col_owner_output_value_this_year_confirmed",
+        "col_owner_output_value_this_year_unconfirmed",
+        "col_owner_output_value_this_year_total"
+      ]
+    },
+    {
+      "id": "grp_owner_output_value_this_month",
+      "label": "其中:本月实际完成产值",
+      "children": [
+        "col_owner_output_value_this_month_confirmed",
+        "col_owner_output_value_this_month_unconfirmed",
+        "col_owner_output_value_this_month_total"
+      ]
+    },
+    {
+      "id": "grp_owner_output_value_total",
+      "label": "自开工累计实际完成产值",
+      "children": [
+        "col_owner_output_value_total_confirmed",
+        "col_owner_output_value_total_unconfirmed",
+        "col_owner_output_value_total_total"
+      ]
+    },
+    {
+      "id": "grp_owner_receivables",
+      "label": "业主收款",
+      "children": [
+        "col_owner_receivable_amount",
+        "col_owner_receivable_ratio",
+        "col_owner_received_amount"
+      ]
+    }
+  ],
+  "features": {
+    "mergedHeaders": true,
+    "subtotal": {
+      "enabled": false
+    }
+  },
+  "wideTable": {
+    "totalFields": 33,
+    "defaultVisibleColumns": 24,
+    "columnPicker": true
+  },
+  "generated_at": "2026-06-01T03:43:54.400293+00:00",
+  "source": "ai"
+}
