@@ -1,0 +1,232 @@
+{
+  "version": 1,
+  "kind": "chinese_complex_report",
+  "managed_file_id": "51853ede-9e6b-4a3a-aa7a-060cbead0862",
+  "reportId": "cost_statistics_report_08",
+  "title": "成本统计报表08",
+  "summary": "该报表采用多级表头布局，第一行显示报表名称，第二行和第三行构成多级表头，对列进行分组展示。数据从第五行开始，包含不同组织、年度、月度和项目的成本数据，且有总计行。",
+  "layoutSheet": "Sheet1",
+  "freeze": {
+    "row": 4,
+    "col": 0
+  },
+  "headerRowCount": 1,
+  "headerCells": [],
+  "regions": {
+    "columnHeader": {
+      "rows": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "merges": []
+    },
+    "dataBody": {
+      "startRow": 5,
+      "startCol": 1
+    }
+  },
+  "columns": [
+    {
+      "id": "col_organization",
+      "field": "organization",
+      "label": "组织",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_year",
+      "field": "year",
+      "label": "年度",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_month",
+      "field": "month",
+      "label": "月度",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_project",
+      "field": "project",
+      "label": "项目",
+      "parentId": "grp_basic_info",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_management_fee",
+      "field": "management_fee",
+      "label": "管理费",
+      "parentId": "grp_cost_items",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_indirect_cost",
+      "field": "indirect_cost",
+      "label": "间接成本",
+      "parentId": "grp_cost_items",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_tax",
+      "field": "tax",
+      "label": "税金",
+      "parentId": "grp_cost_items",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_safety_construction_fee",
+      "field": "safety_construction_fee",
+      "label": "安全文明施工费",
+      "parentId": "grp_direct_cost",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_materials",
+      "field": "materials",
+      "label": "材料",
+      "parentId": "grp_direct_cost",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_machinery",
+      "field": "machinery",
+      "label": "机械",
+      "parentId": "grp_direct_cost",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_labor_subcontract",
+      "field": "labor_subcontract",
+      "label": "劳务分包",
+      "parentId": "grp_direct_cost",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_professional_subcontract",
+      "field": "professional_subcontract",
+      "label": "专业分包",
+      "parentId": "grp_direct_cost",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_direct_cost_total",
+      "field": "direct_cost_total",
+      "label": "直接成本",
+      "parentId": "grp_direct_cost",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_actual_cost",
+      "field": "actual_cost",
+      "label": "实际成本",
+      "parentId": "grp_cost_comparison",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_target_cost",
+      "field": "target_cost",
+      "label": "目标成本",
+      "parentId": "grp_cost_comparison",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_actual_target_ratio",
+      "field": "actual_target_ratio",
+      "label": "实目比",
+      "parentId": "grp_cost_comparison",
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    }
+  ],
+  "columnGroups": [
+    {
+      "id": "grp_basic_info",
+      "label": "基本信息",
+      "children": [
+        "col_organization",
+        "col_year",
+        "col_month",
+        "col_project"
+      ]
+    },
+    {
+      "id": "grp_cost_items",
+      "label": "成本项",
+      "children": [
+        "col_management_fee",
+        "col_indirect_cost",
+        "col_tax",
+        "grp_direct_cost"
+      ]
+    },
+    {
+      "id": "grp_direct_cost",
+      "label": "直接成本",
+      "children": [
+        "col_safety_construction_fee",
+        "col_materials",
+        "col_machinery",
+        "col_labor_subcontract",
+        "col_professional_subcontract",
+        "col_direct_cost_total"
+      ]
+    },
+    {
+      "id": "grp_cost_comparison",
+      "label": "成本比较",
+      "children": [
+        "col_actual_cost",
+        "col_target_cost",
+        "col_actual_target_ratio"
+      ]
+    }
+  ],
+  "features": {
+    "mergedHeaders": false,
+    "subtotal": {
+      "enabled": true
+    }
+  },
+  "wideTable": {
+    "totalFields": 16,
+    "defaultVisibleColumns": 16,
+    "columnPicker": false
+  },
+  "generated_at": "2026-06-01T08:09:20.829337+00:00",
+  "source": "ai"
+}

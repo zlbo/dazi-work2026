@@ -1,0 +1,36 @@
+{
+  "version": "3.0.0",
+  "updatedAt": "2026-05-25T00:00:00.000Z",
+  "examples": [
+    {
+      "id": "onto/setup/profit-ontology-init",
+      "title": "利润分析本体初始化",
+      "category": "onto-setup",
+      "file": "onto/setup/profit_ontology_init.py"
+    },
+    {
+      "id": "onto/function/profit-fn-yoy",
+      "title": "利润同比分析 (YoY)",
+      "category": "onto-function",
+      "file": "onto/function/profit_fn_yoy_analysis.py"
+    },
+    {
+      "id": "onto/function/profit-fn-mom",
+      "title": "利润环比分析 (MoM)",
+      "category": "onto-function",
+      "file": "onto/function/profit_fn_mom_analysis.py"
+    },
+    {
+      "id": "onto/function/profit-fn-top-products",
+      "title": "产品利润排行",
+      "category": "onto-function",
+      "file": "onto/function/profit_fn_top_products.py"
+    },
+    {
+      "id": "onto/function/profit-fn-customer-segmentation",
+      "title": "客户分层",
+      "category": "onto-function",
+      "file": "onto/function/profit_fn_customer_segmentation.py"
+    }
+  ]
+}

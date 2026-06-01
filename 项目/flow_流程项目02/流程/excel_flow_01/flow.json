@@ -1,0 +1,114 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": 80,
+        "y": 250
+      },
+      "data": {
+        "label": "开始",
+        "type": "start",
+        "flowId": 107
+      },
+      "deletable": false,
+      "node_uuid": "d0d7b698-79ea-4d0e-afe2-1a21a7420f57"
+    },
+    {
+      "id": "n-786cf77f2be9",
+      "type": "custom",
+      "position": {
+        "x": 340,
+        "y": 250
+      },
+      "data": {
+        "label": "Excel 销售产品提取",
+        "type": "excel-python",
+        "flowId": 107,
+        "managed_relative_dir": "excel",
+        "file_id": "uploads/managed/excel/e907853f-84ee-465d-8a4d-bed67b21b9e0.xlsx",
+        "source_excel_id": "uploads/managed/excel/e907853f-84ee-465d-8a4d-bed67b21b9e0.xlsx",
+        "fileName": "Demo销售表_最简.xlsx",
+        "original_filename": "Demo销售表_最简.xlsx",
+        "managed_file_id": "e907853f-84ee-465d-8a4d-bed67b21b9e0",
+        "display_name": "Demo销售表_最简.xlsx",
+        "output_variable_name": "销售表",
+        "description": "从 Demo销售表_最简.xlsx 提取销售表、产品表"
+      },
+      "deletable": true,
+      "node_uuid": "786cf77f-2be9-4dfd-bc9c-380aa348dc35"
+    },
+    {
+      "id": "n-dfed85284d4c",
+      "type": "custom",
+      "position": {
+        "x": 600,
+        "y": 250
+      },
+      "data": {
+        "label": "SQL 销售产品关联",
+        "type": "sql-query",
+        "flowId": 107,
+        "output_variable_name": "销售产品宽表",
+        "attached_variables": [
+          "销售表",
+          "产品表"
+        ],
+        "description": "销售表 LEFT JOIN 产品表（销售.产品 = 产品.ID）"
+      },
+      "deletable": true,
+      "node_uuid": "dfed8528-8d4c-4aa1-a0c1-042b7192ffc6"
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 860,
+        "y": 250
+      },
+      "data": {
+        "label": "结束",
+        "type": "end",
+        "flowId": 107
+      },
+      "deletable": false,
+      "node_uuid": "e16bc369-d028-409d-a098-362137c501d9"
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__start-noder-n-786cf77f2be9l",
+      "source": "start-node",
+      "target": "n-786cf77f2be9",
+      "sourceHandle": "r",
+      "targetHandle": "l",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      }
+    },
+    {
+      "id": "xy-edge__n-786cf77f2be9r-n-dfed85284d4cl",
+      "source": "n-786cf77f2be9",
+      "target": "n-dfed85284d4c",
+      "sourceHandle": "r",
+      "targetHandle": "l",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      }
+    },
+    {
+      "id": "xy-edge__n-dfed85284d4cr-end-nodel",
+      "source": "n-dfed85284d4c",
+      "target": "end-node",
+      "sourceHandle": "r",
+      "targetHandle": "l",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      }
+    }
+  ]
+}

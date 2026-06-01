@@ -1,0 +1,67 @@
+{
+  "appId": "workflow-approval",
+  "name": "审批流挂载页",
+  "description": "审批流挂载页（DRAP 页模式演示模板）",
+  "version": "0.1.0",
+  "framework": {
+    "react": "^18",
+    "ts": true
+  },
+  "entry": "index.html",
+  "styles": [
+    "style.css"
+  ],
+  "assets": [
+    "assets/"
+  ],
+  "permissions": [
+    "dataspace:space__0519"
+  ],
+  "data_sources": [
+    {
+      "key": "todos",
+      "kind": "static",
+      "data": {
+        "columns": [
+          "id",
+          "title",
+          "applicant",
+          "status",
+          "submitted_at"
+        ],
+        "rows": [
+          {
+            "id": "AP-001",
+            "title": "差旅报销",
+            "applicant": "张三",
+            "status": "待审",
+            "submitted_at": "2026-05-20"
+          },
+          {
+            "id": "AP-002",
+            "title": "采购申请",
+            "applicant": "李四",
+            "status": "待审",
+            "submitted_at": "2026-05-21"
+          }
+        ]
+      }
+    }
+  ],
+  "sdk": {
+    "min_version": "0.1.0",
+    "contract": "drap-1"
+  },
+  "mount": {
+    "type": "page",
+    "sandbox": "shadow_dom"
+  },
+  "refresh": {
+    "on_mount": true,
+    "stale_ms": 60000
+  },
+  "ai": {
+    "scene_tag": "workflow",
+    "template_origin": "@dazi/app-template-workflow-approval-page@0.1.0"
+  }
+}

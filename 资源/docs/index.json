@@ -1,0 +1,204 @@
+{
+  "version": "3.0.0-beta.3",
+  "updatedAt": "2026-05-29T00:00:00.000Z",
+  "docs": [
+    {
+      "id": "guides/quickstart",
+      "title": "快速开始",
+      "category": "guides",
+      "file": "guides/quickstart.md"
+    },
+    {
+      "id": "guides/cli-invocation",
+      "title": "CLI 调用约定",
+      "category": "guides",
+      "file": "guides/cli-invocation.md"
+    },
+    {
+      "id": "guides/workspace-v3",
+      "title": "工作区 v3 规范",
+      "category": "guides",
+      "file": "guides/workspace-v3.md"
+    },
+    {
+      "id": "guides/migrate-v2-v3",
+      "title": "从 v2 迁移到 v3",
+      "category": "guides",
+      "file": "guides/migrate-v2-v3.md"
+    },
+    {
+      "id": "guides/cli-reference",
+      "title": "CLI 命令速查",
+      "category": "guides",
+      "file": "guides/cli-reference.md"
+    },
+    {
+      "id": "guides/troubleshooting",
+      "title": "故障排查",
+      "category": "guides",
+      "file": "guides/troubleshooting.md"
+    },
+    {
+      "id": "guides/mcp-setup",
+      "title": "MCP 配置指南",
+      "category": "guides",
+      "file": "guides/mcp-setup.md"
+    },
+    {
+      "id": "auth/auth-login",
+      "title": "认证登录",
+      "category": "auth",
+      "file": "auth/auth-login.md"
+    },
+    {
+      "id": "auth/token-management",
+      "title": "Token 管理",
+      "category": "auth",
+      "file": "auth/token-management.md"
+    },
+    {
+      "id": "onto/space-management",
+      "title": "本体空间管理",
+      "category": "onto",
+      "file": "onto/space-management.md"
+    },
+    {
+      "id": "onto/function-guide",
+      "title": "本体函数开发",
+      "category": "onto",
+      "file": "onto/function-guide.md"
+    },
+    {
+      "id": "onto/action-guide",
+      "title": "本体动作（Action）开发",
+      "category": "onto",
+      "file": "onto/action-guide.md"
+    },
+    {
+      "id": "onto/rule-guide",
+      "title": "本体规则管理",
+      "category": "onto",
+      "file": "onto/rule-guide.md"
+    },
+    {
+      "id": "onto/planning-guide",
+      "title": "本体规划指南",
+      "category": "onto",
+      "file": "onto/本体规划指南.md"
+    },
+    {
+      "id": "onto/planning-example-profit",
+      "title": "规划示例：利润分析本体",
+      "category": "onto",
+      "file": "onto/规划示例_利润分析本体方案.md"
+    },
+    {
+      "id": "onto/script-authoring",
+      "title": "本体脚本编写指南（含发布）",
+      "category": "onto",
+      "file": "onto/本体脚本编写指南.md"
+    },
+    {
+      "id": "onto/dazi-script-sdk-reference",
+      "title": "DaziScript SDK 参考",
+      "category": "onto",
+      "file": "onto/dazi_script_sdk_reference.md"
+    },
+    {
+      "id": "onto/dazi-script-seed-data-guide",
+      "title": "DaziScript 灌数指南",
+      "category": "onto",
+      "file": "onto/dazi_script_seed_data_guide.md"
+    },
+    {
+      "id": "flow/flow-project-guide",
+      "title": "数据流程项目开发指南",
+      "category": "flow",
+      "file": "flow/flow-project-guide.md"
+    },
+    {
+      "id": "flow/流程开发最佳实践-VS-flow0案例",
+      "title": "流程开发最佳实践（VS-flow0 案例）",
+      "category": "flow",
+      "file": "flow/流程开发最佳实践-VS-flow0案例.md"
+    },
+    {
+      "id": "flow/variables-guide",
+      "title": "流程变量系统指南",
+      "category": "flow",
+      "file": "flow/variables-guide.md"
+    },
+    {
+      "id": "flow/node-code-guide",
+      "title": "节点代码编写指南",
+      "category": "flow",
+      "file": "flow/node-code-guide.md"
+    },
+    {
+      "id": "flow/flows-guide",
+      "title": "Flow 文档索引",
+      "category": "flow",
+      "file": "flow/flows-guide.md"
+    },
+    {
+      "id": "flow/run-guide",
+      "title": "Flow 运行管理",
+      "category": "flow",
+      "file": "flow/run-guide.md"
+    },
+    {
+      "id": "flow/snapshot-guide",
+      "title": "Flow 快照管理",
+      "category": "flow",
+      "file": "flow/snapshot-guide.md"
+    },
+    {
+      "id": "flow/source-guide",
+      "title": "数据源管理",
+      "category": "flow",
+      "file": "flow/source-guide.md"
+    },
+    {
+      "id": "flow/plan-guide",
+      "title": "Flow 执行计划",
+      "category": "flow",
+      "file": "flow/plan-guide.md"
+    },
+    {
+      "id": "app/app-init",
+      "title": "应用初始化",
+      "category": "app",
+      "file": "app/app-init.md"
+    },
+    {
+      "id": "app/build-upload",
+      "title": "应用构建与上传",
+      "category": "app",
+      "file": "app/build-upload.md"
+    },
+    {
+      "id": "app/release-guide",
+      "title": "应用发布管理",
+      "category": "app",
+      "file": "app/release-guide.md"
+    },
+    {
+      "id": "data/data-spaces",
+      "title": "数据空间管理",
+      "category": "data",
+      "file": "data/data-spaces.md"
+    },
+    {
+      "id": "data/table-preview",
+      "title": "数据表预览",
+      "category": "data",
+      "file": "data/table-preview.md"
+    },
+    {
+      "id": "data/cube-guide",
+      "title": "数据集（Cube）管理",
+      "category": "data",
+      "file": "data/cube-guide.md"
+    }
+  ]
+}

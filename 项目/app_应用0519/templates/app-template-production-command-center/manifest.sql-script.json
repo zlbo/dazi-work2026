@@ -1,0 +1,28 @@
+{
+  "comment": "第四档 profile：sql-script。template_id / script_id 须在空间先创建资产后替换",
+  "appId": "${appId}",
+  "name": "${appName}",
+  "description": "生产指挥中心（sql + script 主路径演示）",
+  "version": "0.1.0",
+  "framework": { "react": "^18", "ts": true },
+  "entry": "index.html",
+  "styles": ["style.css"],
+  "assets": ["assets/"],
+  "permissions": ["dataspace:${spaceId}"],
+  "data_sources": [
+    {
+      "key": "kpi",
+      "kind": "sql_template",
+      "template_id": "${queryId}",
+      "arguments": {},
+      "limit": 500
+    }
+  ],
+  "sdk": { "min_version": "0.1.0", "contract": "drap-1" },
+  "mount": { "type": "page", "sandbox": "shadow_dom" },
+  "refresh": { "on_mount": true, "stale_ms": 60000 },
+  "ai": {
+    "scene_tag": "command_center",
+    "template_origin": "@dazi/app-template-production-command-center@0.1.0"
+  }
+}

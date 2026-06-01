@@ -1,0 +1,46 @@
+{
+  "_onto_test": {
+    "at": "2026-05-28T08:58:52.450Z",
+    "spaceId": "space__0519",
+    "functionId": "fc02.fn.month_pl_budget_kpi"
+  },
+  "params": {
+    "v": 1,
+    "meta": {
+      "last_source": "app_query_aggregate",
+      "last_saved_at": "2026-05-22T11:31:36.578535+00:00",
+      "last_input_shape": "ir"
+    },
+    "arguments": {
+      "version_id": 1,
+      "year_month": "2024-06"
+    },
+    "object_type_code": "FinPLMonthFact"
+  },
+  "cli": {
+    "exitCode": 0,
+    "stderr": ""
+  },
+  "summary": {
+    "ok": true,
+    "data": {
+      "functionId": "fc02.fn.month_pl_budget_kpi",
+      "result": {
+        "status": "error",
+        "execution_id": "b1202a21-fef1-410f-8b84-9acb75b881c6",
+        "duration_ms": 0,
+        "console_log": [
+          {
+            "type": "error",
+            "message": "需要提供 year_month(YYYY-MM) 或 date_key(YYYYMMDD)"
+          }
+        ],
+        "changes": {
+          "created": [],
+          "updated": [],
+          "deleted": []
+        }
+      }
+    }
+  }
+}

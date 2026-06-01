@@ -1,0 +1,22 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.sql，配置改 flow.json",
+  "node_uuid": "f28dac0c-c737-4f8a-b78d-437000425d68",
+  "nodeId": "database-source-1779850848876",
+  "nodeType": "database-source",
+  "label": "数据库读取 6",
+  "codeFile": "code.sql",
+  "codeLanguage": "sql",
+  "position": {
+    "x": 28.6071375300387,
+    "y": 7.946797995619239
+  },
+  "data": {
+    "label": "数据库读取 6",
+    "type": "database-source",
+    "status": "idle",
+    "description": "新节点",
+    "flowId": 101,
+    "output_variable_name": "变量mdy",
+    "connectionId": "clickhouse__space_xsh_01"
+  }
+}

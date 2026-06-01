@@ -1,0 +1,52 @@
+{
+  "flowId": "103",
+  "flowName": "VS-flow0",
+  "nodes": {
+    "ea62116e-25d7-4f5b-bbb8-770ac57f5821": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "7c4e8921-3b6a-4d5e-9f10-2a8b6c4d8e0f": {
+      "nodeId": "n-7c4e89213b6a",
+      "nodeType": "excel-python",
+      "dir": "节点/Excel_多表解析",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "70e3ff925b454ae070d3526d7f615bfedee18bdd"
+    },
+    "b5e6f7a8-9c0d-4e1f-8a2b-3c4d5e6f7890": {
+      "nodeId": "n-b5e6f7a89c0d",
+      "nodeType": "data-quality-check",
+      "dir": "节点/数据质量检查",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "cff14df6f22037949cf9c1f5e6abcce4cceda605"
+    },
+    "c8d9e0f1-2a3b-4c5d-8e9f-0a1b2c3d4e5f": {
+      "nodeId": "n-c8d9e0f12a3b",
+      "nodeType": "condition",
+      "dir": "节点/质检是否通过",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "676821436aa5d58c4440d26fd2c604dc06a390a3"
+    },
+    "1d9f3a7e-6c2b-4850-a1e3-5f7b9d2c4e68": {
+      "nodeId": "n-1d9f3a7e6c2b",
+      "nodeType": "sql-query",
+      "dir": "节点/SQL_表间关联",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "8d3881b013e12370ab293f5d19d9398512190605"
+    },
+    "d7e8f9a0-b1c2-4d3e-8f7a-6b5c4d3e2f1a": {
+      "nodeId": "n-d7e8f9a0b1c2",
+      "nodeType": "database-sink"
+    },
+    "4bb1b0a6-f206-4a57-8b63-db89cc427aff": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    }
+  },
+  "lastPulledAt": "2026-05-30T14:38:49.211Z",
+  "graphFingerprint": "sha1:9edbffd88cdae156b6d1672413f6c7442b1dcc63"
+}

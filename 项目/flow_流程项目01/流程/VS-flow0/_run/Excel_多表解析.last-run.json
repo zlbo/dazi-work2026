@@ -1,0 +1,15 @@
+{
+  "node_id": "n-7c4e89213b6a",
+  "status": "success",
+  "error": null,
+  "active_branch": null,
+  "output_file_id": "uploads/py_result_ab7f1a5a-580d-43c1-8bb4-60d5d28f64f7.parquet",
+  "output_variable_name": "销售表",
+  "extra_variables": {
+    "产品表": "D:\\dazi\\dazi-backend\\storage\\uploads\\py_result_e64bfc04-6a40-4cf8-ba99-1aed9be6a2a0.parquet",
+    "规格表": "D:\\dazi\\dazi-backend\\storage\\uploads\\py_result_b53dfc38-7196-434e-90c5-1d47ffe253b2.parquet"
+  },
+  "output_file": "D:\\dazi\\dazi-backend\\storage\\uploads\\py_result_ab7f1a5a-580d-43c1-8bb4-60d5d28f64f7.parquet",
+  "output_variable_id": 57,
+  "debug_run_id": 25
+}

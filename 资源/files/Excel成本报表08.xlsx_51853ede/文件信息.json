@@ -1,0 +1,29 @@
+{
+  "file_id": "51853ede-9e6b-4a3a-aa7a-060cbead0862",
+  "display_name": "Excel成本报表08.xlsx",
+  "stored_filename": "51853ede-9e6b-4a3a-aa7a-060cbead0862.xlsx",
+  "relative_dir": "excel",
+  "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "file_ext": ".xlsx",
+  "size_bytes": 15209,
+  "storage_rel_path": "uploads/managed/excel/51853ede-9e6b-4a3a-aa7a-060cbead0862.xlsx",
+  "checksum_sha256": "4e6fba151be971aecaf6c03d10a1f4e419be6acb56abadd7e97913ede1138f2a",
+  "scope": "admin",
+  "is_active": true,
+  "owner_user_id": "u__admin__0001",
+  "owner_org_id": null,
+  "updated_at": "2026-06-01T08:07:53.327490",
+  "has_native_digest": true,
+  "has_ai_structure": true,
+  "has_report_layout": true,
+  "registered": true,
+  "pulledAt": "2026-06-01T08:10:43.383Z",
+  "localDir": "D:\\src2025\\ads2025\\dazi-work\\资源\\files\\Excel成本报表08.xlsx_51853ede",
+  "files": [
+    "原文件.xlsx",
+    "原生解析.md",
+    "表结构.json",
+    "报表布局.json",
+    "文件信息.json"
+  ]
+}

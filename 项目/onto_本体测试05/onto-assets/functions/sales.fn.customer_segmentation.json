@@ -1,0 +1,22 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-05-28T08:27:29.396Z",
+    "path": "D:\\src2025\\ads2025\\dazi-work\\项目\\onto_本体测试05\\onto-assets\\functions\\sales.fn.customer_segmentation.json"
+  },
+  "id": "ofn_eae0e0d7b6924c6e",
+  "function_id": "sales.fn.customer_segmentation",
+  "object_type_id": null,
+  "object_type_code": null,
+  "adapter": "dazi_script.ontology_function",
+  "adapter_config": {
+    "entry": "main",
+    "script_id": "5bdeb5e8-f3db-42f8-b852-db42183a05df"
+  },
+  "script_id": "5bdeb5e8-f3db-42f8-b852-db42183a05df",
+  "entry": "main",
+  "display_name": "sales.fn.customer_segmentation",
+  "function_synonyms_cache": null,
+  "description": null,
+  "test_arguments": null,
+  "enabled": true
+}

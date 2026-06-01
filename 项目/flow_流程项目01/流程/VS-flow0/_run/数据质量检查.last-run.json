@@ -1,0 +1,14 @@
+{
+  "node_id": "n-b5e6f7a89c0d",
+  "status": "success",
+  "error": null,
+  "active_branch": null,
+  "output_file_id": "uploads/py_result_19a38764-3453-410c-b3c2-2154e5fda9b3.parquet",
+  "output_variable_name": "V_DQ_REPORT",
+  "extra_variables": {
+    "V_DQ_SCORE": "100"
+  },
+  "output_file": "D:\\dazi\\dazi-backend\\storage\\uploads\\py_result_19a38764-3453-410c-b3c2-2154e5fda9b3.parquet",
+  "output_variable_id": 61,
+  "debug_run_id": 25
+}

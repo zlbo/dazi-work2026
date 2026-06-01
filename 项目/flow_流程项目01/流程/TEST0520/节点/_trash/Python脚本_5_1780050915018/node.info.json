@@ -1,0 +1,24 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.py，配置改 flow.json",
+  "node_uuid": "7fa282cc-54a6-4bad-8112-1ef735d62c30",
+  "nodeId": "python-script-1779239541364",
+  "nodeType": "python-script",
+  "label": "Python脚本 5",
+  "codeFile": "code.py",
+  "codeLanguage": "python",
+  "position": {
+    "x": 460.89927245288004,
+    "y": 314.39687503525136
+  },
+  "data": {
+    "label": "Python脚本 5",
+    "type": "python-script",
+    "status": "idle",
+    "description": "AI 生成的 Python 代码",
+    "flowId": 101,
+    "output_variable_name": "变量68c",
+    "attached_variables": [
+      "前5条"
+    ]
+  }
+}

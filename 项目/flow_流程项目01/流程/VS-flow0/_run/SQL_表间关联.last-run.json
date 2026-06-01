@@ -1,0 +1,12 @@
+{
+  "node_id": "n-1d9f3a7e6c2b",
+  "status": "success",
+  "error": null,
+  "active_branch": null,
+  "output_file_id": "uploads/sql_result_74482c81-e767-4f70-a271-44ae69ebc50c.parquet",
+  "output_variable_name": "销售明细宽表",
+  "extra_variables": {},
+  "output_file": "D:\\dazi\\dazi-backend\\storage\\uploads\\sql_result_74482c81-e767-4f70-a271-44ae69ebc50c.parquet",
+  "output_variable_id": 60,
+  "debug_run_id": 25
+}

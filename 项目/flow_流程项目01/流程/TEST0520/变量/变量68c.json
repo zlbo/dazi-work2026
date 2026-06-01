@@ -1,0 +1,25 @@
+{
+  "name": "变量68c",
+  "type": "table",
+  "status": "empty",
+  "variableId": 55,
+  "nodeId": "python-script-1779239541364",
+  "debugRunId": 23,
+  "updatedAt": "2026-05-20T01:14:25.281156",
+  "syncedAt": "2026-05-30T00:14:09.795Z",
+  "schema": {
+    "variable_name": "变量68c",
+    "variable_type": "table",
+    "columns": [],
+    "row_count": 0
+  },
+  "preview": {
+    "rows": [],
+    "total": 0,
+    "page": 1,
+    "limit": 10,
+    "variable_type": "table",
+    "variable_name": "变量68c",
+    "columns": []
+  }
+}

@@ -1,0 +1,352 @@
+/* DRAP 基础组件样式（命名空间前缀 drap-，避免污染） */
+
+:root {
+  /* 内网部署：不依赖 Google Fonts / 外链 CDN */
+  --dazi-font-sans: 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', system-ui,
+    -apple-system, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.drap-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--drap-bg, #f9fafb);
+  color: var(--drap-fg, #111827);
+  font-family: var(--dazi-font-sans);
+}
+
+.drap-page--dark {
+  --drap-bg: #0b1020;
+  --drap-fg: #e5e7eb;
+  --drap-card-bg: #111827;
+  --drap-card-border: #1f2937;
+  --drap-muted: #9ca3af;
+}
+
+.drap-page--light {
+  --drap-bg: #f9fafb;
+  --drap-fg: #111827;
+  --drap-card-bg: #ffffff;
+  --drap-card-border: #e5e7eb;
+  --drap-muted: #6b7280;
+}
+
+.drap-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--drap-card-border, #e5e7eb);
+}
+
+.drap-page__title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.drap-page__body {
+  flex: 1;
+  overflow: auto;
+  padding: 16px 20px;
+}
+
+.drap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.drap-kpi {
+  background: var(--drap-card-bg, #fff);
+  border: 1px solid var(--drap-card-border, #e5e7eb);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.drap-kpi__title {
+  font-size: 12px;
+  color: var(--drap-muted, #6b7280);
+}
+
+.drap-kpi__value {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.drap-kpi__trend {
+  font-size: 12px;
+}
+
+.drap-kpi__trend--up {
+  color: #16a34a;
+}
+
+.drap-kpi__trend--down {
+  color: #dc2626;
+}
+
+.drap-card {
+  background: var(--drap-card-bg, #fff);
+  border: 1px solid var(--drap-card-border, #e5e7eb);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.drap-card__title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.drap-chart {
+  width: 100%;
+  height: 320px;
+}
+
+.drap-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.drap-table th,
+.drap-table td {
+  border-bottom: 1px solid var(--drap-card-border, #e5e7eb);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.drap-table th {
+  color: var(--drap-muted, #6b7280);
+  font-weight: 500;
+  background: transparent;
+}
+
+.drap-filterbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.drap-filterbar__field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.drap-filterbar__field select,
+.drap-filterbar__field input {
+  background: var(--drap-card-bg, #fff);
+  border: 1px solid var(--drap-card-border, #e5e7eb);
+  color: var(--drap-fg, #111827);
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.drap-empty {
+  color: var(--drap-muted, #6b7280);
+  font-size: 13px;
+  padding: 24px;
+  text-align: center;
+}
+
+/* 中国式复杂报表 */
+.drap-complex-report__scroll {
+  overflow: auto;
+  border: 1px solid var(--drap-card-border, #e5e7eb);
+  border-radius: 8px;
+  background: var(--drap-card-bg, #fff);
+}
+
+.drap-complex-report__table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: none;
+  border-radius: 0;
+  background: var(--drap-card-bg, #fff);
+}
+
+.drap-complex-report__scroll thead th {
+  position: sticky;
+  z-index: 2;
+}
+
+.drap-complex-report__scroll thead tr:first-child th {
+  top: 0;
+}
+
+.drap-complex-report__scroll--grouped thead tr:nth-child(2) th {
+  top: var(--drap-complex-head-row1-h, 38px);
+}
+
+.drap-complex-report__scroll:not(.drap-complex-report__scroll--grouped) thead th {
+  top: 0;
+}
+
+.drap-complex-report__table th,
+.drap-complex-report__table td {
+  border-right: 1px solid var(--drap-card-border, #e5e7eb);
+  border-bottom: 1px solid var(--drap-card-border, #e5e7eb);
+}
+
+.drap-complex-report__table th:last-child,
+.drap-complex-report__table td:last-child {
+  border-right: none;
+}
+
+.drap-complex-report__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* 表头：统一底色、字重，与数据区明显区分（sticky 需实色背景） */
+.drap-complex-report__table thead th {
+  background-color: var(--drap-complex-head-bg, #f3f4f6);
+  color: var(--drap-complex-head-fg, #374151);
+  font-weight: 600;
+  font-size: 12px;
+  padding: 10px 12px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.drap-complex-report__table thead .drap-complex-report__cell--band-0 {
+  background-color: var(--drap-complex-head-band-a, #f3f4f6);
+}
+
+.drap-complex-report__table thead .drap-complex-report__cell--band-1 {
+  background-color: var(--drap-complex-head-band-b, #eceff4);
+}
+
+.drap-complex-report__group-th {
+  font-weight: 600;
+  color: var(--drap-complex-head-fg, #374151);
+  border-bottom: 1px solid var(--drap-card-border, #e5e7eb);
+  letter-spacing: 0.02em;
+}
+
+/* 表头末行（月份/叶子列）与数据区的分隔线 */
+.drap-complex-report__table thead tr:last-child th {
+  border-bottom: 2px solid var(--drap-complex-head-divider, #d1d5db);
+  font-weight: 500;
+  font-size: 11px;
+  color: var(--drap-muted, #6b7280);
+  padding-top: 6px;
+  padding-bottom: 8px;
+  box-shadow: 0 2px 4px -2px rgba(15, 23, 42, 0.06);
+}
+
+/* 分段边界：与普通网格线同宽同色，仅表头用轻微底色区分分组 */
+.drap-complex-report__cell--segment-start {
+  /* 不加粗线；左边界由前一列 border-right 自然形成 */
+}
+
+/* 数据区：白底为主，分组色极淡，hover 略加深 */
+.drap-complex-report__table tbody td {
+  background: var(--drap-card-bg, #fff);
+  color: var(--drap-fg, #111827);
+  font-size: 13px;
+  padding: 7px 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.drap-complex-report__table tbody .drap-complex-report__cell--band-0 {
+  background: var(--drap-complex-body-band-a, #fff);
+}
+
+.drap-complex-report__table tbody .drap-complex-report__cell--band-1 {
+  background: var(--drap-complex-body-band-b, #fafbfc);
+}
+
+.drap-complex-report__table tbody tr:hover td {
+  background: var(--drap-complex-row-hover, #f5f7fa);
+}
+
+.drap-complex-report__table tbody tr:nth-child(even) td {
+  background: var(--drap-complex-row-stripe, #fafafa);
+}
+
+.drap-complex-report__table tbody tr:nth-child(even) .drap-complex-report__cell--band-1 {
+  background: var(--drap-complex-row-stripe-b, #f5f6f8);
+}
+
+.drap-complex-report__table tbody tr:hover .drap-complex-report__cell--band-0,
+.drap-complex-report__table tbody tr:hover .drap-complex-report__cell--band-1 {
+  background: var(--drap-complex-row-hover, #f0f4f8);
+}
+
+/* 纵向合并列（类别）：垂直居中、统一底色，不受斑马纹影响 */
+.drap-complex-report__cell--row-merge {
+  vertical-align: middle;
+  background-color: var(--drap-complex-merge-bg, #f9fafb) !important;
+  font-weight: 500;
+  color: var(--drap-complex-head-fg, #374151);
+  border-right: 1px solid var(--drap-card-border, #e5e7eb);
+}
+
+.drap-complex-report__table tbody tr:hover .drap-complex-report__cell--row-merge {
+  background-color: var(--drap-complex-merge-bg, #f9fafb) !important;
+}
+
+.drap-complex-report__table tbody tr:nth-child(even) .drap-complex-report__cell--row-merge {
+  background-color: var(--drap-complex-merge-bg, #f9fafb) !important;
+}
+
+/* 重点指标行：整行加粗（纵向合并列保持常规字重） */
+.drap-complex-report__row--emphasis td:not(.drap-complex-report__cell--row-merge) {
+  font-weight: 600;
+  color: var(--drap-fg, #111827);
+}
+
+/* 警示指标行：整行红色 */
+.drap-complex-report__row--danger td:not(.drap-complex-report__cell--row-merge) {
+  color: var(--drap-danger, #f53f3f);
+}
+
+.drap-complex-report__row--emphasis.drap-complex-report__row--danger
+  td:not(.drap-complex-report__cell--row-merge) {
+  font-weight: 600;
+  color: var(--drap-danger, #f53f3f);
+}
+
+/* 深色模式 */
+.drap-page--dark .drap-complex-report__table {
+  background: var(--drap-card-bg, #111827);
+}
+
+.drap-page--dark .drap-complex-report__table thead th {
+  --drap-complex-head-bg: #1f2937;
+  --drap-complex-head-fg: #e5e7eb;
+  --drap-complex-head-band-a: #1f2937;
+  --drap-complex-head-band-b: #253041;
+}
+
+.drap-page--dark .drap-complex-report__table thead tr:last-child th {
+  --drap-complex-head-divider: #374151;
+}
+
+.drap-page--dark .drap-complex-report__table tbody td {
+  background: var(--drap-card-bg, #111827);
+}
+
+.drap-page--dark .drap-complex-report__table tbody .drap-complex-report__cell--band-1 {
+  --drap-complex-body-band-b: #151c28;
+}
+
+.drap-page--dark .drap-complex-report__table tbody tr:nth-child(even) td {
+  --drap-complex-row-stripe: #151c28;
+}
+
+.drap-page--dark .drap-complex-report__table tbody tr:hover td {
+  --drap-complex-row-hover: #1e293b;
+}
+
+.drap-page--dark .drap-complex-report__cell--row-merge {
+  --drap-complex-merge-bg: #1a2332;
+}

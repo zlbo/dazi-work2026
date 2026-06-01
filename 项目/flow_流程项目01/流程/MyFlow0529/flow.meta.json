@@ -1,0 +1,36 @@
+{
+  "flowId": "102",
+  "flowName": "MyFlow0529",
+  "nodes": {
+    "76e181e6-9763-403d-984b-c0d0a5416efb": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "1772461c-098b-455d-8a75-31c1b9639393": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    },
+    "3b9c95a1-893a-40e9-a103-9a827a882dcb": {
+      "nodeId": "n-7a17c0f6182c",
+      "nodeType": "excel-import"
+    },
+    "d3f00683-3fb2-4b1a-834f-fdf73c1c61ac": {
+      "nodeId": "n-f8a3888b2b98",
+      "nodeType": "sql-query",
+      "dir": "节点/SQL_查询",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    },
+    "9253888c-5372-4520-94ee-c4a9354dc758": {
+      "nodeId": "n-72d69920b96c",
+      "nodeType": "data-quality-check",
+      "dir": "节点/数据质量检查",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    }
+  },
+  "lastPulledAt": "2026-05-30T12:57:56.796Z",
+  "graphFingerprint": "sha1:a2ce52b7ab338e90fbb84e12cd9a530569b1c1a5"
+}

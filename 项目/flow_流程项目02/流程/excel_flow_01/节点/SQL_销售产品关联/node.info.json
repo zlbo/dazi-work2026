@@ -1,0 +1,24 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.sql，配置改 flow.json",
+  "node_uuid": "dfed8528-8d4c-4aa1-a0c1-042b7192ffc6",
+  "nodeId": "n-dfed85284d4c",
+  "nodeType": "sql-query",
+  "label": "SQL 销售产品关联",
+  "codeFile": "code.sql",
+  "codeLanguage": "sql",
+  "position": {
+    "x": 600,
+    "y": 250
+  },
+  "data": {
+    "label": "SQL 销售产品关联",
+    "type": "sql-query",
+    "flowId": 107,
+    "output_variable_name": "销售产品宽表",
+    "attached_variables": [
+      "销售表",
+      "产品表"
+    ],
+    "description": "销售表 LEFT JOIN 产品表（销售.产品 = 产品.ID）"
+  }
+}

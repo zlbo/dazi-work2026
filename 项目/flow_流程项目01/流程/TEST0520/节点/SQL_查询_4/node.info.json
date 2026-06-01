@@ -1,0 +1,24 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.sql，配置改 flow.json",
+  "node_uuid": "461de57b-ba57-4010-9fca-e64ecb87c87f",
+  "nodeId": "sql-query-1779239537724",
+  "nodeType": "sql-query",
+  "label": "SQL 查询 4",
+  "codeFile": "code.sql",
+  "codeLanguage": "sql",
+  "position": {
+    "x": 331.4867311987547,
+    "y": 279.94803015076286
+  },
+  "data": {
+    "label": "SQL 查询 4",
+    "type": "sql-query",
+    "status": "idle",
+    "description": "AI 生成的 SQL 查询",
+    "flowId": 101,
+    "output_variable_name": "前5条",
+    "attached_variables": [
+      "V_EXCEL_DATA"
+    ]
+  }
+}

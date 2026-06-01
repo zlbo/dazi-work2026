@@ -1,0 +1,77 @@
+{
+  "appId": "complex-report-02",
+  "name": "complex-report-02",
+  "description": "基于文件上传管理 Excel 设计稿 + RLIR 的复杂报表（ComplexReport）",
+  "version": "0.1.0",
+  "framework": {
+    "react": "^18",
+    "ts": true
+  },
+  "entry": "index.html",
+  "styles": [
+    "style.css"
+  ],
+  "assets": [
+    "assets/"
+  ],
+  "permissions": [
+    "dataspace:space__0519"
+  ],
+  "report_design": {
+    "managed_file_id": "",
+    "display_name": "（请在 VS Code 绑定文件上传管理中的 Excel）",
+    "layout_source": "workspace_bundle",
+    "report_id": "demo_report",
+    "layout_snapshot": null
+  },
+  "data_sources": [
+    {
+      "key": "report_data",
+      "kind": "static",
+      "data": {
+        "columns": [
+          "dept",
+          "qty",
+          "yield_pct",
+          "unit_cost"
+        ],
+        "rows": [
+          {
+            "dept": "一车间",
+            "qty": 1200,
+            "yield_pct": 98.2,
+            "unit_cost": 12.5
+          },
+          {
+            "dept": "二车间",
+            "qty": 980,
+            "yield_pct": 96.5,
+            "unit_cost": 13.1
+          },
+          {
+            "dept": "三车间",
+            "qty": 1105,
+            "yield_pct": 97.8,
+            "unit_cost": 11.9
+          }
+        ]
+      }
+    }
+  ],
+  "sdk": {
+    "min_version": "0.1.0",
+    "contract": "drap-1"
+  },
+  "mount": {
+    "type": "page",
+    "sandbox": "shadow_dom"
+  },
+  "refresh": {
+    "on_mount": true,
+    "stale_ms": 60000
+  },
+  "ai": {
+    "scene_tag": "chinese_complex_report",
+    "template_origin": "@dazi/app-template-chinese-complex-report@0.1.0"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "file_id": "e907853f-84ee-465d-8a4d-bed67b21b9e0",
+  "display_name": "Demo销售表_最简.xlsx",
+  "stored_filename": "e907853f-84ee-465d-8a4d-bed67b21b9e0.xlsx",
+  "relative_dir": "excel",
+  "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "file_ext": ".xlsx",
+  "size_bytes": 31958,
+  "storage_rel_path": "uploads/managed/excel/e907853f-84ee-465d-8a4d-bed67b21b9e0.xlsx",
+  "checksum_sha256": "ce4f5a4aadf7d3869b4617cfb46dc304cc9eb880bed33a015a8baa7d1be48b51",
+  "scope": "admin",
+  "is_active": true,
+  "owner_user_id": "u__admin__0001",
+  "owner_org_id": null,
+  "updated_at": "2026-05-09T12:28:56.939862",
+  "has_native_digest": true,
+  "has_ai_structure": true,
+  "registered": true,
+  "pulledAt": "2026-05-30T00:44:53.700Z",
+  "localDir": "D:\\src2025\\ads2025\\dazi-work\\资源\\files\\Demo销售表_最简.xlsx_e907853f",
+  "files": [
+    "原文件.xlsx",
+    "原生解析.md",
+    "表结构.json",
+    "文件信息.json"
+  ]
+}

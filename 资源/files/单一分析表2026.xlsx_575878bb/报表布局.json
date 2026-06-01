@@ -1,0 +1,440 @@
+{
+  "version": 1,
+  "kind": "chinese_complex_report",
+  "managed_file_id": "575878bb-0e11-4b76-bd22-24623b6ddd8a",
+  "reportId": "single_financial_analysis_report",
+  "title": "主要财务指标表",
+  "summary": "该报表为多级表头布局，第一行是报表标题，第三行和第四行是多级表头，第三行包含类别、指标名称以及各年份和分月年份的分组，第四行细化了分月年份的月份信息。数据从第五行开始，展示了不同类别下各指标在不同年份和月份的数据。",
+  "layoutSheet": "主要财务指标（报表数）",
+  "freeze": {
+    "row": 4,
+    "col": 0
+  },
+  "regions": {
+    "columnHeader": {
+      "rows": [
+        3,
+        4
+      ],
+      "merges": []
+    },
+    "dataBody": {
+      "startRow": 5,
+      "startCol": 1
+    }
+  },
+  "columns": [
+    {
+      "id": "col_category",
+      "field": "category",
+      "label": "类别",
+      "parentId": null,
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_indicator",
+      "field": "indicator",
+      "label": "指标名称",
+      "parentId": null,
+      "align": "left",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2017",
+      "field": "2017",
+      "label": "2017年",
+      "parentId": null,
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2018",
+      "field": "2018",
+      "label": "2018年",
+      "parentId": null,
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2019",
+      "field": "2019",
+      "label": "2019年",
+      "parentId": null,
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2020",
+      "field": "2020",
+      "label": "2020年",
+      "parentId": null,
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2021",
+      "field": "2021",
+      "label": "2021年",
+      "parentId": null,
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2022",
+      "field": "2022",
+      "label": "2022年",
+      "parentId": null,
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2021_monthly",
+      "field": "2021_monthly",
+      "label": "2021年（分月）",
+      "parentId": null,
+      "align": "right",
+      "visible": true,
+      "leaf": false
+    },
+    {
+      "id": "col_2021_01",
+      "field": "2021_01",
+      "label": "1月",
+      "parentId": "col_2021_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2021_02",
+      "field": "2021_02",
+      "label": "2月",
+      "parentId": "col_2021_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2021_03",
+      "field": "2021_03",
+      "label": "3月",
+      "parentId": "col_2021_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2021_04",
+      "field": "2021_04",
+      "label": "4月",
+      "parentId": "col_2021_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2021_05",
+      "field": "2021_05",
+      "label": "5月",
+      "parentId": "col_2021_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2021_06",
+      "field": "2021_06",
+      "label": "6月",
+      "parentId": "col_2021_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2021_07",
+      "field": "2021_07",
+      "label": "7月",
+      "parentId": "col_2021_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2021_08",
+      "field": "2021_08",
+      "label": "8月",
+      "parentId": "col_2021_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2021_09",
+      "field": "2021_09",
+      "label": "9月",
+      "parentId": "col_2021_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2021_10",
+      "field": "2021_10",
+      "label": "10月",
+      "parentId": "col_2021_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2021_11",
+      "field": "2021_11",
+      "label": "11月",
+      "parentId": "col_2021_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2021_12",
+      "field": "2021_12",
+      "label": "12月",
+      "parentId": "col_2021_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2022_monthly",
+      "field": "2022_monthly",
+      "label": "2022年（分月）",
+      "parentId": null,
+      "align": "right",
+      "visible": true,
+      "leaf": false
+    },
+    {
+      "id": "col_2022_01",
+      "field": "2022_01",
+      "label": "1月",
+      "parentId": "col_2022_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2022_02",
+      "field": "2022_02",
+      "label": "2月",
+      "parentId": "col_2022_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2022_03",
+      "field": "2022_03",
+      "label": "3月",
+      "parentId": "col_2022_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2022_04",
+      "field": "2022_04",
+      "label": "4月",
+      "parentId": "col_2022_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2022_05",
+      "field": "2022_05",
+      "label": "5月",
+      "parentId": "col_2022_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2022_06",
+      "field": "2022_06",
+      "label": "6月",
+      "parentId": "col_2022_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2022_07",
+      "field": "2022_07",
+      "label": "7月",
+      "parentId": "col_2022_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2022_08",
+      "field": "2022_08",
+      "label": "8月",
+      "parentId": "col_2022_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2022_09",
+      "field": "2022_09",
+      "label": "9月",
+      "parentId": "col_2022_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2022_10",
+      "field": "2022_10",
+      "label": "10月",
+      "parentId": "col_2022_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2022_11",
+      "field": "2022_11",
+      "label": "11月",
+      "parentId": "col_2022_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2022_12",
+      "field": "2022_12",
+      "label": "12月",
+      "parentId": "col_2022_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2023_monthly",
+      "field": "2023_monthly",
+      "label": "2023年（分月）",
+      "parentId": null,
+      "align": "right",
+      "visible": true,
+      "leaf": false
+    },
+    {
+      "id": "col_2023_01",
+      "field": "2023_01",
+      "label": "1月",
+      "parentId": "col_2023_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2023_02",
+      "field": "2023_02",
+      "label": "2月",
+      "parentId": "col_2023_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2023_03",
+      "field": "2023_03",
+      "label": "3月",
+      "parentId": "col_2023_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    },
+    {
+      "id": "col_2023_04",
+      "field": "2023_04",
+      "label": "4月",
+      "parentId": "col_2023_monthly",
+      "align": "right",
+      "visible": true,
+      "leaf": true
+    }
+  ],
+  "columnGroups": [
+    {
+      "id": "col_2021_monthly",
+      "label": "2021年（分月）",
+      "children": [
+        "col_2021_01",
+        "col_2021_02",
+        "col_2021_03",
+        "col_2021_04",
+        "col_2021_05",
+        "col_2021_06",
+        "col_2021_07",
+        "col_2021_08",
+        "col_2021_09",
+        "col_2021_10",
+        "col_2021_11",
+        "col_2021_12"
+      ]
+    },
+    {
+      "id": "col_2022_monthly",
+      "label": "2022年（分月）",
+      "children": [
+        "col_2022_01",
+        "col_2022_02",
+        "col_2022_03",
+        "col_2022_04",
+        "col_2022_05",
+        "col_2022_06",
+        "col_2022_07",
+        "col_2022_08",
+        "col_2022_09",
+        "col_2022_10",
+        "col_2022_11",
+        "col_2022_12"
+      ]
+    },
+    {
+      "id": "col_2023_monthly",
+      "label": "2023年（分月）",
+      "children": [
+        "col_2023_01",
+        "col_2023_02",
+        "col_2023_03",
+        "col_2023_04"
+      ]
+    }
+  ],
+  "features": {
+    "mergedHeaders": false,
+    "subtotal": {
+      "enabled": false
+    }
+  },
+  "wideTable": {
+    "totalFields": 38,
+    "defaultVisibleColumns": 38,
+    "columnPicker": false
+  },
+  "generated_at": "2026-05-31T08:17:39.955646+00:00",
+  "source": "ai"
+}

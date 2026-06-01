@@ -1,0 +1,318 @@
+{
+  "version": 1,
+  "source_file_id": "e907853f-84ee-465d-8a4d-bed67b21b9e0",
+  "display_name": "Demo销售表_最简.xlsx",
+  "generated_at": "2026-05-30T00:30:46.519908+00:00",
+  "summary": "工作簿包含5个工作表，'销售表'记录销售信息，'规格表'记录规格信息，'产品表'记录产品信息，'公式测试'用于测试公式，'图表'展示数量求和结果。",
+  "sheets": [
+    {
+      "sheet_name": "销售表",
+      "tables": [
+        {
+          "table_id": "main",
+          "label": "销售数据信息表",
+          "header_config": {
+            "mode": "simple",
+            "header_row": 1,
+            "header_start_row": null,
+            "header_end_row": null,
+            "data_start_row": 2,
+            "skip_rows": 0,
+            "header_merge_char": "_"
+          },
+          "columns": [
+            {
+              "name": "ID",
+              "col_letter": "A",
+              "col_index": 1,
+              "inferred_type": "number"
+            },
+            {
+              "name": "地区",
+              "col_letter": "B",
+              "col_index": 2,
+              "inferred_type": "string"
+            },
+            {
+              "name": "产品",
+              "col_letter": "C",
+              "col_index": 3,
+              "inferred_type": "string"
+            },
+            {
+              "name": "规格",
+              "col_letter": "D",
+              "col_index": 4,
+              "inferred_type": "string"
+            },
+            {
+              "name": "颜色",
+              "col_letter": "E",
+              "col_index": 5,
+              "inferred_type": "string"
+            },
+            {
+              "name": "数量",
+              "col_letter": "F",
+              "col_index": 6,
+              "inferred_type": "number"
+            },
+            {
+              "name": "金额",
+              "col_letter": "G",
+              "col_index": 7,
+              "inferred_type": "number"
+            },
+            {
+              "name": "日期",
+              "col_letter": "H",
+              "col_index": 8,
+              "inferred_type": "date"
+            }
+          ],
+          "read_hints": {
+            "data_region": {
+              "start_row": 1,
+              "start_col": 1,
+              "end_row": null,
+              "end_col": 8
+            },
+            "notes": "表头位于第1行，数据从第2行开始，无合并表头"
+          },
+          "pandas_read": {
+            "sheet_name": "销售表",
+            "header": 0,
+            "skiprows": null,
+            "usecols": "A:H",
+            "comment": "从'销售表'工作表读取数据，将第1行作为表头，不跳过任何行，读取A到H列的数据"
+          }
+        }
+      ]
+    },
+    {
+      "sheet_name": "规格表",
+      "tables": [
+        {
+          "table_id": "main",
+          "label": "规格信息表",
+          "header_config": {
+            "mode": "simple",
+            "header_row": 2,
+            "header_start_row": null,
+            "header_end_row": null,
+            "data_start_row": 3,
+            "skip_rows": 0,
+            "header_merge_char": "_"
+          },
+          "columns": [
+            {
+              "name": "ID",
+              "col_letter": "A",
+              "col_index": 1,
+              "inferred_type": "string"
+            },
+            {
+              "name": "名称",
+              "col_letter": "B",
+              "col_index": 2,
+              "inferred_type": "string"
+            },
+            {
+              "name": "说明",
+              "col_letter": "C",
+              "col_index": 3,
+              "inferred_type": "string"
+            }
+          ],
+          "read_hints": {
+            "data_region": {
+              "start_row": 2,
+              "start_col": 1,
+              "end_row": 7,
+              "end_col": 3
+            },
+            "notes": "表头位于第2行，数据从第3行开始，无合并表头"
+          },
+          "pandas_read": {
+            "sheet_name": "规格表",
+            "header": 1,
+            "skiprows": null,
+            "usecols": "A:C",
+            "comment": "从'规格表'工作表读取数据，将第2行作为表头，不跳过任何行，读取A到C列的数据"
+          }
+        }
+      ]
+    },
+    {
+      "sheet_name": "产品表",
+      "tables": [
+        {
+          "table_id": "main",
+          "label": "产品信息表",
+          "header_config": {
+            "mode": "simple",
+            "header_row": 2,
+            "header_start_row": null,
+            "header_end_row": null,
+            "data_start_row": 3,
+            "skip_rows": 0,
+            "header_merge_char": "_"
+          },
+          "columns": [
+            {
+              "name": "ID",
+              "col_letter": "A",
+              "col_index": 1,
+              "inferred_type": "string"
+            },
+            {
+              "name": "名称",
+              "col_letter": "B",
+              "col_index": 2,
+              "inferred_type": "string"
+            },
+            {
+              "name": "说明",
+              "col_letter": "C",
+              "col_index": 3,
+              "inferred_type": "string"
+            }
+          ],
+          "read_hints": {
+            "data_region": {
+              "start_row": 2,
+              "start_col": 1,
+              "end_row": 7,
+              "end_col": 3
+            },
+            "notes": "表头位于第2行，数据从第3行开始，无合并表头"
+          },
+          "pandas_read": {
+            "sheet_name": "产品表",
+            "header": 1,
+            "skiprows": null,
+            "usecols": "A:C",
+            "comment": "从'产品表'工作表读取数据，将第2行作为表头，不跳过任何行，读取A到C列的数据"
+          }
+        }
+      ]
+    },
+    {
+      "sheet_name": "公式测试",
+      "tables": [
+        {
+          "table_id": "main",
+          "label": "公式测试数据表",
+          "header_config": {
+            "mode": "simple",
+            "header_row": 1,
+            "header_start_row": null,
+            "header_end_row": null,
+            "data_start_row": 2,
+            "skip_rows": 0,
+            "header_merge_char": "_"
+          },
+          "columns": [
+            {
+              "name": "产品",
+              "col_letter": "A",
+              "col_index": 1,
+              "inferred_type": "string"
+            },
+            {
+              "name": "单价",
+              "col_letter": "B",
+              "col_index": 2,
+              "inferred_type": "number"
+            },
+            {
+              "name": "数量",
+              "col_letter": "C",
+              "col_index": 3,
+              "inferred_type": "number"
+            },
+            {
+              "name": "金额",
+              "col_letter": "D",
+              "col_index": 4,
+              "inferred_type": "number"
+            }
+          ],
+          "read_hints": {
+            "data_region": {
+              "start_row": 1,
+              "start_col": 1,
+              "end_row": 4,
+              "end_col": 4
+            },
+            "notes": "表头位于第1行，数据从第2行开始，无合并表头"
+          },
+          "pandas_read": {
+            "sheet_name": "公式测试",
+            "header": 0,
+            "skiprows": null,
+            "usecols": "A:D",
+            "comment": "从'公式测试'工作表读取数据，将第1行作为表头，不跳过任何行，读取A到D列的数据"
+          }
+        }
+      ]
+    },
+    {
+      "sheet_name": "图表",
+      "tables": [
+        {
+          "table_id": "main",
+          "label": "图表数据信息表",
+          "header_config": {
+            "mode": "advanced",
+            "header_row": null,
+            "header_start_row": 3,
+            "header_end_row": 4,
+            "data_start_row": 5,
+            "skip_rows": 0,
+            "header_merge_char": "_"
+          },
+          "columns": [
+            {
+              "name": "求和项:数量_规格",
+              "col_letter": "A",
+              "col_index": 1,
+              "inferred_type": "string"
+            },
+            {
+              "name": "求和项:数量_产品_冰箱",
+              "col_letter": "B",
+              "col_index": 2,
+              "inferred_type": "number"
+            },
+            {
+              "name": "求和项:数量_产品_电视",
+              "col_letter": "C",
+              "col_index": 3,
+              "inferred_type": "number"
+            }
+          ],
+          "read_hints": {
+            "data_region": {
+              "start_row": 3,
+              "start_col": 1,
+              "end_row": 6,
+              "end_col": 3
+            },
+            "notes": "表头分为两行（第3行和第4行），数据从第5行开始，有合并表头情况"
+          },
+          "pandas_read": {
+            "sheet_name": "图表",
+            "header": [
+              2,
+              3
+            ],
+            "skiprows": null,
+            "usecols": "A:C",
+            "comment": "从'图表'工作表读取数据，将第3行和第4行作为多级表头，不跳过任何行，读取A到C列的数据"
+          }
+        }
+      ]
+    }
+  ]
+}

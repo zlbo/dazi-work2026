@@ -1,0 +1,36 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-05-28T08:24:55.364Z",
+    "path": "D:\\src2025\\ads2025\\dazi-work\\项目\\onto_本体测试05\\onto-assets\\functions\\fc02.fn.month_pl_budget_kpi.json"
+  },
+  "id": "ofn_6f214f31894948ac",
+  "function_id": "fc02.fn.month_pl_budget_kpi",
+  "object_type_id": "oot_5cbbfa18a47845c3",
+  "object_type_code": "FinPLMonthFact",
+  "adapter": "dazi_script.ontology_function",
+  "adapter_config": {
+    "entry": "main",
+    "script_id": "cdfee9fa-47e4-430d-a0c2-2d507731ac2f"
+  },
+  "script_id": "cdfee9fa-47e4-430d-a0c2-2d507731ac2f",
+  "entry": "main",
+  "display_name": null,
+  "function_synonyms_cache": [
+    "月利润分析"
+  ],
+  "description": "只读：月利润合计、月预算合计、达成率（与 v_profit_month_enriched ⋈ fact_budget_month 同源，文档 200 B1；实现为 DaziScript，文档 201）",
+  "test_arguments": {
+    "v": 1,
+    "meta": {
+      "last_source": "app_query_aggregate",
+      "last_saved_at": "2026-05-22T11:31:36.578535+00:00",
+      "last_input_shape": "ir"
+    },
+    "arguments": {
+      "version_id": 1,
+      "year_month": "2024-06"
+    },
+    "object_type_code": "FinPLMonthFact"
+  },
+  "enabled": true
+}

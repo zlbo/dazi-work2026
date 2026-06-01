@@ -1,0 +1,22 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-05-28T08:41:03.315Z",
+    "path": "D:\\src2025\\ads2025\\dazi-work\\项目\\onto_本体项目01\\onto-assets\\functions\\fc02.fn.month_pl_budget_kpi_onto.json"
+  },
+  "id": "ofn_fcab4f95a58c4ba1",
+  "function_id": "fc02.fn.month_pl_budget_kpi_onto",
+  "object_type_id": "oot_5cbbfa18a47845c3",
+  "object_type_code": "FinPLMonthFact",
+  "adapter": "dazi_script.ontology_function",
+  "adapter_config": {
+    "entry": "main",
+    "script_id": "75387d4c-8238-4d46-a8c7-7e6a472b5e08"
+  },
+  "script_id": "75387d4c-8238-4d46-a8c7-7e6a472b5e08",
+  "entry": "main",
+  "display_name": null,
+  "function_synonyms_cache": null,
+  "description": "只读：月利润合计、月预算合计、达成率（两次 semantic.query_aggregate，与示例页双请求同源；文档 201 §8）",
+  "test_arguments": null,
+  "enabled": true
+}

@@ -1,0 +1,29 @@
+{
+  "file_id": "575878bb-0e11-4b76-bd22-24623b6ddd8a",
+  "display_name": "单一分析表2026.xlsx",
+  "stored_filename": "575878bb-0e11-4b76-bd22-24623b6ddd8a.xlsx",
+  "relative_dir": "excel",
+  "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "file_ext": ".xlsx",
+  "size_bytes": 46422,
+  "storage_rel_path": "uploads/managed/excel/575878bb-0e11-4b76-bd22-24623b6ddd8a.xlsx",
+  "checksum_sha256": "cff5dba766a9356e8cf2b3d9cc075c9efd2fc65d10150dea3854ceca0232c504",
+  "scope": "admin",
+  "is_active": true,
+  "owner_user_id": "u__admin__0001",
+  "owner_org_id": null,
+  "updated_at": "2026-05-31T08:14:11.075922",
+  "has_native_digest": true,
+  "has_ai_structure": true,
+  "has_report_layout": true,
+  "registered": true,
+  "pulledAt": "2026-05-31T09:12:10.928Z",
+  "localDir": "D:\\src2025\\ads2025\\dazi-work\\资源\\files\\单一分析表2026.xlsx_575878bb",
+  "files": [
+    "原文件.xlsx",
+    "原生解析.md",
+    "表结构.json",
+    "报表布局.json",
+    "文件信息.json"
+  ]
+}

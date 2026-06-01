@@ -1,0 +1,13 @@
+{
+  "name": "@dazi/dazi-app-cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "dazi-app 启动器：转发至 dazi-vscode bundled CLI（源码在 dazi-vscode/cli/dazi-app）",
+  "type": "module",
+  "bin": {
+    "dazi-app": "./bin/dazi-app.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

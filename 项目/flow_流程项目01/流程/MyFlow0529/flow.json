@@ -1,0 +1,310 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": 50,
+        "y": 250
+      },
+      "data": {
+        "label": "开始",
+        "type": "start",
+        "flowId": 102
+      },
+      "deletable": false,
+      "node_uuid": "76e181e6-9763-403d-984b-c0d0a5416efb",
+      "measured": {
+        "width": 200,
+        "height": 96
+      }
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 682,
+        "y": 320
+      },
+      "data": {
+        "label": "结束",
+        "type": "end",
+        "flowId": 102
+      },
+      "deletable": false,
+      "node_uuid": "1772461c-098b-455d-8a75-31c1b9639393",
+      "measured": {
+        "width": 200,
+        "height": 96
+      }
+    },
+    {
+      "id": "n-7a17c0f6182c",
+      "type": "custom",
+      "position": {
+        "x": 253,
+        "y": 120
+      },
+      "data": {
+        "label": "Excel 导入",
+        "type": "excel-import",
+        "flowId": 102,
+        "managed_relative_dir": "excel",
+        "file_id": "uploads/managed/excel/e907853f-84ee-465d-8a4d-bed67b21b9e0.xlsx",
+        "source_excel_id": "uploads/managed/excel/e907853f-84ee-465d-8a4d-bed67b21b9e0.xlsx",
+        "fileName": "Demo销售表_最简.xlsx",
+        "original_filename": "Demo销售表_最简.xlsx",
+        "managed_file_id": "e907853f-84ee-465d-8a4d-bed67b21b9e0",
+        "display_name": "Demo销售表_最简.xlsx",
+        "import_mode": "simple",
+        "sheet_mode": "single",
+        "selected_sheets": [
+          "销售表"
+        ],
+        "simple_config": {
+          "header_row": 0,
+          "skip_rows": 0
+        },
+        "columns": [
+          {
+            "original_name": "ID",
+            "display_name": "ID",
+            "final_name": "ID",
+            "inferred_type": "date",
+            "final_type": "date",
+            "include": true,
+            "sample_values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "null_count": 0,
+            "total_count": 96,
+            "confidence": 1,
+            "warnings": [],
+            "type_config": {
+              "date_format": "auto"
+            }
+          },
+          {
+            "original_name": "地区",
+            "display_name": "地区",
+            "final_name": "地区",
+            "inferred_type": "string",
+            "final_type": "string",
+            "include": true,
+            "sample_values": [
+              "华东",
+              "华东",
+              "华北",
+              "华北",
+              "华南"
+            ],
+            "null_count": 0,
+            "total_count": 96,
+            "confidence": 1,
+            "warnings": []
+          },
+          {
+            "original_name": "产品",
+            "display_name": "产品",
+            "final_name": "产品",
+            "inferred_type": "string",
+            "final_type": "string",
+            "include": true,
+            "sample_values": [
+              "P01",
+              "P02",
+              "P03",
+              "P01",
+              "P02"
+            ],
+            "null_count": 0,
+            "total_count": 96,
+            "confidence": 1,
+            "warnings": []
+          },
+          {
+            "original_name": "规格",
+            "display_name": "规格",
+            "final_name": "规格",
+            "inferred_type": "string",
+            "final_type": "string",
+            "include": true,
+            "sample_values": [
+              "S1",
+              "S2",
+              "S3",
+              "S4",
+              "S5"
+            ],
+            "null_count": 0,
+            "total_count": 96,
+            "confidence": 1,
+            "warnings": []
+          },
+          {
+            "original_name": "颜色",
+            "display_name": "颜色",
+            "final_name": "颜色",
+            "inferred_type": "string",
+            "final_type": "string",
+            "include": true,
+            "sample_values": [
+              "C1",
+              "C1",
+              "C2",
+              "C2",
+              "C3"
+            ],
+            "null_count": 0,
+            "total_count": 96,
+            "confidence": 1,
+            "warnings": []
+          },
+          {
+            "original_name": "数量",
+            "display_name": "数量",
+            "final_name": "数量",
+            "inferred_type": "date",
+            "final_type": "date",
+            "include": true,
+            "sample_values": [
+              50,
+              100,
+              125,
+              300,
+              25
+            ],
+            "null_count": 0,
+            "total_count": 96,
+            "confidence": 1,
+            "warnings": [],
+            "type_config": {
+              "date_format": "auto"
+            }
+          },
+          {
+            "original_name": "金额",
+            "display_name": "金额",
+            "final_name": "金额",
+            "inferred_type": "date",
+            "final_type": "date",
+            "include": true,
+            "sample_values": [
+              9500.55,
+              20011.5,
+              15002.5,
+              60034.5,
+              21341.8
+            ],
+            "null_count": 0,
+            "total_count": 96,
+            "confidence": 1,
+            "warnings": [],
+            "type_config": {
+              "date_format": "auto"
+            }
+          },
+          {
+            "original_name": "日期",
+            "display_name": "日期",
+            "final_name": "日期",
+            "inferred_type": "datetime",
+            "final_type": "datetime",
+            "include": true,
+            "sample_values": [
+              "2021-01-01T00:00:00",
+              "2021-01-02T00:00:00",
+              "2021-01-03T00:00:00",
+              "2021-01-04T00:00:00",
+              "2021-01-05T00:00:00"
+            ],
+            "null_count": 0,
+            "total_count": 96,
+            "confidence": 1,
+            "warnings": [],
+            "type_config": {
+              "date_format": "%Y-%m-%d %H:%M:%S"
+            }
+          }
+        ],
+        "output_variable_name": "V_EXCEL_DATA",
+        "description": "Excel导入: Demo销售表_最简.xlsx"
+      },
+      "deletable": true,
+      "node_uuid": "3b9c95a1-893a-40e9-a103-9a827a882dcb",
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false
+    },
+    {
+      "id": "n-f8a3888b2b98",
+      "type": "custom",
+      "position": {
+        "x": 411,
+        "y": 381
+      },
+      "data": {
+        "label": "SQL 查询",
+        "type": "sql-query",
+        "flowId": 102,
+        "output_variable_name": "变量zu0"
+      },
+      "deletable": true,
+      "node_uuid": "d3f00683-3fb2-4b1a-834f-fdf73c1c61ac",
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false
+    },
+    {
+      "id": "n-72d69920b96c",
+      "type": "custom",
+      "position": {
+        "x": 120,
+        "y": 240
+      },
+      "data": {
+        "label": "数据质量检查",
+        "type": "data-quality-check"
+      },
+      "deletable": true,
+      "node_uuid": "9253888c-5372-4520-94ee-c4a9354dc758"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_start-node_n-7a17c0f6182c_kt3c",
+      "source": "start-node",
+      "target": "n-7a17c0f6182c",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      }
+    },
+    {
+      "id": "e_n-7a17c0f6182c_n-f8a3888b2b98_spfl",
+      "source": "n-7a17c0f6182c",
+      "target": "n-f8a3888b2b98",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      }
+    },
+    {
+      "id": "e_n-f8a3888b2b98_end-node_vgd9",
+      "source": "n-f8a3888b2b98",
+      "target": "end-node",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      }
+    }
+  ]
+}

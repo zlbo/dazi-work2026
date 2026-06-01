@@ -1,0 +1,22 @@
+# 依赖与构建产物
+node_modules/
+dist/
+.vite/
+*.log
+
+# 环境与密钥（切勿提交）
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+
+# 系统与 IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# pnpm
+.pnpm-store/

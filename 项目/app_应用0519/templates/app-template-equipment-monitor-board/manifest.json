@@ -1,0 +1,70 @@
+{
+  "appId": "equipment-monitor",
+  "name": "设备监控大屏",
+  "description": "设备监控大屏（DRAP 页模式演示模板）",
+  "version": "0.1.0",
+  "framework": {
+    "react": "^18",
+    "ts": true
+  },
+  "entry": "index.html",
+  "styles": [
+    "style.css"
+  ],
+  "assets": [
+    "assets/"
+  ],
+  "permissions": [
+    "dataspace:space__0519"
+  ],
+  "data_sources": [
+    {
+      "key": "metrics",
+      "kind": "static",
+      "data": {
+        "columns": [
+          "label",
+          "value",
+          "unit",
+          "status"
+        ],
+        "rows": [
+          {
+            "label": "OEE",
+            "value": 87.3,
+            "unit": "%",
+            "status": "正常"
+          },
+          {
+            "label": "运行设备",
+            "value": 42,
+            "unit": "台",
+            "status": "正常"
+          },
+          {
+            "label": "告警",
+            "value": 3,
+            "unit": "条",
+            "status": "关注"
+          }
+        ]
+      }
+    }
+  ],
+  "sdk": {
+    "min_version": "0.1.0",
+    "contract": "drap-1"
+  },
+  "mount": {
+    "type": "page",
+    "sandbox": "shadow_dom"
+  },
+  "refresh": {
+    "on_mount": true,
+    "stale_ms": 60000
+  },
+  "ai": {
+    "scene_tag": "equipment_realtime",
+    "template_origin": "@dazi/app-template-equipment-monitor-board@0.1.0"
+  }
+}

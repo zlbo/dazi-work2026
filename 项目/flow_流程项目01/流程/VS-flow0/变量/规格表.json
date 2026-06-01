@@ -1,0 +1,67 @@
+{
+  "name": "规格表",
+  "type": "table",
+  "status": "ready",
+  "variableId": 59,
+  "nodeId": "n-7c4e89213b6a",
+  "debugRunId": 25,
+  "updatedAt": "2026-05-30T14:43:58.023884",
+  "syncedAt": "2026-05-30T14:44:01.065Z",
+  "schema": {
+    "variable_name": "规格表",
+    "variable_type": "table",
+    "columns": [
+      {
+        "name": "ID",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "名称",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "说明",
+        "type": "large_string",
+        "dtype": "string"
+      }
+    ],
+    "row_count": 5
+  },
+  "preview": {
+    "rows": [
+      {
+        "ID": "S1",
+        "名称": "小号",
+        "说明": "小号"
+      },
+      {
+        "ID": "S2",
+        "名称": "中号",
+        "说明": "中号"
+      },
+      {
+        "ID": "S3",
+        "名称": "大号",
+        "说明": "大号"
+      },
+      {
+        "ID": "S4",
+        "名称": "加大号",
+        "说明": "加大号"
+      },
+      {
+        "ID": "S5",
+        "名称": "超大号",
+        "说明": "超大号"
+      }
+    ],
+    "total": 5,
+    "page": 1,
+    "limit": 10,
+    "variable_type": "table",
+    "variable_name": "规格表",
+    "columns": []
+  }
+}

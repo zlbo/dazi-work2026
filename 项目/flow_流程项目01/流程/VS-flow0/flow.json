@@ -1,0 +1,315 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": 20.25577557755777,
+        "y": 0.14851485148512467
+      },
+      "data": {
+        "label": "开始",
+        "type": "start",
+        "flowId": 103
+      },
+      "deletable": false,
+      "node_uuid": "ea62116e-25d7-4f5b-bbb8-770ac57f5821",
+      "measured": {
+        "width": 200,
+        "height": 96
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "n-7c4e89213b6a",
+      "type": "custom",
+      "position": {
+        "x": 16.23102310231026,
+        "y": 238.8052805280528
+      },
+      "data": {
+        "label": "Excel 多表解析",
+        "type": "excel-python",
+        "flowId": 103,
+        "managed_relative_dir": "excel",
+        "file_id": "uploads/managed/excel/e907853f-84ee-465d-8a4d-bed67b21b9e0.xlsx",
+        "source_excel_id": "uploads/managed/excel/e907853f-84ee-465d-8a4d-bed67b21b9e0.xlsx",
+        "fileName": "Demo销售表_最简.xlsx",
+        "original_filename": "Demo销售表_最简.xlsx",
+        "managed_file_id": "e907853f-84ee-465d-8a4d-bed67b21b9e0",
+        "display_name": "Demo销售表_最简.xlsx",
+        "output_variable_name": "销售表",
+        "description": "解析销售表/产品表/规格表"
+      },
+      "deletable": true,
+      "node_uuid": "7c4e8921-3b6a-4d5e-9f10-2a8b6c4d8e0f",
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "n-b5e6f7a89c0d",
+      "type": "custom",
+      "position": {
+        "x": 284.06105610561053,
+        "y": 108.23432343234325
+      },
+      "data": {
+        "label": "数据质量检查",
+        "type": "data-quality-check",
+        "flowId": 103,
+        "output_variable_name": "V_DQ_REPORT",
+        "attached_variables": [
+          "产品表",
+          "规格表"
+        ],
+        "qualityConfig": {
+          "fail_on_error": false,
+          "comment": "不抛错；由下游条件节点根据 V_DQ_REPORT 决定是继续 SQL 还是直接结束",
+          "rules": [
+            {
+              "name": "销售表行数",
+              "type": "row_count_min",
+              "table": "销售表",
+              "min": 1,
+              "description": "事实表不能为空，至少 1 行销售记录"
+            },
+            {
+              "name": "产品表行数",
+              "type": "row_count_min",
+              "table": "产品表",
+              "min": 1,
+              "description": "产品维表不能为空，至少 1 个 SKU"
+            },
+            {
+              "name": "规格表行数",
+              "type": "row_count_min",
+              "table": "规格表",
+              "min": 1,
+              "description": "规格维表不能为空，至少 1 个规格"
+            },
+            {
+              "name": "销售表.产品非空",
+              "type": "not_null",
+              "table": "销售表",
+              "column": "产品",
+              "description": "每条销售须带产品编码（如 P01），不可为空"
+            },
+            {
+              "name": "销售表.规格非空",
+              "type": "not_null",
+              "table": "销售表",
+              "column": "规格",
+              "description": "每条销售须带规格编码（如 S1），不可为空"
+            },
+            {
+              "name": "销售表.地区非空",
+              "type": "not_null",
+              "table": "销售表",
+              "column": "地区",
+              "description": "每条销售须带销售区域（如 华东），不可为空"
+            },
+            {
+              "name": "外键匹配",
+              "type": "fk_match",
+              "description": "销售表.产品→产品表.ID、销售表.规格→规格表.ID，维表须能关联"
+            }
+          ]
+        },
+        "description": "检查销售表/产品表/规格表行数、关键字段非空及外键完整性"
+      },
+      "deletable": true,
+      "node_uuid": "b5e6f7a8-9c0d-4e1f-8a2b-3c4d5e6f7890",
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "n-c8d9e0f12a3b",
+      "type": "custom",
+      "position": {
+        "x": 277.19306930693074,
+        "y": 247.6039603960396
+      },
+      "data": {
+        "label": "质检是否通过",
+        "type": "condition",
+        "flowId": 103,
+        "description": "读取 V_DQ_REPORT（入边df）/ quality_passed；True→SQL，False→结束"
+      },
+      "deletable": true,
+      "node_uuid": "c8d9e0f1-2a3b-4c5d-8e9f-0a1b2c3d4e5f",
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "n-1d9f3a7e6c2b",
+      "type": "custom",
+      "position": {
+        "x": 622.0643564356435,
+        "y": 98.22112211221122
+      },
+      "data": {
+        "label": "SQL 表间关联",
+        "type": "sql-query",
+        "flowId": 103,
+        "output_variable_name": "销售明细宽表",
+        "attached_variables": [
+          "销售表",
+          "产品表",
+          "规格表"
+        ],
+        "description": "销售表 JOIN 产品表、规格表（仅质检通过时执行）"
+      },
+      "deletable": true,
+      "node_uuid": "1d9f3a7e-6c2b-4850-a1e3-5f7b9d2c4e68",
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "n-d7e8f9a0b1c2",
+      "type": "custom",
+      "position": {
+        "x": 618.0643564356435,
+        "y": 210.22112211221122
+      },
+      "data": {
+        "label": "写入销售临时表",
+        "type": "database-sink",
+        "flowId": 103,
+        "connectionId": "clickhouse__space_xsh_01",
+        "tableName": "temp_sales001",
+        "display_name": "销售表临时数据001",
+        "input_variable_name": "销售明细宽表",
+        "description": "将销售明细宽表写入 ClickHouse temp_sales001（space__xsh_01）"
+      },
+      "deletable": true,
+      "node_uuid": "d7e8f9a0-b1c2-4d3e-8f7a-6b5c4d3e2f1a",
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 620.7524752475249,
+        "y": 380.21452145214516
+      },
+      "data": {
+        "label": "结束",
+        "type": "end",
+        "flowId": 103
+      },
+      "deletable": false,
+      "node_uuid": "4bb1b0a6-f206-4a57-8b63-db89cc427aff",
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": true,
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_excel_dq",
+      "source": "n-7c4e89213b6a",
+      "target": "n-b5e6f7a89c0d",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "sourceHandle": "r",
+      "targetHandle": "l"
+    },
+    {
+      "id": "e_cond_sql_true",
+      "source": "n-c8d9e0f12a3b",
+      "sourceHandle": "true",
+      "target": "n-1d9f3a7e6c2b",
+      "targetHandle": "l",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      }
+    },
+    {
+      "id": "e_cond_end_false",
+      "source": "n-c8d9e0f12a3b",
+      "sourceHandle": "false",
+      "target": "end-node",
+      "targetHandle": "l",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      }
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "start-node",
+      "sourceHandle": "b",
+      "target": "n-7c4e89213b6a",
+      "targetHandle": "t",
+      "id": "xy-edge__start-nodeb-n-7c4e89213b6at"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "n-b5e6f7a89c0d",
+      "sourceHandle": "b",
+      "target": "n-c8d9e0f12a3b",
+      "targetHandle": "t",
+      "id": "xy-edge__n-b5e6f7a89c0db-n-c8d9e0f12a3bt"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "n-1d9f3a7e6c2b",
+      "sourceHandle": "b",
+      "target": "n-d7e8f9a0b1c2",
+      "targetHandle": "t",
+      "id": "xy-edge__n-1d9f3a7e6c2bb-n-d7e8f9a0b1c2t"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "n-d7e8f9a0b1c2",
+      "sourceHandle": "b",
+      "target": "end-node",
+      "targetHandle": "t",
+      "id": "xy-edge__n-d7e8f9a0b1c2b-end-nodet"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.py，配置改 flow.json",
+  "node_uuid": "c8d9e0f1-2a3b-4c5d-8e9f-0a1b2c3d4e5f",
+  "nodeId": "n-c8d9e0f12a3b",
+  "nodeType": "condition",
+  "label": "质检是否通过",
+  "codeFile": "code.py",
+  "codeLanguage": "python",
+  "position": {
+    "x": 277.19306930693074,
+    "y": 247.6039603960396
+  },
+  "data": {
+    "label": "质检是否通过",
+    "type": "condition",
+    "flowId": 103,
+    "description": "读取 V_DQ_REPORT（入边df）/ quality_passed；True→SQL，False→结束"
+  }
+}
