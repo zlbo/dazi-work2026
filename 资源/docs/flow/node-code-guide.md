@@ -12,12 +12,13 @@
 |---------------------|----------|----------|
 | `sql-query` | `code.sql` | `flow_nodes.code_body` |
 | `database-source` | `code.sql` | 同上 |
+| `dataspace-source` | `code.sql` | 同上 |
 | `python-script` | `code.py` | 同上 |
 | `excel-python` | `code.py` | 同上 |
 | `condition` | `code.py` | 同上 |
 | `data-quality-check` | `code.py`（键 `dqPythonCode`） | 同上 |
 
-纯配置节点（如 `database-sink`、`delay`、`file-source`）**无** `code.*`，只在 `flow.json` 的 `data` 里配置。
+纯配置节点（如 `database-sink`、`dataspace-sink`、`delay`、`file-source`）**无** `code.*`，只在 `flow.json` 的 `data` 里配置。
 
 **编辑入口**
 
@@ -57,17 +58,24 @@ cd "项目\flow_xxx\流程\MyFlow"
 
 ---
 
-## 3. `sql-query` / `database-source`（SQL）
+## 3. `sql-query` / `database-source` / `dataspace-source`（SQL）
 
 **文件**: `code.sql`  
-**画布配置**（`flow.json` → 节点 `data`）：`connectionId`、`output_variable_name` 等。
+**画布配置**（`flow.json` → 节点 `data`）：
 
-> **变量用法**：`sql-query` 在 SQL 里把 **上游 `output_variable_name`** 当作 **表名**；`database-source` 只 **产出** 变量、不消费 Run 内变量。详见 [流程变量系统指南 §6.1–6.2](./variables-guide.md#61-sql-queryduckdb-内存-sql)。
+| 类型 | 关键字段 |
+|------|----------|
+| `database-source` | `connectionId`、`output_variable_name` |
+| `dataspace-source` | `spaceId`、`output_variable_name` |
+| `sql-query` | `output_variable_name`（消费上游表变量） |
+
+> **变量用法**：`sql-query` 在 SQL 里把 **上游 `output_variable_name`** 当作 **表名**；`database-source` / `dataspace-source` 只 **产出** 变量、不消费 Run 内变量。详见 [流程变量系统指南 §6.1–6.2](./variables-guide.md#61-sql-queryduckdb-内存-sql)。
 
 **约定**
 
 - SQL 写在 **`code.sql`**，不要塞进 `flow.json` 的 `data.sql`（pull 后会剥离到文件）。
-- `connectionId` 为 **`ads_connections` 的字符串 id**（如 `clickhouse__space_xxx`），用 `flow source list` 核对。
+- `connectionId` 为 **`ads_connections` 的字符串 id**，用 `dazi-flow source list` 核对。
+- `spaceId` 为 **`ads_dataspaces` 的 id**，用 `dazi-flow dataspace list` 核对。
 - 执行结果以 **`output_variable_name`** 为名写入调试 Run（表变量）。
 
 **模板（database-source：外部库 → 表变量）**
@@ -78,6 +86,17 @@ SELECT product_id, product_name, category
 FROM dim_product
 WHERE is_active = 1
 LIMIT 50000;
+```
+
+**模板（dataspace-source：数据空间 DuckDB/ClickHouse → 表变量）**
+
+```sql
+-- spaceId 在 flow.json；SQL 针对空间内已注册表
+-- output_variable_name = sales_raw
+SELECT *
+FROM sales_fact
+WHERE dt >= '2025-01-01'
+LIMIT 100000;
 ```
 
 **模板（sql-query：消费上游表变量 → 新表变量）**

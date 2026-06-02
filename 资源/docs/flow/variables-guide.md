@@ -180,6 +180,26 @@ LIMIT 50000
 
 ---
 
+### 6.2b `dataspace-source`（数据空间只读）
+
+**产生变量**：`spaceId` + `code.sql` 在空间存储引擎上查询，结果登记为 **`output_variable_name`**。  
+**不消费** Run 内变量（直连 `ads_dataspaces` + `get_storage`）。
+
+| 配置项 | 说明 |
+|--------|------|
+| `spaceId` | `ads_dataspaces.id`（`dazi-flow dataspace list`） |
+| `output_variable_name` | 产出表变量名 |
+
+```sql
+-- output_variable_name = space_sales
+SELECT *
+FROM sales_fact
+WHERE dt >= '2025-01-01'
+LIMIT 100000
+```
+
+---
+
 ### 6.3 `python-script`（最常用）
 
 **运行时注入**
@@ -309,6 +329,20 @@ output.print("[DQ] 完成")
 | `connectionId` | 目标 `ads_connections` |
 | `tableName` | 目标表名 |
 | `input_variable_name` | 可选；显式指定要写入的表变量名（如 `py_result`） |
+
+---
+
+### 6.6b `dataspace-sink`（无代码文件）
+
+**消费变量**：与 `database-sink` 相同，通过 **`input_variable_name`** 或入边 Parquet 取表。
+
+| 配置项 | 说明 |
+|--------|------|
+| `spaceId` | 目标 `ads_dataspaces.id` |
+| `tableName` | 空间内目标表（物理表名） |
+| `mode` | `append`（默认）或 `replace` |
+| `syncMetadata` | 写后是否同步元数据（默认 true） |
+| `input_variable_name` | 要写入的表变量名 |
 
 ---
 

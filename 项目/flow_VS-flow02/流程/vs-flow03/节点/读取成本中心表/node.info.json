@@ -1,0 +1,21 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.sql，配置改 flow.json",
+  "node_uuid": "e3f4a5b6-c7d8-4901-e2f3-a4b5c6d7e8f9",
+  "nodeId": "n-read-cost-center",
+  "nodeType": "dataspace-source",
+  "label": "读取成本中心表",
+  "codeFile": "code.sql",
+  "codeLanguage": "sql",
+  "position": {
+    "x": 340,
+    "y": 250
+  },
+  "data": {
+    "label": "读取成本中心表",
+    "type": "dataspace-source",
+    "flowId": 111,
+    "spaceId": "space__xsh_01",
+    "output_variable_name": "成本中心表",
+    "description": "从 XSH矿业01 数据空间读取 cost_center_info"
+  }
+}

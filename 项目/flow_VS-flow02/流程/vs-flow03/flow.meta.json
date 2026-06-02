@@ -1,0 +1,47 @@
+{
+  "flowId": "111",
+  "flowName": "vs-flow03",
+  "nodes": {
+    "706f0e32-826f-499b-ae16-5820fefdeda5": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "e3f4a5b6-c7d8-4901-e2f3-a4b5c6d7e8f9": {
+      "nodeId": "n-read-cost-center",
+      "nodeType": "dataspace-source",
+      "dir": "节点/读取成本中心表",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "9b1710702d01b54b19ec643a58a05b27fb811ebc",
+      "codeVersion": 6
+    },
+    "f4a5b6c7-d8e9-4012-f3a4-b5c6d7e8f9a0": {
+      "nodeId": "n-read-cost-type",
+      "nodeType": "dataspace-source",
+      "dir": "节点/读取成本类型表",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "73e2c8dcc31a9bcd6dda64f46e96c8d9396fa54f",
+      "codeVersion": 5
+    },
+    "a5b6c7d8-e9f0-4123-a4b5-c6d7e8f9a0b1": {
+      "nodeId": "n-sql-join",
+      "nodeType": "sql-query",
+      "dir": "节点/SQL_成本关联",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "c9010d34f4380699784c6bfe4a403485d0833bc5",
+      "codeVersion": 5
+    },
+    "b6c7d8e9-f0a1-4234-b5c6-d7e8f9a0b1c2": {
+      "nodeId": "n-write-temp",
+      "nodeType": "dataspace-sink"
+    },
+    "c6db5d8f-913e-4abd-8e14-1c12db7be681": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    }
+  },
+  "lastPulledAt": "2026-06-02T02:47:19.430Z",
+  "graphFingerprint": "sha1:b6a3596fa8d44c0bd9895e400c8149fc5af9e545"
+}

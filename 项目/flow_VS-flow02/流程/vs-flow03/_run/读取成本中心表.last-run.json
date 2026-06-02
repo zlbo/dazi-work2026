@@ -1,0 +1,12 @@
+{
+  "node_id": "n-read-cost-center",
+  "status": "success",
+  "error": null,
+  "active_branch": null,
+  "output_file_id": "uploads/1fd379f1-6d9e-4ae9-be49-d0a279bfd1cf.parquet",
+  "output_variable_name": "成本中心表",
+  "extra_variables": {},
+  "output_file": "D:\\dazi\\dazi-backend\\storage\\uploads\\1fd379f1-6d9e-4ae9-be49-d0a279bfd1cf.parquet",
+  "output_variable_id": 81,
+  "debug_run_id": 32
+}

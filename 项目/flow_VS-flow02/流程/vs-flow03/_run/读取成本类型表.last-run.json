@@ -1,0 +1,12 @@
+{
+  "node_id": "n-read-cost-type",
+  "status": "success",
+  "error": null,
+  "active_branch": null,
+  "output_file_id": "uploads/f9ea3911-bca8-466a-8cb9-c89668841877.parquet",
+  "output_variable_name": "成本类型表",
+  "extra_variables": {},
+  "output_file": "D:\\dazi\\dazi-backend\\storage\\uploads\\f9ea3911-bca8-466a-8cb9-c89668841877.parquet",
+  "output_variable_id": 82,
+  "debug_run_id": 32
+}

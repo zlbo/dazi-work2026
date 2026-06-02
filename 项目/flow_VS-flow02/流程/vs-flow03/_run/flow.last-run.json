@@ -1,0 +1,203 @@
+{
+  "id": 32,
+  "flow_id": 111,
+  "status": "completed",
+  "duration": 1357,
+  "node_status": {
+    "n-read-cost-center": {
+      "status": "success",
+      "node_label": "读取成本中心表",
+      "node_uuid": "e3f4a5b6-c7d8-4901-e2f3-a4b5c6d7e8f9",
+      "startTime": "2026-06-02T03:02:33.627541Z",
+      "endTime": "2026-06-02T03:02:33.705678Z",
+      "duration": 78,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 81,
+      "logs": ""
+    },
+    "end-node": {
+      "status": "success",
+      "node_label": "结束",
+      "node_uuid": "c6db5d8f-913e-4abd-8e14-1c12db7be681",
+      "startTime": "2026-06-02T03:02:34.222263Z",
+      "endTime": "2026-06-02T03:02:34.238952Z",
+      "duration": 16,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 83,
+      "logs": ""
+    },
+    "n-read-cost-type": {
+      "status": "success",
+      "node_label": "读取成本类型表",
+      "node_uuid": "f4a5b6c7-d8e9-4012-f3a4-b5c6d7e8f9a0",
+      "startTime": "2026-06-02T03:02:33.721303Z",
+      "endTime": "2026-06-02T03:02:33.752552Z",
+      "duration": 31,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 82,
+      "logs": ""
+    },
+    "n-sql-join": {
+      "status": "success",
+      "node_label": "SQL 成本关联",
+      "node_uuid": "a5b6c7d8-e9f0-4123-a4b5-c6d7e8f9a0b1",
+      "startTime": "2026-06-02T03:02:33.768164Z",
+      "endTime": "2026-06-02T03:02:33.862557Z",
+      "duration": 94,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 83,
+      "logs": ""
+    },
+    "start-node": {
+      "status": "success",
+      "node_label": "开始",
+      "node_uuid": "706f0e32-826f-499b-ae16-5820fefdeda5",
+      "startTime": "2026-06-02T03:02:33.611927Z",
+      "endTime": "2026-06-02T03:02:33.627541Z",
+      "duration": 15,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": ""
+    },
+    "n-write-temp": {
+      "status": "success",
+      "node_label": "写入 temp_test003",
+      "node_uuid": "b6c7d8e9-f0a1-4234-b5c6-d7e8f9a0b1c2",
+      "startTime": "2026-06-02T03:02:33.877544Z",
+      "endTime": "2026-06-02T03:02:34.222263Z",
+      "duration": 344,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 83,
+      "logs": ""
+    }
+  },
+  "execution_logs": [
+    {
+      "node_id": "start-node",
+      "node_label": "开始",
+      "status": "success",
+      "startTime": "2026-06-02T03:02:33.611927Z",
+      "endTime": "2026-06-02T03:02:33.627541Z",
+      "duration": 15,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": "",
+      "step_order": 1,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "a6bfd53e-e5e6-42b9-bae7-2537ea2ba3c8"
+    },
+    {
+      "node_id": "n-read-cost-center",
+      "node_label": "读取成本中心表",
+      "status": "success",
+      "startTime": "2026-06-02T03:02:33.627541Z",
+      "endTime": "2026-06-02T03:02:33.705678Z",
+      "duration": 78,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 81,
+      "logs": "",
+      "step_order": 2,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "139cc6e4-bca6-4c09-9603-6263868470df"
+    },
+    {
+      "node_id": "n-read-cost-type",
+      "node_label": "读取成本类型表",
+      "status": "success",
+      "startTime": "2026-06-02T03:02:33.721303Z",
+      "endTime": "2026-06-02T03:02:33.752552Z",
+      "duration": 31,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 82,
+      "logs": "",
+      "step_order": 3,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "d32cf037-7650-40db-9a19-51fa0d68ccf7"
+    },
+    {
+      "node_id": "n-sql-join",
+      "node_label": "SQL 成本关联",
+      "status": "success",
+      "startTime": "2026-06-02T03:02:33.768164Z",
+      "endTime": "2026-06-02T03:02:33.862557Z",
+      "duration": 94,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 83,
+      "logs": "",
+      "step_order": 4,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "049eb2fb-16ac-45eb-a28b-7d2043471a97"
+    },
+    {
+      "node_id": "n-write-temp",
+      "node_label": "写入 temp_test003",
+      "status": "success",
+      "startTime": "2026-06-02T03:02:33.877544Z",
+      "endTime": "2026-06-02T03:02:34.222263Z",
+      "duration": 344,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 83,
+      "logs": "",
+      "step_order": 5,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "9be1270c-6f5a-4be6-b060-9cc795029c30"
+    },
+    {
+      "node_id": "end-node",
+      "node_label": "结束",
+      "status": "success",
+      "startTime": "2026-06-02T03:02:34.222263Z",
+      "endTime": "2026-06-02T03:02:34.238952Z",
+      "duration": 16,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 83,
+      "logs": "",
+      "step_order": 6,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "63fd5aa4-9ae2-4492-a254-84e72275916d"
+    }
+  ],
+  "variables": {
+    "成本中心表": {
+      "id": 81,
+      "value": "uploads/2ee86373-44a2-4594-a1d9-d0d0732c3ce4.parquet",
+      "type": "table",
+      "node_id": "n-read-cost-center",
+      "updated_at": "2026-06-02T03:02:33.721303Z"
+    },
+    "成本中心类型宽表": {
+      "id": 83,
+      "value": "uploads/sql_result_8246c573-1e86-424c-acc3-97e606f54074.parquet",
+      "type": "table",
+      "node_id": "n-sql-join",
+      "updated_at": "2026-06-02T03:02:33.877544Z"
+    },
+    "成本类型表": {
+      "id": 82,
+      "value": "uploads/83cc7b5c-00ba-467a-8fa1-e3a24f73ef77.parquet",
+      "type": "table",
+      "node_id": "n-read-cost-type",
+      "updated_at": "2026-06-02T03:02:33.768164Z"
+    }
+  },
+  "created_at": "2026-06-02T02:39:56.927283Z",
+  "completed_at": "2026-06-02T03:02:34.254499Z"
+}

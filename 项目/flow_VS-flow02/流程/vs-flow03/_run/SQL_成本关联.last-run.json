@@ -1,0 +1,9 @@
+{
+  "node_id": "n-sql-join",
+  "status": "failed",
+  "error": "Invalid Input Error: Failed to read Parquet file 'D:/dazi/dazi-backend/storage/uploads/2a42cf1d-a534-4c52-bfa0-7cd10fe69e38.parquet': Need at least one non-root column in the file",
+  "active_branch": null,
+  "output_file_id": null,
+  "output_variable_name": "成本中心类型宽表",
+  "extra_variables": {}
+}
