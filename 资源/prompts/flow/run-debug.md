@@ -14,6 +14,8 @@
 {{debug_output}}
 ```
 
+> 若用户未粘贴输出：AI **应主动读取** `_run/*.last-error.md`、`_run/flow.last-run.md`（及 `变量/` 下 schema），必要时自行执行 `.\scripts\dazi.ps1 flow run ...` 复现；Agent 模式见 `flow/run-fix-loop`。
+
 ## 分析要求
 
 1. 找出**失败节点**及其错误信息
@@ -41,6 +43,8 @@
 
 ## 重新运行
 
+分析完成后，**必须给出可执行的修复与重跑命令**；若用户委托 Agent 模式，应进入改错循环（见 `flow/run-fix-loop`）。
+
 ```powershell
 # 仅重测失败节点（优先）
 .\scripts\dazi.ps1 flow run node-exec --node <node_uuid> --dir .
@@ -58,5 +62,5 @@
 2. **修复动作**：改 `flow.json` 还是改 `节点/<名>/code.*`
 3. **执行命令**：按顺序给出可直接复制的命令
 4. **提交动作**：
-   - 只改代码：`flow node push`
-   - 改了拓扑或节点配置：`flow project push --canvas`
+   - 只改代码：`.\scripts\dazi.ps1 flow node push --node <node_uuid> --dir .`
+   - 改了拓扑或节点配置：`.\scripts\dazi.ps1 flow project push --dir . --canvas`

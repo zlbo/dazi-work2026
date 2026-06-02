@@ -34,7 +34,7 @@ dazi-work/
         ├── 规划/
         └── 流程/
             └── 客户数据清洗/          ← 一个流程 = 一个目录
-                ├── 快速启动.md          pull 后生成（flowId、常用命令、文档链接）
+                ├── 快速启动_<流程名>.md   pull 后生成（flowId、常用命令、AI 单文件入口）
                 ├── flow.json          ★ 画布（节点配置 + 边，不含代码正文）
                 ├── flow.meta.json     flowId、uuid 映射、代码指纹
                 ├── 节点/
@@ -129,7 +129,9 @@ cd "项目\flow_流程项目01\流程\MyFlow0529"
    CLI： flow project push --dir . --canvas
 
 7. 失败时
-   阅读 _run/*.last-error.md → 确认后交 AI 修复（不自动改库）
+   阅读 _run/*.last-error.md（整流程另见 flow.last-run.md）
+   - **对话模式**：用户确认后再交 AI 修复（扩展不自动改库）
+   - **Agent 模式**：AI 自行改错循环，见 `快速启动_<流程名>.md` §AI 自主运行与改错闭环 或提示词 `flow/run-fix-loop`
 ```
 
 ---

@@ -61,3 +61,12 @@
 2. 是否区分 `node_uuid`（测试/提交）与语义 `nodeId`（画布 id）
 3. 是否包含 `output_variable_name` 的来源与去向
 4. 是否避免将 SQL/Python 正文嵌入 `flow.json`
+
+## 设计完成后的验证（Agent 必做）
+
+设计/改代码**不能**只交付文件清单；必须进入 **改错循环**（详见 `flow/run-fix-loop` 与流程目录 `快速启动_<流程名>.md` §AI 自主运行与改错闭环）：
+
+1. 对每个代码节点执行 `node-exec`；必要时整流程 `flow-exec --type debug`
+2. 失败时读取 `_run/*.last-error.md`，按错误分类修复后重跑（默认最多 3 轮）
+3. 全部通过后再 `node push` / `project push --canvas`
+4. **禁止**未实际运行就声称「设计已完成/已通过」
