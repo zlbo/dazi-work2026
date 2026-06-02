@@ -1,0 +1,189 @@
+{
+  "id": 34,
+  "flow_id": 112,
+  "status": "completed",
+  "duration": 1200,
+  "node_status": {
+    "n-bed30407bf9d": {
+      "status": "success",
+      "node_label": "Excel 销售产品提取",
+      "node_uuid": "3f151b7f-8c62-4557-89a4-9947a07ad1a7",
+      "startTime": "2026-06-02T07:36:35.050474Z",
+      "endTime": "2026-06-02T07:36:35.144247Z",
+      "duration": 93,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 85,
+      "logs": ""
+    },
+    "n-bbf0b016cb06": {
+      "status": "success",
+      "node_label": "数据质量检查",
+      "node_uuid": "120f11fe-eba1-4ee7-bcea-7bc389634de7",
+      "startTime": "2026-06-02T07:36:35.159848Z",
+      "endTime": "2026-06-02T07:36:35.191107Z",
+      "duration": 31,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 88,
+      "logs": ""
+    },
+    "n-b35f0f30cdf4": {
+      "status": "success",
+      "node_label": "SQL 销售产品关联",
+      "node_uuid": "e31191a4-0588-4a86-bcb7-92eccc1260de",
+      "startTime": "2026-06-02T07:36:35.206722Z",
+      "endTime": "2026-06-02T07:36:35.253619Z",
+      "duration": 46,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 87,
+      "logs": ""
+    },
+    "start-node": {
+      "status": "success",
+      "node_label": "开始",
+      "node_uuid": "ebbcc99c-5e50-404d-9784-302071a7db0a",
+      "startTime": "2026-06-02T07:36:35.050474Z",
+      "endTime": "2026-06-02T07:36:35.050474Z",
+      "duration": 0,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": ""
+    },
+    "end-node": {
+      "status": "success",
+      "node_label": "结束",
+      "node_uuid": "c08de2db-7078-4b05-b78c-f22fc793f907",
+      "startTime": "2026-06-02T07:36:35.269232Z",
+      "endTime": "2026-06-02T07:36:35.300504Z",
+      "duration": 31,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 87,
+      "logs": ""
+    }
+  },
+  "execution_logs": [
+    {
+      "node_id": "start-node",
+      "node_label": "开始",
+      "status": "success",
+      "startTime": "2026-06-02T07:36:35.050474Z",
+      "endTime": "2026-06-02T07:36:35.050474Z",
+      "duration": 0,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": "",
+      "step_order": 1,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "d142816c-19c4-4fe4-a18e-eaf7ba093845"
+    },
+    {
+      "node_id": "n-bed30407bf9d",
+      "node_label": "Excel 销售产品提取",
+      "status": "success",
+      "startTime": "2026-06-02T07:36:35.050474Z",
+      "endTime": "2026-06-02T07:36:35.144247Z",
+      "duration": 93,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 85,
+      "logs": "",
+      "step_order": 2,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "88b0549e-2c43-440f-a05f-7df8cd48565d"
+    },
+    {
+      "node_id": "n-bbf0b016cb06",
+      "node_label": "数据质量检查",
+      "status": "success",
+      "startTime": "2026-06-02T07:36:35.159848Z",
+      "endTime": "2026-06-02T07:36:35.191107Z",
+      "duration": 31,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 88,
+      "logs": "",
+      "step_order": 3,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "88178363-0a81-4ffc-900f-bb613c75c654"
+    },
+    {
+      "node_id": "n-b35f0f30cdf4",
+      "node_label": "SQL 销售产品关联",
+      "status": "success",
+      "startTime": "2026-06-02T07:36:35.206722Z",
+      "endTime": "2026-06-02T07:36:35.253619Z",
+      "duration": 46,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 87,
+      "logs": "",
+      "step_order": 4,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "7200d2e1-6932-4286-9c3f-a57d51ec17cb"
+    },
+    {
+      "node_id": "end-node",
+      "node_label": "结束",
+      "status": "success",
+      "startTime": "2026-06-02T07:36:35.269232Z",
+      "endTime": "2026-06-02T07:36:35.300504Z",
+      "duration": 31,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 87,
+      "logs": "",
+      "step_order": 5,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "c1d3bea6-6657-42de-a267-6140f04eb306"
+    }
+  ],
+  "variables": {
+    "V_DQ_REPORT": {
+      "id": 88,
+      "value": "uploads/py_result_94fb1e31-a65a-4731-a9bf-26465154df81.parquet",
+      "type": "table",
+      "node_id": "n-bbf0b016cb06",
+      "updated_at": "2026-06-02T07:36:35.206722Z"
+    },
+    "V_DQ_SCORE": {
+      "id": 89,
+      "value": "100",
+      "type": "text",
+      "node_id": "n-bbf0b016cb06",
+      "updated_at": "2026-06-02T07:34:28.320859Z"
+    },
+    "销售产品宽表": {
+      "id": 87,
+      "value": "uploads/sql_result_e55214f7-6bda-4e8c-b7f7-237e98a1d043.parquet",
+      "type": "table",
+      "node_id": "n-b35f0f30cdf4",
+      "updated_at": "2026-06-02T07:36:35.269232Z"
+    },
+    "销售表": {
+      "id": 85,
+      "value": "uploads/py_result_4a9603a9-eaf5-4182-8aaf-6c5f0949192e.parquet",
+      "type": "table",
+      "node_id": "n-bed30407bf9d",
+      "updated_at": "2026-06-02T07:36:35.144247Z"
+    },
+    "产品表": {
+      "id": 86,
+      "value": "uploads/py_result_65ffeb13-6164-4602-97b2-f223d0857b0a.parquet",
+      "type": "table",
+      "node_id": "n-bed30407bf9d",
+      "updated_at": "2026-06-02T07:36:35.159848Z"
+    }
+  },
+  "created_at": "2026-06-02T07:16:34.804412Z",
+  "completed_at": "2026-06-02T07:36:35.300504Z"
+}

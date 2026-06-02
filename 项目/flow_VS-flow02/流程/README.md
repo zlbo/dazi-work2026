@@ -16,7 +16,7 @@
 .\scripts\dazi.ps1 flow project pull --flow <id> --dir "项目\flow_VS-flow02\流程\<流程名>"
 ```
 
-拉取完成后请阅读各流程子目录下的 **`快速启动.md`**。
+拉取完成后请阅读各流程子目录下的 **`快速启动_<流程名>.md`**。
 
 ## 帮助文档
 

@@ -128,7 +128,9 @@ bool(df is not None and not df.empty and df["通过"].all())
 | 通过/不通过两路       | `condition`          | 在 SQL 里写 impossible WHERE      |
 | 多表 JOIN 宽表        | `sql-query`          | 全用 pandas merge（大表时难维护） |
 | 写 ClickHouse / PG 等 | `database-sink`      | 在 Python 里手写 JDBC/HTTP        |
+| 写数据空间表          | `dataspace-sink`     | 先落外部库再回灌空间              |
 | 读外部库              | `database-source`    | 与 sql-query 混用职责             |
+| 读数据空间            | `dataspace-source`   | 误填 `connectionId`               |
 
 ---
 
@@ -219,6 +221,47 @@ LEFT JOIN 规格表 g ON CAST(s.规格 AS VARCHAR) = CAST(g.ID AS VARCHAR)
 }
 ```
 
+### 6.4 dataspace-source / dataspace-sink 配置（新增）
+
+```json
+{
+  "type": "dataspace-source",
+  "data": {
+    "spaceId": "space__0519",
+    "output_variable_name": "空间销售明细"
+  }
+}
+```
+
+`节点/<dataspace-source名>/code.sql` 示例：
+
+```sql
+SELECT *
+FROM sales_fact
+WHERE dt >= '2025-01-01'
+LIMIT 100000
+```
+
+```json
+{
+  "type": "dataspace-sink",
+  "data": {
+    "spaceId": "space__0519",
+    "tableName": "temp_sales001",
+    "mode": "append",
+    "syncMetadata": true,
+    "input_variable_name": "空间销售明细"
+  }
+}
+```
+
+要点：
+
+- `dataspace-source` / `dataspace-sink` 一律使用 **`spaceId`**，不是 `connectionId`。
+- `dataspace-source` 的 SQL 放在 `code.sql`，与 `database-source` 一致。
+- `dataspace-sink` 支持 `mode=append|replace`，默认建议 `append`。
+- `syncMetadata=true` 时，写入后会触发空间元数据同步（建议保留默认）。
+
 ---
 
 ## 七、常用命令清单
@@ -242,6 +285,10 @@ cd "<流程目录>"
 
 # 数据源
 .\scripts\dazi.ps1 flow source list
+
+# 数据空间
+.\scripts\dazi.ps1 flow dataspace list
+.\scripts\dazi.ps1 flow dataspace tables <spaceId>
 ```
 
 命令前缀与 Trae/VS Code 约定见 [CLI 调用约定](../guides/cli-invocation.md)。
@@ -258,8 +305,10 @@ cd "<流程目录>"
 | 质检失败流程中断                | `fail_on_error: true`    | 改为 `false` + 下游 condition         |
 | 画布 push 失败                  | 未关联 flowId            | 先 `project pull --flow <id>`         |
 | sink 写库失败                   | connectionId / 表名错误  | 对照 `资源/datasources/<连接名>/*.md` |
+| dataspace-sink 写入失败         | spaceId / tableName 错误 | 先 `flow dataspace list` / `flow dataspace tables` |
 | 变量列为空                      | 单测时只用了 `df`        | Python 改用 `get_variable`            |
 | AI 不知道 connectionId          | 未拉取连接文档           | 侧栏数据连接 → **拉取连接信息**       |
+| AI 不知道 spaceId               | 未拉取空间文档           | 侧栏数据空间 → **拉取空间信息**       |
 
 ---
 
@@ -274,6 +323,7 @@ cd "<流程目录>"
 - [ ] SQL / Python 中变量名与画布完全一致
 - [ ] 条件节点为单行表达式；出边使用 `true`/`false`
 - [ ] 需要入库时配置了 `database-sink` 三要素
+- [ ] 读写数据空间时使用 `dataspace-source` / `dataspace-sink` + `spaceId`
 - [ ] 自上游单测或整流程 debug 通过
 - [ ] `变量/*.json` 已核对 schema 与样例行
 - [ ] 项目 README / 快速启动已更新拓扑与命令

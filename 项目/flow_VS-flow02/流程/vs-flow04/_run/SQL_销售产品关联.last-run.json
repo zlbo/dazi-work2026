@@ -1,0 +1,9 @@
+{
+  "node_id": "n-b35f0f30cdf4",
+  "status": "failed",
+  "error": "Catalog Error: Table with name 产品表 does not exist!\nDid you mean \"销售表\"?\n\nLINE 16: LEFT JOIN 产品表 p\n                   ^",
+  "active_branch": null,
+  "output_file_id": null,
+  "output_variable_name": "销售产品宽表",
+  "extra_variables": {}
+}
