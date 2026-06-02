@@ -1,0 +1,19 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.py，配置改 flow.json",
+  "node_uuid": "550e8400-e29b-41d4-a716-446655440001",
+  "nodeId": "team-split",
+  "nodeType": "python-script",
+  "label": "团队字段拆分",
+  "codeFile": "code.py",
+  "codeLanguage": "python",
+  "position": {
+    "x": 464.8133198789102,
+    "y": 399.0010090817357
+  },
+  "data": {
+    "label": "团队字段拆分",
+    "type": "python-script",
+    "output_variable_name": "项目人员拆分",
+    "flowId": 109
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "V_DQ_SCORE",
+  "type": "text",
+  "status": "ready",
+  "variableId": 73,
+  "nodeId": "dq-check",
+  "debugRunId": 31,
+  "updatedAt": "2026-06-01T13:30:12.332800",
+  "syncedAt": "2026-06-01T14:01:06.939Z",
+  "value": "100.0",
+  "schema": {
+    "variable_name": "V_DQ_SCORE",
+    "variable_type": "text",
+    "columns": [],
+    "row_count": 0
+  },
+  "preview": {
+    "variable_name": "V_DQ_SCORE",
+    "variable_type": "text",
+    "rows": [
+      {
+        "value": "100.0"
+      }
+    ],
+    "total": 1,
+    "page": 1,
+    "limit": 1
+  }
+}

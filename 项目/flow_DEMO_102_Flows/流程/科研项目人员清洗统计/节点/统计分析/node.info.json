@@ -1,0 +1,19 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.py，配置改 flow.json",
+  "node_uuid": "550e8400-e29b-41d4-a716-446655440004",
+  "nodeId": "stats-analysis",
+  "nodeType": "python-script",
+  "label": "统计分析",
+  "codeFile": "code.py",
+  "codeLanguage": "python",
+  "position": {
+    "x": 1060.6357214934408,
+    "y": 113.53178607467206
+  },
+  "data": {
+    "label": "统计分析",
+    "type": "python-script",
+    "output_variable_name": "统计结果",
+    "flowId": 109
+  }
+}

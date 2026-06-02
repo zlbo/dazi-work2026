@@ -1,0 +1,77 @@
+{
+  "name": "姓氏分布统计",
+  "type": "table",
+  "status": "ready",
+  "variableId": 79,
+  "nodeId": "stats-analysis",
+  "debugRunId": 31,
+  "updatedAt": "2026-06-01T13:57:16.159667",
+  "syncedAt": "2026-06-01T14:01:04.984Z",
+  "schema": {
+    "variable_name": "姓氏分布统计",
+    "variable_type": "table",
+    "columns": [
+      {
+        "name": "姓氏",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "人数",
+        "type": "int64",
+        "dtype": "int"
+      }
+    ],
+    "row_count": 12
+  },
+  "preview": {
+    "rows": [
+      {
+        "姓氏": "陈",
+        "人数": 9
+      },
+      {
+        "姓氏": "孙",
+        "人数": 8
+      },
+      {
+        "姓氏": "冯",
+        "人数": 7
+      },
+      {
+        "姓氏": "赵",
+        "人数": 7
+      },
+      {
+        "姓氏": "李",
+        "人数": 7
+      },
+      {
+        "姓氏": "钱",
+        "人数": 6
+      },
+      {
+        "姓氏": "卫",
+        "人数": 5
+      },
+      {
+        "姓氏": "吴",
+        "人数": 5
+      },
+      {
+        "姓氏": "周",
+        "人数": 5
+      },
+      {
+        "姓氏": "王",
+        "人数": 5
+      }
+    ],
+    "total": 12,
+    "page": 1,
+    "limit": 10,
+    "variable_type": "table",
+    "variable_name": "姓氏分布统计",
+    "columns": []
+  }
+}

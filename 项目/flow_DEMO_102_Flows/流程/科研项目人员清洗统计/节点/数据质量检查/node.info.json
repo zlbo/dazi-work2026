@@ -1,0 +1,76 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.py，配置改 flow.json",
+  "node_uuid": "550e8400-e29b-41d4-a716-446655440002",
+  "nodeId": "dq-check",
+  "nodeType": "data-quality-check",
+  "label": "数据质量检查",
+  "codeFile": "code.py",
+  "codeLanguage": "python",
+  "position": {
+    "x": 674.5610494450051,
+    "y": 110.74672048435923
+  },
+  "data": {
+    "label": "数据质量检查",
+    "type": "data-quality-check",
+    "output_variable_name": "V_DQ_REPORT",
+    "attached_variables": [
+      "项目人员拆分"
+    ],
+    "flowId": 109,
+    "qualityConfig": {
+      "input_variable_id": null,
+      "output_report_variable_name": "V_DQ_REPORT",
+      "output_score_variable_name": "V_DQ_SCORE",
+      "dimensions": {
+        "completeness": {
+          "enabled": true,
+          "weight": 0.2
+        },
+        "conformity": {
+          "enabled": true,
+          "weight": 0.2
+        },
+        "consistency": {
+          "enabled": true,
+          "weight": 0.2
+        },
+        "validity": {
+          "enabled": true,
+          "weight": 0.2
+        },
+        "accuracy": {
+          "enabled": true,
+          "weight": 0.2
+        }
+      },
+      "rules": {
+        "completeness": {
+          "required_columns": [],
+          "primary_key_columns": [],
+          "min_completeness": 0.95,
+          "check_duplicate_rows": false
+        },
+        "conformity": {
+          "enum_rules": [],
+          "pattern_rules": [],
+          "range_rules": [],
+          "datetime_format_columns": [],
+          "numeric_type_columns": [],
+          "length_rules": []
+        },
+        "consistency": {
+          "unique_combinations": [],
+          "group_consistency_rules": []
+        },
+        "validity": {
+          "date_validity_rules": []
+        },
+        "accuracy": {
+          "aggregate_rules": []
+        }
+      },
+      "auto_fix_mode": "suggest_only"
+    }
+  }
+}

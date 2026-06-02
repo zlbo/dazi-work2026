@@ -1,0 +1,23 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.sql，配置改 flow.json",
+  "node_uuid": "550e8400-e29b-41d4-a716-446655440003",
+  "nodeId": "person-join",
+  "nodeType": "sql-query",
+  "label": "人员编码关联",
+  "codeFile": "code.sql",
+  "codeLanguage": "sql",
+  "position": {
+    "x": 905.196770938446,
+    "y": 387.86074672048437
+  },
+  "data": {
+    "label": "人员编码关联",
+    "type": "sql-query",
+    "output_variable_name": "项目人员关联",
+    "attached_variables": [
+      "项目人员拆分",
+      "人员名单"
+    ],
+    "flowId": 109
+  }
+}
