@@ -9,8 +9,30 @@
 |------|-----|
 | flowId | `119` |
 | 本地目录 | `流程/vs-test-03/` |
-| 节点数 | 2（代码节点 0） |
-| 上次拉取 | 2026-06-03T08:37:53.127Z |
+| 画布节点（flow.json） | 3，其中代码节点 1 |
+| meta 已索引代码 | 1 |
+| 上次拉取 | 2026-06-03T12:12:25.198Z |
+
+## 本地文件一致性
+
+| 指标 | 数量 |
+|------|------|
+| 画布节点（flow.json） | 3 |
+| 画布代码节点（flow.json） | 1 |
+| meta 已登记节点 | 3 |
+| meta 已索引代码（dir+codeFile） | 1 |
+
+✅ **flow.json / flow.meta.json / 节点/ 一致**。设计器可正常「打开代码」，`node push` 可识别脏节点。
+
+## 变更提交命令矩阵
+
+| 改了什么 | 命令 |
+|----------|------|
+| `managed_file_id`、`output_variable_name`、连线、增删节点 | `dazi flow project push --dir . --canvas` |
+| `节点/<名>/code.py` 或 `code.sql` | `dazi flow node push --node <uuid> --dir .` |
+| **新增代码节点** | `dazi flow node new --type <type> --dir . --label "<名>"` → 改配置 → `push --canvas` → 写 code → `node push` |
+
+> 禁止只改 `flow.json` 而不更新 `flow.meta.json`（须 `node new` / `pull` / `repair-meta`）。
 
 ## 常用命令
 
@@ -79,10 +101,10 @@ dazi flow variable pull --name <output_variable_name> --dir .
 
 ### 场景 A：新增节点（已有流程继续改）
 
-1. 先读 `flow.json` 与 `flow.meta.json`，确认当前节点与连线
-2. 新建节点（避免伪造 uuid）：`dazi flow node new --type <node_type> --dir . --label "<节点名>"`
+1. 先读 `flow.json` 与 `flow.meta.json`，执行 `dazi flow project doctor --dir .`
+2. **必须**用 CLI 新建节点（禁止手搓 uuid）：`dazi flow node new --type <node_type> --dir . --label "<节点名>"`
 3. 在 `flow.json` 里补 `nodes/edges`（遵守锚点：`sourceHandle` 仅 `r/b/true/false`，`targetHandle` 仅 `l/t`）
-4. 若是代码节点，补 `节点/<名>/code.sql|py`（type 见上文 **可用流程节点**）
+4. 编辑 `节点/<名>/code.sql|py`（`node new` 会创建目录与 meta 索引）
 5. 单节点测试：`dazi flow run node-exec --node <node_uuid> --dir .`
 6. 提交画布（含连线/配置）：`dazi flow project push --dir . --canvas`
 
@@ -186,6 +208,8 @@ CLI 带 `--json` 时：看返回 `success: false` 或 `errorFile` 字段，**再
 | 节点代码编写指南（含 SQL/Python 示例） | [node-code-guide.md](../../../../资源/docs/flow/node-code-guide.md) |
 | Flow 运行与测试 | [run-guide.md](../../../../资源/docs/flow/run-guide.md) |
 | 数据源与 connectionId | [source-guide.md](../../../../资源/docs/flow/source-guide.md) |
+| **流程本地文件规范（AI 必读）** | [local-files-spec.md](../../../../资源/docs/flow/local-files-spec.md) |
+| 流程 AI 工作手册 | [ai-workflow-playbook.md](../../../../资源/docs/flow/ai-workflow-playbook.md) |
 | CLI 调用约定（`dazi` / `dazi.ps1`） | [cli-invocation.md](../../../../资源/docs/guides/cli-invocation.md) |
 
 终端打开文档（**dazi-work 根**或已 `cd` 到流程目录）：

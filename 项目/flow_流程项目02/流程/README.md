@@ -30,6 +30,8 @@ dazi flow project pull --flow <id> --dir "项目\flow_流程项目02\流程\<流
 | 节点代码编写指南（含 SQL/Python 示例） | [node-code-guide.md](../../../资源/docs/flow/node-code-guide.md) |
 | Flow 运行与测试 | [run-guide.md](../../../资源/docs/flow/run-guide.md) |
 | 数据源与 connectionId | [source-guide.md](../../../资源/docs/flow/source-guide.md) |
+| **流程本地文件规范（AI 必读）** | [local-files-spec.md](../../../资源/docs/flow/local-files-spec.md) |
+| 流程 AI 工作手册 | [ai-workflow-playbook.md](../../../资源/docs/flow/ai-workflow-playbook.md) |
 | CLI 调用约定（`dazi` / `dazi.ps1`） | [cli-invocation.md](../../../资源/docs/guides/cli-invocation.md) |
 
 终端打开文档（**dazi-work 根**或已 `cd` 到流程目录）：

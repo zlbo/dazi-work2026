@@ -30,16 +30,16 @@
 
 > **完整节点清单与配置说明**见帮助文档 [flow/flows-guide §流程节点组件](../docs/flow/flows-guide.md#流程节点组件)，或流程目录 **快速启动\_<流程名>.md §可用流程节点**。
 
-| 节点类型                                      | 说明                                       |
-| --------------------------------------------- | ------------------------------------------ |
-| `excel-import` / `excel-python`               | Excel 导入（简单 / 多 Sheet 开发）         |
-| `database-source` / `dataspace-source`        | 外部库 / 数据空间 SQL 读取，产出表变量     |
-| `sql-query`                                   | 消费上游变量（变量名即 SQL 表名）          |
-| `python-script`                               | Python 转换，输出 `result_df`              |
-| `condition`                                   | 条件分支，出边使用 `true/false`            |
-| `data-quality-check`                          | 数据质量检查                               |
-| `database-sink` / `dataspace-sink`            | 写出到外部库 / 数据空间（通常无 `code.*`） |
-| `file-source` / `delay` / `folder-resource-*` | 文件输入、延时、文件夹资源                 |
+| 节点类型                                      | 说明                                                                                                            |
+| --------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `excel-import` / `excel-python`               | Excel：**有 `managed_file_id` 时优先 `excel-python`**（勿用 `file-source`）；极简单单 Sheet 才用 `excel-import` |
+| `database-source` / `dataspace-source`        | 外部库 / 数据空间 SQL 读取，产出表变量                                                                          |
+| `sql-query`                                   | 消费上游变量（变量名即 SQL 表名）                                                                               |
+| `python-script`                               | Python 转换，输出 `result_df`                                                                                   |
+| `condition`                                   | 条件分支，出边使用 `true/false`                                                                                 |
+| `data-quality-check`                          | 数据质量检查                                                                                                    |
+| `database-sink` / `dataspace-sink`            | 写出到外部库 / 数据空间（通常无 `code.*`）                                                                      |
+| `file-source` / `delay` / `folder-resource-*` | 文件输入、延时、文件夹资源                                                                                      |
 
 ## 推荐开发流程（流程项目）
 

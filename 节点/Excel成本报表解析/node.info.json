@@ -1,0 +1,17 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.py，配置改 flow.json",
+  "node_uuid": "d96222ce-aaa9-4050-b782-830c2f2de9eb",
+  "nodeId": "n-ae4b83685355",
+  "nodeType": "excel-python",
+  "label": "Excel成本报表解析",
+  "codeFile": "code.py",
+  "codeLanguage": "python",
+  "position": {
+    "x": 120,
+    "y": 240
+  },
+  "data": {
+    "label": "Excel成本报表解析",
+    "type": "excel-python"
+  }
+}
