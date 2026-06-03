@@ -29,13 +29,15 @@ def main(params: dict, s=None) -> dict:
             "metadata": {}
         },
     ]
-    
+
     result = s.ontology_rules.upsert(rules)
     return {"upserted": len(rules), "result": result}
 ```
 
 执行命令（v3；**勿用** `dazi-onto`）：
+
 ```powershell
-.\scripts\dazi.ps1 onto rule run-seed --space <space-id> --stem <seed_file_stem>
+dazi onto rule run-seed --space <space-id> --stem <seed_file_stem>
 ```
+
 详见提示词 `onto/script-publish-run`。

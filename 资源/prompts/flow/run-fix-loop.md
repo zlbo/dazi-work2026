@@ -11,20 +11,20 @@
 
 1. **扩展不会自动改代码**；你必须在终端**亲自执行** CLI 并读取 `_run/` 错误文件。
 2. **改 → 跑 → 读错 → 再改 → 再跑** 是默认工作方式，不是可选项。
-3. 命令前缀统一：`.\scripts\dazi.ps1 flow ...`（在 `dazi-work` 根；流程目录用 `--dir .`）。
+3. 命令前缀统一：`dazi flow ...`（在 `dazi-work` 根；流程目录用 `--dir .`）。
 
 ## 命令约束（必须遵守）
 
-- 命令前缀统一：`.\scripts\dazi.ps1 flow ...`（在 `dazi-work` 根）
+- 命令前缀统一：`dazi flow ...`（在 `dazi-work` 根）
 - 在流程目录执行时，保留 `--dir .`，避免误跑到其他流程
 - 禁止输出裸 `dazi-flow ...` 作为最终命令
 
 ## 错误发现（跑完必做）
 
-| 运行 | 失败时必读 | 步骤/日志 |
-|------|------------|-----------|
-| `.\scripts\dazi.ps1 flow run node-exec --node <node_uuid> --dir .` | `_run/<节点名>.last-error.md` | — |
-| `.\scripts\dazi.ps1 flow run flow-exec --dir . --type debug` | `_run/flow.last-error.md` | `_run/flow.last-run.md` |
+| 运行                                                 | 失败时必读                    | 步骤/日志               |
+| ---------------------------------------------------- | ----------------------------- | ----------------------- |
+| `dazi flow run node-exec --node <node_uuid> --dir .` | `_run/<节点名>.last-error.md` | —                       |
+| `dazi flow run flow-exec --dir . --type debug`       | `_run/flow.last-error.md`     | `_run/flow.last-run.md` |
 
 带 `--json` 时同时检查：`success: false`、`errorFile` 路径。
 
@@ -38,9 +38,9 @@ FOR round = 1..3:
   2. 修改 code.* 和/或 flow.json（遵守画布锚点规范）
   3. 运行验证：
      - 优先单节点：
-       .\scripts\dazi.ps1 flow run node-exec --node <node_uuid> --dir .
+       dazi flow run node-exec --node <node_uuid> --dir .
      - 需要全链路时：
-       .\scripts\dazi.ps1 flow run flow-exec --dir . --type debug
+       dazi flow run flow-exec --dir . --type debug
   4. IF 成功 → push（见下）→ 结束
      ELSE → 读新生成的 last-error.md → 下一轮
   5. IF round==3 仍失败 → 输出：失败节点、3 轮尝试摘要、剩余疑点、需用户提供的资料
@@ -48,18 +48,18 @@ FOR round = 1..3:
 
 ## 修复决策树
 
-| 错误分类 | 改哪里 | 验证命令 |
-|----------|--------|----------|
-| 缺上游变量 | 先跑上游或整流程 | `.\scripts\dazi.ps1 flow run flow-exec --dir . --type debug`，再 `.\scripts\dazi.ps1 flow run node-exec --node <node_uuid> --dir .` |
-| 配置缺失 | `flow.json` 节点 `data` | `.\scripts\dazi.ps1 flow run node-exec --node <node_uuid> --dir .` → `.\scripts\dazi.ps1 flow project push --dir . --canvas` |
-| 代码错误 | `节点/<名>/code.sql\|py` | `.\scripts\dazi.ps1 flow run node-exec --node <node_uuid> --dir .` → `.\scripts\dazi.ps1 flow node push --node <node_uuid> --dir .` |
-| 连接/数据源 | connectionId / spaceId | 改配置后 `.\scripts\dazi.ps1 flow project push --dir . --canvas` |
+| 错误分类    | 改哪里                   | 验证命令                                                                                                |
+| ----------- | ------------------------ | ------------------------------------------------------------------------------------------------------- |
+| 缺上游变量  | 先跑上游或整流程         | `dazi flow run flow-exec --dir . --type debug`，再 `dazi flow run node-exec --node <node_uuid> --dir .` |
+| 配置缺失    | `flow.json` 节点 `data`  | `dazi flow run node-exec --node <node_uuid> --dir .` → `dazi flow project push --dir . --canvas`        |
+| 代码错误    | `节点/<名>/code.sql\|py` | `dazi flow run node-exec --node <node_uuid> --dir .` → `dazi flow node push --node <node_uuid> --dir .` |
+| 连接/数据源 | connectionId / spaceId   | 改配置后 `dazi flow project push --dir . --canvas`                                                      |
 
 ## 提交规则
 
-- 只改代码：`.\scripts\dazi.ps1 flow node push --node <node_uuid> --dir .`
-- 改连线/配置/增删节点：`.\scripts\dazi.ps1 flow project push --dir . --canvas`
-- 确认变量 schema：`.\scripts\dazi.ps1 flow variable pull --name <output_variable_name> --dir .`
+- 只改代码：`dazi flow node push --node <node_uuid> --dir .`
+- 改连线/配置/增删节点：`dazi flow project push --dir . --canvas`
+- 确认变量 schema：`dazi flow variable pull --name <output_variable_name> --dir .`
 - **禁止**未验证通过就 push
 
 ## 回答格式（每轮结束后）

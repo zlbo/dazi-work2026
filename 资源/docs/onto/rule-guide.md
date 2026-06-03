@@ -5,6 +5,7 @@
 ## 规则概念
 
 规则（Rule）存储在 `ads_ontology_rules` 表，通过种子脚本写入，通常用于：
+
 - 数据校验规则
 - 业务约束条件
 - 权限规则集
@@ -12,16 +13,16 @@
 ## 列出规则
 
 ```bash
-.\scripts\dazi.ps1 onto rule list --space <space-id>
+dazi onto rule list --space <space-id>
 
 # 按规则集过滤
-.\scripts\dazi.ps1 onto rule list --space <space-id> --rule-set finance_rules
+dazi onto rule list --space <space-id> --rule-set finance_rules
 ```
 
 ## 执行规则种子
 
 ```bash
-.\scripts\dazi.ps1 onto rule run-seed --space <space-id> --stem cw_001_rules_seed
+dazi onto rule run-seed --space <space-id> --stem cw_001_rules_seed
 ```
 
 ## 种子脚本示例
@@ -44,9 +45,9 @@ def main(params: dict, s) -> dict:
 
 ```bash
 # 删除单条
-.\scripts\dazi.ps1 onto rule delete fin_001 --space <space-id>
+dazi onto rule delete fin_001 --space <space-id>
 
 # 按规则集批量删除（先 dry-run）
-.\scripts\dazi.ps1 onto rule delete-all --space <space-id> --rule-set old_rules --dry-run
-.\scripts\dazi.ps1 onto rule delete-all --space <space-id> --rule-set old_rules --yes
+dazi onto rule delete-all --space <space-id> --rule-set old_rules --dry-run
+dazi onto rule delete-all --space <space-id> --rule-set old_rules --yes
 ```

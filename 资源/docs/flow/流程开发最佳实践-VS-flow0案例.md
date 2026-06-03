@@ -95,7 +95,8 @@ bool(df is not None and not df.empty and df["通过"].all())
 ### 阶段 1：接入与解析
 
 - Excel 多 Sheet、表头不统一 → **`excel-python`** + `set_table_output`。
-- 单 Sheet 简单导入 → **`excel-import`** 即可。
+- **凡有 `managed_file_id` 的 Excel（`.xlsx`/`.xls`）默认用 `excel-python`**，**勿用 `file-source`**（不解析 Excel）。
+- 单 Sheet、第 1 行标准表头、零自定义逻辑 → 才考虑 **`excel-import`**。
 - 解析后立即 **`flow variable pull`** 核对列名、行数、类型。
 
 ### 阶段 2：质量与分支
@@ -120,17 +121,18 @@ bool(df is not None and not df.empty and df["通过"].all())
 
 ## 三、节点选型速查
 
-| 场景                  | 推荐节点             | 避免                              |
-| --------------------- | -------------------- | --------------------------------- |
-| 多 Sheet、不同 header | `excel-python`       | 多个 `excel-import` 重复配置      |
-| 单 Sheet 直读         | `excel-import`       | 不必要的 Python                   |
-| 行数/非空/外键        | `data-quality-check` | 在 Python 里散落 if/raise         |
-| 通过/不通过两路       | `condition`          | 在 SQL 里写 impossible WHERE      |
-| 多表 JOIN 宽表        | `sql-query`          | 全用 pandas merge（大表时难维护） |
-| 写 ClickHouse / PG 等 | `database-sink`      | 在 Python 里手写 JDBC/HTTP        |
-| 写数据空间表          | `dataspace-sink`     | 先落外部库再回灌空间              |
-| 读外部库              | `database-source`    | 与 sql-query 混用职责             |
-| 读数据空间            | `dataspace-source`   | 误填 `connectionId`               |
+| 场景                    | 推荐节点             | 避免                              |
+| ----------------------- | -------------------- | --------------------------------- |
+| Excel + managed_file_id | **`excel-python`**   | **`file-source`**（不解析 xlsx）  |
+| 多 Sheet、不同 header   | `excel-python`       | 多个 `excel-import` 重复配置      |
+| 极简单 Sheet、零代码    | `excel-import`       | 不必要的 Python                   |
+| 行数/非空/外键          | `data-quality-check` | 在 Python 里散落 if/raise         |
+| 通过/不通过两路         | `condition`          | 在 SQL 里写 impossible WHERE      |
+| 多表 JOIN 宽表          | `sql-query`          | 全用 pandas merge（大表时难维护） |
+| 写 ClickHouse / PG 等   | `database-sink`      | 在 Python 里手写 JDBC/HTTP        |
+| 写数据空间表            | `dataspace-sink`     | 先落外部库再回灌空间              |
+| 读外部库                | `database-source`    | 与 sql-query 混用职责             |
+| 读数据空间              | `dataspace-source`   | 误填 `connectionId`               |
 
 ---
 
@@ -272,23 +274,23 @@ LIMIT 100000
 cd "<流程目录>"
 
 # 同步平台
-.\scripts\dazi.ps1 flow project pull --flow <flowId> --dir .
-.\scripts\dazi.ps1 flow project push --dir . --canvas
+dazi flow project pull --flow <flowId> --dir .
+dazi flow project push --dir . --canvas
 
 # 测试
-.\scripts\dazi.ps1 flow run node-exec --node <node_uuid> --dir .
-.\scripts\dazi.ps1 flow run flow-exec --dir . --type debug
+dazi flow run node-exec --node <node_uuid> --dir .
+dazi flow run flow-exec --dir . --type debug
 
 # 变量
-.\scripts\dazi.ps1 flow variable pull --name 销售明细宽表 --dir .
-.\scripts\dazi.ps1 flow variable sync --dir .
+dazi flow variable pull --name 销售明细宽表 --dir .
+dazi flow variable sync --dir .
 
 # 数据源
-.\scripts\dazi.ps1 flow source list
+dazi flow source list
 
 # 数据空间
-.\scripts\dazi.ps1 flow dataspace list
-.\scripts\dazi.ps1 flow dataspace tables <spaceId>
+dazi flow dataspace list
+dazi flow dataspace tables <spaceId>
 ```
 
 命令前缀与 Trae/VS Code 约定见 [CLI 调用约定](../guides/cli-invocation.md)。
@@ -297,18 +299,18 @@ cd "<流程目录>"
 
 ## 八、常见问题与对策
 
-| 现象                            | 原因                     | 对策                                  |
-| ------------------------------- | ------------------------ | ------------------------------------- |
-| SQL 单测找不到表                | 上游变量未写入 debug Run | 先跑 Excel 节点或整流程 debug         |
-| excel-python 单测只有主表       | 多表需整图或先跑 Excel   | 用 `flow-exec` 或按序 node-exec       |
-| Condition Error: invalid syntax | 条件脚本非单行表达式     | 改为单行 `bool(...)`                  |
-| 质检失败流程中断                | `fail_on_error: true`    | 改为 `false` + 下游 condition         |
-| 画布 push 失败                  | 未关联 flowId            | 先 `project pull --flow <id>`         |
-| sink 写库失败                   | connectionId / 表名错误  | 对照 `资源/datasources/<连接名>/*.md` |
+| 现象                            | 原因                     | 对策                                               |
+| ------------------------------- | ------------------------ | -------------------------------------------------- |
+| SQL 单测找不到表                | 上游变量未写入 debug Run | 先跑 Excel 节点或整流程 debug                      |
+| excel-python 单测只有主表       | 多表需整图或先跑 Excel   | 用 `flow-exec` 或按序 node-exec                    |
+| Condition Error: invalid syntax | 条件脚本非单行表达式     | 改为单行 `bool(...)`                               |
+| 质检失败流程中断                | `fail_on_error: true`    | 改为 `false` + 下游 condition                      |
+| 画布 push 失败                  | 未关联 flowId            | 先 `project pull --flow <id>`                      |
+| sink 写库失败                   | connectionId / 表名错误  | 对照 `资源/datasources/<连接名>/*.md`              |
 | dataspace-sink 写入失败         | spaceId / tableName 错误 | 先 `flow dataspace list` / `flow dataspace tables` |
-| 变量列为空                      | 单测时只用了 `df`        | Python 改用 `get_variable`            |
-| AI 不知道 connectionId          | 未拉取连接文档           | 侧栏数据连接 → **拉取连接信息**       |
-| AI 不知道 spaceId               | 未拉取空间文档           | 侧栏数据空间 → **拉取空间信息**       |
+| 变量列为空                      | 单测时只用了 `df`        | Python 改用 `get_variable`                         |
+| AI 不知道 connectionId          | 未拉取连接文档           | 侧栏数据连接 → **拉取连接信息**                    |
+| AI 不知道 spaceId               | 未拉取空间文档           | 侧栏数据空间 → **拉取空间信息**                    |
 
 ---
 

@@ -32,10 +32,10 @@
 
 ```bash
 # 查看表结构
-.\scripts\dazi.ps1 data table schema <table-id> --space <space-id>
+dazi data table schema <table-id> --space <space-id>
 
 # 采样数据（在 VS Code 侧栏点击表名）
-.\scripts\dazi.ps1 data table sample <table-id> --space <space-id> --rows 20
+dazi data table sample <table-id> --space <space-id> --rows 20
 
 # 使用 Flow 做批量分析
 dazi-flow run start <analysis-flow-id>

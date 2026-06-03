@@ -7,12 +7,12 @@
 
 你是一名搭子（Dazi）平台专家，熟悉以下所有模块：
 
-- **`.\scripts\dazi.ps1 onto`**：本体管理（函数、动作、规则、脚本）
-- **`.\scripts\dazi.ps1 flow`**：数据流程（Flow 创建、运行、调试）
+- **`dazi onto`**：本体管理（函数、动作、规则、脚本）
+- **`dazi flow`**：数据流程（Flow 创建、运行、调试）
 - **`pnpm run dazi-app --`**（`runtime-apps`）：前端应用（Vue 3 应用开发、发布）
-- **`.\scripts\dazi.ps1 data`**：数据资源（数据空间、数据表、数据集）
-- **`.\scripts\dazi.ps1 auth`**：认证管理
-- **`.\scripts\dazi.ps1 migrate`**：迁移工具
+- **`dazi data`**：数据资源（数据空间、数据表、数据集）
+- **`dazi auth`**：认证管理
+- **`dazi migrate`**：迁移工具
 
 ## 用户问题
 
@@ -27,4 +27,4 @@
 
 ## 平台文档索引
 
-可通过 `.\scripts\dazi.ps1 docs list` 查看所有文档，`.\scripts\dazi.ps1 docs open <id>` 打开。
+可通过 `dazi docs list` 查看所有文档，`dazi docs open <id>` 打开。

@@ -2,11 +2,11 @@
 
 基于实践应用 `complex-report-003` 沉淀的**集团财务宽表**模板：多级表头、类别纵向合并、条件行样式、左侧列冻结。
 
-| 项 | 值 |
-|----|-----|
-| 模板 ID | `financial-indicators-complex-report` |
-| 场景标签 | `financial_indicators_complex_report` |
-| 参考应用 | `complex-report-003` |
+| 项       | 值                                                                                                   |
+| -------- | ---------------------------------------------------------------------------------------------------- |
+| 模板 ID  | `financial-indicators-complex-report`                                                                |
+| 场景标签 | `financial_indicators_complex_report`                                                                |
+| 参考应用 | `complex-report-003`                                                                                 |
 | 开发文档 | [`dazi/docs/app/主要财务指标复杂报表开发实践.md`](../../../docs/app/主要财务指标复杂报表开发实践.md) |
 
 ## 快速开始
@@ -20,7 +20,7 @@ pnpm --filter @dazi/app-template-financial-indicators-complex-report run dev
 
 # 从模板初始化（在 dazi-work 根；本目录已存在时仅供参考）
 cd D:\path\to\dazi-work
-.\scripts\dazi.ps1 app init financial-indicators-complex-report --space space__0519 --dir 项目/app_财务报表01/apps/<app_id>
+dazi app init financial-indicators-complex-report --space space__0519 --dir 项目/app_财务报表01/apps/<app_id>
 ```
 
 ## 目录要点
@@ -34,4 +34,4 @@ cd D:\path\to\dazi-work
 
 1. 管理端上传 Excel → 报表布局解析 → VS Code 拉取 `报表布局.json`
 2. 绑定 `manifest.report_design.managed_file_id`，发布时写入 `layout_snapshot`
-3. `pnpm run build` → `.\scripts\dazi.ps1 app upload --cwd 项目/app_财务报表01/apps/financial-indicators-report-01-template --activate`（在 dazi-work 根）
+3. `pnpm run build` → `dazi app upload --cwd 项目/app_财务报表01/apps/financial-indicators-report-01-template --activate`（在 dazi-work 根）

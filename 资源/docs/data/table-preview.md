@@ -5,19 +5,19 @@
 ## 列出数据表
 
 ```bash
-.\scripts\dazi.ps1 data table list --space <space-id>
+dazi data table list --space <space-id>
 ```
 
 ## 查看表结构
 
 ```bash
-.\scripts\dazi.ps1 data table schema <table-id> --space <space-id>
+dazi data table schema <table-id> --space <space-id>
 ```
 
 ## 采样数据
 
 ```bash
-.\scripts\dazi.ps1 data table sample <table-id> --space <space-id> --rows 10
+dazi data table sample <table-id> --space <space-id> --rows 10
 ```
 
 ## 在扩展中预览
@@ -31,11 +31,11 @@
 
 ```bash
 # 列出平台文件
-.\scripts\dazi.ps1 data file list --space <space-id>
+dazi data file list --space <space-id>
 
 # 上传本地文件
-.\scripts\dazi.ps1 data file upload ./data.csv --space <space-id>
+dazi data file upload ./data.csv --space <space-id>
 
 # 下载文件
-.\scripts\dazi.ps1 data file pull remote/path.csv --space <space-id>
+dazi data file pull remote/path.csv --space <space-id>
 ```

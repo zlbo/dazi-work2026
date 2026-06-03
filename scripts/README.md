@@ -8,10 +8,10 @@ TRAE、Cursor 终端、CI 等环境**默认没有**全局命令 `dazi` / `dazi-o
 
 1. 环境变量 `DAZI_BUNDLED_DIR`
 2. `dazi-work/tools/dazi-clis`（建议交付包携带）
-3. 已安装 **v3** 扩展目录（按 IDE 不同路径不同）  
-   - **Trae**：`%USERPROFILE%\.trae\extensions\dazitech.dazi-vscode-*\bundled\clis`  
-   - **Cursor**：`%USERPROFILE%\.cursor\extensions\...`  
-   - **VS Code**：`%USERPROFILE%\.vscode\extensions\...`  
+3. 已安装 **v3** 扩展目录（按 IDE 不同路径不同）
+   - **Trae**：`%USERPROFILE%\.trae\extensions\dazitech.dazi-vscode-*\bundled\clis`
+   - **Cursor**：`%USERPROFILE%\.cursor\extensions\...`
+   - **VS Code**：`%USERPROFILE%\.vscode\extensions\...`
    - 自定义：`%VSCODE_EXTENSIONS%` 或 `%DAZI_EXTENSIONS_DIR%`
 
 > 这意味着生产机**不需要源码仓库**，只要装了 `dazi-vscode.vsix` 即可运行。
@@ -27,13 +27,36 @@ cd d:\...\dazi-work
 
 检查项：Node 版本、`bundled/clis` 解析路径、四个 CLI 文件、`auth whoami`、`runtime-apps`、`dazi-app`。
 
+## 全局短命令（可选，`@dazitech/cli`）
+
+已用 pnpm 全局安装时，可直接使用 `dazi`（与 `dazi.ps1` 等价）：
+
+```powershell
+pnpm add -g @dazitech/cli@3.0.0
+pnpm bin -g    # 确认全局 bin 在 PATH 中
+dazi --version
+dazi auth whoami
+dazi flow project pull --flow <id> --dir "项目\..."
+```
+
+研发机安装全局 `dazi`（**无需** publish 到 npm）：
+
+```powershell
+cd dazi\dazi-vscode
+pnpm run link:cli
+```
+
+上传到 npm / 内网 registry 才需要 `pnpm login` 后 `pnpm run publish:cli`。
+
+详见 `dazi-vscode/packages/cli-dist/README.md`。
+
 ## 用法（在 `dazi-work` 目录下）
 
 ```powershell
 # PowerShell
-.\scripts\dazi.ps1 auth whoami
-.\scripts\dazi.ps1 onto script publish 项目/onto_本体项目01/脚本/setup/training_ontology_init.py --space space__0519 --type setup
-.\scripts\dazi.ps1 onto script run --file 项目/onto_本体项目01/脚本/setup/training_ontology_init.py --space space__0519
+dazi auth whoami
+dazi onto script publish 项目/onto_本体项目01/脚本/setup/training_ontology_init.py --space space__0519 --type setup
+dazi onto script run --file 项目/onto_本体项目01/脚本/setup/training_ontology_init.py --space space__0519
 ```
 
 ```cmd
@@ -62,9 +85,9 @@ cd ..\..\dazi-work
 ```powershell
 cd d:\...\dazi-work
 .\scripts\doctor-cli.ps1
-.\scripts\dazi.ps1 --version
-.\scripts\dazi.ps1 auth whoami
-.\scripts\dazi.ps1 onto function list --space <space_id>
+dazi --version
+dazi auth whoami
+dazi onto function list --space <space_id>
 cd runtime-apps
 pnpm run dazi-app -- --version
 ```
@@ -86,14 +109,14 @@ pnpm run dazi-app -- --version
 
 - **不要**使用 `dazi-onto`（独立命令不存在于 PATH）
 - **不要**使用旧版 `dazi-agent` 发布 v3 本体脚本（除非显式走 legacy 模式）
-- **使用**：`.\scripts\dazi.ps1 onto ...`
+- **使用**：`dazi onto ...`
 
 登录（一次性）：
 
 ```powershell
-.\scripts\dazi.ps1 auth login
+dazi auth login
 # 或设置 dazi.serverUrl 后
-.\scripts\dazi.ps1 auth set-token <token>
+dazi auth set-token <token>
 ```
 
 详见：

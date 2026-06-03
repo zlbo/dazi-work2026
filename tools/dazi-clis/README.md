@@ -26,6 +26,6 @@ Copy-Item bundled\clis\*.js ..\..\dazi-work\tools\dazi-clis\ -Force
 
 ```powershell
 cd dazi-work
-.\scripts\dazi.ps1 --version
+dazi --version
 .\scripts\doctor-cli.ps1
 ```

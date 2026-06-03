@@ -1,0 +1,46 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": 50,
+        "y": 250
+      },
+      "data": {
+        "label": "开始",
+        "type": "start"
+      },
+      "deletable": false,
+      "node_uuid": "aa1ba01e-bc96-41ab-b9e4-4b42e77aaae5"
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 850,
+        "y": 250
+      },
+      "data": {
+        "label": "结束",
+        "type": "end"
+      },
+      "deletable": false,
+      "node_uuid": "47c53b38-6005-4d7f-9f89-7ea56dab6b38"
+    },
+    {
+      "id": "n-ae4b83685355",
+      "node_uuid": "d96222ce-aaa9-4050-b782-830c2f2de9eb",
+      "type": "custom",
+      "position": {
+        "x": 120,
+        "y": 240
+      },
+      "data": {
+        "label": "Excel成本报表解析",
+        "type": "excel-python"
+      }
+    }
+  ],
+  "edges": []
+}

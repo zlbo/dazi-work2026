@@ -26,10 +26,10 @@
 def main(params: dict, s=None) -> dict:
     """
     [函数说明]
-    
+
     Args:
         params: 包含 xxx（说明）
-        
+
     Returns:
         包含 xxx（说明）
     """
@@ -37,8 +37,10 @@ def main(params: dict, s=None) -> dict:
 ```
 
 发布与运行（v3，工作区根目录；**勿用** `dazi-onto`）：
+
 ```powershell
-.\scripts\dazi.ps1 onto script publish 项目/onto_<名>/脚本/functions/<file>.py --space <space-id> --register-function-id <id>
-.\scripts\dazi.ps1 onto function run <id> --space <space-id>
+dazi onto script publish 项目/onto_<名>/脚本/functions/<file>.py --space <space-id> --register-function-id <id>
+dazi onto function run <id> --space <space-id>
 ```
+
 详见提示词 `onto/script-publish-run`（侧栏 帮助 → 提示词）。

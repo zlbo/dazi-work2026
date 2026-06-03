@@ -9,13 +9,13 @@ Cube 是预聚合的数据集，基于数据表或视图构建，支持快速查
 ## 列出 Cube
 
 ```bash
-.\scripts\dazi.ps1 data cube list --space <space-id>
+dazi data cube list --space <space-id>
 ```
 
 ## 查看 Cube 详情
 
 ```bash
-.\scripts\dazi.ps1 data cube info <cube-id> --space <space-id>
+dazi data cube info <cube-id> --space <space-id>
 ```
 
 ## 在扩展中使用

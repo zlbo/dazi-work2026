@@ -18,12 +18,13 @@
 ```powershell
 # 在 dazi-work 根目录运行
 .\scripts\doctor-cli.ps1
-.\scripts\dazi.ps1 doctor
-.\scripts\dazi.ps1 env
-.\scripts\dazi.ps1 auth whoami
+dazi doctor
+dazi env
+dazi auth whoami
 ```
 
 环境输出：
+
 ```
 {{env_output}}
 ```

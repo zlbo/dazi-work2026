@@ -1,0 +1,80 @@
+{
+  "name": "V_DQ_REPORT",
+  "type": "table",
+  "status": "ready",
+  "variableId": 72,
+  "nodeId": "dq-check",
+  "debugRunId": 31,
+  "updatedAt": "2026-06-02T23:54:28.336304",
+  "syncedAt": "2026-06-03T00:03:29.934Z",
+  "schema": {
+    "variable_name": "V_DQ_REPORT",
+    "variable_type": "table",
+    "columns": [
+      {
+        "name": "规则名称",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "检查项",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "问题数量",
+        "type": "int64",
+        "dtype": "int"
+      },
+      {
+        "name": "状态",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "详情",
+        "type": "large_string",
+        "dtype": "string"
+      }
+    ],
+    "row_count": 4
+  },
+  "preview": {
+    "rows": [
+      {
+        "规则名称": "空项目名检查",
+        "检查项": "科研项目",
+        "问题数量": 0,
+        "状态": "通过",
+        "详情": "发现 0 条空项目名记录"
+      },
+      {
+        "规则名称": "空员工姓名检查",
+        "检查项": "员工姓名",
+        "问题数量": 0,
+        "状态": "通过",
+        "详情": "发现 0 条空员工姓名记录"
+      },
+      {
+        "规则名称": "重复记录检查",
+        "检查项": "科研项目+员工姓名",
+        "问题数量": 0,
+        "状态": "通过",
+        "详情": "发现 0 条重复记录"
+      },
+      {
+        "规则名称": "项目人员数量统计",
+        "检查项": "人数分布",
+        "问题数量": 0,
+        "状态": "通过",
+        "详情": "最小:1.0人, 最大:4.0人, 平均:2.8人"
+      }
+    ],
+    "total": 4,
+    "page": 1,
+    "limit": 10,
+    "variable_type": "table",
+    "variable_name": "V_DQ_REPORT",
+    "columns": []
+  }
+}

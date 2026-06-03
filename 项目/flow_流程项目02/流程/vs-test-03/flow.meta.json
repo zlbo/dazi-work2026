@@ -1,0 +1,16 @@
+{
+  "flowId": "119",
+  "flowName": "vs-test-03",
+  "nodes": {
+    "aa1ba01e-bc96-41ab-b9e4-4b42e77aaae5": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "47c53b38-6005-4d7f-9f89-7ea56dab6b38": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    }
+  },
+  "lastPulledAt": "2026-06-03T08:37:53.126Z",
+  "graphFingerprint": "sha1:9743375ab5ba962c61957e3a86841bb5408ec673"
+}
