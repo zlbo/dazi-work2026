@@ -5,8 +5,8 @@
   "variableId": 75,
   "nodeId": "stats-analysis",
   "debugRunId": 31,
-  "updatedAt": "2026-06-01T13:57:16.128420",
-  "syncedAt": "2026-06-01T14:01:05.961Z",
+  "updatedAt": "2026-06-03T01:43:11.353970",
+  "syncedAt": "2026-06-03T01:56:58.030Z",
   "schema": {
     "variable_name": "统计结果",
     "variable_type": "table",

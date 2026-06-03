@@ -5,8 +5,8 @@
   "variableId": 76,
   "nodeId": "stats-analysis",
   "debugRunId": 31,
-  "updatedAt": "2026-06-01T13:57:16.144064",
-  "syncedAt": "2026-06-01T14:01:05.772Z",
+  "updatedAt": "2026-06-03T01:43:11.369569",
+  "syncedAt": "2026-06-03T01:56:57.862Z",
   "schema": {
     "variable_name": "项目参与人数统计",
     "variable_type": "table",

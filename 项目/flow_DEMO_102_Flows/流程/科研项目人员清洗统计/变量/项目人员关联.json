@@ -5,8 +5,8 @@
   "variableId": 74,
   "nodeId": "person-join",
   "debugRunId": 31,
-  "updatedAt": "2026-06-01T13:57:16.019050",
-  "syncedAt": "2026-06-01T14:01:06.164Z",
+  "updatedAt": "2026-06-03T01:43:11.197680",
+  "syncedAt": "2026-06-03T01:56:58.386Z",
   "schema": {
     "variable_name": "项目人员关联",
     "variable_type": "table",

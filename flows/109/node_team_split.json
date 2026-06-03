@@ -1,3 +1,0 @@
-{
-  "pythonCode": "import pandas as pd\nimport re\n\noutput.print(\"[团队字段拆分] 开始\")\n\nif df is None or df.empty:\n    df = get_variable(\"混杂数据\")\noutput.print(f\"输入数据: shape={df.shape}\")\n\ndef split_team(team_str):\n    if pd.isna(team_str):\n        return []\n    separators = r'[,，、\\-_—@\\s]+'\n    names = re.split(separators, str(team_str).strip())\n    return [name.strip() for name in names if name.strip()]\n\ndf['团队成员列表'] = df['团队'].apply(split_team)\nresult_df = df.explode('团队成员列表').rename(columns={'团队成员列表': '员工姓名'})\nresult_df = result_df[['科研项目', '员工姓名']].reset_index(drop=True)\n\noutput.print(f\"拆分后: shape={result_df.shape}\")\noutput.print(f\"项目数: {result_df['科研项目'].nunique()}, 人员记录数: {len(result_df)}\")\n\noutput.print(\"[团队字段拆分] 完成\")"
-}

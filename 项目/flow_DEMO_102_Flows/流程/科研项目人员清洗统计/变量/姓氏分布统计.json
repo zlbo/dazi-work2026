@@ -5,8 +5,8 @@
   "variableId": 79,
   "nodeId": "stats-analysis",
   "debugRunId": 31,
-  "updatedAt": "2026-06-01T13:57:16.159667",
-  "syncedAt": "2026-06-01T14:01:04.984Z",
+  "updatedAt": "2026-06-03T01:43:11.385183",
+  "syncedAt": "2026-06-03T01:56:57.354Z",
   "schema": {
     "variable_name": "姓氏分布统计",
     "variable_type": "table",

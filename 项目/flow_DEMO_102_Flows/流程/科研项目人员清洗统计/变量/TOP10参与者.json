@@ -5,8 +5,8 @@
   "variableId": 78,
   "nodeId": "stats-analysis",
   "debugRunId": 31,
-  "updatedAt": "2026-06-01T13:57:16.144064",
-  "syncedAt": "2026-06-01T14:01:05.386Z",
+  "updatedAt": "2026-06-03T01:43:11.385183",
+  "syncedAt": "2026-06-03T01:56:57.186Z",
   "schema": {
     "variable_name": "TOP10参与者",
     "variable_type": "table",

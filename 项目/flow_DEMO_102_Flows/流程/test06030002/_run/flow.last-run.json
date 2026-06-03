@@ -1,0 +1,93 @@
+{
+  "id": 36,
+  "flow_id": 114,
+  "status": "failed",
+  "duration": 40695,
+  "node_status": {
+    "end-node": {
+      "status": "pending",
+      "node_label": "结束",
+      "node_uuid": "0c3cdad2-1a81-4d2d-a0d1-657781f08220",
+      "startTime": null,
+      "endTime": null,
+      "duration": null,
+      "error": null,
+      "traceback": null,
+      "output_variable_id": null,
+      "logs": null
+    },
+    "excel-parser-node": {
+      "status": "failed",
+      "node_label": "Excel解析器",
+      "node_uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "startTime": "2026-06-03T13:32:27.524105Z",
+      "endTime": "2026-06-03T13:32:27.539749Z",
+      "duration": 15,
+      "error": "[Errno 2] No such file or directory: 'D:\\\\GitHub\\\\dazi-work\\\\资源\\\\files\\\\科研项目_模拟人员混杂数据.xlsx_72326a69\\\\原文件.xlsx'",
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": ""
+    },
+    "start-node": {
+      "status": "success",
+      "node_label": "开始",
+      "node_uuid": "19c53204-cc7f-4418-9d4c-46766d5c6edf",
+      "startTime": "2026-06-03T13:32:27.508490Z",
+      "endTime": "2026-06-03T13:32:27.508490Z",
+      "duration": 0,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": ""
+    },
+    "split-team-node": {
+      "status": "pending",
+      "node_label": "拆分团队成员",
+      "node_uuid": "b2c3d4e5-f678-90ab-cdef-0123456789ab",
+      "startTime": null,
+      "endTime": null,
+      "duration": null,
+      "error": null,
+      "traceback": null,
+      "output_variable_id": null,
+      "logs": null
+    }
+  },
+  "execution_logs": [
+    {
+      "node_id": "start-node",
+      "node_label": "开始",
+      "status": "success",
+      "startTime": "2026-06-03T13:32:27.508490Z",
+      "endTime": "2026-06-03T13:32:27.508490Z",
+      "duration": 0,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": "",
+      "step_order": 1,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "a229a90d-c30b-49e5-88b7-287d23543b4a"
+    },
+    {
+      "node_id": "excel-parser-node",
+      "node_label": "Excel解析器",
+      "status": "failed",
+      "startTime": "2026-06-03T13:32:27.524105Z",
+      "endTime": "2026-06-03T13:32:27.539749Z",
+      "duration": 15,
+      "error": "[Errno 2] No such file or directory: 'D:\\\\GitHub\\\\dazi-work\\\\资源\\\\files\\\\科研项目_模拟人员混杂数据.xlsx_72326a69\\\\原文件.xlsx'",
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": "",
+      "step_order": 2,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "530a2cbc-e0a0-4998-8b35-f048ffb1f195"
+    }
+  ],
+  "variables": {},
+  "created_at": "2026-06-03T02:14:11.758285Z",
+  "completed_at": "2026-06-03T13:32:27.539749Z"
+}

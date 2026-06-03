@@ -5,8 +5,8 @@
   "variableId": 71,
   "nodeId": "team-split",
   "debugRunId": 31,
-  "updatedAt": "2026-06-01T13:57:15.769056",
-  "syncedAt": "2026-06-01T14:01:06.549Z",
+  "updatedAt": "2026-06-03T01:43:10.978984",
+  "syncedAt": "2026-06-03T01:56:58.727Z",
   "schema": {
     "variable_name": "项目人员拆分",
     "variable_type": "table",

@@ -25,8 +25,8 @@
       "id": "excel-parse",
       "type": "custom",
       "position": {
-        "x": 189,
-        "y": 351
+        "x": 161.81428636877658,
+        "y": 253.08959327120385
       },
       "data": {
         "label": "Excel解析",
@@ -40,14 +40,15 @@
         "width": 200,
         "height": 98
       },
-      "selected": false
+      "selected": false,
+      "dragging": false
     },
     {
       "id": "team-split",
       "type": "custom",
       "position": {
-        "x": 464.8133198789102,
-        "y": 399.0010090817357
+        "x": 344.78519036621896,
+        "y": 104.32819870886935
       },
       "data": {
         "label": "团队字段拆分",
@@ -58,17 +59,17 @@
       "node_uuid": "550e8400-e29b-41d4-a716-446655440001",
       "measured": {
         "width": 200,
-        "height": 98
+        "height": 99
       },
-      "selected": false,
+      "selected": true,
       "dragging": false
     },
     {
       "id": "dq-check",
       "type": "custom",
       "position": {
-        "x": 674.5610494450051,
-        "y": 110.74672048435923
+        "x": 712.1100941576514,
+        "y": 109.20669420442707
       },
       "data": {
         "label": "数据质量检查",
@@ -145,8 +146,8 @@
       "id": "person-join",
       "type": "custom",
       "position": {
-        "x": 905.196770938446,
-        "y": 387.86074672048437
+        "x": 909.5927291049005,
+        "y": 252.0137661115317
       },
       "data": {
         "label": "人员编码关联",
@@ -170,8 +171,8 @@
       "id": "stats-analysis",
       "type": "custom",
       "position": {
-        "x": 1060.6357214934408,
-        "y": 113.53178607467206
+        "x": 1166.5750568929354,
+        "y": 123.00603558194393
       },
       "data": {
         "label": "统计分析",
@@ -191,8 +192,8 @@
       "id": "end-node",
       "type": "custom",
       "position": {
-        "x": 1266.2058526740666,
-        "y": 255.57013118062565
+        "x": 1391.011499210641,
+        "y": 266.7669715074015
       },
       "data": {
         "label": "结束",
@@ -212,8 +213,8 @@
       "id": "db-sink",
       "type": "custom",
       "position": {
-        "x": 639.2765769829576,
-        "y": 528.1401228615562
+        "x": 519.6942144362863,
+        "y": 252.6552741593107
       },
       "data": {
         "label": "写入项目人员拆分表",
@@ -239,10 +240,60 @@
       },
       "node_uuid": "550e8400-e29b-41d4-a716-446655440005",
       "measured": {
-        "width": 209,
-        "height": 99
+        "width": 208,
+        "height": 98
       },
-      "selected": true,
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "python-script-1780369618182",
+      "type": "custom",
+      "position": {
+        "x": 1161.6637046414776,
+        "y": 394.77213216751977
+      },
+      "data": {
+        "label": "Python脚本 9",
+        "type": "python-script",
+        "status": "idle",
+        "description": "AI 生成的 Python 代码",
+        "flowId": 109,
+        "output_variable_name": "变量7lb",
+        "attached_variables": [
+          "项目人员关联"
+        ]
+      },
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "7e5c9ade-e0d5-4adf-8301-714da391dc10"
+    },
+    {
+      "id": "team-full-split",
+      "type": "custom",
+      "position": {
+        "x": 377,
+        "y": 443
+      },
+      "data": {
+        "label": "团队人员全面拆分",
+        "type": "python-script",
+        "output_variable_name": "项目人员全面拆分",
+        "attached_variables": [
+          "混杂数据"
+        ],
+        "flowId": 109
+      },
+      "node_uuid": "550e8400-e29b-41d4-a716-446655440006",
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false,
       "dragging": false
     }
   ],
@@ -256,45 +307,37 @@
       "markerEnd": {
         "type": "arrowclosed",
         "color": "#64748b"
-      }
+      },
+      "selected": false
     },
     {
-      "id": "xy-edge__excel-parser-team-splitl",
+      "id": "xy-edge__excel-parser-team-full-splitl",
       "source": "excel-parse",
-      "target": "team-split",
       "sourceHandle": "r",
+      "target": "team-full-split",
       "targetHandle": "l",
       "markerEnd": {
         "type": "arrowclosed",
         "color": "#64748b"
-      }
+      },
+      "selected": false
     },
     {
-      "id": "xy-edge__team-splitt-dq-checkl",
-      "source": "team-split",
-      "target": "dq-check",
-      "sourceHandle": "t",
+      "id": "xy-edge__team-full-splitr-end-nodel",
+      "source": "team-full-split",
+      "sourceHandle": "r",
+      "target": "end-node",
       "targetHandle": "l",
       "markerEnd": {
         "type": "arrowclosed",
         "color": "#64748b"
-      }
+      },
+      "selected": false
     },
     {
       "id": "xy-edge__dq-checkr-person-joinl",
       "source": "dq-check",
       "target": "person-join",
-      "sourceHandle": "r",
-      "targetHandle": "l",
-      "markerEnd": {
-        "type": "arrowclosed",
-        "color": "#64748b"
-      }
-    },
-    {
-      "id": "xy-edge__person-joinr-stats-analysisl",
-      "source": "person-join",
-      "target": "stats-analysis",
       "sourceHandle": "r",
       "targetHandle": "l",
       "markerEnd": {
@@ -314,17 +357,6 @@
       }
     },
     {
-      "id": "xy-edge__team-splitb-db-sinkl",
-      "source": "team-split",
-      "target": "db-sink",
-      "sourceHandle": "b",
-      "targetHandle": "l",
-      "markerEnd": {
-        "type": "arrowclosed",
-        "color": "#64748b"
-      }
-    },
-    {
       "type": "custom",
       "markerEnd": {
         "type": "arrowclosed",
@@ -335,6 +367,42 @@
       "target": "dq-check",
       "targetHandle": "l",
       "id": "xy-edge__db-sinkr-dq-checkl"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#94a3b8"
+      },
+      "source": "person-join",
+      "sourceHandle": "r",
+      "target": "python-script-1780369618182",
+      "targetHandle": "l",
+      "id": "xy-edge__person-joinr-python-script-1780369618182l"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#94a3b8"
+      },
+      "source": "python-script-1780369618182",
+      "sourceHandle": "r",
+      "target": "end-node",
+      "targetHandle": "l",
+      "id": "xy-edge__python-script-1780369618182r-end-nodel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#94a3b8"
+      },
+      "source": "person-join",
+      "sourceHandle": "r",
+      "target": "stats-analysis",
+      "targetHandle": "l",
+      "id": "xy-edge__person-joinr-stats-analysisl"
     }
   ]
 }

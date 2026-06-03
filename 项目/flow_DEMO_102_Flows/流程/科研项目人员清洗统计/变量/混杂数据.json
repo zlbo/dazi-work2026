@@ -5,8 +5,8 @@
   "variableId": 69,
   "nodeId": "excel-parse",
   "debugRunId": 31,
-  "updatedAt": "2026-06-01T13:57:15.721218",
-  "syncedAt": "2026-06-01T14:01:06.938Z",
+  "updatedAt": "2026-06-03T01:51:09.625670",
+  "syncedAt": "2026-06-03T01:56:57.012Z",
   "schema": {
     "variable_name": "混杂数据",
     "variable_type": "table",

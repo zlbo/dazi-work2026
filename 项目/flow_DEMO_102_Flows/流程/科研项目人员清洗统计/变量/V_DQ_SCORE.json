@@ -6,7 +6,7 @@
   "nodeId": "dq-check",
   "debugRunId": 31,
   "updatedAt": "2026-06-01T13:30:12.332800",
-  "syncedAt": "2026-06-01T14:01:06.939Z",
+  "syncedAt": "2026-06-03T01:56:58.848Z",
   "value": "100.0",
   "schema": {
     "variable_name": "V_DQ_SCORE",

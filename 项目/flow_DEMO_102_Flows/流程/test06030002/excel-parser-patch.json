@@ -1,0 +1,5 @@
+{
+  "data": {
+    "code_body": "# -*- coding: utf-8 -*-\n\"\"\"\nExcel 解析器 - 将 Excel 文件的每个 Sheet 解析成一张表\n\"\"\"\nimport pandas as pd\nimport os\n\n# Excel 文件路径\nexcel_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), \"..\", \"..\", \"..\", \"资源\", \"files\", \"科研项目_模拟人员混杂数据.xlsx_72326a69\", \"原文件.xlsx\")\nexcel_path = os.path.abspath(excel_path)\n\n# 读取所有 Sheet\nexcel_file = pd.ExcelFile(excel_path)\nsheet_names = excel_file.sheet_names\n\n# 存储每个 Sheet 对应的表\ntables = {}\nfor sheet_name in sheet_names:\n    df = pd.read_excel(excel_file, sheet_name=sheet_name)\n    table_name = f\"table_{sheet_name}\"\n    tables[table_name] = df\n\n# 输出：返回所有表的数据\nresult_df = pd.DataFrame({\n    \"sheet_name\": sheet_names,\n    \"table_name\": [f\"table_{s}\" for s in sheet_names],\n    \"row_count\": [len(pd.read_excel(excel_file, sheet_name=s)) for s in sheet_names]\n})\n"
+  }
+}

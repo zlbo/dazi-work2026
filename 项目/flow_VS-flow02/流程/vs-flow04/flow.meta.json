@@ -28,14 +28,13 @@
       "dir": "节点/SQL_销售产品关联",
       "codeFile": "code.sql",
       "codeLanguage": "sql",
-      "codeHash": "6bd9909d9f29605d71049458bda466ff4bf90baa",
-      "codeVersion": 9
+      "codeHash": "6bd9909d9f29605d71049458bda466ff4bf90baa"
     },
     "c08de2db-7078-4b05-b78c-f22fc793f907": {
       "nodeId": "end-node",
       "nodeType": "end"
     }
   },
-  "lastPulledAt": "2026-06-02T08:47:29.616Z",
-  "graphFingerprint": "sha1:dd0fb738040d95524114ac29bbaa3e1c9e809c46"
+  "lastPulledAt": "2026-06-03T02:10:49.677Z",
+  "graphFingerprint": "sha1:96ae45294981d5ad43fb336bac2a6fc867eb45da"
 }
