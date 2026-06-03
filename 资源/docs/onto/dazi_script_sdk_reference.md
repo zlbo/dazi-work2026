@@ -3,16 +3,16 @@
 **文档 ID**: `onto/dazi-script-sdk-reference`  
 **适用**: dazi-vscode v3 + 搭子平台 DaziScript（ClickHouse 数据空间）
 
-> 给 LLM 与开发者提供精简、可执行的 SDK 规范。脚本目录、类型与 **`.\scripts\dazi.ps1 onto script publish`** 等见 **[本体脚本编写指南](./本体脚本编写指南.md)**。
+> 给 LLM 与开发者提供精简、可执行的 SDK 规范。脚本目录、类型与 **`dazi onto script publish`** 等见 **[本体脚本编写指南](./本体脚本编写指南.md)**。
 
 ## 1. 工作区与脚本放置（dazi-vscode）
 
-| 用途 | 路径 |
-|------|------|
-| **日常开发**（推荐） | `<工作区根>/项目/onto_<项目名>/脚本/*.py` |
-| **空间 ID** | `项目/onto_<项目名>/README.md` 中的数据空间 ID |
-| **参考示例** | `资源/examples/onto/setup/`、`资源/examples/onto/function/`（侧栏 **帮助 → 示例** 或 `.\scripts\dazi.ps1 examples sync`） |
-| **本文档** | `资源/docs/onto/dazi_script_sdk_reference.md`（`.\scripts\dazi.ps1 docs sync` 后） |
+| 用途                 | 路径                                                                                                        |
+| -------------------- | ----------------------------------------------------------------------------------------------------------- |
+| **日常开发**（推荐） | `<工作区根>/项目/onto_<项目名>/脚本/*.py`                                                                   |
+| **空间 ID**          | `项目/onto_<项目名>/README.md` 中的数据空间 ID                                                              |
+| **参考示例**         | `资源/examples/onto/setup/`、`资源/examples/onto/function/`（侧栏 **帮助 → 示例** 或 `dazi examples sync`） |
+| **本文档**           | `资源/docs/onto/dazi_script_sdk_reference.md`（`dazi docs sync` 后）                                        |
 
 - **禁止**将 `onto/<space_id>/editorial/` 作为 v3 本地开发约定（历史路径，仅 CLI `script sync` 可能拉回平台副本）。
 - 脚本入口仅需定义 **`main()`**；平台执行时自动调用，**不要**写 `if __name__ == "__main__":`。
@@ -23,7 +23,7 @@
 - 新建空间须显式指定（若脚本内创建空间）：
   - `storage_engine="clickhouse"`
   - `connection_config={"database": "<db_name>"}`
-- 执行前确认已登录（`.\scripts\dazi.ps1 auth whoami`）且 `dazi.serverUrl` 正确。
+- 执行前确认已登录（`dazi auth whoami`）且 `dazi.serverUrl` 正确。
 
 ## 3. 顶层对象与推荐调用
 
@@ -66,7 +66,13 @@
   "updated": [],
   "skipped": [],
   "errors": [],
-  "summary": { "requested": 0, "created": 0, "updated": 0, "skipped": 0, "errors": 0 }
+  "summary": {
+    "requested": 0,
+    "created": 0,
+    "updated": 0,
+    "skipped": 0,
+    "errors": 0
+  }
 }
 ```
 
@@ -140,18 +146,18 @@
 
 ```bash
 # 预检
-.\scripts\dazi.ps1 onto script publish-preview 项目/onto_<项目名>/脚本/my_setup.py --space <space-id>
+dazi onto script publish-preview 项目/onto_<项目名>/脚本/my_setup.py --space <space-id>
 
 # 发布（初始化/灌数类脚本）
-.\scripts\dazi.ps1 onto script publish 项目/onto_<项目名>/脚本/my_setup.py --space <space-id>
+dazi onto script publish 项目/onto_<项目名>/脚本/my_setup.py --space <space-id>
 
 # 发布并注册为本体函数
-.\scripts\dazi.ps1 onto script publish 项目/onto_<项目名>/脚本/my_func.py \
+dazi onto script publish 项目/onto_<项目名>/脚本/my_func.py \
   --space <space-id> \
   --register-function-id my_func
 
 # 运行已入库函数
-.\scripts\dazi.ps1 onto function run my_func --space <space-id> --params '{}'
+dazi onto function run my_func --space <space-id> --params '{}'
 ```
 
 亦可用侧栏 **Onto 本体** → 发布函数 / 运行函数。
@@ -162,7 +168,7 @@
 - 非 0 退出码即失败
 - 会改写数据的步骤须提供跳过/禁用开关
 
-**内置参考示例**（在用户工作区：**侧栏 帮助 → 示例 → 下载所有示例**，或执行 `.\scripts\dazi.ps1 examples sync`，得到 **`资源/examples/`**；可复制到 **`项目/<onto_项目名>/脚本/`** 再改，勿直接改写同步下来的只读备份）：
+**内置参考示例**（在用户工作区：**侧栏 帮助 → 示例 → 下载所有示例**，或执行 `dazi examples sync`，得到 **`资源/examples/`**；可复制到 **`项目/<onto_项目名>/脚本/`** 再改，勿直接改写同步下来的只读备份）：
 
 - 初始化：**`<工作区根>/资源/examples/onto/setup/profit_ontology_init.py`**
 - 函数样例：**`<工作区根>/资源/examples/onto/function/profit_fn_*.py`**

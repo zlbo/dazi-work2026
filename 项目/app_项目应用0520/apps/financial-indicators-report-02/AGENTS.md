@@ -5,23 +5,24 @@
 
 ## 应用元信息
 
-| 项 | 值 |
-|----|-----|
-| app_id | `financial-indicators-report-02` |
-| 空间 | `space__0519` |
-| 模板 | `financial-indicators-report-01-template` |
-| 目录 | `D:/src2025/ads2025/dazi-work/项目/app_项目应用0520/apps/financial-indicators-report-02` |
+| 项     | 值                                                                                       |
+| ------ | ---------------------------------------------------------------------------------------- |
+| app_id | `financial-indicators-report-02`                                                         |
+| 空间   | `space__0519`                                                                            |
+| 模板   | `financial-indicators-report-01-template`                                                |
+| 目录   | `D:/src2025/ads2025/dazi-work/项目/app_项目应用0520/apps/financial-indicators-report-02` |
 
 ## 数据源（manifest）
 
-| key | kind | 引用 | 备注 |
-|-----|------|------|------|
-| report_data | static | inline static | |
+| key         | kind   | 引用          | 备注 |
+| ----------- | ------ | ------------- | ---- |
+| report_data | static | inline static |      |
 
 ## 场景意图（摘录 · 模板示例）
 
 ```markdown
 > ⚠️ 本文件由模板 `financial-indicators-report-01-template` 提供**初始示例**，仅作参考。
+>
 > - 通用规范：[`.ai/overview.md`](./overview.md)
 > - 数据源：`docs/data-source-cookbook.md` · 内联：`docs/inline-data-source.md`
 > - 视觉：`docs/ui-style-guide.md`
@@ -41,7 +42,6 @@
 - 关键决策 / 动作：
 - 必看指标 / 字段：
 - 与模板示例的差异：
-
 ```
 
 ## 数据绑定（摘录）
@@ -60,18 +60,21 @@
 > 由 `dazi-app init` 生成。完整上下文请执行 `dazi-app context refresh`（P3）。
 
 ## 数据空间
+
 - ID: `space__0519`
 
 ## 应用
+
 - app_id: `financial-indicators-report-02`
 - 名称: 财务指标02
 - 模板: `financial-indicators-report-01-template`
 
 ## 开发提示
+
 - 通用指引见 `.ai/overview.md`
 - 数据绑定见 `.ai/data-binding.md`
 - 禁止裸 fetch，统一使用 @dazi/app-sdk-data
-…
+  …
 ```
 
 ## 自检待办（doctor）
@@ -86,9 +89,9 @@
 ```powershell
 pnpm run dev   # 在应用组件目录
 # 在 dazi-work 根执行（推荐，自动 bundled CLI）
-.\scripts\dazi.ps1 app manifest validate --cwd 项目/app_项目应用0520/apps/financial-indicators-report-02 --scan-src
-.\scripts\dazi.ps1 app doctor --cwd 项目/app_项目应用0520/apps/financial-indicators-report-02
-.\scripts\dazi.ps1 app upload --cwd 项目/app_项目应用0520/apps/financial-indicators-report-02 --space space__0519 --activate
+dazi app manifest validate --cwd 项目/app_项目应用0520/apps/financial-indicators-report-02 --scan-src
+dazi app doctor --cwd 项目/app_项目应用0520/apps/financial-indicators-report-02
+dazi app upload --cwd 项目/app_项目应用0520/apps/financial-indicators-report-02 --space space__0519 --activate
 ```
 
 ## 铁律

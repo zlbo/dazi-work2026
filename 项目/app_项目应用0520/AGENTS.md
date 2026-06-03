@@ -26,14 +26,14 @@
 ## 五步法（任何新应用）
 
 ```powershell
-# 推荐：在 dazi-work 根（.\scripts\dazi.ps1 自动设置 bundled CLI）
+# 推荐：在 dazi-work 根（dazi 自动设置 bundled CLI）
 cd D:\path\to\dazi-work
 
 # 1. 脚手架（亦可用扩展「新建项目 / 新建应用组件」）
-.\scripts\dazi.ps1 app init <template_id> --space <spaceId> --dir 项目/app_<名>/apps/<app_id>
+dazi app init <template_id> --space <spaceId> --dir 项目/app_<名>/apps/<app_id>
 
 # 2. 改 manifest.data_sources（VS Code 绑定面板或手改 manifest.json）
-.\scripts\dazi.ps1 app manifest validate --cwd 项目/app_<名>/apps/<app_id> --scan-src
+dazi app manifest validate --cwd 项目/app_<名>/apps/<app_id> --scan-src
 
 # 3. 本地 dev（在应用组件目录）
 cd 项目\app_<名>\apps\<app_id>
@@ -41,10 +41,10 @@ pnpm run dev
 
 # 4. 自检（回到 dazi-work 根）
 cd D:\path\to\dazi-work
-.\scripts\dazi.ps1 app doctor --cwd 项目/app_<名>/apps/<app_id>
+dazi app doctor --cwd 项目/app_<名>/apps/<app_id>
 
 # 5. 发布
-.\scripts\dazi.ps1 app upload --cwd 项目/app_<名>/apps/<app_id> --space <spaceId> --activate
+dazi app upload --cwd 项目/app_<名>/apps/<app_id> --space <spaceId> --activate
 ```
 
 **备选**：在应用项目 monorepo 根使用 `pnpm run dazi-app -- …`（须配置 `DAZI_BUNDLED_DIR`，否则易报「未找到 bundled CLI」）。
@@ -55,31 +55,31 @@ cd D:\path\to\dazi-work
 
 ## 目录约定
 
-| 路径 | 说明 |
-|------|------|
-| `templates/app-template-*` | 官方场景模板（勿与 `apps/` 混放） |
-| `apps/<app_id>/` | 业务应用（`init` 生成） |
-| `apps/<app_id>/manifest.json` | 数据源与权限声明 |
-| `apps/<app_id>/.ai/overview.md` | **通用**开发指引（所有应用相同结构） |
-| `apps/<app_id>/.ai/` | `CONTEXT.md`、`data-binding.md`、`page-intent.md`（模板示例，可改） |
-| `apps/<app_id>/AGENTS.md` | **本应用**专用 AI 指南 |
-| `apps/<app_id>/drap-assets/` | SQL / Python 资产 |
-| `sdk/app-sdk-*` | 子应用 SDK（源码直引） |
-| `docs/` | 人类可读开发指南 |
+| 路径                            | 说明                                                                |
+| ------------------------------- | ------------------------------------------------------------------- |
+| `templates/app-template-*`      | 官方场景模板（勿与 `apps/` 混放）                                   |
+| `apps/<app_id>/`                | 业务应用（`init` 生成）                                             |
+| `apps/<app_id>/manifest.json`   | 数据源与权限声明                                                    |
+| `apps/<app_id>/.ai/overview.md` | **通用**开发指引（所有应用相同结构）                                |
+| `apps/<app_id>/.ai/`            | `CONTEXT.md`、`data-binding.md`、`page-intent.md`（模板示例，可改） |
+| `apps/<app_id>/AGENTS.md`       | **本应用**专用 AI 指南                                              |
+| `apps/<app_id>/drap-assets/`    | SQL / Python 资产                                                   |
+| `sdk/app-sdk-*`                 | 子应用 SDK（源码直引）                                              |
+| `docs/`                         | 人类可读开发指南                                                    |
 
 ---
 
 ## 文档索引
 
-| 文档 | 用途 |
-|------|------|
-| [docs/quickstart.md](./docs/quickstart.md) | 5 分钟开机 |
-| [docs/env.md](./docs/env.md) | 开发/生产主站与 API 地址（唯一真值源） |
-| [docs/develop-guide.md](./docs/develop-guide.md) | 完整开发流 |
-| [docs/data-source-cookbook.md](./docs/data-source-cookbook.md) | 数据源 kind 与示例 |
-| [docs/inline-data-source.md](./docs/inline-data-source.md) | sql_asset / script_asset |
-| [docs/ui-style-guide.md](./docs/ui-style-guide.md) | 子应用 UI 规范 |
-| [docs/faq.md](./docs/faq.md) | 常见报错 |
+| 文档                                                           | 用途                                   |
+| -------------------------------------------------------------- | -------------------------------------- |
+| [docs/quickstart.md](./docs/quickstart.md)                     | 5 分钟开机                             |
+| [docs/env.md](./docs/env.md)                                   | 开发/生产主站与 API 地址（唯一真值源） |
+| [docs/develop-guide.md](./docs/develop-guide.md)               | 完整开发流                             |
+| [docs/data-source-cookbook.md](./docs/data-source-cookbook.md) | 数据源 kind 与示例                     |
+| [docs/inline-data-source.md](./docs/inline-data-source.md)     | sql_asset / script_asset               |
+| [docs/ui-style-guide.md](./docs/ui-style-guide.md)             | 子应用 UI 规范                         |
+| [docs/faq.md](./docs/faq.md)                                   | 常见报错                               |
 
 ---
 
@@ -87,11 +87,11 @@ cd D:\path\to\dazi-work
 
 ```powershell
 # dazi-work 根
-.\scripts\dazi.ps1 app help [quickstart|manifest|data-source|upload|doctor]
-.\scripts\dazi.ps1 app doctor --cwd 项目/app_<名>/apps/<app_id>
-.\scripts\dazi.ps1 app manifest validate --cwd 项目/app_<名>/apps/<app_id> --scan-src
-.\scripts\dazi.ps1 app templates list --remote
-.\scripts\dazi.ps1 app context refresh --cwd 项目/app_<名>/apps/<app_id>
+dazi app help [quickstart|manifest|data-source|upload|doctor]
+dazi app doctor --cwd 项目/app_<名>/apps/<app_id>
+dazi app manifest validate --cwd 项目/app_<名>/apps/<app_id> --scan-src
+dazi app templates list --remote
+dazi app context refresh --cwd 项目/app_<名>/apps/<app_id>
 ```
 
 ---

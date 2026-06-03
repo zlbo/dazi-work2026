@@ -5,6 +5,7 @@
 ## 空间概念
 
 本体空间（Space）是搭子平台的基础组织单位，每个空间包含：
+
 - 函数定义（FunctionDef）
 - 动作定义（ActionDef）
 - 规则（Rule）
@@ -13,16 +14,17 @@
 ## 列出空间
 
 ```bash
-.\scripts\dazi.ps1 onto space list
+dazi onto space list
 ```
 
 ## 初始化本地工作区
 
 ```bash
-.\scripts\dazi.ps1 onto space init --space-id <space-id>
+dazi onto space init --space-id <space-id>
 ```
 
 本地目录结构：
+
 ```
 onto/<space-id>/
   editorial/
@@ -40,7 +42,7 @@ onto/<space-id>/
 将远端本体数据同步到本地：
 
 ```bash
-.\scripts\dazi.ps1 onto space snapshot --space-id <space-id>
+dazi onto space snapshot --space-id <space-id>
 ```
 
 快照保存到 `onto/<space-id>/snapshot.json`。

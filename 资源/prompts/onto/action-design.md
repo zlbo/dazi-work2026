@@ -23,25 +23,27 @@
 def main(params: dict, context: dict, s=None) -> dict:
     """
     [动作说明]
-    
+
     Args:
         params: 动作参数
         context: 触发上下文（user_id, org_id, permission_tags 等）
-        
+
     Returns:
         {"status": "ok", ...}
     """
     # 权限检查（可选）
     if "finance.write" not in context.get("permission_tags", []):
         raise PermissionError("缺少 finance.write 权限")
-    
+
     # 执行写操作
-    
+
     return {"status": "ok"}
 ```
 
 发布命令（v3；**勿用** `dazi-onto`）：
+
 ```powershell
-.\scripts\dazi.ps1 onto script publish 项目/onto_<名>/脚本/<file>.py --space <space-id> --register-action-id <action_code> --register-action-permission-tag "finance.write"
+dazi onto script publish 项目/onto_<名>/脚本/<file>.py --space <space-id> --register-action-id <action_code> --register-action-permission-tag "finance.write"
 ```
+
 详见提示词 `onto/script-publish-run`。

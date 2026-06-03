@@ -1,0 +1,105 @@
+{
+  "id": 39,
+  "flow_id": 117,
+  "status": "completed",
+  "duration": 9844,
+  "node_status": {
+    "start-node": {
+      "status": "success",
+      "node_label": "开始",
+      "node_uuid": "ede5f573-0cd6-47c6-96bf-24903f144224",
+      "startTime": "2026-06-03T06:12:03.963208Z",
+      "endTime": "2026-06-03T06:12:03.978830Z",
+      "duration": 15,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": ""
+    },
+    "n-a1b2c3d4e5f6": {
+      "status": "success",
+      "node_label": "Excel读取",
+      "node_uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "startTime": "2026-06-03T06:12:03.978830Z",
+      "endTime": "2026-06-03T06:12:04.041335Z",
+      "duration": 62,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 92,
+      "logs": ""
+    },
+    "end-node": {
+      "status": "success",
+      "node_label": "结束",
+      "node_uuid": "4ed9086a-9c79-4258-8c46-d5759f425a10",
+      "startTime": "2026-06-03T06:12:04.103854Z",
+      "endTime": "2026-06-03T06:12:04.103854Z",
+      "duration": 0,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 92,
+      "logs": ""
+    }
+  },
+  "execution_logs": [
+    {
+      "node_id": "start-node",
+      "node_label": "开始",
+      "status": "success",
+      "startTime": "2026-06-03T06:12:03.963208Z",
+      "endTime": "2026-06-03T06:12:03.978830Z",
+      "duration": 15,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": "",
+      "step_order": 1,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "eb077533-6a85-4e73-aff6-e501d13b75e2"
+    },
+    {
+      "node_id": "n-a1b2c3d4e5f6",
+      "node_label": "Excel读取",
+      "status": "success",
+      "startTime": "2026-06-03T06:12:03.978830Z",
+      "endTime": "2026-06-03T06:12:04.041335Z",
+      "duration": 62,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 92,
+      "logs": "",
+      "step_order": 2,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "e281bc4f-cec3-4d07-a2b4-0d448084f5ed"
+    },
+    {
+      "node_id": "end-node",
+      "node_label": "结束",
+      "status": "success",
+      "startTime": "2026-06-03T06:12:04.103854Z",
+      "endTime": "2026-06-03T06:12:04.103854Z",
+      "duration": 0,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 92,
+      "logs": "",
+      "step_order": 3,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "d23cd593-87c6-411d-ab64-6db5618decf0"
+    }
+  ],
+  "variables": {
+    "excel_data": {
+      "id": 92,
+      "value": "uploads/py_result_ba85e78d-b91e-4a22-b744-cd1929d8a584.parquet",
+      "type": "table",
+      "node_id": "n-a1b2c3d4e5f6",
+      "updated_at": "2026-06-03T06:12:04.072617Z"
+    }
+  },
+  "created_at": "2026-06-03T03:27:59.603634Z",
+  "completed_at": "2026-06-03T06:12:04.119456Z"
+}

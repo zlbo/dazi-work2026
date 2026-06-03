@@ -19,10 +19,10 @@ Token 存储在 `~/.dazi/auth.json`，格式：
 
 ```bash
 # 预览
-.\scripts\dazi.ps1 auth migrate --dry-run
+dazi auth migrate --dry-run
 
 # 执行（从 ~/.dazi-app/auth.json 迁移）
-.\scripts\dazi.ps1 auth migrate
+dazi auth migrate
 ```
 
 ## Token 刷新
@@ -30,13 +30,13 @@ Token 存储在 `~/.dazi/auth.json`，格式：
 Token 过期后重新登录，旧 Token 自动覆盖：
 
 ```bash
-.\scripts\dazi.ps1 auth login
+dazi auth login
 # 或
-.\scripts\dazi.ps1 auth set-token --token "<new-token>"
+dazi auth set-token --token "<new-token>"
 ```
 
 ## 清除 Token
 
 ```bash
-.\scripts\dazi.ps1 auth logout
+dazi auth logout
 ```

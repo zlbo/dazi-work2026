@@ -13,10 +13,10 @@
 
 ```powershell
 # 命令行拉取（dazi-work 根）
-.\scripts\dazi.ps1 flow project pull --flow <id> --dir "项目\flow_流程项目02\流程\<流程名>"
+dazi flow project pull --flow <id> --dir "项目\flow_流程项目02\流程\<流程名>"
 ```
 
-拉取完成后请阅读各流程子目录下的 **`快速启动.md`**。
+拉取完成后请阅读各流程子目录下的 **`快速启动_<流程名>.md`**。
 
 ## 帮助文档
 
@@ -30,14 +30,17 @@
 | 节点代码编写指南（含 SQL/Python 示例） | [node-code-guide.md](../../../资源/docs/flow/node-code-guide.md) |
 | Flow 运行与测试 | [run-guide.md](../../../资源/docs/flow/run-guide.md) |
 | 数据源与 connectionId | [source-guide.md](../../../资源/docs/flow/source-guide.md) |
-| CLI 调用约定（`dazi.ps1`） | [cli-invocation.md](../../../资源/docs/guides/cli-invocation.md) |
+| **流程本地文件规范（AI 必读）** | [local-files-spec.md](../../../资源/docs/flow/local-files-spec.md) |
+| 流程 AI 工作手册 | [ai-workflow-playbook.md](../../../资源/docs/flow/ai-workflow-playbook.md) |
+| CLI 调用约定（`dazi` / `dazi.ps1`） | [cli-invocation.md](../../../资源/docs/guides/cli-invocation.md) |
 
-终端打开文档（在 **dazi-work 根**）：
+终端打开文档（**dazi-work 根**或已 `cd` 到流程目录）：
 
 ```powershell
-.\scripts\dazi.ps1 docs open flow/flow-project-guide
-.\scripts\dazi.ps1 docs open flow/variables-guide
-.\scripts\dazi.ps1 docs open flow/node-code-guide
+dazi docs open flow/flow-project-guide
+dazi docs open flow/variables-guide
+dazi docs open flow/node-code-guide
+dazi docs open flow/flows-guide
 ```
 
 **代码示例**：变量读写、`python-script` / `sql-query` 模板见 [节点代码编写指南](../../../资源/docs/flow/node-code-guide.md) 与 [流程变量系统指南](../../../资源/docs/flow/variables-guide.md)。

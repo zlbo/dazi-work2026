@@ -1,0 +1,47 @@
+{
+  "name": "匹配状态汇总",
+  "type": "table",
+  "status": "ready",
+  "variableId": 80,
+  "nodeId": "stats-analysis",
+  "debugRunId": 31,
+  "updatedAt": "2026-06-02T23:54:28.599005",
+  "syncedAt": "2026-06-03T00:03:28.385Z",
+  "schema": {
+    "variable_name": "匹配状态汇总",
+    "variable_type": "table",
+    "columns": [
+      {
+        "name": "匹配状态",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "人数",
+        "type": "int64",
+        "dtype": "int"
+      },
+      {
+        "name": "占比",
+        "type": "large_string",
+        "dtype": "string"
+      }
+    ],
+    "row_count": 1
+  },
+  "preview": {
+    "rows": [
+      {
+        "匹配状态": "已匹配",
+        "人数": 102,
+        "占比": "100.0%"
+      }
+    ],
+    "total": 1,
+    "page": 1,
+    "limit": 10,
+    "variable_type": "table",
+    "variable_name": "匹配状态汇总",
+    "columns": []
+  }
+}

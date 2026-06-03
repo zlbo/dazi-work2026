@@ -1,0 +1,25 @@
+{
+  "flowId": "117",
+  "flowName": "vs_flow06",
+  "nodes": {
+    "ede5f573-0cd6-47c6-96bf-24903f144224": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "a1b2c3d4-e5f6-7890-abcd-ef1234567890": {
+      "nodeId": "n-a1b2c3d4e5f6",
+      "nodeType": "excel-python",
+      "dir": "节点/Excel读取",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "37de090ab134633249654ad4302a406c749814d0",
+      "codeVersion": 8
+    },
+    "4ed9086a-9c79-4258-8c46-d5759f425a10": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    }
+  },
+  "lastPulledAt": "2026-06-03T03:28:00.069Z",
+  "graphFingerprint": "sha1:d0a13b658d29b4a301959d24b881b1a1636b28dc"
+}

@@ -3,7 +3,7 @@
 **文档 ID**: `guides/quickstart`  
 **适用版本**: dazi-vscode v3.0+
 
-> CLI 调用约定见 **[CLI 调用约定](./cli-invocation.md)**。生产环境在 `dazi-work` 根目录使用 `.\scripts\dazi.ps1`。
+> CLI 调用约定见 **[CLI 调用约定](./cli-invocation.md)**。生产环境在 `dazi-work` 根目录使用 `dazi`。
 
 ## 5 分钟完成首次配置
 
@@ -42,27 +42,27 @@ https://your-dazi-server.example.com
 在命令面板（`Ctrl+Shift+P`）搜索 **搭子: 登录**，或终端：
 
 ```powershell
-.\scripts\dazi.ps1 auth login
+dazi auth login
 # 或直接绑定 Token
-.\scripts\dazi.ps1 auth set-token --token "your-jwt-token"
+dazi auth set-token --token "your-jwt-token"
 ```
 
 ### 6. 初始化工作区
 
 ```powershell
 # 新项目（本体空间）
-.\scripts\dazi.ps1 onto space init --space-id <your-space-id>
+dazi onto space init --space-id <your-space-id>
 
 # 已有 v2 项目迁移
-.\scripts\dazi.ps1 migrate workspace
+dazi migrate workspace
 ```
 
 ### 7. 验证环境
 
 ```powershell
-.\scripts\dazi.ps1 doctor
-.\scripts\dazi.ps1 env
-.\scripts\dazi.ps1 auth whoami
+dazi doctor
+dazi env
+dazi auth whoami
 ```
 
 侧栏「搭子」图标应显示 6 个节点：帮助、数据资源、本体、流程、应用、工作区。

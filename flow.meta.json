@@ -1,0 +1,24 @@
+{
+  "flowId": "119",
+  "flowName": "vs-test-03",
+  "nodes": {
+    "aa1ba01e-bc96-41ab-b9e4-4b42e77aaae5": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "47c53b38-6005-4d7f-9f89-7ea56dab6b38": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    },
+    "d96222ce-aaa9-4050-b782-830c2f2de9eb": {
+      "nodeId": "n-ae4b83685355",
+      "nodeType": "excel-python",
+      "dir": "节点/Excel成本报表解析",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "d89a02762a2eddd915de7cda6af8d008d7416f82"
+    }
+  },
+  "lastPulledAt": "2026-06-03T09:17:43.413Z",
+  "graphFingerprint": "sha1:cbe58cb788fdf28cd4040b134c1beb562b43030c"
+}

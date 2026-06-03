@@ -29,7 +29,7 @@
 
 ## 命令约束（必须遵守）
 
-- 命令前缀统一：`.\scripts\dazi.ps1 flow ...`（在 `dazi-work` 根）
+- 命令前缀统一：`dazi flow ...`（在 `dazi-work` 根）
 - 在流程目录执行时，命令建议显式带 `--dir .`
 - 禁止输出裸 `dazi-flow ...` 作为最终交付命令
 
@@ -37,20 +37,20 @@
 
 ```powershell
 # 查看当前状态
-.\scripts\dazi.ps1 flow project status --dir .
+dazi flow project status --dir .
 
 # 新增节点（若需要）
-.\scripts\dazi.ps1 flow node new --type <node_type> --dir . --label "<节点名>"
+dazi flow node new --type <node_type> --dir . --label "<节点名>"
 
 # 单节点验证
-.\scripts\dazi.ps1 flow run node-exec --node <node_uuid> --dir .
+dazi flow run node-exec --node <node_uuid> --dir .
 
 # 整流程验证
-.\scripts\dazi.ps1 flow run flow-exec --dir . --type debug
+dazi flow run flow-exec --dir . --type debug
 
 # 提交（改画布/配置时必须 canvas）
-.\scripts\dazi.ps1 flow node push --node <node_uuid> --dir .
-.\scripts\dazi.ps1 flow project push --dir . --canvas
+dazi flow node push --node <node_uuid> --dir .
+dazi flow project push --dir . --canvas
 ```
 
 ## 回答格式要求

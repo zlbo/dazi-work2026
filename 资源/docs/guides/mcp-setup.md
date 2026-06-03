@@ -24,53 +24,53 @@
 
 ## 聚合 MCP 工具总览（`mcp stdio`）
 
-运行 `.\scripts\dazi.ps1 mcp tools` 查看完整列表，共 **28 个工具**：
+运行 `dazi mcp tools` 查看完整列表，共 **28 个工具**：
 
 ### 📖 文档与提示词（4 个）
 
-| 工具 | 说明 |
-|------|------|
-| `list_docs` | 列出文档目录（可按分类过滤） |
-| `get_doc` | 获取文档完整内容 |
-| `list_prompts` | 列出提示词目录 |
-| `get_prompt` | 获取提示词完整内容 |
+| 工具           | 说明                         |
+| -------------- | ---------------------------- |
+| `list_docs`    | 列出文档目录（可按分类过滤） |
+| `get_doc`      | 获取文档完整内容             |
+| `list_prompts` | 列出提示词目录               |
+| `get_prompt`   | 获取提示词完整内容           |
 
 ### 🧠 本体 onto（8 个）
 
-| 工具 | 说明 |
-|------|------|
-| `onto_list_spaces` | 列出所有本体空间 |
+| 工具                  | 说明             |
+| --------------------- | ---------------- |
+| `onto_list_spaces`    | 列出所有本体空间 |
 | `onto_list_functions` | 列出空间函数定义 |
-| `onto_get_function` | 查看函数详情 |
-| `onto_run_function` | 执行函数 |
-| `onto_list_actions` | 列出动作定义 |
-| `onto_list_rules` | 列出规则 |
-| `onto_list_scripts` | 列出脚本 |
-| `onto_space_snapshot` | 拉取空间快照 |
+| `onto_get_function`   | 查看函数详情     |
+| `onto_run_function`   | 执行函数         |
+| `onto_list_actions`   | 列出动作定义     |
+| `onto_list_rules`     | 列出规则         |
+| `onto_list_scripts`   | 列出脚本         |
+| `onto_space_snapshot` | 拉取空间快照     |
 
 ### 🔄 流程 flow（9 个）
 
-| 工具 | 说明 |
-|------|------|
-| `flow_list_flows` | 列出 Flow |
-| `flow_get_flow` | 查看 Flow 详情 |
-| `flow_list_runs` | 列出运行记录 |
-| `flow_start_run` | 启动 Flow |
-| `flow_debug_run` | 调试最近 Run |
-| `flow_list_sources` | 列出数据源 |
-| `flow_source_tables` | 列出数据源中的表 |
-| `flow_table_structure` | 查看表列结构 |
-| `flow_snapshot_pull` | 拉取快照 |
-| `flow_plan_llm_guide` | 生成 LLM 引导文档 |
+| 工具                   | 说明              |
+| ---------------------- | ----------------- |
+| `flow_list_flows`      | 列出 Flow         |
+| `flow_get_flow`        | 查看 Flow 详情    |
+| `flow_list_runs`       | 列出运行记录      |
+| `flow_start_run`       | 启动 Flow         |
+| `flow_debug_run`       | 调试最近 Run      |
+| `flow_list_sources`    | 列出数据源        |
+| `flow_source_tables`   | 列出数据源中的表  |
+| `flow_table_structure` | 查看表列结构      |
+| `flow_snapshot_pull`   | 拉取快照          |
+| `flow_plan_llm_guide`  | 生成 LLM 引导文档 |
 
 ### 🗂 数据 data（4 个）
 
-| 工具 | 说明 |
-|------|------|
-| `data_list_spaces` | 列出数据空间 |
-| `data_list_tables` | 列出数据表 |
-| `data_table_schema` | 查看表字段结构 |
-| `data_table_sample` | 采样数据（前 N 行）|
+| 工具                | 说明                |
+| ------------------- | ------------------- |
+| `data_list_spaces`  | 列出数据空间        |
+| `data_list_tables`  | 列出数据表          |
+| `data_table_schema` | 查看表字段结构      |
+| `data_table_sample` | 采样数据（前 N 行） |
 
 ## Cursor 使用示例
 

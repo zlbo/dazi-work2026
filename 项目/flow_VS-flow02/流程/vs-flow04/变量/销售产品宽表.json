@@ -6,7 +6,11 @@
   "nodeId": "n-b35f0f30cdf4",
   "debugRunId": 34,
   "updatedAt": "2026-06-02T08:51:33.521128",
+<<<<<<< HEAD
   "syncedAt": "2026-06-03T02:10:49.929Z",
+=======
+  "syncedAt": "2026-06-03T03:45:24.488Z",
+>>>>>>> f76e2c88d23fcf72acb0aa10a8e9faee5683db3f
   "schema": {
     "variable_name": "销售产品宽表",
     "variable_type": "table",

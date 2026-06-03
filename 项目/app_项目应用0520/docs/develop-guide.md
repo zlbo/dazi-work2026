@@ -17,7 +17,7 @@
 └── AGENTS.md              # AI 助手入口
 ```
 
-**原则**：模板在 `templates/`，应用在 `apps/`；**推荐**在 **`dazi-work` 根**执行 `.\scripts\dazi.ps1 app <子命令> --cwd 项目/app_<名>/apps/<app_id>`（自动 bundled CLI）。备选：在 monorepo 根 `pnpm run dazi-app`（须 `DAZI_BUNDLED_DIR`）。
+**原则**：模板在 `templates/`，应用在 `apps/`；**推荐**在 **`dazi-work` 根**执行 `dazi app <子命令> --cwd 项目/app_<名>/apps/<app_id>`（自动 bundled CLI）。备选：在 monorepo 根 `pnpm run dazi-app`（须 `DAZI_BUNDLED_DIR`）。
 
 CLI 源码真源：`dazi/dazi-vscode/cli/dazi-app`（见 [../../dazi-vscode/cli/dazi-app/README.md](../../dazi-vscode/cli/dazi-app/README.md)）。
 
@@ -52,13 +52,13 @@ apps/<app_id>/
 
 ## 3. manifest 要点
 
-| 字段 | 说明 |
-|------|------|
-| `appId` | 全局唯一，与 Registry 一致 |
-| `permissions[]` | 至少 `dataspace:<spaceId>` |
-| `data_sources[]` | 数据集 key + kind + 参数 |
-| `mount.type` | `page` 或 `chat_result`（布局提示，不互斥） |
-| `sdk.contract` | 固定 `drap-1` |
+| 字段             | 说明                                        |
+| ---------------- | ------------------------------------------- |
+| `appId`          | 全局唯一，与 Registry 一致                  |
+| `permissions[]`  | 至少 `dataspace:<spaceId>`                  |
+| `data_sources[]` | 数据集 key + kind + 参数                    |
+| `mount.type`     | `page` 或 `chat_result`（布局提示，不互斥） |
+| `sdk.contract`   | 固定 `drap-1`                               |
 
 **运行时**：`DaziAppRegistryHost` → `POST .../fetch-data-sources` → `useDataset(key)`。
 
@@ -81,7 +81,7 @@ apps/<app_id>/
 在 **dazi-work 根**（推荐）：
 
 ```powershell
-.\scripts\dazi.ps1 app init production-command-center `
+dazi app init production-command-center `
   --space space__0519 `
   --dir 项目/app_<名>/apps/my-pcc `
   --name "我的生产指挥中心" `
@@ -93,36 +93,36 @@ apps/<app_id>/
 ### 4.2 空间上下文
 
 ```powershell
-.\scripts\dazi.ps1 app context refresh --cwd 项目/app_<名>/apps/my-pcc
+dazi app context refresh --cwd 项目/app_<名>/apps/my-pcc
 # 写入 .ai/CONTEXT.md，并刷新 AGENTS.md 摘要
 ```
 
 ### 4.3 与模板 manifest 对比
 
 ```powershell
-.\scripts\dazi.ps1 app manifest diff-template production-command-center --cwd 项目/app_<名>/apps/my-pcc
-.\scripts\dazi.ps1 app manifest merge-template production-command-center --cwd 项目/app_<名>/apps/my-pcc --profile sql-script --write
+dazi app manifest diff-template production-command-center --cwd 项目/app_<名>/apps/my-pcc
+dazi app manifest merge-template production-command-center --cwd 项目/app_<名>/apps/my-pcc --profile sql-script --write
 ```
 
 ### 4.4 校验与发布（dazi-work 根）
 
 ```powershell
-.\scripts\dazi.ps1 app manifest validate --cwd 项目/app_<名>/apps/my-pcc --scan-src
-.\scripts\dazi.ps1 app upload --cwd 项目/app_<名>/apps/my-pcc --space space__0519 --activate
+dazi app manifest validate --cwd 项目/app_<名>/apps/my-pcc --scan-src
+dazi app upload --cwd 项目/app_<名>/apps/my-pcc --space space__0519 --activate
 ```
 
 ---
 
 ## 5. 数据源选型
 
-| 场景 | 推荐 kind |
-|------|-----------|
-| 模板演示 / 离线布局 | `static` |
-| 生产明细 / 自定义 SQL（空间已保存查询） | `sql_template` |
-| 复杂计算（空间已发布脚本） | `script_entry` |
-| 标准 KPI / 问数脊骨 | `ontology_function` / `ontology_semantic` |
-| Cube 报表 | `cube_query` |
-| 单应用专属、随 zip 迁移（Phase E） | `sql_asset` / `script_asset` + `drap-assets/` |
+| 场景                                    | 推荐 kind                                     |
+| --------------------------------------- | --------------------------------------------- |
+| 模板演示 / 离线布局                     | `static`                                      |
+| 生产明细 / 自定义 SQL（空间已保存查询） | `sql_template`                                |
+| 复杂计算（空间已发布脚本）              | `script_entry`                                |
+| 标准 KPI / 问数脊骨                     | `ontology_function` / `ontology_semantic`     |
+| Cube 报表                               | `cube_query`                                  |
+| 单应用专属、随 zip 迁移（Phase E）      | `sql_asset` / `script_asset` + `drap-assets/` |
 
 详见 [data-source-cookbook.md](./data-source-cookbook.md) 与 [inline-data-source.md](./inline-data-source.md)。
 
@@ -140,11 +140,11 @@ apps/<app_id>/
 
 配置（扩展）：
 
-| 设置 | 说明 |
-|------|------|
+| 设置                   | 说明                                                                                        |
+| ---------------------- | ------------------------------------------------------------------------------------------- |
 | `dazi.runtimeAppsRoot` | 应用项目根（含 `templates/`、`sdk/`）；空则扫描 `项目/app_*` 或兼容 `<工作区>/runtime-apps` |
-| `dazi.serverUrl` | 平台 API 根（无 `/api` 后缀）；与 `~/.dazi/auth.json` 的 `serverUrl` 应对齐 |
-| `dazi.spaceId` | 当前数据空间 |
+| `dazi.serverUrl`       | 平台 API 根（无 `/api` 后缀）；与 `~/.dazi/auth.json` 的 `serverUrl` 应对齐                 |
+| `dazi.spaceId`         | 当前数据空间                                                                                |
 
 鉴权：`dazi auth login` 或侧栏登录 → `~/.dazi/auth.json`。发布前在发布面板确认 **发布目标 API**。
 
@@ -170,13 +170,13 @@ apps/<app_id>/
 
 ## 9. 文档索引（runtime-apps 内）
 
-| 文档 | 内容 |
-|------|------|
-| [quickstart.md](./quickstart.md) | 5 分钟开机 |
-| [env.md](./env.md) | 开发/生产主站与 API 地址 |
-| [data-source-cookbook.md](./data-source-cookbook.md) | 数据源 kind |
-| [inline-data-source.md](./inline-data-source.md) | sql_asset / script_asset |
-| [ui-style-guide.md](./ui-style-guide.md) | 子应用 UI 规范 |
-| [faq.md](./faq.md) | 常见报错 |
-| [../README.md](../README.md) | monorepo、bundled CLI |
-| [AGENTS.md](../AGENTS.md) | AI 助手入口 |
+| 文档                                                 | 内容                     |
+| ---------------------------------------------------- | ------------------------ |
+| [quickstart.md](./quickstart.md)                     | 5 分钟开机               |
+| [env.md](./env.md)                                   | 开发/生产主站与 API 地址 |
+| [data-source-cookbook.md](./data-source-cookbook.md) | 数据源 kind              |
+| [inline-data-source.md](./inline-data-source.md)     | sql_asset / script_asset |
+| [ui-style-guide.md](./ui-style-guide.md)             | 子应用 UI 规范           |
+| [faq.md](./faq.md)                                   | 常见报错                 |
+| [../README.md](../README.md)                         | monorepo、bundled CLI    |
+| [AGENTS.md](../AGENTS.md)                            | AI 助手入口              |

@@ -21,30 +21,30 @@
 
 ## 目录说明
 
-| 路径 | 对应 CLI | 用途 |
-|------|----------|------|
-| `项目/onto_<名称>/` | `.\scripts\dazi.ps1 onto ...` | 本体规划、脚本、发布 |
-| `项目/app_<名称>/` | `pnpm run dazi-app -- ...`（在应用项目根） | DRAP monorepo；组件在 `apps/<app_id>/` |
-| `项目/app_<名称>/apps/<app_id>/` | 同上 + `--cwd apps/<app_id>` | 单个应用组件源码 |
-| `资源/docs/` | `.\scripts\dazi.ps1 docs ...` | 同步后的内置文档 |
-| `scripts/` | `.\scripts\dazi.ps1 ...` | 本体/流程/鉴权/数据（非 DRAP） |
-| `~/.dazi/auth.json` | 共享 | 登录凭据（扩展与 CLI 共用） |
+| 路径                             | 对应 CLI                                   | 用途                                   |
+| -------------------------------- | ------------------------------------------ | -------------------------------------- |
+| `项目/onto_<名称>/`              | `dazi onto ...`                            | 本体规划、脚本、发布                   |
+| `项目/app_<名称>/`               | `pnpm run dazi-app -- ...`（在应用项目根） | DRAP monorepo；组件在 `apps/<app_id>/` |
+| `项目/app_<名称>/apps/<app_id>/` | 同上 + `--cwd apps/<app_id>`               | 单个应用组件源码                       |
+| `资源/docs/`                     | `dazi docs ...`                            | 同步后的内置文档                       |
+| `scripts/`                       | `dazi ...`                                 | 本体/流程/鉴权/数据（非 DRAP）         |
+| `~/.dazi/auth.json`              | 共享                                       | 登录凭据（扩展与 CLI 共用）            |
 
 ## 扩展侧栏对应
 
-| 侧栏 | 工作区路径 |
-|------|------------|
-| 本体 | `项目/onto_*` |
+| 侧栏     | 工作区路径                                |
+| -------- | ----------------------------------------- |
+| 本体     | `项目/onto_*`                             |
 | App 应用 | `项目/app_*`（monorepo）→ `apps/<app_id>` |
-| 数据资源 | 平台数据空间（非目录） |
+| 数据资源 | 平台数据空间（非目录）                    |
 
 ## v2 → v3 目录映射
 
-| v2 | v3（搭子工作区） |
-|----|----------------|
-| `ontology/` | `项目/onto_*` |
-| `runtime-apps/apps/*` | `项目/app_*/apps/*`（推荐）或 `<ws>/runtime-apps/apps/*`（兼容） |
-| `.dazi-agent/auth.json` | `~/.dazi/auth.json` |
+| v2                      | v3（搭子工作区）                                                 |
+| ----------------------- | ---------------------------------------------------------------- |
+| `ontology/`             | `项目/onto_*`                                                    |
+| `runtime-apps/apps/*`   | `项目/app_*/apps/*`（推荐）或 `<ws>/runtime-apps/apps/*`（兼容） |
+| `.dazi-agent/auth.json` | `~/.dazi/auth.json`                                              |
 
 ## 相关文档
 

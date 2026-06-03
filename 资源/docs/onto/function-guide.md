@@ -12,7 +12,7 @@
 
 ```bash
 # 发布新函数（路径指向本体项目 脚本/ 目录）
-.\scripts\dazi.ps1 onto function publish 项目/onto_<项目名>/脚本/my_func.py \
+dazi onto function publish 项目/onto_<项目名>/脚本/my_func.py \
   --space <space-id> \
   --function-id my_function \
   --display-name "我的函数" \
@@ -22,7 +22,7 @@
 或使用 `script publish`（等价，见 [本体脚本编写指南](./本体脚本编写指南.md)）：
 
 ```bash
-.\scripts\dazi.ps1 onto script publish 项目/onto_<项目名>/脚本/my_func.py \
+dazi onto script publish 项目/onto_<项目名>/脚本/my_func.py \
   --space <space-id> \
   --register-function-id my_function
 ```
@@ -33,7 +33,7 @@
 
 ```bash
 # 用工作副本快速更新（不做完整 publish 流程）
-.\scripts\dazi.ps1 onto function update-code <function-id> \
+dazi onto function update-code <function-id> \
   --space <space-id> \
   --stem my_func
 ```
@@ -43,7 +43,7 @@
 ## 运行函数
 
 ```bash
-.\scripts\dazi.ps1 onto function run <function-id> \
+dazi onto function run <function-id> \
   --space <space-id> \
   --params '{"key": "value"}'
 ```
@@ -51,7 +51,7 @@
 ## 保存测试参数
 
 ```bash
-.\scripts\dazi.ps1 onto function save-test-arguments <function-id> \
+dazi onto function save-test-arguments <function-id> \
   --space <space-id> \
   --params '{"test_param": 42}'
 ```

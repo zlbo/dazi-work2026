@@ -5,6 +5,7 @@
 ## Action 概念
 
 Action 是可被外部系统触发的本体操作，通常用于：
+
 - 写入数据
 - 触发业务流程
 - 执行审批操作
@@ -12,7 +13,7 @@ Action 是可被外部系统触发的本体操作，通常用于：
 ## 列出动作
 
 ```bash
-.\scripts\dazi.ps1 onto action list --space <space-id>
+dazi onto action list --space <space-id>
 ```
 
 ## 发布 Action
@@ -20,7 +21,7 @@ Action 是可被外部系统触发的本体操作，通常用于：
 脚本放在 **`项目/onto_<项目名>/脚本/`**（可与函数脚本同目录，用文件名区分）：
 
 ```bash
-.\scripts\dazi.ps1 onto script publish 项目/onto_<项目名>/脚本/my_action.py \
+dazi onto script publish 项目/onto_<项目名>/脚本/my_action.py \
   --space <space-id> \
   --register-action-id my_action_code \
   --register-action-permission-tag "finance.write"
@@ -31,7 +32,7 @@ Action 是可被外部系统触发的本体操作，通常用于：
 ## 更新 Action 代码
 
 ```bash
-.\scripts\dazi.ps1 onto action update-code my_action_code \
+dazi onto action update-code my_action_code \
   --space <space-id> \
   --stem my_action
 ```

@@ -14,7 +14,7 @@
 {{debug_output}}
 ```
 
-> 若用户未粘贴输出：AI **应主动读取** `_run/*.last-error.md`、`_run/flow.last-run.md`（及 `变量/` 下 schema），必要时自行执行 `.\scripts\dazi.ps1 flow run ...` 复现；Agent 模式见 `flow/run-fix-loop`。
+> 若用户未粘贴输出：AI **应主动读取** `_run/*.last-error.md`、`_run/flow.last-run.md`（及 `变量/` 下 schema），必要时自行执行 `dazi flow run ...` 复现；Agent 模式见 `flow/run-fix-loop`。
 
 ## 分析要求
 
@@ -26,18 +26,18 @@
 
 ## 常见问题类型
 
-| 症状 | 可能原因 |
-|------|---------|
-| `KeyError` | 字段名不一致，检查上游变量 schema（`变量/<name>.json`） |
-| `TypeError` | 数据类型不符，检查字段类型 |
-| `ConnectionError` | 数据源连接失败，检查数据源配置 |
-| `PermissionError` | 缺少权限，检查登录状态与权限 |
-| 节点超时 | 数据量过大或查询未优化 |
-| 上游变量缺失 | 未先运行上游节点或整流程 |
+| 症状              | 可能原因                                                |
+| ----------------- | ------------------------------------------------------- |
+| `KeyError`        | 字段名不一致，检查上游变量 schema（`变量/<name>.json`） |
+| `TypeError`       | 数据类型不符，检查字段类型                              |
+| `ConnectionError` | 数据源连接失败，检查数据源配置                          |
+| `PermissionError` | 缺少权限，检查登录状态与权限                            |
+| 节点超时          | 数据量过大或查询未优化                                  |
+| 上游变量缺失      | 未先运行上游节点或整流程                                |
 
 ## 命令约束（必须遵守）
 
-- 命令前缀统一：`.\scripts\dazi.ps1 flow ...`（在 `dazi-work` 根）
+- 命令前缀统一：`dazi flow ...`（在 `dazi-work` 根）
 - 在流程目录执行时，保留 `--dir .`，避免误跑到其他流程
 - 禁止输出裸 `dazi-flow ...` 作为最终命令
 
@@ -47,13 +47,13 @@
 
 ```powershell
 # 仅重测失败节点（优先）
-.\scripts\dazi.ps1 flow run node-exec --node <node_uuid> --dir .
+dazi flow run node-exec --node <node_uuid> --dir .
 
 # 整流程回归（必要时）
-.\scripts\dazi.ps1 flow run flow-exec --dir . --type debug
+dazi flow run flow-exec --dir . --type debug
 
 # 拉取变量确认修复效果
-.\scripts\dazi.ps1 flow variable pull --name <output_variable_name> --dir .
+dazi flow variable pull --name <output_variable_name> --dir .
 ```
 
 ## 回答格式要求
@@ -62,5 +62,5 @@
 2. **修复动作**：改 `flow.json` 还是改 `节点/<名>/code.*`
 3. **执行命令**：按顺序给出可直接复制的命令
 4. **提交动作**：
-   - 只改代码：`.\scripts\dazi.ps1 flow node push --node <node_uuid> --dir .`
-   - 改了拓扑或节点配置：`.\scripts\dazi.ps1 flow project push --dir . --canvas`
+   - 只改代码：`dazi flow node push --node <node_uuid> --dir .`
+   - 改了拓扑或节点配置：`dazi flow project push --dir . --canvas`

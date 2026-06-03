@@ -14,13 +14,13 @@
 
 ### 1.1 放置位置（v3）
 
-| 类型 | 推荐路径 |
-|------|----------|
-| **项目内开发** | `<工作区根>/项目/onto_<项目名>/脚本/<名称>.py` |
-| **参考示例** | `资源/examples/onto/setup/`（初始化+灌数一体）、`资源/examples/onto/function/`（分析函数，非灌数专篇） |
+| 类型           | 推荐路径                                                                                               |
+| -------------- | ------------------------------------------------------------------------------------------------------ |
+| **项目内开发** | `<工作区根>/项目/onto_<项目名>/脚本/<名称>.py`                                                         |
+| **参考示例**   | `资源/examples/onto/setup/`（初始化+灌数一体）、`资源/examples/onto/function/`（分析函数，非灌数专篇） |
 
 - `space_id` 以 **`项目/onto_<项目名>/README.md`** 为准（扩展「新建项目」时已绑定）。
-- 侧栏 **帮助 → 📎 示例 → 下载所有示例**，或：`.\scripts\dazi.ps1 examples sync` → `资源/examples/`。
+- 侧栏 **帮助 → 📎 示例 → 下载所有示例**，或：`dazi examples sync` → `资源/examples/`。
 - 须定义 **`main()`**，**不要**写 `if __name__ == "__main__":`。
 
 > 不再使用 `spaces/<space_id>/editorial/scripts/setup/` 作为 v3 本地约定路径。
@@ -53,11 +53,11 @@
 
 ## 3. 推荐模式对照
 
-| 场景 | 推荐做法 |
-|------|----------|
-| 少量固定行 | 单条 `INSERT ... VALUES`，元组间**无**行间 `--`；或拆多条 `INSERT` |
-| 多批次、多行 | **`s.sql.insert_rows`** + Python 生成 `list[dict]` |
-| 需读 SQL 文件 | 注释写在 **INSERT 块上方**（Python 侧），不要塞进 `VALUES` 中间 |
+| 场景          | 推荐做法                                                           |
+| ------------- | ------------------------------------------------------------------ |
+| 少量固定行    | 单条 `INSERT ... VALUES`，元组间**无**行间 `--`；或拆多条 `INSERT` |
+| 多批次、多行  | **`s.sql.insert_rows`** + Python 生成 `list[dict]`                 |
+| 需读 SQL 文件 | 注释写在 **INSERT 块上方**（Python 侧），不要塞进 `VALUES` 中间    |
 
 ---
 
@@ -132,18 +132,18 @@ def main():
 
 ```bash
 # 预检
-.\scripts\dazi.ps1 onto script publish-preview 项目/onto_<项目名>/脚本/demo_seed.py --space <space-id>
+dazi onto script publish-preview 项目/onto_<项目名>/脚本/demo_seed.py --space <space-id>
 
 # 发布到平台（data_script / 初始化脚本）
-.\scripts\dazi.ps1 onto script publish 项目/onto_<项目名>/脚本/demo_seed.py --space <space-id>
+dazi onto script publish 项目/onto_<项目名>/脚本/demo_seed.py --space <space-id>
 
 # 若已入库且已知 script-id，可在平台侧执行；或通过 Onto 侧栏运行
-.\scripts\dazi.ps1 onto script run --script-id <script-id> --space <space-id> --params '{}'
+dazi onto script run --script-id <script-id> --space <space-id> --params '{}'
 ```
 
 **参考完整初始化+灌数**：复制 `资源/examples/onto/setup/profit_ontology_init.py` 到 `项目/.../脚本/` 后按空间改 `space_id` 与表名，再发布执行。
 
-> **已废弃**：`dazi-agent run --file "spaces/.../editorial/..."` — 请改用上表 `.\scripts\dazi.ps1 onto script publish` / `function run`。
+> **已废弃**：`dazi-agent run --file "spaces/.../editorial/..."` — 请改用上表 `dazi onto script publish` / `function run`。
 
 ---
 

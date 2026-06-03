@@ -1,0 +1,20 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.py，配置改 flow.json",
+  "node_uuid": "550e8400-e29b-41d4-a716-446655440000",
+  "nodeId": "excel-parse",
+  "nodeType": "excel-python",
+  "label": "Excel解析",
+  "codeFile": "code.py",
+  "codeLanguage": "python",
+  "position": {
+    "x": 122.22904904558976,
+    "y": 253.08959327120385
+  },
+  "data": {
+    "label": "Excel解析",
+    "type": "excel-python",
+    "output_variable_name": "混杂数据",
+    "managed_file_id": "72326a69-1d8e-4345-ad4f-81ef013bee3d",
+    "flowId": 109
+  }
+}

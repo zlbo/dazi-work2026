@@ -1,0 +1,108 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": 50,
+        "y": 250
+      },
+      "data": {
+        "label": "开始",
+        "type": "start",
+        "flowId": 113
+      },
+      "deletable": false,
+      "node_uuid": "02b17d31-047e-41c3-93aa-3738dc379401"
+    },
+    {
+      "id": "n-ba94ccead976",
+      "type": "custom",
+      "position": {
+        "x": 350,
+        "y": 250
+      },
+      "data": {
+        "label": "Excel解析",
+        "type": "excel-python",
+        "output_variable_name": "成本统计报表",
+        "managed_file_id": "51853ede-9e6b-4a3a-aa7a-060cbead0862",
+        "flowId": 113
+      },
+      "deletable": true,
+      "node_uuid": "9da902bb-5157-49be-ab27-795ac98df1f2"
+    },
+    {
+      "id": "n-f33b2b374491",
+      "type": "custom",
+      "position": {
+        "x": 650,
+        "y": 250
+      },
+      "data": {
+        "label": "写入成本统计报表",
+        "type": "dataspace-sink",
+        "flowId": 113,
+        "spaceId": "space__misc_01",
+        "tableName": "cost_report_08",
+        "display_name": "成本统计报表08",
+        "mode": "replace",
+        "syncMetadata": true,
+        "input_variable_name": "成本统计报表",
+        "description": "将 Excel 解析结果写入综合示例数据空间"
+      },
+      "deletable": true,
+      "node_uuid": "9d734354-b6be-49f0-84ac-a91bde97d9bb"
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 950,
+        "y": 250
+      },
+      "data": {
+        "label": "结束",
+        "type": "end",
+        "flowId": 113
+      },
+      "deletable": false,
+      "node_uuid": "9207e9e5-f715-456c-af86-7bd8384f5503"
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__start-noder-n-ba94ccead976l",
+      "source": "start-node",
+      "target": "n-ba94ccead976",
+      "sourceHandle": "r",
+      "targetHandle": "l",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      }
+    },
+    {
+      "id": "xy-edge__n-ba94ccead976r-n-f33b2b374491l",
+      "source": "n-ba94ccead976",
+      "target": "n-f33b2b374491",
+      "sourceHandle": "r",
+      "targetHandle": "l",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      }
+    },
+    {
+      "id": "xy-edge__n-f33b2b374491r-end-nodel",
+      "source": "n-f33b2b374491",
+      "target": "end-node",
+      "sourceHandle": "r",
+      "targetHandle": "l",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      }
+    }
+  ]
+}

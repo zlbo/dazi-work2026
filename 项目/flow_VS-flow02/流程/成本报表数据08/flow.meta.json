@@ -1,0 +1,29 @@
+{
+  "flowId": "113",
+  "flowName": "成本报表数据08",
+  "nodes": {
+    "02b17d31-047e-41c3-93aa-3738dc379401": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "9207e9e5-f715-456c-af86-7bd8384f5503": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    },
+    "9da902bb-5157-49be-ab27-795ac98df1f2": {
+      "nodeId": "n-ba94ccead976",
+      "nodeType": "excel-python",
+      "dir": "节点/Excel解析",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "ade996b8442ab49c48d1fe4be37365a953f417da",
+      "codeVersion": 5
+    },
+    "9d734354-b6be-49f0-84ac-a91bde97d9bb": {
+      "nodeId": "n-f33b2b374491",
+      "nodeType": "dataspace-sink"
+    }
+  },
+  "lastPulledAt": "2026-06-03T01:43:09.810Z",
+  "graphFingerprint": "sha1:89a63ce6f97ad8d46d778b42b1d3a9d120fe42ad"
+}
