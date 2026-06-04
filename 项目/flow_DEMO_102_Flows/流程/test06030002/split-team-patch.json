@@ -1,5 +1,0 @@
-{
-  "data": {
-    "pythonCode": "# -*- coding: utf-8 -*-\n\"\"\"\n拆分团队成员 - 将团队字段中的成员拆分成单独的列\n\"\"\"\nimport pandas as pd\nimport os\n\n# Excel 文件路径\nexcel_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), \"..\", \"..\", \"..\", \"资源\", \"files\", \"科研项目_模拟人员混杂数据.xlsx_72326a69\", \"原文件.xlsx\")\nexcel_path = os.path.abspath(excel_path)\n\n# 读取混杂数据 Sheet\ndf = pd.read_excel(excel_path, sheet_name=\"混杂数据\")\n\n# 拆分团队成员\nmax_members = df[\"团队\"].str.split(\"、\", expand=True).shape[1]\n\n# 创建拆分后的列\nsplit_df = df[\"团队\"].str.split(\"、\", expand=True)\nsplit_df.columns = [f\"成员{i+1}\" for i in range(max_members)]\n\n# 合并结果\nresult_df = pd.concat([df[[\"科研项目\"]], split_df], axis=1)\n"
-  }
-}

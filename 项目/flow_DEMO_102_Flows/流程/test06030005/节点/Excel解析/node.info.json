@@ -1,0 +1,20 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.py，配置改 flow.json",
+  "node_uuid": "ded48fce-f7fe-4ec4-bbcb-a9ac2abfc0c0",
+  "nodeId": "n-697229c6440c",
+  "nodeType": "excel-python",
+  "label": "Excel解析",
+  "codeFile": "code.py",
+  "codeLanguage": "python",
+  "position": {
+    "x": 327,
+    "y": 249
+  },
+  "data": {
+    "label": "Excel解析",
+    "type": "excel-python",
+    "managed_file_id": "72326a69-1d8e-4345-ad4f-81ef013bee3d",
+    "output_variable_name": "人员名单",
+    "flowId": 120
+  }
+}

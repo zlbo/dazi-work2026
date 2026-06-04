@@ -1,7 +1,0 @@
-{
-  "name": "split_team_members",
-  "status": "not_materialized",
-  "debugRunId": 36,
-  "syncedAt": "2026-06-03T13:33:46.385Z",
-  "hint": "已在 flow.json 声明，debug_run_id=36 中尚未产出。请运行对应节点后刷新。"
-}

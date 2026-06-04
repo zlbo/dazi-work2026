@@ -1,0 +1,238 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": 50,
+        "y": 250
+      },
+      "data": {
+        "label": "开始",
+        "type": "start",
+        "flowId": 120
+      },
+      "deletable": false,
+      "node_uuid": "72cdd4d6-b9c6-4a31-b70a-7af47514e80d",
+      "measured": {
+        "width": 200,
+        "height": 96
+      }
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 850,
+        "y": 250
+      },
+      "data": {
+        "label": "结束",
+        "type": "end",
+        "flowId": 120
+      },
+      "deletable": false,
+      "node_uuid": "769f89e8-877b-41bf-a7ff-395553e8f837",
+      "measured": {
+        "width": 200,
+        "height": 96
+      }
+    },
+    {
+      "id": "n-697229c6440c",
+      "node_uuid": "ded48fce-f7fe-4ec4-bbcb-a9ac2abfc0c0",
+      "type": "custom",
+      "position": {
+        "x": 327,
+        "y": 249
+      },
+      "data": {
+        "label": "Excel解析",
+        "type": "excel-python",
+        "managed_file_id": "72326a69-1d8e-4345-ad4f-81ef013bee3d",
+        "output_variable_name": "人员名单",
+        "flowId": 120
+      },
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false
+    },
+    {
+      "id": "n-29573094b8c9",
+      "node_uuid": "49ae9879-47ca-4a0d-8007-4f1290f84627",
+      "type": "custom",
+      "position": {
+        "x": 564,
+        "y": 249
+      },
+      "data": {
+        "label": "团队人员提取",
+        "type": "python-script",
+        "output_variable_name": "团队人员拆分",
+        "flowId": 120
+      },
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false
+    },
+    {
+      "id": "python-script-1780536627297",
+      "type": "custom",
+      "position": {
+        "x": 712.6361110787753,
+        "y": 400.68653904111716
+      },
+      "data": {
+        "label": "Python脚本 5",
+        "type": "python-script",
+        "status": "idle",
+        "description": "AI 生成的 Python 代码",
+        "flowId": 120,
+        "output_variable_name": "变量i2w",
+        "attached_variables": [
+          "团队人员拆分"
+        ]
+      },
+      "measured": {
+        "width": 200,
+        "height": 99
+      },
+      "selected": true,
+      "dragging": false,
+      "node_uuid": "838a7276-7f90-4997-a3ac-2efcae482af5"
+    },
+    {
+      "id": "python-script-1780536853244",
+      "type": "custom",
+      "position": {
+        "x": 498.542643897582,
+        "y": 502.6037943387962
+      },
+      "data": {
+        "label": "Python脚本 6",
+        "type": "python-script",
+        "status": "idle",
+        "description": "AI 生成的 Python 代码",
+        "flowId": 120,
+        "output_variable_name": "变量97h",
+        "attached_variables": [
+          "团队人员拆分"
+        ]
+      },
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false,
+      "node_uuid": "f37aabe0-950a-4e3d-a8fb-3e778d62c97a",
+      "dragging": false
+    },
+    {
+      "id": "n-dab8b7524db7",
+      "node_uuid": "72ee1fc7-b6de-4400-85f2-b884ee2c1ff6",
+      "type": "custom",
+      "position": {
+        "x": 780,
+        "y": 512
+      },
+      "data": {
+        "label": "数据质量检查",
+        "type": "data-quality-check",
+        "output_variable_name": "质检报告",
+        "flowId": 120
+      },
+      "measured": {
+        "width": 200,
+        "height": 98
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-start-excel",
+      "source": "start-node",
+      "target": "n-697229c6440c",
+      "sourceHandle": "r",
+      "targetHandle": "l",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      }
+    },
+    {
+      "id": "e-excel-team",
+      "source": "n-697229c6440c",
+      "target": "n-29573094b8c9",
+      "sourceHandle": "r",
+      "targetHandle": "l",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      }
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#94a3b8"
+      },
+      "source": "n-29573094b8c9",
+      "sourceHandle": "r",
+      "target": "python-script-1780536627297",
+      "targetHandle": "l",
+      "id": "xy-edge__n-29573094b8c9r-python-script-1780536627297l"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#94a3b8"
+      },
+      "source": "python-script-1780536627297",
+      "sourceHandle": "r",
+      "target": "end-node",
+      "targetHandle": "l",
+      "id": "xy-edge__python-script-1780536627297r-end-nodel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#94a3b8"
+      },
+      "source": "n-29573094b8c9",
+      "sourceHandle": "b",
+      "target": "python-script-1780536853244",
+      "targetHandle": "l",
+      "id": "xy-edge__n-29573094b8c9b-python-script-1780536853244l"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#94a3b8"
+      },
+      "source": "python-script-1780536853244",
+      "sourceHandle": "r",
+      "target": "n-dab8b7524db7",
+      "targetHandle": "l",
+      "id": "xy-edge__python-script-1780536853244r-n-dab8b7524db7l"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#94a3b8"
+      },
+      "source": "n-dab8b7524db7",
+      "sourceHandle": "r",
+      "target": "end-node",
+      "targetHandle": "l",
+      "id": "xy-edge__n-dab8b7524db7r-end-nodel"
+    }
+  ]
+}

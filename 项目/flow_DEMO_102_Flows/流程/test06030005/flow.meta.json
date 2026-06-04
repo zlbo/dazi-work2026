@@ -1,0 +1,56 @@
+{
+  "flowId": "120",
+  "flowName": "test06030005",
+  "nodes": {
+    "72cdd4d6-b9c6-4a31-b70a-7af47514e80d": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "769f89e8-877b-41bf-a7ff-395553e8f837": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    },
+    "ded48fce-f7fe-4ec4-bbcb-a9ac2abfc0c0": {
+      "nodeId": "n-697229c6440c",
+      "nodeType": "excel-python",
+      "dir": "节点/Excel解析",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "62db43cb7e00065ad304a86f55e6c934d5259ee5"
+    },
+    "49ae9879-47ca-4a0d-8007-4f1290f84627": {
+      "nodeId": "n-29573094b8c9",
+      "nodeType": "python-script",
+      "dir": "节点/团队人员提取",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "1ac4c753ae247e1a2b13e2a0ae1636ca4a8bd797"
+    },
+    "838a7276-7f90-4997-a3ac-2efcae482af5": {
+      "nodeId": "python-script-1780536627297",
+      "nodeType": "python-script",
+      "dir": "节点/Python脚本_5",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "a9c619c6c794a53930abf3803157e8164158ef76"
+    },
+    "f37aabe0-950a-4e3d-a8fb-3e778d62c97a": {
+      "nodeId": "python-script-1780536853244",
+      "nodeType": "python-script",
+      "dir": "节点/Python脚本_6",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "68062d5bb043c5b84a0bfff12a414e3cf8cdda46"
+    },
+    "72ee1fc7-b6de-4400-85f2-b884ee2c1ff6": {
+      "nodeId": "n-dab8b7524db7",
+      "nodeType": "data-quality-check",
+      "dir": "节点/数据质量检查",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "cc6ba522734f214af10918f80b8a907acdfcae3d"
+    }
+  },
+  "lastPulledAt": "2026-06-04T01:55:47.996Z",
+  "graphFingerprint": "sha1:dd1acffa4f1823b5f32ed7ab0d8fbe4632bf78b4"
+}

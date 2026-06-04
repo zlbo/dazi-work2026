@@ -1,0 +1,65 @@
+{
+  "name": "V_DQ_REPORT",
+  "type": "table",
+  "status": "ready",
+  "variableId": 99,
+  "nodeId": "n-dab8b7524db7",
+  "debugRunId": 42,
+  "updatedAt": "2026-06-04T01:56:05.342173",
+  "syncedAt": "2026-06-04T01:55:55.008Z",
+  "schema": {
+    "variable_name": "V_DQ_REPORT",
+    "variable_type": "table",
+    "columns": [
+      {
+        "name": "问题类型",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "科研项目",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "人员",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "项目ID",
+        "type": "large_string",
+        "dtype": "int"
+      },
+      {
+        "name": "员工编码",
+        "type": "large_string",
+        "dtype": "int"
+      },
+      {
+        "name": "描述",
+        "type": "large_string",
+        "dtype": "string"
+      }
+    ],
+    "row_count": 1
+  },
+  "preview": {
+    "rows": [
+      {
+        "问题类型": "无",
+        "科研项目": "全部",
+        "人员": "全部",
+        "项目ID": "全部有效",
+        "员工编码": "全部有效",
+        "描述": "所有数据均通过质量检查"
+      }
+    ],
+    "total": 1,
+    "page": 1,
+    "limit": 10,
+    "variable_type": "table",
+    "variable_name": "V_DQ_REPORT",
+    "columns": []
+  }
+}
