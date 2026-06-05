@@ -2,42 +2,42 @@
   "id": 41,
   "flow_id": 119,
   "status": "completed",
-  "duration": 2288,
+  "duration": 154148,
   "node_status": {
-    "n-ae4b83685355": {
-      "status": "skipped",
-      "node_label": "Excel成本报表解析",
-      "node_uuid": "d96222ce-aaa9-4050-b782-830c2f2de9eb",
-      "startTime": null,
-      "endTime": null,
-      "duration": null,
-      "error": null,
-      "traceback": null,
-      "output_variable_id": null,
-      "logs": null
-    },
-    "end-node": {
-      "status": "skipped",
-      "node_label": "结束",
-      "node_uuid": "47c53b38-6005-4d7f-9f89-7ea56dab6b38",
-      "startTime": null,
-      "endTime": null,
-      "duration": null,
-      "error": null,
-      "traceback": null,
-      "output_variable_id": null,
-      "logs": null
-    },
     "start-node": {
       "status": "success",
       "node_label": "开始",
       "node_uuid": "aa1ba01e-bc96-41ab-b9e4-4b42e77aaae5",
-      "startTime": "2026-06-03T09:16:01.332301Z",
-      "endTime": "2026-06-03T09:16:01.347912Z",
+      "startTime": "2026-06-05T03:27:00.612907Z",
+      "endTime": "2026-06-05T03:27:00.628507Z",
       "duration": 15,
       "error": null,
       "traceback": "",
       "output_variable_id": null,
+      "logs": ""
+    },
+    "n-ae4b83685355": {
+      "status": "success",
+      "node_label": "Excel成本报表解析",
+      "node_uuid": "d96222ce-aaa9-4050-b782-830c2f2de9eb",
+      "startTime": "2026-06-05T03:27:00.644188Z",
+      "endTime": "2026-06-05T03:27:01.301368Z",
+      "duration": 657,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 93,
+      "logs": ""
+    },
+    "end-node": {
+      "status": "success",
+      "node_label": "结束",
+      "node_uuid": "47c53b38-6005-4d7f-9f89-7ea56dab6b38",
+      "startTime": "2026-06-05T03:27:01.332618Z",
+      "endTime": "2026-06-05T03:27:01.348230Z",
+      "duration": 15,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 93,
       "logs": ""
     }
   },
@@ -46,8 +46,8 @@
       "node_id": "start-node",
       "node_label": "开始",
       "status": "success",
-      "startTime": "2026-06-03T09:16:01.332301Z",
-      "endTime": "2026-06-03T09:16:01.347912Z",
+      "startTime": "2026-06-05T03:27:00.612907Z",
+      "endTime": "2026-06-05T03:27:00.628507Z",
       "duration": 15,
       "error": null,
       "traceback": "",
@@ -56,10 +56,50 @@
       "step_order": 1,
       "iteration": 0,
       "active_branch": null,
-      "execution_id": "2e951cc7-29fb-491c-8482-897b89b8c71f"
+      "execution_id": "079d8344-4790-4f95-950f-e7112152cb99"
+    },
+    {
+      "node_id": "n-ae4b83685355",
+      "node_label": "Excel成本报表解析",
+      "status": "success",
+      "startTime": "2026-06-05T03:27:00.644188Z",
+      "endTime": "2026-06-05T03:27:01.301368Z",
+      "duration": 657,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 93,
+      "logs": "",
+      "step_order": 2,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "ec8a1429-22ed-4934-b711-0a10b4ba111d"
+    },
+    {
+      "node_id": "end-node",
+      "node_label": "结束",
+      "status": "success",
+      "startTime": "2026-06-05T03:27:01.332618Z",
+      "endTime": "2026-06-05T03:27:01.348230Z",
+      "duration": 15,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 93,
+      "logs": "",
+      "step_order": 3,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "357d4e7b-5793-4a90-8f70-13bcff07f69f"
     }
   ],
-  "variables": {},
+  "variables": {
+    "成本统计报表": {
+      "id": 93,
+      "value": "uploads/py_result_92a0c3e6-63e6-4c27-8138-7e150606765a.parquet",
+      "type": "table",
+      "node_id": "n-ae4b83685355",
+      "updated_at": "2026-06-05T03:27:01.332618Z"
+    }
+  },
   "created_at": "2026-06-03T08:37:52.617185Z",
-  "completed_at": "2026-06-03T09:16:01.347912Z"
+  "completed_at": "2026-06-05T03:27:01.348230Z"
 }

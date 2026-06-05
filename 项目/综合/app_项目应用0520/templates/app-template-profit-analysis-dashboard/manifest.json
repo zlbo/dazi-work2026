@@ -1,0 +1,35 @@
+{
+  "appId": "profit-analysis",
+  "name": "利润分析（问数皮肤）",
+  "description": "聊天主区展示问数结果表格/趋势（DRAP chat_result）",
+  "version": "0.1.0",
+  "framework": { "react": "^18", "ts": true },
+  "entry": "index.html",
+  "styles": ["style.css"],
+  "assets": ["assets/"],
+  "permissions": ["dataspace:space__0519"],
+  "data_sources": [
+    {
+      "key": "message",
+      "kind": "static",
+      "data": {
+        "columns": ["year_month", "budget_total", "actual_total", "achievement_rate"],
+        "rows": [
+          {
+            "year_month": "2025-05",
+            "budget_total": 12500000,
+            "actual_total": 10625000,
+            "achievement_rate": 85.0
+          }
+        ]
+      }
+    }
+  ],
+  "sdk": { "min_version": "0.1.0", "contract": "drap-1" },
+  "mount": { "type": "chat_result", "sandbox": "shadow_dom" },
+  "refresh": { "on_mount": false },
+  "ai": {
+    "scene_tag": "profit_analysis_chat_result",
+    "template_origin": "@dazi/app-template-profit-analysis-dashboard@0.1.0#chat-result"
+  }
+}

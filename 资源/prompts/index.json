@@ -1,20 +1,99 @@
 {
-  "version": "3.0.0-beta.3",
+  "version": "3.0.6",
   "updatedAt": "2026-05-26T00:00:00.000Z",
   "prompts": [
-    { "id": "onto/script-publish-run", "title": "本体脚本发布与运行（TRAE/智能体）", "category": "onto", "file": "onto/script-publish-run.md" },
-    { "id": "onto/function-design", "title": "本体函数设计",          "category": "onto",    "file": "onto/function-design.md" },
-    { "id": "onto/action-design",   "title": "本体动作（Action）设计", "category": "onto",    "file": "onto/action-design.md" },
-    { "id": "onto/rule-seed",       "title": "规则种子脚本",           "category": "onto",    "file": "onto/rule-seed.md" },
-    { "id": "flow/flow-design",     "title": "Flow 设计",             "category": "flow",    "file": "flow/flow-design.md", "featured": true },
-    { "id": "flow/run-debug",       "title": "Run 调试分析",          "category": "flow",    "file": "flow/run-debug.md" },
-    { "id": "flow/run-fix-loop",  "title": "Flow 自主运行改错",      "category": "flow",    "file": "flow/run-fix-loop.md", "featured": true },
-    { "id": "flow/plan-generate",   "title": "执行计划生成",           "category": "flow",    "file": "flow/plan-generate.md" },
-    { "id": "app/ui-design",        "title": "搭子 App UI 设计",      "category": "app",     "file": "app/ui-design.md" },
-    { "id": "data/data-analysis",   "title": "数据分析",              "category": "data",    "file": "data/data-analysis.md" },
-    { "id": "data/sql-query",       "title": "SQL 查询生成",          "category": "data",    "file": "data/sql-query.md" },
-    { "id": "general/ask-dazi",     "title": "询问搭子平台",          "category": "general", "file": "general/ask-dazi.md" },
-    { "id": "general/troubleshoot", "title": "问题排查",              "category": "general", "file": "general/troubleshoot.md" },
-    { "id": "general/code-review",  "title": "搭子脚本代码审查",      "category": "general", "file": "general/code-review.md" }
+    {
+      "id": "onto/script-publish-run",
+      "title": "本体脚本发布与运行（TRAE/智能体）",
+      "category": "onto",
+      "file": "onto/script-publish-run.md"
+    },
+    {
+      "id": "onto/function-design",
+      "title": "本体函数设计",
+      "category": "onto",
+      "file": "onto/function-design.md"
+    },
+    {
+      "id": "onto/action-design",
+      "title": "本体动作（Action）设计",
+      "category": "onto",
+      "file": "onto/action-design.md"
+    },
+    {
+      "id": "onto/rule-seed",
+      "title": "规则种子脚本",
+      "category": "onto",
+      "file": "onto/rule-seed.md"
+    },
+    {
+      "id": "flow/flow-design",
+      "title": "Flow 设计",
+      "category": "flow",
+      "file": "flow/flow-design.md",
+      "featured": true
+    },
+    {
+      "id": "flow/ai-workflow-playbook",
+      "title": "流程 AI 工作手册",
+      "category": "flow",
+      "file": "flow/ai-workflow-playbook.md",
+      "featured": true
+    },
+    {
+      "id": "flow/run-debug",
+      "title": "Run 调试分析",
+      "category": "flow",
+      "file": "flow/run-debug.md"
+    },
+    {
+      "id": "flow/run-fix-loop",
+      "title": "Flow 自主运行改错",
+      "category": "flow",
+      "file": "flow/run-fix-loop.md",
+      "featured": true
+    },
+    {
+      "id": "flow/plan-generate",
+      "title": "执行计划生成",
+      "category": "flow",
+      "file": "flow/plan-generate.md"
+    },
+    {
+      "id": "app/ui-design",
+      "title": "搭子 App UI 设计",
+      "category": "app",
+      "file": "app/ui-design.md"
+    },
+    {
+      "id": "data/data-analysis",
+      "title": "数据分析",
+      "category": "data",
+      "file": "data/data-analysis.md"
+    },
+    {
+      "id": "data/sql-query",
+      "title": "SQL 查询生成",
+      "category": "data",
+      "file": "data/sql-query.md"
+    },
+    {
+      "id": "general/ask-dazi",
+      "title": "询问搭子平台",
+      "category": "general",
+      "file": "general/ask-dazi.md"
+    },
+    {
+      "id": "general/troubleshoot",
+      "title": "问题排查",
+      "category": "general",
+      "file": "general/troubleshoot.md"
+    },
+    {
+      "id": "general/code-review",
+      "title": "搭子脚本代码审查",
+      "category": "general",
+      "file": "general/code-review.md"
+    }
   ]
 }

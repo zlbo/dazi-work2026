@@ -9,7 +9,9 @@
 
 ## 推荐阅读顺序
 
-1. [数据流程项目开发指南](./flow-project-guide.md) — 目录结构、`dazi.ps1 flow`、菜单、pull/push 循环
+0. **[流程本地文件规范](./local-files-spec.md)** — **AI 必读**：`flow.json` / `flow.meta.json` / `node.info.json` 职责与标准示例  
+0.1 [流程 AI 工作手册](./ai-workflow-playbook.md) — 一分钟决策树与禁止清单  
+1. [数据流程项目开发指南](./flow-project-guide.md) — 目录结构、`dazi flow`、菜单、pull/push 循环
 2. **[画布节点与连线规范](./flow-project-guide.md#62-画布节点与连线规范ai-创建--编辑-flowjson-必读)** — **AI 创建流程必读**：节点尺寸 200px、锚点 `l/t/r/b/true/false`、条件分支
 3. [流程开发最佳实践（VS-flow0 案例）](./流程开发最佳实践-VS-flow0案例.md) — **端到端案例**：Excel → 质检 → SQL → 落库、五阶段开发法、检查表
 4. [流程变量系统指南](./variables-guide.md) — 变量模型、`output_variable_name`、代码节点如何用变量
@@ -21,32 +23,41 @@
 
 ## 终端命令前缀
 
-在 **`dazi-work` 根目录**（Trae、VS Code、Cursor 交付环境）：
+命令前缀（Trae、VS Code、Cursor 交付环境）：
 
 ```powershell
 dazi flow <子命令...>
 ```
 
-等价于开发时的 `dazi-flow <子命令...>`。示例：
+等价于开发时的 `dazi-flow <子命令...>`。
+
+> **流程子命令的 `--dir`** 须指向 `项目/<业务名>/流程/flows/<流程名>/`（含 `flow.json`），**推荐绝对路径**。**禁止**在 `dazi-work` 工作区根使用 `--dir .`。
+
+示例：
 
 ```powershell
 dazi flow flows list
-dazi flow project pull --flow 98 --dir "项目\flow_xxx\流程\MyFlow"
+dazi flow project pull --flow 98 --dir "D:\path\to\dazi-work\项目\财务分析02\流程\flows\MyFlow"
+dazi flow project status --dir "D:\path\to\dazi-work\项目\财务分析02\流程\flows\MyFlow"
 ```
 
 ---
 
-## 流程项目（`项目/flow_*`）常用命令
+## 流程项目（业务项目）常用命令
 
-| 任务               | 命令                                                |
-| ------------------ | --------------------------------------------------- |
-| 拉取平台流程到本地 | `flow project pull --flow <id> --dir <流程目录>`    |
-| 提交代码 + 画布    | `flow project push --dir <流程目录> --canvas`       |
-| 查看本地改动       | `flow project status --dir <流程目录>`              |
-| 提交单个节点代码   | `flow node push --node <uuid> --dir <流程目录>`     |
-| 单节点测试         | `flow run node-exec --node <uuid> --dir <流程目录>` |
-| 整流程运行         | `flow run flow-exec --dir <流程目录> --type debug`  |
-| 拉取变量           | `flow variable pull --name <名> --dir <流程目录>`   |
+| 任务               | 命令                                                                 |
+| ------------------ | -------------------------------------------------------------------- |
+| 拉取平台流程到本地 | `flow project pull --flow <id> --dir <flows/<名>/绝对路径>`          |
+| 提交代码 + 画布    | `flow project push --dir <flows/<名>/绝对路径> --canvas`             |
+| 目录一致性检查     | `flow project doctor --dir <flows/<名>/绝对路径>`                    |
+| 修复 meta 索引     | `flow project repair-meta --dir <flows/<名>/绝对路径>`               |
+| 查看本地改动       | `flow project status --dir <flows/<名>/绝对路径>`                    |
+| 提交单个节点代码   | `flow node push --node <uuid> --dir <flows/<名>/绝对路径>`（改 `code.*` 后**先于测试**） |
+| 单节点测试         | `flow run node-exec --node <uuid> --dir <flows/<名>/绝对路径>`（执行**平台已 push** 的代码） |
+| 整流程运行         | `flow run flow-exec --dir <flows/<名>/绝对路径> --type debug`        |
+| 拉取变量           | `flow variable pull --name <名> --dir <flows/<名>/绝对路径>`         |
+
+`<flows/<名>/绝对路径>` = `…/项目/<业务名>/流程/flows/<流程名>`。执行 `status` 后核对输出的 **flowId / 流程名** 与 `快速启动_*.md` 一致。
 
 扩展侧栏/资源管理器右键与上表 **同源**，见 [flow-project-guide](./flow-project-guide.md#6-资源管理器菜单主交互)。
 
@@ -294,7 +305,7 @@ pandas 清洗/聚合   → python-script
 | ------------------------------------------ | ------------------------------------------- |
 | [流程变量系统指南](./variables-guide.md)   | 变量产生/消费、`get_variable`、SQL 表名约定 |
 | [Flow 运行与测试](./run-guide.md)          | Run、debug、变量、流程项目测试              |
-| [Flow 快照管理](./snapshot-guide.md)       | 平台级 `flows/<id>/snapshot.json` 分离快照  |
+| [数据流程项目开发指南 §5 pull/push](./flow-project-guide.md#5-同步策略pull--push) | 平台快照拉取与本地拆分  |
 | [数据源管理](./source-guide.md)            | connectionId、表结构                        |
 | [Flow 执行计划](./plan-guide.md)           | FlowPlan / markdown 规划                    |
 | [CLI 命令速查](../guides/cli-reference.md) | 完整命令表                                  |

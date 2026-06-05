@@ -44,6 +44,25 @@ Token 保存在 `~/.dazi/auth.json`，检查是否过期。
 2. 执行 `dazi auth whoami` 确认登录状态
 3. 右键侧栏节点选「刷新」
 
+## 流程：设计器打不开代码 / push 后平台仍旧
+
+```powershell
+$flowDir = "D:\path\to\dazi-work\项目\<业务名>\流程\flows\<流程名>"
+dazi flow project doctor --dir $flowDir
+dazi flow project repair-meta --dir $flowDir
+dazi flow project push --dir $flowDir --canvas
+```
+
+| 现象                                 | 原因                                  | 处理            |
+| ------------------------------------ | ------------------------------------- | --------------- |
+| 设计器「打开代码」失败               | `flow.meta.json` 无该 uuid 的 `dir`   | `repair-meta`   |
+| 改了 `managed_file_id` 平台没有      | 只用了 `project push` 未加 `--canvas` | `push --canvas` |
+| `node push` 无效果                   | meta 未索引该节点                     | `repair-meta`   |
+| 本地 flow.json 对、快速启动写 2 节点 | pull 后手改画布未同步 meta            | `repair-meta`   |
+| **status 的 flowId 与快速启动不一致** | 在 dazi-work 根或错误流程目录 `--dir .` | 改用 `flows/<名>/` **绝对路径**；见 `快速启动_*.md` |
+
+详见 [流程本地文件规范](../flow/local-files-spec.md)、[一致性检查表](./flow-consistency-checklist.md)。
+
 ## 工作区目录找不到
 
 ```powershell
@@ -65,7 +84,7 @@ dazi doctor --workspace-root D:\path\to\dazi-work
 检查 `.cursor/mcp.json` 配置。MCP 需能调用 bundled CLI，示例：
 
 ```powershell
-$env:DAZI_BUNDLED_DIR = "$env:USERPROFILE\.cursor\extensions\dazitech.dazi-vscode-3.0.0\bundled\clis"
+$env:DAZI_BUNDLED_DIR = "$env:USERPROFILE\.cursor\extensions\dazitech.dazi-vscode-3.0.6\bundled\clis"
 node "$env:DAZI_BUNDLED_DIR\dazi.js" mcp stdio
 ```
 

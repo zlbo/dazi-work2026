@@ -18,12 +18,26 @@
 3. 明确每个代码节点应写入哪个文件（`节点/<名>/code.sql|py`）
 4. 给出最短执行命令链（拉取/测试/提交）
 
+## 本地文件契约（必须遵守）
+
+必读帮助文档：**`flow/local-files-spec`**、**`flow/ai-workflow-playbook`**。
+
+| 文件 | 规则 |
+|------|------|
+| `flow.json` | 画布与节点配置（`managed_file_id` 等）；禁止手搓 `node_uuid` |
+| `flow.meta.json` | 仅由 `pull` / `node new` / `repair-meta` 维护；设计器靠它打开代码 |
+| `节点/<名>/code.*` | 代码正文唯一位置 |
+
+**禁止**：只改 `flow.json` 而不更新 meta（会导致打不开代码、`node push` 跳过）。
+
 ## 命令与环境约束（必须遵守）
 
 - 默认在 **`dazi-work` 根目录**执行，命令前缀统一：`dazi flow ...`
 - 进入流程目录后可继续带 `--dir .`，不要省略关键参数
-- `flow.json` 是画布与配置真理源；`节点/<名>/code.*` 是代码真理源
-- 修改拓扑/连线/节点配置后，必须 `flow project push --dir . --canvas`
+- 修改 `managed_file_id`、`output_variable_name`、连线、拓扑 → **`flow project push --dir . --canvas`**
+- 修改 `code.py` / `code.sql` → **`flow node push --node <uuid> --dir .`**
+- 新增代码节点 → **`flow node new`**，禁止手搓 uuid
+- 目录不一致 → **`flow project doctor`** → **`repair-meta`**
 - 禁止使用裸 `dazi-flow ...` 作为最终交付命令
 
 ## 常见节点类型（按业务类型 data.type）
@@ -52,12 +66,13 @@ dazi flow node new --type <node_type> --dir . --label "<节点名>"
 
 # 3) 修改 flow.json（节点配置与连线）+ 修改 节点/<名>/code.*
 
-# 4) 单节点测试
-dazi flow run node-exec --node <node_uuid> --dir .
-
-# 5) 提交（代码可用 node push；拓扑/配置变更必须 canvas push）
+# 4) 提交（先于测试；node-exec 跑的是平台已 push 的代码）
+dazi flow project push --dir . --canvas   # 若改了拓扑/配置
 dazi flow node push --node <node_uuid> --dir .
-dazi flow project push --dir . --canvas
+
+# 5) 单节点测试 + 核对输出变量
+dazi flow run node-exec --node <node_uuid> --dir .
+dazi flow variable pull --name <output_variable_name> --dir .   # 若节点配置了输出变量
 ```
 
 ## 一致性检查（回答末尾必须自检）
@@ -71,7 +86,9 @@ dazi flow project push --dir . --canvas
 
 设计/改代码**不能**只交付文件清单；必须进入 **改错循环**（详见 `flow/run-fix-loop` 与流程目录 `快速启动_<流程名>.md` §AI 自主运行与改错闭环）：
 
-1. 对每个代码节点执行 `node-exec`；必要时整流程 `flow-exec --type debug`
-2. 失败时读取 `_run/*.last-error.md`，按错误分类修复后重跑（默认最多 3 轮）
-3. 全部通过后再 `node push` / `project push --canvas`
-4. **禁止**未实际运行就声称「设计已完成/已通过」
+1. 改 `code.*` 后先 `node push`；改画布/配置先 `project push --canvas`
+2. 对每个代码节点执行 `node-exec`；有 `output_variable_name` 时 `variable pull` 核对
+3. 必要时整流程 `flow-exec --type debug`
+4. 失败时读取 `_run/*.last-error.md`，按错误分类修复后重跑（默认最多 3 轮，详见 `flow/run-fix-loop`）
+5. **成功判据**：push 成功 → node-exec `success: true` → variable 合理（若适用）
+6. **禁止**未 push 就测代码；**禁止**未实际运行就声称「设计已完成/已通过」

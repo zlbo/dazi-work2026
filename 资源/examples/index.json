@@ -1,5 +1,5 @@
 {
-  "version": "3.0.0",
+  "version": "3.0.6",
   "updatedAt": "2026-05-25T00:00:00.000Z",
   "examples": [
     {
@@ -31,6 +31,12 @@
       "title": "客户分层",
       "category": "onto-function",
       "file": "onto/function/profit_fn_customer_segmentation.py"
+    },
+    {
+      "id": "flow/minimal-excel-python",
+      "title": "流程目录标准示例（excel-python）",
+      "category": "flow",
+      "file": "flow/minimal-excel-python/README.md"
     }
   ]
 }

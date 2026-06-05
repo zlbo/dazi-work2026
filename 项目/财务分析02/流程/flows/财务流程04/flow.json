@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": 50,
+        "y": 250
+      },
+      "data": {
+        "label": "开始",
+        "type": "start"
+      },
+      "deletable": false,
+      "node_uuid": "f227299a-2a0f-4a03-8dbb-26403f07244a"
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 850,
+        "y": 250
+      },
+      "data": {
+        "label": "结束",
+        "type": "end"
+      },
+      "deletable": false,
+      "node_uuid": "2a888999-3fca-444d-9ad1-7595ede51019"
+    },
+    {
+      "id": "n-6b446b778083",
+      "node_uuid": "db093447-70cf-4bcd-88b5-b92f489feec5",
+      "type": "custom",
+      "position": {
+        "x": 450,
+        "y": 250
+      },
+      "data": {
+        "label": "Excel成本报表解析",
+        "type": "excel-python",
+        "managed_file_id": "51853ede-9e6b-4a3a-aa7a-060cbead0862",
+        "output_variable_name": "成本统计报表"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "start-node",
+      "target": "n-6b446b778083",
+      "sourceHandle": "r",
+      "targetHandle": "l"
+    },
+    {
+      "id": "e2",
+      "source": "n-6b446b778083",
+      "target": "end-node",
+      "sourceHandle": "r",
+      "targetHandle": "l"
+    }
+  ]
+}

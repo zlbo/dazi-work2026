@@ -84,16 +84,17 @@ GET /flows/{id}/debug-run  →  绑定 ads_flows.debug_run_id
 ```
 
 ```powershell
-cd "项目\flow_xxx\流程\MyFlow"
+$flowDir = "D:\path\to\dazi-work\项目\<业务名>\流程\flows\MyFlow"
 
-# 先运行产出变量的上游节点，或整流程 debug
-dazi flow run node-exec --node <上游uuid> --dir .
+# 先 push 再运行上游（node-exec 不读本地未提交的 code.*）
+dazi flow node push --node <上游uuid> --dir $flowDir
+dazi flow run node-exec --node <上游uuid> --dir $flowDir
 
-# 拉取单个变量（列信息 + 前 10 行）
-dazi flow variable pull --name sales_clean --dir .
+# 拉取单个变量（列信息 + 前 10 行；成功判据之一）
+dazi flow variable pull --name sales_clean --dir $flowDir
 
 # 同步调试 Run 中全部变量
-dazi flow variable sync --dir .
+dazi flow variable sync --dir $flowDir
 ```
 
 - 设计器：选中节点 → **`output_variable_name`** 旁 **📊**

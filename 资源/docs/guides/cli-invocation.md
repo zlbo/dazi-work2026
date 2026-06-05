@@ -49,7 +49,7 @@ dazi onto function list --space <space-id>
 | ---------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | `dazi auth whoami`                                               | 原 `dazi auth whoami`                                                   |
 | `dazi onto script publish ...`                                   | 原 `dazi onto script publish ...`（**勿用** `dazi-onto`）               |
-| `dazi flow project pull --flow 98 --dir 项目\flow_x\流程\MyFlow` | 流程项目拉取                                                            |
+| `dazi flow project pull --flow 98 --dir …\项目\<业务名>\流程\flows\MyFlow` | 流程项目拉取（`--dir` 推荐绝对路径）                                    |
 | `dazi flow run node-exec --node <uuid> --dir <流程目录>`         | 单节点测试                                                              |
 | `pnpm run dazi-app -- upload ...`                                | 原 `dazi-app upload ...`（须在**应用项目根**，含 `sdk/`、`templates/`） |
 
@@ -65,7 +65,8 @@ dazi onto function list --space <space-id>
 因此文档里的 `dazi-flow project pull …` 在 Trae / VS Code 交付环境中应写为：
 
 ```powershell
-dazi flow project pull --flow 98 --dir "项目\flow_xxx\流程\MyFlow"
+# --dir 须指向 flows/<流程名>/（含 flow.json）；禁止在 dazi-work 根 --dir .
+dazi flow project pull --flow 98 --dir "D:\path\to\dazi-work\项目\财务分析02\流程\flows\MyFlow"
 ```
 
 流程项目开发详见 [flow/flow-project-guide](../flow/flow-project-guide.md)。

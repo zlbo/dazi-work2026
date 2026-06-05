@@ -51,12 +51,16 @@
 
 > **流程项目日常开发**见 [flow/flow-project-guide](../flow/flow-project-guide.md)。
 
-### 流程项目（`项目/flow_*/流程/<名>/`）
+### 流程项目（`项目/<业务名>/流程/flows/<流程名>/`）
+
+> `--dir` 须含 `flow.json`，推荐绝对路径；禁止在 `dazi-work` 工作区根 `--dir .`。
 
 | 命令                                                  | 说明                                        |
 | ----------------------------------------------------- | ------------------------------------------- |
 | `dazi flow project pull --flow <id> --dir <流程目录>` | 拉取 snapshot 并拆分为 flow.json + 节点代码 |
-| `dazi flow project push --dir <dir> [--canvas]`       | 提交脏代码节点；`--canvas` 含画布           |
+| `dazi flow project push --dir <dir> [--canvas]`       | 提交脏代码节点；**配置变更必须** `--canvas`   |
+| `dazi flow project doctor --dir <dir>`                | 检查 flow.json / meta / 节点/ 一致性        |
+| `dazi flow project repair-meta --dir <dir>`           | 修复 flow.meta.json 索引                    |
 | `dazi flow project status --dir <dir>`                | 本地代码改动                                |
 | `dazi flow node push --node <uuid> --dir <dir>`       | 提交单节点代码                              |
 | `dazi flow node pull --node <uuid> --dir <dir>`       | 拉取单节点代码                              |

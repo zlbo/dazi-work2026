@@ -3,27 +3,34 @@
 **文档 ID**: `flow/run-guide`
 
 **命令前缀**（`dazi-work` 根）：`dazi flow …`  
-**流程项目**：在 `项目/flow_*/流程/<名>/` 下执行，或使用 `--dir <流程目录>`。
+**流程项目**：`--dir` 指向 `项目/<业务名>/流程/flows/<流程名>/`（**推荐绝对路径**；禁止在 `dazi-work` 根 `--dir .`）。
 
 ---
 
 ## 1. 流程项目：单节点测试（最常用）
 
 ```powershell
-cd "项目\flow_xxx\流程\MyFlow"
+$flowDir = "D:\path\to\dazi-work\项目\<业务名>\流程\flows\MyFlow"
 
-# 按 node_uuid 测试（CLI 内部翻译为语义 nodeId）
-dazi flow run node-exec --node <node_uuid> --dir .
+# 改 code.* 后必须先 push，再测（node-exec 执行的是平台代码，不是本地未提交文件）
+dazi flow node push --node <node_uuid> --dir $flowDir
+dazi flow run node-exec --node <node_uuid> --dir $flowDir
+
+# 若节点配置了 output_variable_name，须 pull 核对（不能仅凭 node-exec 退出码）
+dazi flow variable pull --name <output_variable_name> --dir $flowDir
 ```
 
 **行为**
 
-1. `GET /flows/{id}/debug-run` — 确保 `ads_flows.debug_run_id` 已绑定调试 Run
-2. `POST /flows/{id}/nodes/{nodeId}/run` — 执行单节点
-3. 成功时同步该节点 `output_variable_name` 到 **`变量/<名>.json`**
-4. 失败时写入 **`_run/<节点名>.last-error.md`**（扩展会自动打开）
+1. `node push` — 将本地 `code.*` 同步到平台 `flow_nodes.code_body`
+2. `GET /flows/{id}/debug-run` — 确保 `ads_flows.debug_run_id` 已绑定调试 Run
+3. `POST /flows/{id}/nodes/{nodeId}/run` — 在平台执行**已 push** 的节点代码
+4. 成功时 CLI 会尝试同步该节点 `output_variable_name` 到 **`变量/<名>.json`**
+5. 失败时写入 **`_run/<节点名>.last-error.md`**
 
-扩展：右键 **节点/** 或 **code.\*** → **测试运行节点**。
+**成功判据（代码节点）**：`node push` 成功 → `node-exec` JSON `success: true` →（有 `output_variable_name` 时）`variable pull` 后变量为 ready 且预览合理。
+
+扩展：设计器/运行面板 **搭子执行** 前请确认已 `node push`；右键 **节点/** 或 **code.\*** → **测试运行节点**（同样依赖平台已 push 代码）。
 
 ---
 

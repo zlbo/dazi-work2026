@@ -1,0 +1,62 @@
+﻿@import "@dazi/app-sdk-ui/styles.css";
+
+html, body, #drap-root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  font-family: var(--dazi-font-sans);
+}
+
+.drap-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+/* 财务宽表：左侧类别/指标冻结（z-index 高于数据列、低于表头交叉角） */
+.drap-complex-report__table {
+  min-width: max-content;
+}
+
+.drap-complex-report__table thead tr:first-child > th[rowspan="2"]:nth-child(1),
+.drap-complex-report__table tbody td:nth-child(1) {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 88px;
+}
+
+.drap-complex-report__table thead tr:first-child > th[rowspan="2"]:nth-child(2),
+.drap-complex-report__table tbody td:nth-child(2) {
+  position: sticky;
+  left: 88px;
+  z-index: 1;
+  min-width: 200px;
+  box-shadow: 2px 0 4px rgba(15, 23, 42, 0.04);
+}
+
+.drap-complex-report__table thead tr:first-child > th[rowspan="2"]:nth-child(1),
+.drap-complex-report__table thead tr:first-child > th[rowspan="2"]:nth-child(2) {
+  z-index: 3;
+}
+
+.drap-complex-report__table tbody td:nth-child(1),
+.drap-complex-report__table tbody td:nth-child(2) {
+  background-color: var(--drap-card-bg, #fff);
+}
+
+.drap-complex-report__table tbody td:nth-child(1).drap-complex-report__cell--row-merge {
+  background-color: var(--drap-complex-merge-bg, #f9fafb) !important;
+}
+
+.drap-complex-report__table tbody tr:nth-child(even) td:nth-child(1),
+.drap-complex-report__table tbody tr:nth-child(even) td:nth-child(2) {
+  background-color: var(--drap-complex-row-stripe, #fafafa);
+}
+
+.drap-complex-report__table tbody tr:hover td:nth-child(1),
+.drap-complex-report__table tbody tr:hover td:nth-child(2) {
+  background-color: var(--drap-complex-row-hover, #f0f4f8);
+}

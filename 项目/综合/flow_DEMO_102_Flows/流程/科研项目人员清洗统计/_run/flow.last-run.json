@@ -1,0 +1,364 @@
+{
+  "id": 31,
+  "flow_id": 109,
+  "status": "completed",
+  "duration": 132102,
+  "node_status": {
+    "end-node": {
+      "status": "success",
+      "node_label": "结束",
+      "node_uuid": "e886cf6b-0f07-4628-8427-7d5fbe0fd37a",
+      "startTime": "2026-06-03T01:43:11.400811Z",
+      "endTime": "2026-06-03T01:43:11.416436Z",
+      "duration": 15,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 75,
+      "logs": ""
+    },
+    "team-split": {
+      "status": "success",
+      "node_label": "团队字段拆分",
+      "node_uuid": "550e8400-e29b-41d4-a716-446655440001",
+      "startTime": "2026-06-03T01:43:10.947681Z",
+      "endTime": "2026-06-03T01:43:10.978984Z",
+      "duration": 31,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 71,
+      "logs": ""
+    },
+    "db-sink": {
+      "status": "success",
+      "node_label": "写入项目人员拆分表",
+      "node_uuid": "550e8400-e29b-41d4-a716-446655440005",
+      "startTime": "2026-06-03T01:43:10.978984Z",
+      "endTime": "2026-06-03T01:43:11.103923Z",
+      "duration": 124,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 71,
+      "logs": ""
+    },
+    "dq-check": {
+      "status": "success",
+      "node_label": "数据质量检查",
+      "node_uuid": "550e8400-e29b-41d4-a716-446655440002",
+      "startTime": "2026-06-03T01:43:11.103923Z",
+      "endTime": "2026-06-03T01:43:11.135177Z",
+      "duration": 31,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 72,
+      "logs": ""
+    },
+    "start-node": {
+      "status": "success",
+      "node_label": "开始",
+      "node_uuid": "3474693b-853b-4ff9-997a-6601a22efbd2",
+      "startTime": "2026-06-03T01:43:10.853925Z",
+      "endTime": "2026-06-03T01:43:10.869561Z",
+      "duration": 15,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": ""
+    },
+    "person-join": {
+      "status": "success",
+      "node_label": "人员编码关联",
+      "node_uuid": "550e8400-e29b-41d4-a716-446655440003",
+      "startTime": "2026-06-03T01:43:11.150809Z",
+      "endTime": "2026-06-03T01:43:11.197680Z",
+      "duration": 46,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 74,
+      "logs": ""
+    },
+    "python-script-1780369618182": {
+      "status": "success",
+      "node_label": "Python脚本 9",
+      "node_uuid": "7e5c9ade-e0d5-4adf-8301-714da391dc10",
+      "startTime": "2026-06-03T01:43:11.213323Z",
+      "endTime": "2026-06-03T01:43:11.244574Z",
+      "duration": 31,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 84,
+      "logs": ""
+    },
+    "excel-parse": {
+      "status": "success",
+      "node_label": "Excel解析",
+      "node_uuid": "550e8400-e29b-41d4-a716-446655440000",
+      "startTime": "2026-06-03T01:43:10.869561Z",
+      "endTime": "2026-06-03T01:43:10.932057Z",
+      "duration": 62,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 69,
+      "logs": ""
+    },
+    "stats-analysis": {
+      "status": "success",
+      "node_label": "统计分析",
+      "node_uuid": "550e8400-e29b-41d4-a716-446655440004",
+      "startTime": "2026-06-03T01:43:11.275805Z",
+      "endTime": "2026-06-03T01:43:11.353970Z",
+      "duration": 78,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 75,
+      "logs": ""
+    }
+  },
+  "execution_logs": [
+    {
+      "node_id": "start-node",
+      "node_label": "开始",
+      "status": "success",
+      "startTime": "2026-06-03T01:43:10.853925Z",
+      "endTime": "2026-06-03T01:43:10.869561Z",
+      "duration": 15,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": "",
+      "step_order": 1,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "9d06384b-dc91-4163-a6f5-863b18827c9e"
+    },
+    {
+      "node_id": "excel-parse",
+      "node_label": "Excel解析",
+      "status": "success",
+      "startTime": "2026-06-03T01:43:10.869561Z",
+      "endTime": "2026-06-03T01:43:10.932057Z",
+      "duration": 62,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 69,
+      "logs": "",
+      "step_order": 2,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "f152952e-7cdf-4c1a-9ef0-a6791ea3a12f"
+    },
+    {
+      "node_id": "team-split",
+      "node_label": "团队字段拆分",
+      "status": "success",
+      "startTime": "2026-06-03T01:43:10.947681Z",
+      "endTime": "2026-06-03T01:43:10.978984Z",
+      "duration": 31,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 71,
+      "logs": "",
+      "step_order": 3,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "30252477-82da-4af9-b076-cde3b51ababe"
+    },
+    {
+      "node_id": "db-sink",
+      "node_label": "写入项目人员拆分表",
+      "status": "success",
+      "startTime": "2026-06-03T01:43:10.978984Z",
+      "endTime": "2026-06-03T01:43:11.103923Z",
+      "duration": 124,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 71,
+      "logs": "",
+      "step_order": 4,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "d049f165-f58f-41c6-823f-a3b44f95bbd8"
+    },
+    {
+      "node_id": "dq-check",
+      "node_label": "数据质量检查",
+      "status": "success",
+      "startTime": "2026-06-03T01:43:11.103923Z",
+      "endTime": "2026-06-03T01:43:11.135177Z",
+      "duration": 31,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 72,
+      "logs": "",
+      "step_order": 5,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "1d2a7bf2-baa7-4565-9378-450205980d52"
+    },
+    {
+      "node_id": "person-join",
+      "node_label": "人员编码关联",
+      "status": "success",
+      "startTime": "2026-06-03T01:43:11.150809Z",
+      "endTime": "2026-06-03T01:43:11.197680Z",
+      "duration": 46,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 74,
+      "logs": "",
+      "step_order": 6,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "8f5f7bea-a72d-4c6a-a5a8-2b3182c379b3"
+    },
+    {
+      "node_id": "python-script-1780369618182",
+      "node_label": "Python脚本 9",
+      "status": "success",
+      "startTime": "2026-06-03T01:43:11.213323Z",
+      "endTime": "2026-06-03T01:43:11.244574Z",
+      "duration": 31,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 84,
+      "logs": "",
+      "step_order": 7,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "b3192ab9-ecb2-4b23-946d-b915c23d491c"
+    },
+    {
+      "node_id": "stats-analysis",
+      "node_label": "统计分析",
+      "status": "success",
+      "startTime": "2026-06-03T01:43:11.275805Z",
+      "endTime": "2026-06-03T01:43:11.353970Z",
+      "duration": 78,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 75,
+      "logs": "",
+      "step_order": 8,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "84e9b9aa-d252-4b4e-b9af-48c60cc9bde5"
+    },
+    {
+      "node_id": "end-node",
+      "node_label": "结束",
+      "status": "success",
+      "startTime": "2026-06-03T01:43:11.400811Z",
+      "endTime": "2026-06-03T01:43:11.416436Z",
+      "duration": 15,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 75,
+      "logs": "",
+      "step_order": 9,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "2ac34c45-20d4-44b2-b10a-09cbc27260e2"
+    }
+  ],
+  "variables": {
+    "混杂数据": {
+      "id": 69,
+      "value": "uploads/py_result_01e4c322-990a-4ef0-afaa-96f80ab37001.parquet",
+      "type": "table",
+      "node_id": "excel-parse",
+      "updated_at": "2026-06-03T01:43:10.947681Z"
+    },
+    "统计结果": {
+      "id": 75,
+      "value": "uploads/py_result_8bf4bfb5-d009-4c48-bc20-d1b6e1164069.parquet",
+      "type": "table",
+      "node_id": "stats-analysis",
+      "updated_at": "2026-06-03T01:43:11.353970Z"
+    },
+    "人员参与项目统计": {
+      "id": 77,
+      "value": "uploads/py_result_e238a1bb-4792-4b09-9ef4-eddd4b64f5c1.parquet",
+      "type": "table",
+      "node_id": "stats-analysis",
+      "updated_at": "2026-06-03T01:43:11.369569Z"
+    },
+    "姓氏分布统计": {
+      "id": 79,
+      "value": "uploads/py_result_c8c1e447-4875-4cac-b9c1-7284b73c6416.parquet",
+      "type": "table",
+      "node_id": "stats-analysis",
+      "updated_at": "2026-06-03T01:43:11.385183Z"
+    },
+    "TOP10参与者": {
+      "id": 78,
+      "value": "uploads/py_result_26a569c2-fbf4-474f-abf7-5354db7476ce.parquet",
+      "type": "table",
+      "node_id": "stats-analysis",
+      "updated_at": "2026-06-03T01:43:11.385183Z"
+    },
+    "项目人员关联": {
+      "id": 74,
+      "value": "uploads/sql_result_c7e00778-4468-476f-a0a9-ecc3cb8a4987.parquet",
+      "type": "table",
+      "node_id": "person-join",
+      "updated_at": "2026-06-03T01:43:11.197680Z"
+    },
+    "V_DQ_REPORT": {
+      "id": 72,
+      "value": "uploads/py_result_367e1171-a578-4669-a9a5-ad70dd690409.parquet",
+      "type": "table",
+      "node_id": "dq-check",
+      "updated_at": "2026-06-03T01:43:11.135177Z"
+    },
+    "变量7lb": {
+      "id": 84,
+      "value": "uploads/py_result_9886d1ee-6b48-4778-b2a3-9c1547e531f2.parquet",
+      "type": "table",
+      "node_id": "python-script-1780369618182",
+      "updated_at": "2026-06-03T01:43:11.260175Z"
+    },
+    "项目参与人数统计": {
+      "id": 76,
+      "value": "uploads/py_result_b4a08e9b-96f3-4b50-9c4b-07705d3d796b.parquet",
+      "type": "table",
+      "node_id": "stats-analysis",
+      "updated_at": "2026-06-03T01:43:11.369569Z"
+    },
+    "匹配状态汇总": {
+      "id": 80,
+      "value": "uploads/py_result_c75fd416-72f7-422d-91c6-05acd4581267.parquet",
+      "type": "table",
+      "node_id": "stats-analysis",
+      "updated_at": "2026-06-03T01:43:11.385183Z"
+    },
+    "V_DQ_SCORE": {
+      "id": 73,
+      "value": "100.0",
+      "type": "text",
+      "node_id": "dq-check",
+      "updated_at": "2026-06-01T13:30:12.332800Z"
+    },
+    "人员名单": {
+      "id": 70,
+      "value": "uploads/py_result_d7783dbd-4bd8-40b5-952a-453f2d704475.parquet",
+      "type": "table",
+      "node_id": "excel-parse",
+      "updated_at": "2026-06-03T01:43:10.947681Z"
+    },
+    "项目人员拆分": {
+      "id": 71,
+      "value": "uploads/py_result_be25c300-a5c9-4216-ab7a-0cec3645e1e6.parquet",
+      "type": "table",
+      "node_id": "team-split",
+      "updated_at": "2026-06-03T01:43:10.978984Z"
+    },
+    "变量eax": {
+      "id": 90,
+      "value": "uploads/py_result_d1e36ff9-f69a-4835-bafd-53cfda094e92.parquet",
+      "type": "table",
+      "node_id": "python-script-1780449977130",
+      "updated_at": "2026-06-03T01:31:34.458566Z"
+    }
+  },
+  "created_at": "2026-06-01T13:01:29.007166Z",
+  "completed_at": "2026-06-03T01:43:11.432049Z"
+}

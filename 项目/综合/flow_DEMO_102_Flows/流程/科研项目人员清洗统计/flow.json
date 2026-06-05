@@ -1,0 +1,408 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": -1.5237134207870895,
+        "y": 102.39152371342078
+      },
+      "data": {
+        "label": "开始",
+        "type": "start",
+        "flowId": 109
+      },
+      "deletable": false,
+      "node_uuid": "3474693b-853b-4ff9-997a-6601a22efbd2",
+      "measured": {
+        "width": 200,
+        "height": 96
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "excel-parse",
+      "type": "custom",
+      "position": {
+        "x": 161.81428636877658,
+        "y": 253.08959327120385
+      },
+      "data": {
+        "label": "Excel解析",
+        "type": "excel-python",
+        "output_variable_name": "混杂数据",
+        "managed_file_id": "72326a69-1d8e-4345-ad4f-81ef013bee3d",
+        "flowId": 109
+      },
+      "node_uuid": "550e8400-e29b-41d4-a716-446655440000",
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "team-split",
+      "type": "custom",
+      "position": {
+        "x": 344.78519036621896,
+        "y": 104.32819870886935
+      },
+      "data": {
+        "label": "团队字段拆分",
+        "type": "python-script",
+        "output_variable_name": "项目人员拆分",
+        "flowId": 109
+      },
+      "node_uuid": "550e8400-e29b-41d4-a716-446655440001",
+      "measured": {
+        "width": 200,
+        "height": 99
+      },
+      "selected": true,
+      "dragging": false
+    },
+    {
+      "id": "dq-check",
+      "type": "custom",
+      "position": {
+        "x": 712.1100941576514,
+        "y": 109.20669420442707
+      },
+      "data": {
+        "label": "数据质量检查",
+        "type": "data-quality-check",
+        "output_variable_name": "V_DQ_REPORT",
+        "attached_variables": [
+          "项目人员拆分"
+        ],
+        "flowId": 109,
+        "qualityConfig": {
+          "input_variable_id": null,
+          "output_report_variable_name": "V_DQ_REPORT",
+          "output_score_variable_name": "V_DQ_SCORE",
+          "dimensions": {
+            "completeness": {
+              "enabled": true,
+              "weight": 0.2
+            },
+            "conformity": {
+              "enabled": true,
+              "weight": 0.2
+            },
+            "consistency": {
+              "enabled": true,
+              "weight": 0.2
+            },
+            "validity": {
+              "enabled": true,
+              "weight": 0.2
+            },
+            "accuracy": {
+              "enabled": true,
+              "weight": 0.2
+            }
+          },
+          "rules": {
+            "completeness": {
+              "required_columns": [],
+              "primary_key_columns": [],
+              "min_completeness": 0.95,
+              "check_duplicate_rows": false
+            },
+            "conformity": {
+              "enum_rules": [],
+              "pattern_rules": [],
+              "range_rules": [],
+              "datetime_format_columns": [],
+              "numeric_type_columns": [],
+              "length_rules": []
+            },
+            "consistency": {
+              "unique_combinations": [],
+              "group_consistency_rules": []
+            },
+            "validity": {
+              "date_validity_rules": []
+            },
+            "accuracy": {
+              "aggregate_rules": []
+            }
+          },
+          "auto_fix_mode": "suggest_only"
+        }
+      },
+      "node_uuid": "550e8400-e29b-41d4-a716-446655440002",
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "person-join",
+      "type": "custom",
+      "position": {
+        "x": 909.5927291049005,
+        "y": 252.0137661115317
+      },
+      "data": {
+        "label": "人员编码关联",
+        "type": "sql-query",
+        "output_variable_name": "项目人员关联",
+        "attached_variables": [
+          "项目人员拆分",
+          "人员名单"
+        ],
+        "flowId": 109
+      },
+      "node_uuid": "550e8400-e29b-41d4-a716-446655440003",
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "stats-analysis",
+      "type": "custom",
+      "position": {
+        "x": 1166.5750568929354,
+        "y": 123.00603558194393
+      },
+      "data": {
+        "label": "统计分析",
+        "type": "python-script",
+        "output_variable_name": "统计结果",
+        "flowId": 109
+      },
+      "node_uuid": "550e8400-e29b-41d4-a716-446655440004",
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 1391.011499210641,
+        "y": 266.7669715074015
+      },
+      "data": {
+        "label": "结束",
+        "type": "end",
+        "flowId": 109
+      },
+      "deletable": false,
+      "node_uuid": "e886cf6b-0f07-4628-8427-7d5fbe0fd37a",
+      "measured": {
+        "width": 200,
+        "height": 96
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "db-sink",
+      "type": "custom",
+      "position": {
+        "x": 519.6942144362863,
+        "y": 252.6552741593107
+      },
+      "data": {
+        "label": "写入项目人员拆分表",
+        "type": "database-sink",
+        "connectionId": "clickhouse__space_panda_construction_005",
+        "tableName": "project_person_split",
+        "input_variable_name": "项目人员拆分",
+        "flowId": 109,
+        "columnMapping": {
+          "科研项目": {
+            "sourceType": "large_string",
+            "targetType": "VARCHAR",
+            "length": 255,
+            "selected": true
+          },
+          "员工姓名": {
+            "sourceType": "large_string",
+            "targetType": "VARCHAR",
+            "length": 255,
+            "selected": true
+          }
+        }
+      },
+      "node_uuid": "550e8400-e29b-41d4-a716-446655440005",
+      "measured": {
+        "width": 208,
+        "height": 98
+      },
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "python-script-1780369618182",
+      "type": "custom",
+      "position": {
+        "x": 1161.6637046414776,
+        "y": 394.77213216751977
+      },
+      "data": {
+        "label": "Python脚本 9",
+        "type": "python-script",
+        "status": "idle",
+        "description": "AI 生成的 Python 代码",
+        "flowId": 109,
+        "output_variable_name": "变量7lb",
+        "attached_variables": [
+          "项目人员关联"
+        ]
+      },
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "7e5c9ade-e0d5-4adf-8301-714da391dc10"
+    },
+    {
+      "id": "team-full-split",
+      "type": "custom",
+      "position": {
+        "x": 377,
+        "y": 443
+      },
+      "data": {
+        "label": "团队人员全面拆分",
+        "type": "python-script",
+        "output_variable_name": "项目人员全面拆分",
+        "attached_variables": [
+          "混杂数据"
+        ],
+        "flowId": 109
+      },
+      "node_uuid": "550e8400-e29b-41d4-a716-446655440006",
+      "measured": {
+        "width": 200,
+        "height": 98
+      },
+      "selected": false,
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__start-noder-excel-parsel",
+      "source": "start-node",
+      "target": "excel-parse",
+      "sourceHandle": "r",
+      "targetHandle": "l",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "selected": false
+    },
+    {
+      "id": "xy-edge__excel-parser-team-full-splitl",
+      "source": "excel-parse",
+      "sourceHandle": "r",
+      "target": "team-full-split",
+      "targetHandle": "l",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "selected": false
+    },
+    {
+      "id": "xy-edge__team-full-splitr-end-nodel",
+      "source": "team-full-split",
+      "sourceHandle": "r",
+      "target": "end-node",
+      "targetHandle": "l",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "selected": false
+    },
+    {
+      "id": "xy-edge__dq-checkr-person-joinl",
+      "source": "dq-check",
+      "target": "person-join",
+      "sourceHandle": "r",
+      "targetHandle": "l",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      }
+    },
+    {
+      "id": "xy-edge__stats-analysisr-end-nodel",
+      "source": "stats-analysis",
+      "target": "end-node",
+      "sourceHandle": "r",
+      "targetHandle": "l",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      }
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#94a3b8"
+      },
+      "source": "db-sink",
+      "sourceHandle": "r",
+      "target": "dq-check",
+      "targetHandle": "l",
+      "id": "xy-edge__db-sinkr-dq-checkl"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#94a3b8"
+      },
+      "source": "person-join",
+      "sourceHandle": "r",
+      "target": "python-script-1780369618182",
+      "targetHandle": "l",
+      "id": "xy-edge__person-joinr-python-script-1780369618182l"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#94a3b8"
+      },
+      "source": "python-script-1780369618182",
+      "sourceHandle": "r",
+      "target": "end-node",
+      "targetHandle": "l",
+      "id": "xy-edge__python-script-1780369618182r-end-nodel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#94a3b8"
+      },
+      "source": "person-join",
+      "sourceHandle": "r",
+      "target": "stats-analysis",
+      "targetHandle": "l",
+      "id": "xy-edge__person-joinr-stats-analysisl"
+    }
+  ]
+}

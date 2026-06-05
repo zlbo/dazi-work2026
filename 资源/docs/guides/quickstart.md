@@ -72,6 +72,6 @@ dazi auth whoami
 - [CLI 调用约定](./cli-invocation.md)
 - [认证管理](../auth/auth-login.md)
 - [本体开发入门](../onto/space-management.md)
-- [数据流程项目开发](../flow/flow-project-guide.md) — **推荐**：`项目/flow_*`、菜单、pull/push
+- [数据流程项目开发](../flow/flow-project-guide.md) — **推荐**：`项目/<业务名>/流程/flows/`、菜单、pull/push
 - [节点代码编写](../flow/node-code-guide.md) — python-script、sql-query 等
 - [流程开发索引](../flow/flows-guide.md) — Flow 文档入口

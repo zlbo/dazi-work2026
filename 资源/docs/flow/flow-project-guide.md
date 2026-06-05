@@ -1,7 +1,7 @@
 # 数据流程项目开发指南
 
 **文档 ID**: `flow/flow-project-guide`  
-**适用**: `dazi-vscode` v3.1+、`dazi-work` 工作区、`项目/flow_*` 流程项目
+**适用**: `dazi-vscode` v3.0.6+、`dazi-work` 工作区、业务项目 `项目/<业务名>/`
 
 ---
 
@@ -10,8 +10,9 @@
 | 维度       | 说明                                                            |
 | ---------- | --------------------------------------------------------------- | ------------------- |
 | CLI 入口   | `dazi flow …` → `dazi-flow`（Trae / VS Code / Cursor 交付环境） |
-| 工作区     | `dazi-work` + `项目/flow_<名>/`                                 |
-| 本地流程树 | `流程/<名>/flow.json` + `节点/<名>/code.*`                      |
+| **本地文件** | **[流程本地文件规范](./local-files-spec.md)**（AI 必读） |
+| 工作区     | `dazi-work` + `项目/<业务名>/`（含 `本体/`、`流程/`、`应用/`）   |
+| 本地流程树 | `流程/flows/<流程名>/flow.json` + `节点/<名>/code.*`            |
 | 画布真理源 | **`flow.json`**（= 平台 `config_json` 镜像，代码已剥离）        |
 | 代码真理源 | \*\*`节点/<名>/code.sql                                         | py`** + `node push` |
 | 主交互     | **资源管理器右键** + MVP 流程设计器                             |
@@ -28,23 +29,27 @@ dazi-work/
 ├── scripts/
 │   └── dazi.ps1              ← 终端/Trae 中运行搭子 CLI 的入口
 └── 项目/
-    └── flow_数据集成01/
-        ├── README.md                  项目元信息
-        ├── 快速启动.md                项目级入门
-        ├── 规划/
+    └── 财务分析02/            ← 业务项目名（无 flow_/onto_/app_ 前缀）
+        ├── README.md
+        ├── 本体/ontos/…
+        ├── 应用/apps/…
         └── 流程/
-            └── 客户数据清洗/          ← 一个流程 = 一个目录
-                ├── 快速启动_<流程名>.md   pull 后生成（flowId、常用命令、AI 单文件入口）
-                ├── flow.json          ★ 画布（节点配置 + 边，不含代码正文）
-                ├── flow.meta.json     flowId、uuid 映射、代码指纹
-                ├── 节点/
-                │   └── SQL查询/
-                │       ├── code.sql   ★ 代码唯一真理源
-                │       └── node.info.json
-                ├── 变量/              调试 Run 变量只读派生（schema + 预览）
-                │   └── sales_df.json
-                └── _run/              测试/运行产物（*.last-error.md 等）
+            ├── README.md              流程工作区说明
+            ├── 规划/
+            └── flows/                 各流程实例容器
+                └── 客户数据清洗/      ← 一个流程 = 一个目录
+                    ├── 快速启动_<流程名>.md   pull 后生成（flowId、绝对路径命令、AI 入口）
+                    ├── flow.json          ★ 画布（节点配置 + 边，不含代码正文）
+                    ├── flow.meta.json     flowId、uuid 映射、代码指纹（勿手改）
+                    ├── 节点/
+                    │   └── SQL查询/
+                    │       ├── code.sql   ★ 代码唯一真理源
+                    │       └── node.info.json
+                    ├── 变量/              调试 Run 变量只读派生
+                    └── _run/              测试/运行产物（*.last-error.md 等）
 ```
+
+> **禁止**在 `dazi-work` **工作区根**对流程命令使用 `--dir .`（可能误读根目录残留的 `flow.meta.json`，导致 flowId 与目标流程不一致）。`--dir` 必须指向含 `flow.json` 的 `flows/<流程名>/` 目录，**推荐绝对路径**。
 
 **关键约定**
 
@@ -55,7 +60,7 @@ dazi-work/
 
 ---
 
-## 3. CLI 怎么跑：`dazi.ps1` 与 `dazi-flow`
+## 3. CLI 怎么跑：全局 `dazi` 与 bundled
 
 ### 3.1 调用链（Trae / VS Code / Cursor 交付环境）
 
@@ -81,23 +86,30 @@ dazi flow <子命令...>
 | `dazi-flow run node-exec …` | `dazi flow run node-exec …` |
 | `dazi-flow variable pull …` | `dazi flow variable pull …` |
 
-**工作目录技巧**：多数命令支持 `--dir <流程目录>`。也可 **`cd` 到流程目录**后省略 `--dir`（cwd 即 `流程/<名>/`）。
+**`--dir` 约定**（Trae / Agent 必读）：
+
+| 方式 | 说明 |
+|------|------|
+| **推荐：绝对路径** | `--dir "D:\path\to\dazi-work\项目\<业务名>\流程\flows\<流程名>"`，不依赖终端 `cd` |
+| 可选：`cd` + `--dir .` | 仅当已确认终端位于目标 `flows/<流程名>/` 时 |
+| **禁止** | 在 `dazi-work` 根执行 `project status/push/pull --dir .` |
+
+CLI 会校验目录含 `flow.json`；从 `节点/` 子路径执行时可向上解析到流程目录。
 
 ```powershell
-# 在 dazi-work 根
+# 鉴权（可在 dazi-work 根）
 cd D:\path\to\dazi-work
 dazi auth whoami
 
-# 拉取平台流程到本地（首次）
-dazi flow project pull --flow 98 --dir "项目\flow_流程项目01\流程\MyFlow0529"
+# 拉取平台流程（推荐绝对路径 --dir）
+dazi flow project pull --flow 98 --dir "D:\path\to\dazi-work\项目\财务分析02\流程\flows\MyFlow0529"
 
-# 进入流程目录后，后续命令可省略 --dir
-cd "项目\flow_流程项目01\流程\MyFlow0529"
-dazi flow project status
-dazi flow node push --node <node_uuid>
+# 状态自检：输出 flowId / 流程名须与 快速启动_*.md 一致
+dazi flow project status --dir "D:\path\to\dazi-work\项目\财务分析02\流程\flows\MyFlow0529"
+dazi flow node push --node <node_uuid> --dir "D:\path\to\dazi-work\项目\财务分析02\流程\flows\MyFlow0529"
 ```
 
-**常用子命令速查**（拉取 / 提交 / 测试 / 变量等）见 [Flow 文档索引 · 流程项目常用命令](./flows-guide.md#流程项目flow_-常用命令)。Plan、数据源等专题见 [执行计划](./plan-guide.md)、[数据源管理](./source-guide.md)。
+**常用子命令速查**见 [Flow 文档索引 · 流程项目常用命令](./flows-guide.md#流程项目业务项目常用命令)。Plan、数据源等见 [执行计划](./plan-guide.md)、[数据源管理](./source-guide.md)。
 
 ---
 
@@ -105,7 +117,7 @@ dazi flow node push --node <node_uuid>
 
 ```text
 1. 新建或拉取
-   扩展：项目/flow_* → 新建流程 / 拉取平台流程
+   扩展：右键 `流程/flows/` → 新建流程 / 拉取平台流程
    CLI： flow project pull --flow <id> --dir <流程目录>
 
 2. 改代码
@@ -116,15 +128,19 @@ dazi flow node push --node <node_uuid>
    右键 flow.json → 打开流程设计器 → 保存 flow.json
    （AI 手改拓扑须遵守 [§6.2 画布节点与连线规范](#62-画布节点与连线规范ai-创建--编辑-flowjson-必读)）
 
-4. 单节点测试
-   右键 节点/ 或 code.* → 测试运行节点
+4. 提交节点代码（改 code.* 后、测试前必做）
+   右键 code.* → 提交节点
+   CLI： flow node push --node <uuid> --dir .
+
+5. 单节点测试（平台执行已 push 的代码）
+   设计器/运行面板「搭子执行」，或右键 节点/ / code.*
    CLI： flow run node-exec --node <uuid> --dir .
 
-5. 查看变量（表变量 schema + 前 10 行）
+6. 查看变量（表变量 schema + 前 10 行；有 output_variable_name 时建议必做）
    设计器属性面板 output_variable_name 旁 📊
    或： flow variable pull --name <变量名> --dir .
 
-6. 提交到平台
+7. 提交画布（改连线/配置/增删节点时）
    右键 → 提交流程（智能：代码脏节点 + 画布变更）
    CLI： flow project push --dir . --canvas
 
@@ -144,8 +160,12 @@ dazi flow node push --node <node_uuid>
 | **push 代码** | 仅脏节点：`PATCH /flows/{id}/flow-nodes/{uuid}`（乐观锁 `expected_version`）                |
 | **push 画布** | `PUT /flows/{id}` body `{ data: 完整 document }`（`--canvas`）                              |
 | **status**    | 本地 `code.*` 的 sha1 与 meta 中 `codeHash` 比对                                            |
+| **doctor**    | 检查 `flow.json` / `flow.meta.json` / `节点/` 一致性                                        |
+| **repair-meta** | 按 `flow.json` 与 `节点/` 重建 meta 索引；并刷新 `快速启动_*.md`                          |
 
-冲突时：先 **拉取** 或 **`node push --force`**（慎用覆盖）。
+冲突时：先 **拉取** 或 **`node push --force`**（慎用覆盖）。**本地节点多于平台时勿 pull**，应先 `push --canvas`。
+
+`pull` 前若 doctor 报错会打印警告；拉取后若平台节点少于本地会提示可能已覆盖手改画布。
 
 ---
 
@@ -153,12 +173,12 @@ dazi flow node push --node <node_uuid>
 
 | 右键对象                    | 常用命令                                               |
 | --------------------------- | ------------------------------------------------------ |
-| `flow.json` / 流程目录      | 打开设计器、拉取、**提交**、状态、运行整流程           |
+| `flow.json` / 流程目录      | 打开设计器、拉取、**提交**、状态、**doctor**、**修复 meta**、运行整流程 |
 | `节点/<名>/`                | 打开代码、拉取/提交节点、**测试运行**                  |
 | `节点/<名>/code.*`          | 提交、测试、拉取                                       |
 | `变量/`                     | 同步变量到本地                                         |
 | `变量/<名>.json`            | 刷新变量、查看变量信息                                 |
-| `项目/flow_*`               | 新建流程、拉取平台流程                                 |
+| `流程/flows/`（容器目录）   | 新建流程、拉取平台流程                                 |
 | **数据资源 → 文件上传管理** | 浏览平台登记文件、**拉取到本地资源**、复制 AI 附加说明 |
 
 设计器工具栏：**保存 / 校验 / 运行 / 提交 / 拉取**。
@@ -503,3 +523,4 @@ VS Code **打开流程设计器**（右键 `flow.json`）时：
 | 变量查看失败         | 先 **测试节点** 或 **运行流程**；确认 `flow.meta.json` 有 `flowId`                  |
 | 节点测试报缺上游变量 | 先运行上游节点，或 **运行整流程（debug）** 再测当前节点                             |
 | 代码改了平台没更新   | `node push` 或 `project push`；看 `project status` 是否脏                           |
+| flowId 与文档不一致  | 在 dazi-work 根或错误目录执行 `--dir .`；改用 `flows/<名>/` 绝对路径                 |

@@ -1,0 +1,129 @@
+{
+  "id": 48,
+  "flow_id": 128,
+  "status": "completed",
+  "duration": 1427,
+  "node_status": {
+    "n-7badabc7ddfd": {
+      "status": "skipped",
+      "node_label": "Python 脚本",
+      "node_uuid": "ee678a08-3a08-4ea2-983d-50c9d5515ba9",
+      "startTime": null,
+      "endTime": null,
+      "duration": null,
+      "error": null,
+      "traceback": null,
+      "output_variable_id": null,
+      "logs": null
+    },
+    "start-node": {
+      "status": "success",
+      "node_label": "开始",
+      "node_uuid": "216d98fb-fa8e-4ea1-b597-bfe31c60cade",
+      "startTime": "2026-06-05T11:52:46.465149Z",
+      "endTime": "2026-06-05T11:52:46.479443Z",
+      "duration": 14,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": ""
+    },
+    "n-c37d3d8884b9": {
+      "status": "skipped",
+      "node_label": "SQL 查询",
+      "node_uuid": "f404ac45-5a34-48d0-9837-32af2993ce53",
+      "startTime": null,
+      "endTime": null,
+      "duration": null,
+      "error": null,
+      "traceback": null,
+      "output_variable_id": null,
+      "logs": null
+    },
+    "n-e4897380cd6e": {
+      "status": "success",
+      "node_label": "读取成本报表",
+      "node_uuid": "dd27062b-add8-49b7-9df9-69996e1a68c4",
+      "startTime": "2026-06-05T11:52:46.479443Z",
+      "endTime": "2026-06-05T11:52:46.526327Z",
+      "duration": 46,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 106,
+      "logs": ""
+    },
+    "end-node": {
+      "status": "success",
+      "node_label": "结束",
+      "node_uuid": "08298284-3356-4edc-89d5-2a9f242c4aef",
+      "startTime": "2026-06-05T11:52:46.541956Z",
+      "endTime": "2026-06-05T11:52:46.573847Z",
+      "duration": 31,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 106,
+      "logs": ""
+    }
+  },
+  "execution_logs": [
+    {
+      "node_id": "start-node",
+      "node_label": "开始",
+      "status": "success",
+      "startTime": "2026-06-05T11:52:46.465149Z",
+      "endTime": "2026-06-05T11:52:46.479443Z",
+      "duration": 14,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": "",
+      "step_order": 1,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "8e9a7e56-1c8e-4f80-a4e0-5496b9973abd"
+    },
+    {
+      "node_id": "n-e4897380cd6e",
+      "node_label": "读取成本报表",
+      "status": "success",
+      "startTime": "2026-06-05T11:52:46.479443Z",
+      "endTime": "2026-06-05T11:52:46.526327Z",
+      "duration": 46,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 106,
+      "logs": "",
+      "step_order": 2,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "1dee93f7-47a2-4404-bca5-3a52713d8493"
+    },
+    {
+      "node_id": "end-node",
+      "node_label": "结束",
+      "status": "success",
+      "startTime": "2026-06-05T11:52:46.541956Z",
+      "endTime": "2026-06-05T11:52:46.573847Z",
+      "duration": 31,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 106,
+      "logs": "",
+      "step_order": 3,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "fe9ff99d-3337-4221-bf2a-9526d8621b34"
+    }
+  ],
+  "variables": {
+    "成本报表": {
+      "id": 106,
+      "value": "uploads/5f4c450a-80dc-4f27-b20d-8bf666b7cd84.parquet",
+      "type": "table",
+      "node_id": "n-e4897380cd6e",
+      "updated_at": "2026-06-05T11:52:46.541956Z"
+    }
+  },
+  "created_at": "2026-06-05T11:28:59.558190Z",
+  "completed_at": "2026-06-05T11:52:46.588824Z"
+}

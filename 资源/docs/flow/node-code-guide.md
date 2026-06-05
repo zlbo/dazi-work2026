@@ -1,8 +1,10 @@
 # 节点代码编写指南
 
 **文档 ID**: `flow/node-code-guide`  
-**适用**: `项目/flow_*/流程/<名>/节点/<节点名>/code.*`  
-**前置**: [数据流程项目开发指南](./flow-project-guide.md)、[流程变量系统指南](./variables-guide.md)、**[Flow 文档索引 §流程节点组件](./flows-guide.md#流程节点组件)**（全部可用节点）
+**适用**: `项目/<业务名>/流程/flows/<流程名>/节点/<节点名>/code.*`  
+**前置**: **[流程本地文件规范](./local-files-spec.md)**（必读）、[数据流程项目开发指南](./flow-project-guide.md)、[流程变量系统指南](./variables-guide.md)
+
+> 设计器「打开代码」依赖 `flow.meta.json` 中该节点的 `dir`+`codeFile`。若打不开，先 `dazi flow project doctor` → `repair-meta`。
 
 ---
 
@@ -38,23 +40,30 @@
 ## 2. 修改代码的标准流程
 
 ```powershell
-# 1. 进入流程目录（dazi-work 根下）
-cd "项目\flow_xxx\流程\MyFlow"
+# 1. 确定流程目录（推荐绝对路径）
+$flowDir = "D:\path\to\dazi-work\项目\<业务名>\流程\flows\MyFlow"
 
 # 2. 编辑 节点/SQL查询/code.sql 等
 
 # 3. 查看是否有本地改动
-dazi flow project status
+dazi flow project status --dir $flowDir
 
-# 4. 单节点测试（会先 GET debug-run，再 POST 单节点运行）
-dazi flow run node-exec --node <node_uuid> --dir .
+# 4. 提交代码到平台（必须先于测试；node-exec 跑的是平台已 push 的代码）
+dazi flow node push --node <node_uuid> --dir $flowDir
 
-# 5. 提交代码到平台
-dazi flow node push --node <node_uuid> --dir .
+# 5. 单节点测试
+dazi flow run node-exec --node <node_uuid> --dir $flowDir
+
+# 6. 若有 output_variable_name：核对输出变量（不能仅凭 node-exec 退出码）
+dazi flow variable pull --name <output_variable_name> --dir $flowDir
 ```
 
 `node_uuid` 在 `flow.meta.json` → `nodes.<uuid>`，或设计器属性面板、 `node.info.json` 中查看。  
 **单节点运行 API 使用语义 `nodeId`（画布 `id` 字段）**，CLI 的 `node-exec` 会用 meta 自动翻译。
+
+> **勿先测后 push**：未 `node push` 时 `node-exec` 仍执行平台旧代码，会造成「本地已改但通过/仍报错」的假象。
+
+**成功判据**：`node push` 成功 → `node-exec` 的 JSON `success: true` →（有输出变量时）`variable pull` 后 `变量/<名>.json` 为 ready 且数据合理。
 
 测试失败时阅读 **`_run/<节点名>.last-error.md`**（含错误分类与修复指引），确认后再交给 AI。
 
@@ -393,7 +402,7 @@ dazi flow variable sync --dir .
 ## 10. AI 协作建议
 
 1. 让 AI 阅读 **`code.*`** + **`flow.json` 中该节点 `data`** + 失败时的 **`_run/*.last-error.md`**
-2. **Agent 模式**（用户委托改流程）：AI 应主动执行「改 → `node-exec`/`flow-exec` → 读 `last-error.md` → 再改 → 再跑」循环（默认最多 3 轮），详见流程目录 **`快速启动_<流程名>.md` §AI 自主运行与改错闭环** 或提示词 **`flow/run-fix-loop`**
-3. **对话模式**（用户仅粘贴错误）：用户确认后再改代码 → 测试 → `node push`
+2. **Agent 模式**（用户委托改流程）：AI 应主动执行「改 `code.*` → **`node push`** → **`node-exec`** →（有输出变量时）**`variable pull`** → 读 `last-error.md` → 再改」循环（默认最多 3 轮），详见 **`快速启动_<流程名>.md` §AI 自主运行与改错闭环** 或 **`flow/run-fix-loop`**
+3. **对话模式**（用户仅粘贴错误）：用户确认后再改代码 → **`node push`** → 测试 → `variable pull`（若适用）
 4. 需要查上游表结构时，先 **运行上游** 或 **`variable pull`**，把 `变量/<名>.json` 交给 AI
 5. MCP：`dazi-flow mcp serve`（工具含 `flow_run_node`、`flow_node_get_code`、`flow_node_set_code` 等，写操作需 `--allow-write`）

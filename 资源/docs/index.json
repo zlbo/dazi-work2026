@@ -1,5 +1,5 @@
 {
-  "version": "3.0.0-beta.3",
+  "version": "3.0.6",
   "updatedAt": "2026-05-29T00:00:00.000Z",
   "docs": [
     {
@@ -111,10 +111,28 @@
       "file": "onto/dazi_script_seed_data_guide.md"
     },
     {
+      "id": "flow/local-files-spec",
+      "title": "流程本地文件规范与示例",
+      "category": "flow",
+      "file": "flow/local-files-spec.md"
+    },
+    {
+      "id": "flow/ai-workflow-playbook",
+      "title": "流程项目 AI 工作手册",
+      "category": "flow",
+      "file": "flow/ai-workflow-playbook.md"
+    },
+    {
       "id": "flow/flow-project-guide",
       "title": "数据流程项目开发指南",
       "category": "flow",
       "file": "flow/flow-project-guide.md"
+    },
+    {
+      "id": "guides/flow-consistency-checklist",
+      "title": "流程目录一致性检查表",
+      "category": "guides",
+      "file": "guides/flow-consistency-checklist.md"
     },
     {
       "id": "flow/流程开发最佳实践-VS-flow0案例",
@@ -145,12 +163,6 @@
       "title": "Flow 运行管理",
       "category": "flow",
       "file": "flow/run-guide.md"
-    },
-    {
-      "id": "flow/snapshot-guide",
-      "title": "Flow 快照管理",
-      "category": "flow",
-      "file": "flow/snapshot-guide.md"
     },
     {
       "id": "flow/source-guide",
