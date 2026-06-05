@@ -1,0 +1,15 @@
+{
+  "node_id": "n-dab8b7524db7",
+  "status": "success",
+  "error": null,
+  "active_branch": null,
+  "output_file_id": "uploads/py_result_bee8eea9-3ff0-4f0d-915f-6b8cee9ef077.parquet",
+  "output_variable_name": "V_DQ_REPORT",
+  "extra_variables": {
+    "V_DQ_SCORE": "100",
+    "质检报告": "D:\\dazi\\dazi-backend\\storage\\uploads\\py_result_dda83dfc-f897-475b-89d4-1c5261a2e911.parquet"
+  },
+  "output_file": "D:\\dazi\\dazi-backend\\storage\\uploads\\py_result_bee8eea9-3ff0-4f0d-915f-6b8cee9ef077.parquet",
+  "output_variable_id": 99,
+  "debug_run_id": 42
+}
