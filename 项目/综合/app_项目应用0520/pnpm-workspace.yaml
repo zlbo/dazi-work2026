@@ -1,7 +1,0 @@
-packages:
-  - 'sdk/*'
-  - 'templates/*'
-  - 'cli'
-  - 'apps/*'
-allowBuilds:
-  esbuild: set this to true or false

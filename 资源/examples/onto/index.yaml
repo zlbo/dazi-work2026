@@ -1,0 +1,29 @@
+version: "1.0"
+updatedAt: "2026-06-07"
+
+# 规划 / 脚本阶段须至少阅读 defaultReadOrder 中一个完整示例（README + plans 主文档）
+defaultReadOrder:
+  - 销售示例
+  - 设备运营
+
+examples:
+  - id: sales
+    dir: 销售示例
+    title: 产品销售分析
+    domain: [销售, 订单, 产品, 渠道, SKU, 客户]
+    planPrimary: plans/规划示例_产品销售本体规划方案.md
+    featured: true
+
+  - id: profit
+    dir: 利润示例
+    title: 利润 / GL 分析
+    domain: [利润, 科目, 预算, GL, 成本中心, 预实]
+    planPrimary: plans/规划示例_利润分析本体方案.md
+    featured: true
+
+  - id: equip-ops
+    dir: 设备运营
+    title: 化工设备运营分析
+    domain: [设备, OEE, 停机, 维保, 能耗, 工厂, 运营]
+    planPrimary: plans/化工设备运营分析本体方案.md
+    featured: true

@@ -3,15 +3,17 @@
 **文档 ID**: `onto/dazi-script-sdk-reference`  
 **适用**: dazi-vscode v3 + 搭子平台 DaziScript（ClickHouse 数据空间）
 
-> 给 LLM 与开发者提供精简、可执行的 SDK 规范。脚本目录、类型与 **`dazi onto script publish`** 等见 **[本体脚本编写指南](./本体脚本编写指南.md)**。
+> 给 LLM 与开发者提供精简、可执行的 SDK 规范。脚本目录、类型与 **`dazi onto script publish`** 等见 **[本体脚本编写指南](./本体脚本编写指南.md)**。  
+> **执行脚本前必读（强制）**：[脚本运行常见错误处理](./脚本运行常见错误处理.md)。
 
 ## 1. 工作区与脚本放置（dazi-vscode）
 
 | 用途                 | 路径                                                                                                        |
 | -------------------- | ----------------------------------------------------------------------------------------------------------- |
-| **日常开发**（推荐） | `<工作区根>/项目/onto_<项目名>/脚本/*.py`                                                                   |
-| **空间 ID**          | `项目/onto_<项目名>/README.md` 中的数据空间 ID                                                              |
-| **参考示例**         | `资源/examples/onto/setup/`、`资源/examples/onto/function/`（侧栏 **帮助 → 示例** 或 `dazi examples sync`） |
+| **日常开发**（推荐） | `<工作区根>/项目/<业务名>/本体/ontos/<实现名>/setup/*.py`（初始化、灌数）                                   |
+|                      | `<工作区根>/项目/<业务名>/本体/ontos/<实现名>/functions/*.py`（本体函数、动作）                           |
+| **空间 ID**          | `项目/<业务名>/本体/ontos/<实现名>/README.md` 中的数据空间 ID                                              |
+| **参考示例**         | **`资源/examples/onto/利润示例/`**、**`资源/examples/onto/销售示例/`**（侧栏 **帮助 → 示例** 或 `dazi examples sync`；总览 `onto/README.md`） |
 | **本文档**           | `资源/docs/onto/dazi_script_sdk_reference.md`（`dazi docs sync` 后）                                        |
 
 - **禁止**将 `onto/<space_id>/editorial/` 作为 v3 本地开发约定（历史路径，仅 CLI `script sync` 可能拉回平台副本）。
@@ -101,6 +103,24 @@
 - `s.sql.query(sql)` / `s.sql.query_one(sql)` / `s.sql.execute(sql)`
 - `s.sql.insert_rows(table, rows)`（`rows` 为 `list[dict]`）
 
+**`query_one` 与多列聚合**
+
+- `query_one` 适合 `SELECT count()` 等**单列标量**；对 `SELECT sum(a), count(b) ...` 等多列聚合，**勿**对返回值调用 `.get()`（可能得到 float 而非 dict）。
+- **推荐**：`rows = s.sql.query(sql); row = rows[0] if rows else {}`（函数脚本内为 `p.sql.query`）。详见 [脚本运行常见错误处理](./脚本运行常见错误处理.md#2-sql-聚合查询query_one-返回类型)。
+
+### 5.2.1 本体函数输出（`ontology_function`）
+
+与 setup/seed 不同，本体函数运行时平台注入 `ctx`、`space`、`onto`：
+
+| 要点 | 说明 |
+| ---- | ---- |
+| 入口 | `def main():`（**无** `params` 形参） |
+| 入参 | `ctx.params` → `p.get_params()` |
+| 出参 | **`return p.function_result(columns=..., data=..., row_count=...)`** |
+| 禁止 | `output.print_json()`（`OutputModule` 无此方法）、裸 `return {"k": v}` |
+
+标准模板：`资源/examples/onto/_templates/ontology_function_template.py`。详见 [function-guide](./function-guide.md#函数脚本结构标准模板)、[脚本运行常见错误处理 §3](./脚本运行常见错误处理.md#3-函数输出禁止-outputprint_json)。
+
 **ClickHouse：`INSERT ... VALUES` 与注释**
 
 - **`VALUES` 与各元组之间禁止 SQL 行注释 `--`**，否则易出现 `Code: 27` 等解析错误。
@@ -108,37 +128,86 @@
 
 ### 5.3 `s.tables`
 
-- `s.tables.register(table_name, label=...)`
-- `s.tables.sync_columns(table_name)`
+- `s.tables.register(table_name, display_name=..., description=..., label=..., category_347=...)` — `label` 为 `display_name` 简写别名；已注册时可刷新表显示名与说明；`category_347` 为 平台标准分类中文名（如 `"维度表"`），注册后**即时挂载**平台分类
+- `s.tables.sync_columns(table_name)` — 从物理库同步列；未显式传入元数据时仅**推断** `display_name`（token 词典），**不**写入业务 `description`
+- `s.tables.set_column_meta(table_name, columns=[{name, display_name, description, business_role}], force=False)` — 批量写入列显示名与说明（须先 register + sync_columns）
+- `s.tables.register_with_meta(table_name, display_name=..., description=..., columns=[...], force_column_meta=False, category_347=...)` — 上三者合一（**推荐** setup 脚本使用）
 - `s.tables.list()` / `s.tables.discover()`
-- `s.tables.add_relationship(...)`
+- `s.tables.add_relationship(from_table, to_table, join_sql, relationship_type="many_to_one", join_keys=None, description=None, category_347=...)` — 注册**数据空间表间关系**（幂等）；`category_347` 如 `"主数据关联"`、`"时间关联"`
 
 ### 5.4 Cube
 
-- `s.register_cube(name, table, title, measures, dimensions)`
+- `s.register_cube(name, table, title, measures, dimensions, category_347=...)` — `category_347` 如 `"流程型"`、`"主体型"`
 
 ### 5.5 `s.onto`
 
-- `s.onto.define_object_type(code, name, ...)`
+- `s.onto.define_object_type(code, name, ..., category_347=...)` — 如 `category_347="主数据"`
 - `s.onto.bind_source(object_type_code, "dazi_cube", config={"cube": "CubeName"})`
 - `s.onto.define_property(...)`
-- `s.onto.define_link_type(code, name, from_object_type_code, to_object_type_code, ...)`
-- `s.onto.register_function(function_id, adapter, ...)`
+- `s.onto.define_link_type(code, name, from_object_type_code, to_object_type_code, ..., category_347=...)` — 如 `category_347="归属关系"`
+- `s.onto.register_function(function_id, adapter, ..., category_347=...)` — 如 `category_347="总览分析"`
 - `s.onto.define_action(action_code, ...)`
 
-### 5.6 `s.ontology` / `s.ontology_rules` / `s.scripts`
+**常见误用**（setup 脚本）：不存在 `s.onto.sync_metrics()`、`s.cubes.upsert`；`define_object_type` 第二参数为 `name` 非 `label`；链接类型参数为 `from_object_type_code` / `to_object_type_code`。对照表见 [脚本运行常见错误处理](./脚本运行常见错误处理.md#1-setup-脚本-api-误用)。
+
+### 5.6 `s.categories`（平台分类挂载）
+
+挂载到 `ads_categories` 默认根下的平级目录，桥表关联表/Cube/对象/关系/链接/函数。分类名必须与 [本体命名规范](./本体命名规范_物理表Cube与对象.md) 中的**平台标准分类中文名**一致（如「维度表」「流程型」「总览分析」）。详见 [本体分类规划与SDK扩展方案](./本体分类规划与SDK扩展方案.md)。
+
+> **术语说明**：SDK 参数 `category_347`、`ensure_347` 与 CLI `--register-platform-category` 均表示**平台标准分类**（侧栏分组名），与内部文档编号无关；`category_347` 为历史参数名，请传入标准中文分类名。
+
+- `s.categories` — `CategoryManager` 实例（按空间懒加载）
+- `s.categories.ensure_347(kind, category)` — 按平台标准分类名创建平级目录（幂等）；`kind` 支持 `table` / `cube` / `object` / `relation` / `link` / `function`
+- `s.categories.assign_table(category, table_name)` — 挂载物理表
+- `s.categories.assign_cube(category, cube_name)` — 挂载 Cube
+- `s.categories.assign_object(category, object_type_code)` — 挂载对象类型
+- `s.categories.assign_relation(category, from_table, to_table)` — 挂载表间关系
+- `s.categories.assign_link(category, link_code)` — 挂载链接类型
+- `s.categories.assign_function(category, function_id)` — 挂载本体函数（如 `profit.fn.get_summary`）
+- `s.categories.auto_assign_tables(table_names)` — 按表名前缀自动推断平台分类并挂载
+- `s.categories.apply_registry(CATEGORY_REGISTRY, skip_missing=True, kinds=None)` — 批量应用注册表；`kinds` 可限定资源类（默认六类全挂；推荐在 `*_category_mount.py` 中一次性执行）
+
+**`CATEGORY_REGISTRY` 结构**（与规划附录 B 对齐）：
+
+```python
+CATEGORY_REGISTRY = {
+    "table": {"维度表": ["dim_account"], "事实表": ["fact_gl_journal_entry"]},
+    "cube": {"流程型": ["ActualCube"], "主体型": ["AccountActualCube"]},
+    "object": {"主数据": ["Account"], "事务": ["JournalEntry"], "分析": ["ProfitAnalysis"]},
+    "relation": {"时间关联": [("fact_x", "dim_date")], "主数据关联": [("fact_x", "dim_y")]},
+    "link": {"归属关系": ["entry_belongs_account"], "分析归因": ["analysis_by_account"]},
+    "function": {"总览分析": ["profit.fn.get_summary"]},  # 函数未注册时须 skip_missing=True
+}
+```
+
+**两种用法**（可并存，挂载幂等）：
+
+1. **批量 — `*_category_mount.py`**（推荐）：全量 `CATEGORY_REGISTRY` + `apply_registry`（init + seed + 全部函数 publish **之后**）
+2. **内联**（注册时即时挂载，可与 1 并存）：
+
+```python
+s.tables.register_with_meta("dim_product", display_name="产品维表", category_347="维度表", ...)
+s.register_cube("SalesCube", table=fact, title="...", category_347="流程型", ...)
+s.onto.define_object_type("Product", "产品", category_347="主数据")
+s.tables.add_relationship(..., category_347="主数据关联")
+s.onto.define_link_type("order_contains_product", "...", ..., category_347="归属关系")
+```
+
+### 5.7 `s.ontology` / `s.ontology_rules` / `s.scripts`
 
 见上文；规则：`ensure_rule_set` + `upsert_rule`；脚本记录：`create` / `ensure` / `list` 等。
 
 ## 6. 标准初始化流程（建议）
 
-1. 确认 `space_id`（项目 README）
+1. 确认 `space_id`（实现单元 README）
 2. 建表与灌数（`s.sql`；灌数规范见 seed 指南）
-3. `s.tables.register` + `sync_columns`
-4. `s.register_cube`
-5. `s.onto` 定义对象、属性、链接
-6. 注册函数/动作并 `features.attach`
-7. 配置规则（如需要）
+3. `s.tables.register_with_meta`（`TABLE_REGISTRY` 含表/列 `display_name`、`description`）
+4. **`s.tables.add_relationship`**（与规划「表间关系」一致；**勿省略**）
+5. `s.register_cube`
+6. `s.onto` 定义对象、属性、链接
+7. 注册函数/动作：`dazi onto script publish ... --register-function-id`（可选 `--register-platform-category`）；**发布后** `save-test-arguments`
+8. 函数齐后 run `*_category_mount.py`（全量分类；或依赖步骤 7 内联 `--register-platform-category`）
+9. 配置规则（如需要）
 
 ## 7. 在 dazi-vscode 中发布与运行
 
@@ -146,13 +215,13 @@
 
 ```bash
 # 预检
-dazi onto script publish-preview 项目/onto_<项目名>/脚本/my_setup.py --space <space-id>
+dazi onto script publish-preview 项目/<业务名>/本体/ontos/<实现名>/setup/my_setup.py --space <space-id>
 
 # 发布（初始化/灌数类脚本）
-dazi onto script publish 项目/onto_<项目名>/脚本/my_setup.py --space <space-id>
+dazi onto script publish 项目/<业务名>/本体/ontos/<实现名>/setup/my_setup.py --space <space-id>
 
 # 发布并注册为本体函数
-dazi onto script publish 项目/onto_<项目名>/脚本/my_func.py \
+dazi onto script publish 项目/<业务名>/本体/ontos/<实现名>/functions/my_func.py \
   --space <space-id> \
   --register-function-id my_func
 
@@ -168,7 +237,10 @@ dazi onto function run my_func --space <space-id> --params '{}'
 - 非 0 退出码即失败
 - 会改写数据的步骤须提供跳过/禁用开关
 
-**内置参考示例**（在用户工作区：**侧栏 帮助 → 示例 → 下载所有示例**，或执行 `dazi examples sync`，得到 **`资源/examples/`**；可复制到 **`项目/<onto_项目名>/脚本/`** 再改，勿直接改写同步下来的只读备份）：
+**内置参考示例**（在用户工作区：**侧栏 帮助 → 示例 → 下载所有示例**，或执行 `dazi examples sync`，得到 **`资源/examples/`**；可复制到 **`项目/<业务名>/本体/ontos/<实现名>/setup/`** 或 **`functions/`** 再改，勿直接改写同步下来的只读备份）：
 
-- 初始化：**`<工作区根>/资源/examples/onto/setup/profit_ontology_init.py`**
-- 函数样例：**`<工作区根>/资源/examples/onto/function/profit_fn_*.py`**
+- **规划全文**：`资源/examples/onto/<示例>/plans/*.md`（推荐 `销售示例/plans/规划示例_产品销售本体规划方案.md`）
+- **常见错误**（，**非**通用模板）：`脚本运行常见错误处理.md` 中的已废弃客户路径 — 使用通用占位符
+- **利润示例（GL 域）**：`资源/examples/onto/利润示例/setup/profit_ontology_init.py`、`profit_seed_data.py`、`functions/profit_fn_*.py`、`functions/test_arguments/`
+- **销售示例（推荐，含表间关系 + test_arguments）**：`资源/examples/onto/销售示例/setup/sales_ontology_init.py`、`sales_seed_data.py`、`functions/sales_fn_*.py`
+- **脚本运行纠错（实录）**：`资源/docs/onto/脚本运行常见错误处理.md` — setup API、`query_one`、CLI test_arguments 踩坑

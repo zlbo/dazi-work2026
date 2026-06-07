@@ -1,0 +1,9 @@
+{
+  "node_id": "n-edf2a45054d8",
+  "status": "failed",
+  "error": "No managed_file_id configured",
+  "active_branch": null,
+  "output_file_id": null,
+  "output_variable_name": null,
+  "extra_variables": {}
+}

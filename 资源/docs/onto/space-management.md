@@ -23,7 +23,7 @@ dazi onto space list
 dazi onto space init --space-id <space-id>
 ```
 
-本地目录结构：
+本地目录结构（**历史/遗留布局**，由 CLI `space init` 生成）：
 
 ```
 onto/<space-id>/
@@ -36,6 +36,8 @@ onto/<space-id>/
   scripts/        ← 脚本文件
   .dazi-space.json
 ```
+
+> **推荐工作区结构（v3）**：日常开发与文档约定使用 **`项目/<业务名>/本体/ontos/<实现名>/`** 实现单元布局（`README.md` 为 `space_id` 权威来源，`plans/`、`setup/`、`functions/`、`快速启动_<实现名>.md`）。`dazi onto space init` 生成的 **`onto/<space-id>/`** 仅用于 CLI 拉取快照、同步脚本等**对照/迁移**场景，**不应**作为新建本体项目的主开发路径。详见 **[本体规划指南](./本体规划指南.md)**、**[本体脚本编写指南](./本体脚本编写指南.md)**。
 
 ## 拉取快照
 

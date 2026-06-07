@@ -17,8 +17,11 @@ code --install-extension dazi-vscode-3.x.x.vsix
 
 ### 2. 打开工作区
 
-将 **`dazi-work`** 文件夹作为 VS Code 工作区根目录打开（含 `项目/`、`资源/`、`scripts/`）。  
-DRAP 应用项目位于 **`项目/app_<名称>/`**（完整 monorepo，见 [§331](../../docs/331-应用项目多项目与组件重构.md)）；不再要求根目录必须有 `runtime-apps/`。
+将 **`dazi-work`** 文件夹作为 VS Code 工作区根目录打开（含 `项目/`、`资源/`、`scripts/`）。
+
+业务项目位于 **`项目/<业务名>/`**，内含固定子目录 `本体/`、`流程/`、`应用/`。  
+本体开发入口为 **`项目/<业务名>/本体/ontos/<实现名>/`**（含 `plans/`、`setup/`、`functions/`；`space_id` 写在 `README.md`）。  
+应用组件位于 **`项目/<业务名>/应用/apps/<app_id>/`**（见 [§331](../../docs/331-应用项目多项目与组件重构.md)）。
 
 ### 3. 自检 CLI
 
@@ -49,11 +52,21 @@ dazi auth set-token --token "your-jwt-token"
 
 ### 6. 初始化工作区
 
-```powershell
-# 新项目（本体空间）
-dazi onto space init --space-id <your-space-id>
+**推荐（v3 业务项目 + per-item 本体）**：
 
-# 已有 v2 项目迁移
+1. 命令面板执行 **搭子: 新建业务项目**，创建 `项目/<业务名>/`
+2. 命令面板执行 **搭子: 新建本体实现**，在 `本体/ontos/<实现名>/` 下生成 `plans/`、`setup/`、`functions/` 及 `快速启动_<实现名>.md`
+3. 在 `ontos/<实现名>/README.md` 中确认或填写数据空间 ID
+
+**兼容（历史 CLI 布局，非日常开发入口）**：
+
+```powershell
+dazi onto space init --space-id <your-space-id>
+```
+
+已有 v2 项目迁移：
+
+```powershell
 dazi migrate workspace
 ```
 
@@ -72,6 +85,7 @@ dazi auth whoami
 - [CLI 调用约定](./cli-invocation.md)
 - [认证管理](../auth/auth-login.md)
 - [本体开发入门](../onto/space-management.md)
+- [工作区 v3 规范](./workspace-v3.md) — 业务项目目录树与 per-item 本体结构
 - [数据流程项目开发](../flow/flow-project-guide.md) — **推荐**：`项目/<业务名>/流程/flows/`、菜单、pull/push
 - [节点代码编写](../flow/node-code-guide.md) — python-script、sql-query 等
 - [流程开发索引](../flow/flows-guide.md) — Flow 文档入口

@@ -1,0 +1,10 @@
+{
+    "v": 1,
+    "arguments": {
+        "start_date": "2025-01-01",
+        "end_date": "2026-06-30",
+        "energy_type_id": null,
+        "plant_id": null
+    },
+    "object_type_code": "EnergyConsumption"
+}

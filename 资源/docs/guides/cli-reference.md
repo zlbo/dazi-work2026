@@ -22,14 +22,27 @@
 | `dazi prompt list`        | 列出提示词                                         |
 | `dazi prompt show <id>`   | 显示提示词                                         |
 | `dazi prompt sync`        | 同步内置提示词到 `资源/prompts/`                   |
-| `dazi examples list`      | 列出示例脚本                                       |
-| `dazi examples open <id>` | 显示示例内容                                       |
-| `dazi examples sync`      | 同步内置示例到 `资源/examples/`                    |
+| `dazi examples list`      | 列出示例脚本（`--category onto` 过滤本体类）     |
+| `dazi examples show <id>` | 显示示例内容（如 `onto/sales/plan`）               |
+| `dazi examples sync`      | 同步内置示例到 `资源/examples/`（含完整 `onto/` 树） |
+| `dazi examples onto list` | 列出本体完整示例注册表（读 `onto/index.json`）     |
+| `dazi examples onto suggest [关键词]` | 按业务域推荐对照示例（规划前选用）   |
+| `dazi examples onto show <id>` | 显示示例路径；`--plan` / `--readme` 输出全文  |
 | `dazi migrate workspace`  | 迁移工作区                                         |
 | `dazi migrate config`     | 迁移旧配置                                         |
 | `dazi onto <args>`        | 本体 CLI（**勿用** `dazi-onto`）                   |
 | `dazi flow <args>`        | 流程 CLI                                           |
 | `dazi app <args>`         | 应用 CLI（亦可在应用项目根用 `pnpm run dazi-app`） |
+
+**本体规划阶段常用**：
+
+```powershell
+dazi examples sync
+dazi examples onto suggest 设备 OEE
+dazi examples onto show equip-ops --plan
+```
+
+索引真源：`examples/onto/index.yaml`（人工维护）→ `index.json`（`copy:bundled` 时生成）。详见 [本体规划指南](../onto/本体规划指南.md)。
 
 ## 本体（`dazi onto ...`）
 

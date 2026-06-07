@@ -1,6 +1,6 @@
 {
-  "version": "3.0.6",
-  "updatedAt": "2026-05-29T00:00:00.000Z",
+  "version": "3.1.1",
+  "updatedAt": "2026-06-06T12:00:00.000Z",
   "docs": [
     {
       "id": "guides/quickstart",
@@ -87,10 +87,16 @@
       "file": "onto/本体规划指南.md"
     },
     {
-      "id": "onto/planning-example-profit",
-      "title": "规划示例：利润分析本体",
+      "id": "onto/naming-conventions",
+      "title": "本体命名规范（物理表 · Cube · 对象）",
       "category": "onto",
-      "file": "onto/规划示例_利润分析本体方案.md"
+      "file": "onto/本体命名规范_物理表Cube与对象.md"
+    },
+    {
+      "id": "onto/category-taxonomy-sdk",
+      "title": "349 · 本体分类规划与 SDK 扩展方案",
+      "category": "onto",
+      "file": "onto/本体分类规划与SDK扩展方案.md"
     },
     {
       "id": "onto/script-authoring",
@@ -109,6 +115,13 @@
       "title": "DaziScript 灌数指南",
       "category": "onto",
       "file": "onto/dazi_script_seed_data_guide.md"
+    },
+    {
+      "id": "onto/script-run-troubleshooting",
+      "title": "【必读】脚本运行常见错误处理",
+      "category": "onto",
+      "file": "onto/脚本运行常见错误处理.md",
+      "featured": true
     },
     {
       "id": "flow/local-files-spec",

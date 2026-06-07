@@ -18,16 +18,16 @@ dazi onto action list --space <space-id>
 
 ## 发布 Action
 
-脚本放在 **`项目/onto_<项目名>/脚本/`**（可与函数脚本同目录，用文件名区分）：
+脚本放在 **`项目/<业务名>/本体/ontos/<实现名>/functions/`**（可与函数脚本同目录，用文件名区分）：
 
 ```bash
-dazi onto script publish 项目/onto_<项目名>/脚本/my_action.py \
+dazi onto script publish 项目/<业务名>/本体/ontos/<实现名>/functions/my_action.py \
   --space <space-id> \
   --register-action-id my_action_code \
   --register-action-permission-tag "finance.write"
 ```
 
-`<space-id>` 取自项目 **`README.md`**。
+`<space-id>` 取自实现单元 **`README.md`**（`项目/<业务名>/本体/ontos/<实现名>/README.md`）。
 
 ## 更新 Action 代码
 

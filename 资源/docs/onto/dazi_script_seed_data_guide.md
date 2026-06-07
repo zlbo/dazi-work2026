@@ -16,14 +16,14 @@
 
 | 类型           | 推荐路径                                                                                               |
 | -------------- | ------------------------------------------------------------------------------------------------------ |
-| **项目内开发** | `<工作区根>/项目/onto_<项目名>/脚本/<名称>.py`                                                         |
-| **参考示例**   | `资源/examples/onto/setup/`（初始化+灌数一体）、`资源/examples/onto/function/`（分析函数，非灌数专篇） |
+| **项目内开发** | `<工作区根>/项目/<业务名>/本体/ontos/<实现名>/setup/<名称>.py`                                         |
+| **参考示例**   | **`资源/examples/onto/销售示例/setup/`**（init + seed）、**`资源/examples/onto/利润示例/setup/`**（init 模板） |
 
-- `space_id` 以 **`项目/onto_<项目名>/README.md`** 为准（扩展「新建项目」时已绑定）。
+- `space_id` 以 **`项目/<业务名>/本体/ontos/<实现名>/README.md`** 为准（扩展「新建本体实现」时已绑定）。
 - 侧栏 **帮助 → 📎 示例 → 下载所有示例**，或：`dazi examples sync` → `资源/examples/`。
 - 须定义 **`main()`**，**不要**写 `if __name__ == "__main__":`。
 
-> 不再使用 `spaces/<space_id>/editorial/scripts/setup/` 作为 v3 本地约定路径。
+> 不再使用 `spaces/<space_id>/editorial/scripts/setup/`、`项目/onto_<名称>/脚本/` 作为 v3 本地约定路径。
 
 ---
 
@@ -63,13 +63,13 @@
 
 ## 4. 示例：`insert_rows`（推荐）
 
-将 `space_id`、表名、列名替换为项目 README 与规划文档中的真实值。表须已存在（或在本脚本前文 DDL 创建）。
+将 `space_id`、表名、列名替换为实现单元 README 与规划文档中的真实值。表须已存在（或在本脚本前文 DDL 创建）。
 
 ```python
 """示例：按空间灌入演示数据（幂等 + insert_rows）
 
-放置：项目/onto_<项目名>/脚本/demo_seed.py
-space_id：见项目 README.md
+放置：项目/<业务名>/本体/ontos/<实现名>/setup/demo_seed.py
+space_id：见实现单元 README.md
 """
 
 import json
@@ -128,20 +128,23 @@ def main():
 
 ## 6. 发布与执行（dazi-vscode）
 
-在工作区根目录（`--space` 与项目 README 一致）：
+在工作区根目录（`--space` 与实现单元 README 一致）：
 
 ```bash
 # 预检
-dazi onto script publish-preview 项目/onto_<项目名>/脚本/demo_seed.py --space <space-id>
+dazi onto script publish-preview 项目/<业务名>/本体/ontos/<实现名>/setup/demo_seed.py --space <space-id>
 
 # 发布到平台（data_script / 初始化脚本）
-dazi onto script publish 项目/onto_<项目名>/脚本/demo_seed.py --space <space-id>
+dazi onto script publish 项目/<业务名>/本体/ontos/<实现名>/setup/demo_seed.py --space <space-id>
 
 # 若已入库且已知 script-id，可在平台侧执行；或通过 Onto 侧栏运行
 dazi onto script run --script-id <script-id> --space <space-id> --params '{}'
 ```
 
-**参考完整初始化+灌数**：复制 `资源/examples/onto/setup/profit_ontology_init.py` 到 `项目/.../脚本/` 后按空间改 `space_id` 与表名，再发布执行。
+**参考完整初始化+灌数**：
+
+- **推荐（已落地）**：`资源/examples/onto/销售示例/setup/sales_ontology_init.py`、`sales_seed_data.py`（规划见同目录 `../plans/规划示例_产品销售本体规划方案.md`）
+- **通用模板**：复制 `资源/examples/onto/利润示例/setup/profit_ontology_init.py` 到 `项目/<业务名>/本体/ontos/<实现名>/setup/` 后按空间改 `space_id` 与表名，再发布执行。
 
 > **已废弃**：`dazi-agent run --file "spaces/.../editorial/..."` — 请改用上表 `dazi onto script publish` / `function run`。
 

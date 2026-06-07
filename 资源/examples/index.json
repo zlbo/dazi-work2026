@@ -1,36 +1,438 @@
 {
-  "version": "3.0.6",
-  "updatedAt": "2026-05-25T00:00:00.000Z",
+  "version": "3.1.1",
+  "updatedAt": "2026-06-07T12:00:00.000Z",
   "examples": [
     {
-      "id": "onto/setup/profit-ontology-init",
-      "title": "利润分析本体初始化",
-      "category": "onto-setup",
-      "file": "onto/setup/profit_ontology_init.py"
+      "id": "onto/readme",
+      "title": "Onto 内置示例总览（销售 + 利润 + 设备运营）",
+      "category": "onto",
+      "file": "onto/README.md"
     },
     {
-      "id": "onto/function/profit-fn-yoy",
-      "title": "利润同比分析 (YoY)",
-      "category": "onto-function",
-      "file": "onto/function/profit_fn_yoy_analysis.py"
+      "id": "onto/template/onto-preflight",
+      "title": "Onto 函数 publish 门禁脚本模板",
+      "category": "onto-模板",
+      "file": "onto/_templates/onto_preflight.ps1"
     },
     {
-      "id": "onto/function/profit-fn-mom",
-      "title": "利润环比分析 (MoM)",
-      "category": "onto-function",
-      "file": "onto/function/profit_fn_mom_analysis.py"
+      "id": "onto/index",
+      "title": "Onto 示例索引（index.yaml）",
+      "category": "onto",
+      "file": "onto/index.yaml"
     },
     {
-      "id": "onto/function/profit-fn-top-products",
-      "title": "产品利润排行",
-      "category": "onto-function",
-      "file": "onto/function/profit_fn_top_products.py"
+      "id": "onto/index-json",
+      "title": "Onto 示例索引（index.json，CLI 机器可读）",
+      "category": "onto",
+      "file": "onto/index.json"
     },
     {
-      "id": "onto/function/profit-fn-customer-segmentation",
-      "title": "客户分层",
-      "category": "onto-function",
-      "file": "onto/function/profit_fn_customer_segmentation.py"
+      "id": "onto/sales/readme",
+      "title": "销售示例 · 总览",
+      "category": "onto-销售",
+      "file": "onto/销售示例/README.md"
+    },
+    {
+      "id": "onto/sales/plan",
+      "title": "销售示例 · 规划正文",
+      "category": "onto-销售",
+      "file": "onto/销售示例/plans/规划示例_产品销售本体规划方案.md"
+    },
+    {
+      "id": "onto/profit/readme",
+      "title": "利润示例 · 总览",
+      "category": "onto-利润",
+      "file": "onto/利润示例/README.md"
+    },
+    {
+      "id": "onto/profit/plan",
+      "title": "利润示例 · 规划正文",
+      "category": "onto-利润",
+      "file": "onto/利润示例/plans/规划示例_利润分析本体方案.md"
+    },
+    {
+      "id": "onto/equip-ops/readme",
+      "title": "设备运营 · 总览",
+      "category": "onto-设备运营",
+      "file": "onto/设备运营/README.md"
+    },
+    {
+      "id": "onto/equip-ops/plan",
+      "title": "设备运营 · 规划正文",
+      "category": "onto-设备运营",
+      "file": "onto/设备运营/plans/化工设备运营分析本体方案.md"
+    },
+    {
+      "id": "onto/equip-ops/setup/ontology-init",
+      "title": "设备运营 · 本体初始化",
+      "category": "onto-设备运营-初始化",
+      "file": "onto/设备运营/setup/equip_ops_ontology_init.py"
+    },
+    {
+      "id": "onto/equip-ops/setup/seed-data",
+      "title": "设备运营 · 演示灌数",
+      "category": "onto-设备运营-初始化",
+      "file": "onto/设备运营/setup/equip_ops_seed_data.py"
+    },
+    {
+      "id": "onto/equip-ops/setup/category-mount",
+      "title": "设备运营 · 平台分类挂载",
+      "category": "onto-设备运营-初始化",
+      "file": "onto/设备运营/setup/equip_ops_category_mount.py"
+    },
+    {
+      "id": "onto/equip-ops/function/get-summary",
+      "title": "设备运营 · 运营总览",
+      "category": "onto-设备运营-函数",
+      "file": "onto/设备运营/functions/equip_ops_fn_get_summary.py"
+    },
+    {
+      "id": "onto/equip-ops/function/oee",
+      "title": "设备运营 · OEE 分析",
+      "category": "onto-设备运营-函数",
+      "file": "onto/设备运营/functions/equip_ops_fn_oee_analysis.py"
+    },
+    {
+      "id": "onto/equip-ops/function/availability",
+      "title": "设备运营 · 可用率分析",
+      "category": "onto-设备运营-函数",
+      "file": "onto/设备运营/functions/equip_ops_fn_availability_analysis.py"
+    },
+    {
+      "id": "onto/equip-ops/function/downtime-breakdown",
+      "title": "设备运营 · 停机分解",
+      "category": "onto-设备运营-函数",
+      "file": "onto/设备运营/functions/equip_ops_fn_downtime_breakdown.py"
+    },
+    {
+      "id": "onto/equip-ops/function/maintenance-compliance",
+      "title": "设备运营 · 维保合规",
+      "category": "onto-设备运营-函数",
+      "file": "onto/设备运营/functions/equip_ops_fn_maintenance_compliance.py"
+    },
+    {
+      "id": "onto/equip-ops/function/energy-intensity",
+      "title": "设备运营 · 能耗强度",
+      "category": "onto-设备运营-函数",
+      "file": "onto/设备运营/functions/equip_ops_fn_energy_intensity.py"
+    },
+    {
+      "id": "onto/equip-ops/function/plan-vs-actual",
+      "title": "设备运营 · 计划 vs 实际",
+      "category": "onto-设备运营-函数",
+      "file": "onto/设备运营/functions/equip_ops_fn_plan_vs_actual.py"
+    },
+    {
+      "id": "onto/equip-ops/function/unit-comparison",
+      "title": "设备运营 · 装置对比",
+      "category": "onto-设备运营-函数",
+      "file": "onto/设备运营/functions/equip_ops_fn_unit_comparison.py"
+    },
+    {
+      "id": "onto/equip-ops/function/top-fault-equipment",
+      "title": "设备运营 · 故障设备 Top N",
+      "category": "onto-设备运营-函数",
+      "file": "onto/设备运营/functions/equip_ops_fn_top_fault_equipment.py"
+    },
+    {
+      "id": "onto/equip-ops/function/yoy",
+      "title": "设备运营 · 同比 (YoY)",
+      "category": "onto-设备运营-函数",
+      "file": "onto/设备运营/functions/equip_ops_fn_yoy_analysis.py"
+    },
+    {
+      "id": "onto/equip-ops/function/mom",
+      "title": "设备运营 · 环比 (MoM)",
+      "category": "onto-设备运营-函数",
+      "file": "onto/设备运营/functions/equip_ops_fn_mom_analysis.py"
+    },
+    {
+      "id": "onto/equip-ops/function/save-test-arguments",
+      "title": "设备运营 · 批量保存 test_arguments",
+      "category": "onto-设备运营-工具",
+      "file": "onto/设备运营/functions/save_test_arguments.ps1"
+    },
+    {
+      "id": "onto/equip-ops/test-args/get-summary",
+      "title": "test_arguments · equip_ops.fn.get_summary",
+      "category": "onto-设备运营-测试参数",
+      "file": "onto/设备运营/functions/test_arguments/equip_ops.fn.get_summary.json"
+    },
+    {
+      "id": "onto/equip-ops/test-args/oee",
+      "title": "test_arguments · equip_ops.fn.oee_analysis",
+      "category": "onto-设备运营-测试参数",
+      "file": "onto/设备运营/functions/test_arguments/equip_ops.fn.oee_analysis.json"
+    },
+    {
+      "id": "onto/equip-ops/test-args/availability",
+      "title": "test_arguments · equip_ops.fn.availability_analysis",
+      "category": "onto-设备运营-测试参数",
+      "file": "onto/设备运营/functions/test_arguments/equip_ops.fn.availability_analysis.json"
+    },
+    {
+      "id": "onto/equip-ops/test-args/downtime-breakdown",
+      "title": "test_arguments · equip_ops.fn.downtime_breakdown",
+      "category": "onto-设备运营-测试参数",
+      "file": "onto/设备运营/functions/test_arguments/equip_ops.fn.downtime_breakdown.json"
+    },
+    {
+      "id": "onto/equip-ops/test-args/maintenance-compliance",
+      "title": "test_arguments · equip_ops.fn.maintenance_compliance",
+      "category": "onto-设备运营-测试参数",
+      "file": "onto/设备运营/functions/test_arguments/equip_ops.fn.maintenance_compliance.json"
+    },
+    {
+      "id": "onto/equip-ops/test-args/energy-intensity",
+      "title": "test_arguments · equip_ops.fn.energy_intensity",
+      "category": "onto-设备运营-测试参数",
+      "file": "onto/设备运营/functions/test_arguments/equip_ops.fn.energy_intensity.json"
+    },
+    {
+      "id": "onto/equip-ops/test-args/plan-vs-actual",
+      "title": "test_arguments · equip_ops.fn.plan_vs_actual",
+      "category": "onto-设备运营-测试参数",
+      "file": "onto/设备运营/functions/test_arguments/equip_ops.fn.plan_vs_actual.json"
+    },
+    {
+      "id": "onto/equip-ops/test-args/unit-comparison",
+      "title": "test_arguments · equip_ops.fn.unit_comparison",
+      "category": "onto-设备运营-测试参数",
+      "file": "onto/设备运营/functions/test_arguments/equip_ops.fn.unit_comparison.json"
+    },
+    {
+      "id": "onto/equip-ops/test-args/top-fault-equipment",
+      "title": "test_arguments · equip_ops.fn.top_fault_equipment",
+      "category": "onto-设备运营-测试参数",
+      "file": "onto/设备运营/functions/test_arguments/equip_ops.fn.top_fault_equipment.json"
+    },
+    {
+      "id": "onto/equip-ops/test-args/yoy",
+      "title": "test_arguments · equip_ops.fn.yoy_analysis",
+      "category": "onto-设备运营-测试参数",
+      "file": "onto/设备运营/functions/test_arguments/equip_ops.fn.yoy_analysis.json"
+    },
+    {
+      "id": "onto/equip-ops/test-args/mom",
+      "title": "test_arguments · equip_ops.fn.mom_analysis",
+      "category": "onto-设备运营-测试参数",
+      "file": "onto/设备运营/functions/test_arguments/equip_ops.fn.mom_analysis.json"
+    },
+    {
+      "id": "onto/profit/setup/ontology-init",
+      "title": "利润分析 · 本体初始化",
+      "category": "onto-利润-初始化",
+      "file": "onto/利润示例/setup/profit_ontology_init.py"
+    },
+    {
+      "id": "onto/profit/setup/seed-data",
+      "title": "利润分析 · 演示灌数",
+      "category": "onto-利润-初始化",
+      "file": "onto/利润示例/setup/profit_seed_data.py"
+    },
+    {
+      "id": "onto/profit/setup/category-mount",
+      "title": "利润分析 · 平台分类挂载",
+      "category": "onto-利润-初始化",
+      "file": "onto/利润示例/setup/profit_category_mount.py"
+    },
+    {
+      "id": "onto/profit/function/get-summary",
+      "title": "利润分析 · 利润总览",
+      "category": "onto-利润-函数",
+      "file": "onto/利润示例/functions/profit_fn_get_summary.py"
+    },
+    {
+      "id": "onto/profit/function/yoy",
+      "title": "利润分析 · 同比 (YoY)",
+      "category": "onto-利润-函数",
+      "file": "onto/利润示例/functions/profit_fn_yoy_analysis.py"
+    },
+    {
+      "id": "onto/profit/function/mom",
+      "title": "利润分析 · 环比 (MoM)",
+      "category": "onto-利润-函数",
+      "file": "onto/利润示例/functions/profit_fn_mom_analysis.py"
+    },
+    {
+      "id": "onto/profit/function/budget-vs-actual",
+      "title": "利润分析 · 预实对比",
+      "category": "onto-利润-函数",
+      "file": "onto/利润示例/functions/profit_fn_budget_vs_actual.py"
+    },
+    {
+      "id": "onto/profit/function/account-breakdown",
+      "title": "利润分析 · 科目结构",
+      "category": "onto-利润-函数",
+      "file": "onto/利润示例/functions/profit_fn_account_breakdown.py"
+    },
+    {
+      "id": "onto/profit/function/cost-center-profit",
+      "title": "利润分析 · 组织利润",
+      "category": "onto-利润-函数",
+      "file": "onto/利润示例/functions/profit_fn_cost_center_profit.py"
+    },
+    {
+      "id": "onto/profit/function/top-accounts",
+      "title": "利润分析 · 科目 Top N",
+      "category": "onto-利润-函数",
+      "file": "onto/利润示例/functions/profit_fn_top_accounts.py"
+    },
+    {
+      "id": "onto/profit/function/save-test-arguments",
+      "title": "利润分析 · 批量保存 test_arguments",
+      "category": "onto-利润-工具",
+      "file": "onto/利润示例/functions/save_test_arguments.ps1"
+    },
+    {
+      "id": "onto/profit/test-args/get-summary",
+      "title": "test_arguments · profit.fn.get_summary",
+      "category": "onto-利润-测试参数",
+      "file": "onto/利润示例/functions/test_arguments/profit.fn.get_summary.json"
+    },
+    {
+      "id": "onto/profit/test-args/yoy",
+      "title": "test_arguments · profit.fn.yoy_analysis",
+      "category": "onto-利润-测试参数",
+      "file": "onto/利润示例/functions/test_arguments/profit.fn.yoy_analysis.json"
+    },
+    {
+      "id": "onto/profit/test-args/mom",
+      "title": "test_arguments · profit.fn.mom_analysis",
+      "category": "onto-利润-测试参数",
+      "file": "onto/利润示例/functions/test_arguments/profit.fn.mom_analysis.json"
+    },
+    {
+      "id": "onto/profit/test-args/budget-vs-actual",
+      "title": "test_arguments · profit.fn.budget_vs_actual",
+      "category": "onto-利润-测试参数",
+      "file": "onto/利润示例/functions/test_arguments/profit.fn.budget_vs_actual.json"
+    },
+    {
+      "id": "onto/profit/test-args/account-breakdown",
+      "title": "test_arguments · profit.fn.account_breakdown",
+      "category": "onto-利润-测试参数",
+      "file": "onto/利润示例/functions/test_arguments/profit.fn.account_breakdown.json"
+    },
+    {
+      "id": "onto/profit/test-args/cost-center-profit",
+      "title": "test_arguments · profit.fn.cost_center_profit",
+      "category": "onto-利润-测试参数",
+      "file": "onto/利润示例/functions/test_arguments/profit.fn.cost_center_profit.json"
+    },
+    {
+      "id": "onto/profit/test-args/top-accounts",
+      "title": "test_arguments · profit.fn.top_accounts",
+      "category": "onto-利润-测试参数",
+      "file": "onto/利润示例/functions/test_arguments/profit.fn.top_accounts.json"
+    },
+    {
+      "id": "onto/sales/setup/ontology-init",
+      "title": "产品销售 · 本体初始化",
+      "category": "onto-销售-初始化",
+      "file": "onto/销售示例/setup/sales_ontology_init.py"
+    },
+    {
+      "id": "onto/sales/setup/seed-data",
+      "title": "产品销售 · 演示灌数",
+      "category": "onto-销售-初始化",
+      "file": "onto/销售示例/setup/sales_seed_data.py"
+    },
+    {
+      "id": "onto/sales/setup/category-mount",
+      "title": "产品销售 · 平台分类挂载",
+      "category": "onto-销售-初始化",
+      "file": "onto/销售示例/setup/sales_category_mount.py"
+    },
+    {
+      "id": "onto/sales/function/get-summary",
+      "title": "产品销售 · 销售概览",
+      "category": "onto-销售-函数",
+      "file": "onto/销售示例/functions/sales_fn_get_summary.py"
+    },
+    {
+      "id": "onto/sales/function/yoy",
+      "title": "产品销售 · 同比分析",
+      "category": "onto-销售-函数",
+      "file": "onto/销售示例/functions/sales_fn_yoy_analysis.py"
+    },
+    {
+      "id": "onto/sales/function/mom",
+      "title": "产品销售 · 环比分析",
+      "category": "onto-销售-函数",
+      "file": "onto/销售示例/functions/sales_fn_mom_analysis.py"
+    },
+    {
+      "id": "onto/sales/function/top-products",
+      "title": "产品销售 · Top 产品",
+      "category": "onto-销售-函数",
+      "file": "onto/销售示例/functions/sales_fn_top_products.py"
+    },
+    {
+      "id": "onto/sales/function/customer-segmentation",
+      "title": "产品销售 · 客户分层",
+      "category": "onto-销售-函数",
+      "file": "onto/销售示例/functions/sales_fn_customer_segmentation.py"
+    },
+    {
+      "id": "onto/sales/function/region-breakdown",
+      "title": "产品销售 · 区域分布",
+      "category": "onto-销售-函数",
+      "file": "onto/销售示例/functions/sales_fn_region_breakdown.py"
+    },
+    {
+      "id": "onto/sales/function/channel-mix",
+      "title": "产品销售 · 渠道结构",
+      "category": "onto-销售-函数",
+      "file": "onto/销售示例/functions/sales_fn_channel_mix.py"
+    },
+    {
+      "id": "onto/sales/function/save-test-arguments",
+      "title": "产品销售 · 批量保存 test_arguments",
+      "category": "onto-销售-工具",
+      "file": "onto/销售示例/functions/save_test_arguments.ps1"
+    },
+    {
+      "id": "onto/sales/test-args/get-summary",
+      "title": "test_arguments · sales.fn.get_summary",
+      "category": "onto-销售-测试参数",
+      "file": "onto/销售示例/functions/test_arguments/sales.fn.get_summary.json"
+    },
+    {
+      "id": "onto/sales/test-args/yoy",
+      "title": "test_arguments · sales.fn.yoy_analysis",
+      "category": "onto-销售-测试参数",
+      "file": "onto/销售示例/functions/test_arguments/sales.fn.yoy_analysis.json"
+    },
+    {
+      "id": "onto/sales/test-args/mom",
+      "title": "test_arguments · sales.fn.mom_analysis",
+      "category": "onto-销售-测试参数",
+      "file": "onto/销售示例/functions/test_arguments/sales.fn.mom_analysis.json"
+    },
+    {
+      "id": "onto/sales/test-args/top-products",
+      "title": "test_arguments · sales.fn.top_products",
+      "category": "onto-销售-测试参数",
+      "file": "onto/销售示例/functions/test_arguments/sales.fn.top_products.json"
+    },
+    {
+      "id": "onto/sales/test-args/customer-segmentation",
+      "title": "test_arguments · sales.fn.customer_segmentation",
+      "category": "onto-销售-测试参数",
+      "file": "onto/销售示例/functions/test_arguments/sales.fn.customer_segmentation.json"
+    },
+    {
+      "id": "onto/sales/test-args/region-breakdown",
+      "title": "test_arguments · sales.fn.region_breakdown",
+      "category": "onto-销售-测试参数",
+      "file": "onto/销售示例/functions/test_arguments/sales.fn.region_breakdown.json"
+    },
+    {
+      "id": "onto/sales/test-args/channel-mix",
+      "title": "test_arguments · sales.fn.channel_mix",
+      "category": "onto-销售-测试参数",
+      "file": "onto/销售示例/functions/test_arguments/sales.fn.channel_mix.json"
     },
     {
       "id": "flow/minimal-excel-python",

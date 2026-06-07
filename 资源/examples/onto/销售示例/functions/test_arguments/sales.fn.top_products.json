@@ -1,0 +1,5 @@
+{
+  "v": 1,
+  "arguments": {"limit": 5, "metric": "sales_amount", "start_date": "2025-01-01", "end_date": "2026-06-30"},
+  "object_type_code": "Product"
+}

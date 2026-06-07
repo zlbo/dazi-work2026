@@ -84,7 +84,7 @@ dazi doctor --workspace-root D:\path\to\dazi-work
 检查 `.cursor/mcp.json` 配置。MCP 需能调用 bundled CLI，示例：
 
 ```powershell
-$env:DAZI_BUNDLED_DIR = "$env:USERPROFILE\.cursor\extensions\dazitech.dazi-vscode-3.0.6\bundled\clis"
+$env:DAZI_BUNDLED_DIR = "$env:USERPROFILE\.cursor\extensions\dazitech.dazi-vscode-3.1.1\bundled\clis"
 node "$env:DAZI_BUNDLED_DIR\dazi.js" mcp stdio
 ```
 
@@ -99,3 +99,14 @@ pnpm run dazi-app -- --version
 ```
 
 应用 CLI 由 bundled + 启动器提供，**不需要** monorepo 源码。
+
+## 本体脚本：发布 / 运行 / test_arguments
+
+| 现象 | 原因 | 处理 |
+| ---- | ---- | ---- |
+| init 报 `sync_metrics` / `cubes` 不存在 | API 误用 | 见 [脚本运行常见错误处理](../onto/脚本运行常见错误处理.md) §1 |
+| 函数聚合 SQL 报 `float` 无 `.get()` | `query_one` 用于多列聚合 | 改用 `query()` 取 `rows[0]`，见纠错文档 §2 |
+| `function run --arguments-json-file` unknown | 该子命令不支持此参数 | 先 `save-test-arguments`，再 `function run <function_id>` |
+| `save-test-arguments` 404 | 传了 `function_id` 而非 `ofn_xxx` | `dazi onto function list` 取内部 `id` |
+
+完整常见错误与 CLI 说明：`dazi docs show onto/script-run-troubleshooting`（`dazi docs sync` 后位于 `资源/docs/onto/`）。

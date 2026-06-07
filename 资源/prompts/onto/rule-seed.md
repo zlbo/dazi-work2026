@@ -13,6 +13,9 @@
 
 ## 种子脚本模板
 
+建议将种子脚本保存到 `项目/<业务名>/本体/ontos/<实现名>/setup/<stem>_seed_rules.py`（与同实现的 init/seed 脚本并列）。  
+`space_id` 取自 `ontos/<实现名>/README.md`。
+
 ```python
 def main(params: dict, s=None) -> dict:
     """
@@ -34,9 +37,10 @@ def main(params: dict, s=None) -> dict:
     return {"upserted": len(rules), "result": result}
 ```
 
-执行命令（v3；**勿用** `dazi-onto`）：
+发布与执行（v3；**勿用** `dazi-onto`）：
 
 ```powershell
+dazi onto script publish 项目/<业务名>/本体/ontos/<实现名>/setup/<stem>_seed_rules.py --space <space-id> --type data
 dazi onto rule run-seed --space <space-id> --stem <seed_file_stem>
 ```
 

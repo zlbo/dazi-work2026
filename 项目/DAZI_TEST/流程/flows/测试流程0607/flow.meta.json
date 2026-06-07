@@ -1,0 +1,24 @@
+{
+  "flowId": "131",
+  "flowName": "测试流程0607",
+  "nodes": {
+    "ba2c41c6-51e6-4999-8afc-5530ebd71cf8": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "de9027d7-a5d1-46b7-b6a6-f33a141a9741": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    },
+    "d55bc0c7-03ae-4b28-b525-419007f0ea31": {
+      "nodeId": "n-9b5d053930f8",
+      "nodeType": "excel-python",
+      "dir": "节点/Excel_开发",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "d89a02762a2eddd915de7cda6af8d008d7416f82"
+    }
+  },
+  "lastPulledAt": "2026-06-07T01:04:45.525Z",
+  "graphFingerprint": "sha1:4bbe01584c7c07d647177c1fe1ad57ee721a34a2"
+}

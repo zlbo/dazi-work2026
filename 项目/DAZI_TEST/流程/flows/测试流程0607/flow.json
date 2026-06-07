@@ -1,0 +1,46 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": 50,
+        "y": 250
+      },
+      "data": {
+        "label": "开始",
+        "type": "start"
+      },
+      "deletable": false,
+      "node_uuid": "ba2c41c6-51e6-4999-8afc-5530ebd71cf8"
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 850,
+        "y": 250
+      },
+      "data": {
+        "label": "结束",
+        "type": "end"
+      },
+      "deletable": false,
+      "node_uuid": "de9027d7-a5d1-46b7-b6a6-f33a141a9741"
+    },
+    {
+      "id": "n-9b5d053930f8",
+      "node_uuid": "d55bc0c7-03ae-4b28-b525-419007f0ea31",
+      "type": "custom",
+      "position": {
+        "x": 120,
+        "y": 240
+      },
+      "data": {
+        "label": "Excel 开发",
+        "type": "excel-python"
+      }
+    }
+  ],
+  "edges": []
+}

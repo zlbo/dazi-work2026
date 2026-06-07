@@ -40,10 +40,13 @@ def main(params: dict, context: dict, s=None) -> dict:
     return {"status": "ok"}
 ```
 
+脚本落盘路径：`项目/<业务名>/本体/ontos/<实现名>/setup/` 或 `functions/`（按脚本类型选择）。  
+`space_id` 取自 `ontos/<实现名>/README.md`。
+
 发布命令（v3；**勿用** `dazi-onto`）：
 
 ```powershell
-dazi onto script publish 项目/onto_<名>/脚本/<file>.py --space <space-id> --register-action-id <action_code> --register-action-permission-tag "finance.write"
+dazi onto script publish 项目/<业务名>/本体/ontos/<实现名>/setup/<file>.py --space <space-id> --register-action-id <action_code> --register-action-permission-tag "finance.write"
 ```
 
 详见提示词 `onto/script-publish-run`。
