@@ -138,7 +138,7 @@
         "spaceId": "space__panda_construction",
         "tableName": "fact_project_output",
         "input_variable_name": "validated_output_data",
-        "mode": "append",
+        "writeMode": "append",
         "syncMetadata": true
       },
       "measured": {

@@ -1,0 +1,203 @@
+{
+  "id": 58,
+  "flow_id": 136,
+  "status": "completed",
+  "duration": 3622,
+  "node_status": {
+    "start-node": {
+      "status": "success",
+      "node_label": "开始",
+      "node_uuid": "fa3df7cc-7038-415a-87dd-9c4688804625",
+      "startTime": "2026-06-10T13:10:15.930323Z",
+      "endTime": "2026-06-10T13:10:15.930323Z",
+      "duration": 0,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": ""
+    },
+    "dataspace-sink-balance": {
+      "status": "success",
+      "node_label": "写入收支数据",
+      "node_uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "startTime": "2026-06-10T13:10:58.150989Z",
+      "endTime": "2026-06-10T13:11:23.227167Z",
+      "duration": 25076,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 122,
+      "logs": ""
+    },
+    "python-transform-balance": {
+      "status": "success",
+      "node_label": "数据转换",
+      "node_uuid": "e5f8a3b9-2c7d-4e8a-9f6b-1a2c3d4e5f6a",
+      "startTime": "2026-06-10T13:10:16.556318Z",
+      "endTime": "2026-06-10T13:10:36.503574Z",
+      "duration": 19947,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 121,
+      "logs": ""
+    },
+    "python-quality-balance": {
+      "status": "success",
+      "node_label": "质量检查",
+      "node_uuid": "f7c4e8d2-1a3b-5c6d-7e8f-9a0b1c2d3e4g",
+      "startTime": "2026-06-10T13:10:36.535786Z",
+      "endTime": "2026-06-10T13:10:58.135413Z",
+      "duration": 21599,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 122,
+      "logs": ""
+    },
+    "database-source-balance": {
+      "status": "success",
+      "node_label": "读取收支数据",
+      "node_uuid": "d96222ce-aaa9-4050-b782-830c2f2de9eb",
+      "startTime": "2026-06-10T13:10:15.945968Z",
+      "endTime": "2026-06-10T13:10:16.525070Z",
+      "duration": 579,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 120,
+      "logs": ""
+    },
+    "end-node": {
+      "status": "success",
+      "node_label": "结束",
+      "node_uuid": "59b0f551-6e19-4b69-b2b4-e71a72807063",
+      "startTime": "2026-06-10T13:11:23.227167Z",
+      "endTime": "2026-06-10T13:11:23.242794Z",
+      "duration": 15,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 122,
+      "logs": ""
+    }
+  },
+  "execution_logs": [
+    {
+      "node_id": "start-node",
+      "node_label": "开始",
+      "status": "success",
+      "startTime": "2026-06-10T13:10:15.930323Z",
+      "endTime": "2026-06-10T13:10:15.930323Z",
+      "duration": 0,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": "",
+      "step_order": 1,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "332d1ef9-dc6c-4580-9666-a3bd6fcc7176"
+    },
+    {
+      "node_id": "database-source-balance",
+      "node_label": "读取收支数据",
+      "status": "success",
+      "startTime": "2026-06-10T13:10:15.945968Z",
+      "endTime": "2026-06-10T13:10:16.525070Z",
+      "duration": 579,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 120,
+      "logs": "",
+      "step_order": 2,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "47f6ede1-056c-4659-a1ec-564fa22ac080"
+    },
+    {
+      "node_id": "python-transform-balance",
+      "node_label": "数据转换",
+      "status": "success",
+      "startTime": "2026-06-10T13:10:16.556318Z",
+      "endTime": "2026-06-10T13:10:36.503574Z",
+      "duration": 19947,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 121,
+      "logs": "",
+      "step_order": 3,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "04744342-0f09-48bd-8ebb-40b743eacd6f"
+    },
+    {
+      "node_id": "python-quality-balance",
+      "node_label": "质量检查",
+      "status": "success",
+      "startTime": "2026-06-10T13:10:36.535786Z",
+      "endTime": "2026-06-10T13:10:58.135413Z",
+      "duration": 21599,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 122,
+      "logs": "",
+      "step_order": 4,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "a66dcbf4-74ec-4c68-a439-24fc86380036"
+    },
+    {
+      "node_id": "dataspace-sink-balance",
+      "node_label": "写入收支数据",
+      "status": "success",
+      "startTime": "2026-06-10T13:10:58.150989Z",
+      "endTime": "2026-06-10T13:11:23.227167Z",
+      "duration": 25076,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 122,
+      "logs": "",
+      "step_order": 5,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "58cd44d7-5c5d-41c2-94fe-65c784f5b18f"
+    },
+    {
+      "node_id": "end-node",
+      "node_label": "结束",
+      "status": "success",
+      "startTime": "2026-06-10T13:11:23.227167Z",
+      "endTime": "2026-06-10T13:11:23.242794Z",
+      "duration": 15,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": 122,
+      "logs": "",
+      "step_order": 6,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "e991ce39-5cac-4dba-9617-a11a7b55180f"
+    }
+  ],
+  "variables": {
+    "project_balance_data": {
+      "id": 121,
+      "value": "uploads/py_result_5a7ad6d8-289a-4430-8dbd-bf7b3a45b598.parquet",
+      "type": "table",
+      "node_id": "python-transform-balance",
+      "updated_at": "2026-06-10T13:10:36.520265Z"
+    },
+    "balance_raw_data": {
+      "id": 120,
+      "value": "uploads/3874a86c-4a71-4039-9b57-e126973b7045.parquet",
+      "type": "table",
+      "node_id": "database-source-balance",
+      "updated_at": "2026-06-10T13:10:16.556318Z"
+    },
+    "validated_balance_data": {
+      "id": 122,
+      "value": "uploads/py_result_20f9e5ad-0c59-4645-8981-12ebcf776fec.parquet",
+      "type": "table",
+      "node_id": "python-quality-balance",
+      "updated_at": "2026-06-10T13:10:58.145148Z"
+    }
+  },
+  "created_at": "2026-06-10T12:11:00.273693Z",
+  "completed_at": "2026-06-10T13:11:23.242794Z"
+}

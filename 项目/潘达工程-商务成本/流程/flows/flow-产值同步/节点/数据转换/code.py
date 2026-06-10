@@ -22,9 +22,14 @@ target_fields = [
 
 # 创建结果列表，逐行处理确保类型正确
 result_rows = []
-current_time = pd.Timestamp.now()
+current_time = pd.Timestamp.now().to_pydatetime() # 转换为 Python datetime
 
 for _, row in df.iterrows():
+    # ... (计算 date_key, report_period 等)
+    # (保持原有逻辑，但确保数值是 float/int)
+    # ...
+    # (为了简洁，我在这里只展示关键的修改点，但会替换整个段落)
+    
     # 计算日期键
     try:
         year = int(row['year'])
@@ -71,7 +76,12 @@ for _, row in df.iterrows():
     result_rows.append(result_row)
 
 # 转换为 DataFrame
-result_df = pd.DataFrame(result_rows, columns=target_fields)
+df_result = pd.DataFrame(result_rows, columns=target_fields)
+
+# 强制转换所有列为 Python 原生类型 (SOP 2.2 核心要求)
+result_df = pd.DataFrame()
+for col in df_result.columns:
+    result_df[col] = df_result[col].tolist()
 
 output.print(f"输出 shape={result_df.shape}")
 output.print(f"输出列: {list(result_df.columns)}")

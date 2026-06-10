@@ -96,6 +96,11 @@ for _, row in df.iterrows():
     result_rows.append(result_row)
 
 # 转换为 DataFrame
-result_df = pd.DataFrame(result_rows)
+df_result = pd.DataFrame(result_rows)
+
+# 强制转换所有列为 Python 原生类型 (SOP 2.2 核心要求)
+result_df = pd.DataFrame()
+for col in df_result.columns:
+    result_df[col] = df_result[col].tolist()
 
 output.print("[产值同步] 数据质量检查完成")

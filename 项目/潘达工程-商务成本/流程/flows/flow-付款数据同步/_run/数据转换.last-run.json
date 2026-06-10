@@ -1,0 +1,12 @@
+{
+  "node_id": "python-transform-payment",
+  "status": "success",
+  "error": null,
+  "active_branch": null,
+  "output_file_id": "uploads/py_result_af58fa48-c6a2-46a7-8444-a667cfbc4751.parquet",
+  "output_variable_name": "project_payment_data",
+  "extra_variables": {},
+  "output_file": "D:\\dazi\\dazi-backend\\storage\\uploads\\py_result_af58fa48-c6a2-46a7-8444-a667cfbc4751.parquet",
+  "output_variable_id": 118,
+  "debug_run_id": 59
+}

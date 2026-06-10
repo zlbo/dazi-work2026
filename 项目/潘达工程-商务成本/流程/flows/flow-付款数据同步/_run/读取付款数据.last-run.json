@@ -1,0 +1,12 @@
+{
+  "node_id": "database-source-payment",
+  "status": "success",
+  "error": null,
+  "active_branch": null,
+  "output_file_id": "uploads/796dd67d-fe20-41f5-b486-f238a0a049b5.parquet",
+  "output_variable_name": "payment_raw_data",
+  "extra_variables": {},
+  "output_file": "D:\\dazi\\dazi-backend\\storage\\uploads\\796dd67d-fe20-41f5-b486-f238a0a049b5.parquet",
+  "output_variable_id": 117,
+  "debug_run_id": 59
+}

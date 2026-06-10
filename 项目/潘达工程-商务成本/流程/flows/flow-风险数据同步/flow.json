@@ -1,0 +1,235 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": 80,
+        "y": 250
+      },
+      "data": {
+        "label": "开始",
+        "type": "start",
+        "flowId": 135
+      },
+      "deletable": false,
+      "measured": {
+        "width": 200,
+        "height": 95
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "7a562fc6-3a8a-414b-8cfa-434679c6a0a1"
+    },
+    {
+      "id": "database-source-risk",
+      "type": "custom",
+      "position": {
+        "x": 340,
+        "y": 250
+      },
+      "data": {
+        "label": "读取风险数据",
+        "type": "database-source",
+        "status": "idle",
+        "description": "从建工成本数据源读取项目风险数据",
+        "flowId": 135,
+        "output_variable_name": "risk_raw_data",
+        "connectionId": "duckdb__建工成本01",
+        "queryConfig": {
+          "tableName": "tb_project_risk_list_analyse",
+          "selectedFields": [
+            "id",
+            "project_id",
+            "year",
+            "month",
+            "risk_type",
+            "code",
+            "name",
+            "value",
+            "value_type",
+            "value_remark",
+            "warning",
+            "analyse_reason",
+            "analyse_correction",
+            "remark"
+          ],
+          "useAliases": true,
+          "distinct": false,
+          "rowLimit": 200000,
+          "filters": []
+        },
+        "tableName": "tb_project_risk_list_analyse"
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "d96222ce-aaa9-4050-b782-830c2f2de9eb"
+    },
+    {
+      "id": "python-transform-risk",
+      "type": "custom",
+      "position": {
+        "x": 600,
+        "y": 250
+      },
+      "data": {
+        "label": "数据转换",
+        "type": "python-script",
+        "status": "idle",
+        "description": "字段映射、派生字段计算",
+        "flowId": 135,
+        "output_variable_name": "project_risk_data",
+        "attached_variables": [
+          "risk_raw_data"
+        ]
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "e5f8a3b9-2c7d-4e8a-9f6b-1a2c3d4e5f6a"
+    },
+    {
+      "id": "python-quality-risk",
+      "type": "custom",
+      "position": {
+        "x": 860,
+        "y": 250
+      },
+      "data": {
+        "label": "质量检查",
+        "type": "python-script",
+        "status": "idle",
+        "description": "数据质量校验",
+        "flowId": 135,
+        "output_variable_name": "validated_risk_data",
+        "attached_variables": [
+          "project_risk_data"
+        ]
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "f7c4e8d2-1a3b-5c6d-7e8f-9a0b1c2d3e4g"
+    },
+    {
+      "id": "dataspace-sink-risk",
+      "type": "custom",
+      "position": {
+        "x": 1120,
+        "y": 250
+      },
+      "data": {
+        "label": "写入风险数据",
+        "type": "dataspace-sink",
+        "status": "idle",
+        "description": "将风险数据写入本体模型表",
+        "flowId": 135,
+        "spaceId": "space__panda_construction",
+        "tableName": "fact_project_risk",
+        "input_variable_name": "validated_risk_data",
+        "writeMode": "append",
+        "syncMetadata": true
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 1380,
+        "y": 250
+      },
+      "data": {
+        "label": "结束",
+        "type": "end",
+        "flowId": 135
+      },
+      "deletable": false,
+      "measured": {
+        "width": 200,
+        "height": 95
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "36d93c1f-5843-4300-b161-7c7b06e24b9f"
+    }
+  ],
+  "edges": [
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "start-node",
+      "sourceHandle": "r",
+      "target": "database-source-risk",
+      "targetHandle": "l",
+      "id": "xy-edge__start-noder-database-source-riskl"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "database-source-risk",
+      "sourceHandle": "r",
+      "target": "python-transform-risk",
+      "targetHandle": "l",
+      "id": "xy-edge__database-source-riskr-python-transform-riskl"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "python-transform-risk",
+      "sourceHandle": "r",
+      "target": "python-quality-risk",
+      "targetHandle": "l",
+      "id": "xy-edge__python-transform-riskr-python-quality-riskl"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "python-quality-risk",
+      "sourceHandle": "r",
+      "target": "dataspace-sink-risk",
+      "targetHandle": "l",
+      "id": "xy-edge__python-quality-riskr-dataspace-sink-riskl"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "dataspace-sink-risk",
+      "sourceHandle": "r",
+      "target": "end-node",
+      "targetHandle": "l",
+      "id": "xy-edge__dataspace-sink-riskr-end-nodel"
+    }
+  ]
+}

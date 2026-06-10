@@ -21,8 +21,8 @@
       "dir": "节点/数据转换",
       "codeFile": "code.py",
       "codeLanguage": "python",
-      "codeHash": "319ee87f93676dfa03853b46fc0ae154b8050b0a",
-      "codeVersion": 30
+      "codeHash": "3ad5539ecc3c28472c2115e7b37f0d5b0c434c32",
+      "codeVersion": 32
     },
     "f7c4e8d2-1a3b-5c6d-7e8f-9a0b1c2d3e4g": {
       "nodeId": "python-quality-output",
@@ -30,8 +30,8 @@
       "dir": "节点/质量检查",
       "codeFile": "code.py",
       "codeLanguage": "python",
-      "codeHash": "42b8598fb1640a3cf8975ab815d44406b8e23ca2",
-      "codeVersion": 28
+      "codeHash": "e2db8d0a2f90c1c1addba86e9490333826ed36d5",
+      "codeVersion": 30
     },
     "47c53b38-6005-4d7f-9f89-7ea56dab6b39": {
       "nodeId": "end-node",
@@ -47,5 +47,5 @@
     }
   },
   "lastPulledAt": "2026-06-10T09:40:25.182Z",
-  "graphFingerprint": "sha1:bbb22fe68f73a207f443df709daaec88ea96f13f"
+  "graphFingerprint": "sha1:845912509675e76f8582bcbbe26c2fca1d3c7b6a"
 }

@@ -5,8 +5,8 @@
   "variableId": 109,
   "nodeId": "python-transform-output",
   "debugRunId": 51,
-  "updatedAt": "2026-06-10T10:52:34.240366",
-  "syncedAt": "2026-06-10T10:53:10.092Z",
+  "updatedAt": "2026-06-10T13:17:16.903578",
+  "syncedAt": "2026-06-10T13:17:54.031Z",
   "schema": {
     "variable_name": "project_output_data",
     "variable_type": "table",
@@ -97,7 +97,7 @@
         "output_current_confirmed": 1991111.11,
         "output_current_unconfirmed": 0,
         "total_output": 1991111.11,
-        "created_at": "2026-06-10T18:52:17.021601",
+        "created_at": "2026-06-10T21:16:59.004302",
         "confirmed_output": 1991111.11,
         "report_period": "2022-12",
         "company_id": ""
@@ -113,7 +113,7 @@
         "output_current_confirmed": 0,
         "output_current_unconfirmed": 0,
         "total_output": 0,
-        "created_at": "2026-06-10T18:52:17.021601",
+        "created_at": "2026-06-10T21:16:59.004302",
         "confirmed_output": 0,
         "report_period": "2022-08",
         "company_id": ""
@@ -129,7 +129,7 @@
         "output_current_confirmed": 0,
         "output_current_unconfirmed": 0,
         "total_output": 0,
-        "created_at": "2026-06-10T18:52:17.021601",
+        "created_at": "2026-06-10T21:16:59.004302",
         "confirmed_output": 0,
         "report_period": "2022-01",
         "company_id": ""
@@ -145,7 +145,7 @@
         "output_current_confirmed": 0,
         "output_current_unconfirmed": 0,
         "total_output": 0,
-        "created_at": "2026-06-10T18:52:17.021601",
+        "created_at": "2026-06-10T21:16:59.004302",
         "confirmed_output": 0,
         "report_period": "2023-08",
         "company_id": ""
@@ -161,7 +161,7 @@
         "output_current_confirmed": 0,
         "output_current_unconfirmed": 0,
         "total_output": 0,
-        "created_at": "2026-06-10T18:52:17.021601",
+        "created_at": "2026-06-10T21:16:59.004302",
         "confirmed_output": 0,
         "report_period": "2021-12",
         "company_id": ""
@@ -177,7 +177,7 @@
         "output_current_confirmed": 0,
         "output_current_unconfirmed": 0,
         "total_output": 0,
-        "created_at": "2026-06-10T18:52:17.021601",
+        "created_at": "2026-06-10T21:16:59.004302",
         "confirmed_output": 0,
         "report_period": "2022-11",
         "company_id": ""
@@ -193,7 +193,7 @@
         "output_current_confirmed": 0,
         "output_current_unconfirmed": 0,
         "total_output": 0,
-        "created_at": "2026-06-10T18:52:17.021601",
+        "created_at": "2026-06-10T21:16:59.004302",
         "confirmed_output": 0,
         "report_period": "2022-11",
         "company_id": ""
@@ -209,7 +209,7 @@
         "output_current_confirmed": 0,
         "output_current_unconfirmed": 0,
         "total_output": 0,
-        "created_at": "2026-06-10T18:52:17.021601",
+        "created_at": "2026-06-10T21:16:59.004302",
         "confirmed_output": 0,
         "report_period": "2022-11",
         "company_id": ""
@@ -225,7 +225,7 @@
         "output_current_confirmed": 0,
         "output_current_unconfirmed": 0,
         "total_output": 0,
-        "created_at": "2026-06-10T18:52:17.021601",
+        "created_at": "2026-06-10T21:16:59.004302",
         "confirmed_output": 0,
         "report_period": "2024-02",
         "company_id": ""
@@ -241,7 +241,7 @@
         "output_current_confirmed": 0,
         "output_current_unconfirmed": 0,
         "total_output": 0,
-        "created_at": "2026-06-10T18:52:17.021601",
+        "created_at": "2026-06-10T21:16:59.004302",
         "confirmed_output": 0,
         "report_period": "2022-09",
         "company_id": ""
