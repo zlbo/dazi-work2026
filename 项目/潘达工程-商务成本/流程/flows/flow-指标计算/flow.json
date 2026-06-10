@@ -1,0 +1,145 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "node_uuid": "00000000-0000-0000-0000-000000000001",
+      "position": { "x": 80, "y": 120 },
+      "data": { "type": "start", "label": "开始" }
+    },
+    {
+      "id": "get-output",
+      "type": "custom",
+      "node_uuid": "00000000-0000-0000-0000-000000000002",
+      "position": { "x": 80, "y": 280 },
+      "data": {
+        "type": "variable",
+        "label": "获取产值数据",
+        "output_variable_name": "output_data"
+      }
+    },
+    {
+      "id": "get-cost",
+      "type": "custom",
+      "node_uuid": "00000000-0000-0000-0000-000000000003",
+      "position": { "x": 340, "y": 280 },
+      "data": {
+        "type": "variable",
+        "label": "获取成本数据",
+        "output_variable_name": "cost_data"
+      }
+    },
+    {
+      "id": "get-payment",
+      "type": "custom",
+      "node_uuid": "00000000-0000-0000-0000-000000000004",
+      "position": { "x": 600, "y": 280 },
+      "data": {
+        "type": "variable",
+        "label": "获取付款数据",
+        "output_variable_name": "payment_data"
+      }
+    },
+    {
+      "id": "get-balance",
+      "type": "custom",
+      "node_uuid": "00000000-0000-0000-0000-000000000005",
+      "position": { "x": 860, "y": 280 },
+      "data": {
+        "type": "variable",
+        "label": "获取收支数据",
+        "output_variable_name": "balance_data"
+      }
+    },
+    {
+      "id": "calc-indicator",
+      "type": "custom",
+      "node_uuid": "00000000-0000-0000-0000-000000000006",
+      "position": { "x": 470, "y": 440 },
+      "data": {
+        "type": "python-script",
+        "label": "计算派生指标",
+        "output_variable_name": "project_indicator_data"
+      }
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "node_uuid": "00000000-0000-0000-0000-000000000007",
+      "position": { "x": 730, "y": 440 },
+      "data": { "type": "end", "label": "结束" }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__start-nodeb-get-outputt",
+      "source": "start-node",
+      "target": "get-output",
+      "sourceHandle": "b",
+      "targetHandle": "t"
+    },
+    {
+      "id": "xy-edge__start-noder-get-costl",
+      "source": "start-node",
+      "target": "get-cost",
+      "sourceHandle": "r",
+      "targetHandle": "l"
+    },
+    {
+      "id": "xy-edge__get-outputr-get-costl",
+      "source": "get-output",
+      "target": "get-cost",
+      "sourceHandle": "r",
+      "targetHandle": "l"
+    },
+    {
+      "id": "xy-edge__get-costr-get-paymentl",
+      "source": "get-cost",
+      "target": "get-payment",
+      "sourceHandle": "r",
+      "targetHandle": "l"
+    },
+    {
+      "id": "xy-edge__get-paymentr-get-balancel",
+      "source": "get-payment",
+      "target": "get-balance",
+      "sourceHandle": "r",
+      "targetHandle": "l"
+    },
+    {
+      "id": "xy-edge__get-outputb-calc-indicatori",
+      "source": "get-output",
+      "target": "calc-indicator",
+      "sourceHandle": "b",
+      "targetHandle": "t"
+    },
+    {
+      "id": "xy-edge__get-costb-calc-indicatorl",
+      "source": "get-cost",
+      "target": "calc-indicator",
+      "sourceHandle": "b",
+      "targetHandle": "l"
+    },
+    {
+      "id": "xy-edge__get-paymentb-calc-indicatorr",
+      "source": "get-payment",
+      "target": "calc-indicator",
+      "sourceHandle": "b",
+      "targetHandle": "r"
+    },
+    {
+      "id": "xy-edge__get-balanceb-calc-indicatorl",
+      "source": "get-balance",
+      "target": "calc-indicator",
+      "sourceHandle": "b",
+      "targetHandle": "l"
+    },
+    {
+      "id": "xy-edge__calc-indicatorr-end-nodel",
+      "source": "calc-indicator",
+      "target": "end-node",
+      "sourceHandle": "r",
+      "targetHandle": "l"
+    }
+  ]
+}

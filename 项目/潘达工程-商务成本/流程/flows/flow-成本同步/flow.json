@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "node_uuid": "00000000-0000-0000-0000-000000000001",
+      "position": { "x": 80, "y": 120 },
+      "data": { "type": "start", "label": "开始" }
+    },
+    {
+      "id": "sql-cost",
+      "type": "custom",
+      "node_uuid": "00000000-0000-0000-0000-000000000002",
+      "position": { "x": 340, "y": 120 },
+      "data": {
+        "type": "sql-query",
+        "label": "SQL-查询成本",
+        "output_variable_name": "cost_data"
+      }
+    },
+    {
+      "id": "py-transform",
+      "type": "custom",
+      "node_uuid": "00000000-0000-0000-0000-000000000003",
+      "position": { "x": 600, "y": 120 },
+      "data": {
+        "type": "python-script",
+        "label": "数据转换",
+        "output_variable_name": "project_cost_data"
+      }
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "node_uuid": "00000000-0000-0000-0000-000000000004",
+      "position": { "x": 860, "y": 120 },
+      "data": { "type": "end", "label": "结束" }
+    }
+  ],
+  "edges": [
+    {
+      "id": "xy-edge__start-noder-sql-costl",
+      "source": "start-node",
+      "target": "sql-cost",
+      "sourceHandle": "r",
+      "targetHandle": "l"
+    },
+    {
+      "id": "xy-edge__sql-costr-py-transforml",
+      "source": "sql-cost",
+      "target": "py-transform",
+      "sourceHandle": "r",
+      "targetHandle": "l"
+    },
+    {
+      "id": "xy-edge__py-transformr-end-nodel",
+      "source": "py-transform",
+      "target": "end-node",
+      "sourceHandle": "r",
+      "targetHandle": "l"
+    }
+  ]
+}

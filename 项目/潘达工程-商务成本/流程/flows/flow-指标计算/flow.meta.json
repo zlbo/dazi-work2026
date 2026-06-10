@@ -1,0 +1,64 @@
+{
+  "flowId": "flow-005",
+  "flowName": "指标计算",
+  "nodes": {
+    "00000000-0000-0000-0000-000000000001": {
+      "id": "start-node",
+      "name": "开始",
+      "type": "start",
+      "dir": "节点/开始",
+      "codeFile": null,
+      "codeHash": null
+    },
+    "00000000-0000-0000-0000-000000000002": {
+      "id": "get-output",
+      "name": "获取产值数据",
+      "type": "variable",
+      "dir": "节点/获取产值数据",
+      "codeFile": null,
+      "codeHash": null
+    },
+    "00000000-0000-0000-0000-000000000003": {
+      "id": "get-cost",
+      "name": "获取成本数据",
+      "type": "variable",
+      "dir": "节点/获取成本数据",
+      "codeFile": null,
+      "codeHash": null
+    },
+    "00000000-0000-0000-0000-000000000004": {
+      "id": "get-payment",
+      "name": "获取付款数据",
+      "type": "variable",
+      "dir": "节点/获取付款数据",
+      "codeFile": null,
+      "codeHash": null
+    },
+    "00000000-0000-0000-0000-000000000005": {
+      "id": "get-balance",
+      "name": "获取收支数据",
+      "type": "variable",
+      "dir": "节点/获取收支数据",
+      "codeFile": null,
+      "codeHash": null
+    },
+    "00000000-0000-0000-0000-000000000006": {
+      "id": "calc-indicator",
+      "name": "计算派生指标",
+      "type": "python-script",
+      "dir": "节点/计算派生指标",
+      "codeFile": "code.py",
+      "codeHash": ""
+    },
+    "00000000-0000-0000-0000-000000000007": {
+      "id": "end-node",
+      "name": "结束",
+      "type": "end",
+      "dir": "节点/结束",
+      "codeFile": null,
+      "codeHash": null
+    }
+  },
+  "debugRunId": null,
+  "schemaVersion": "1.0"
+}

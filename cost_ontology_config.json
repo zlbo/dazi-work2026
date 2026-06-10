@@ -1,0 +1,1273 @@
+{
+  "space_id": "space__panda_construction",
+  "tables": {
+    "dim_project": {
+      "display_name": "项目维表",
+      "description": "项目主数据",
+      "columns": [
+        {
+          "name": "id",
+          "display_name": "项目ID",
+          "description": "主键"
+        },
+        {
+          "name": "projectCode",
+          "display_name": "项目编码"
+        },
+        {
+          "name": "projectName",
+          "display_name": "项目名称"
+        },
+        {
+          "name": "projectType",
+          "display_name": "项目类型"
+        },
+        {
+          "name": "projectStatus",
+          "display_name": "项目状态"
+        },
+        {
+          "name": "province",
+          "display_name": "所属省份"
+        },
+        {
+          "name": "city",
+          "display_name": "所属城市"
+        },
+        {
+          "name": "address",
+          "display_name": "项目地址"
+        },
+        {
+          "name": "companyId",
+          "display_name": "分公司ID",
+          "description": "关联dim_company"
+        },
+        {
+          "name": "contractAmount",
+          "display_name": "合同金额"
+        },
+        {
+          "name": "startDate",
+          "display_name": "开工日期"
+        },
+        {
+          "name": "endDate",
+          "display_name": "竣工日期"
+        },
+        {
+          "name": "createdAt",
+          "display_name": "创建时间"
+        }
+      ]
+    },
+    "dim_company": {
+      "display_name": "分公司维表",
+      "description": "分公司主数据",
+      "columns": [
+        {
+          "name": "id",
+          "display_name": "分公司ID",
+          "description": "主键"
+        },
+        {
+          "name": "companyCode",
+          "display_name": "分公司编码"
+        },
+        {
+          "name": "companyName",
+          "display_name": "分公司名称"
+        },
+        {
+          "name": "province",
+          "display_name": "所在省份"
+        },
+        {
+          "name": "city",
+          "display_name": "所在城市"
+        }
+      ]
+    },
+    "dim_supplier": {
+      "display_name": "供应商维表",
+      "description": "供应商主数据",
+      "columns": [
+        {
+          "name": "id",
+          "display_name": "供应商ID",
+          "description": "主键"
+        },
+        {
+          "name": "supplierName",
+          "display_name": "供应商名称"
+        },
+        {
+          "name": "supplierType",
+          "display_name": "供应商类型"
+        },
+        {
+          "name": "contactPerson",
+          "display_name": "联系人"
+        },
+        {
+          "name": "contactPhone",
+          "display_name": "联系电话"
+        },
+        {
+          "name": "companyId",
+          "display_name": "所属分公司ID",
+          "description": "关联dim_company"
+        }
+      ]
+    },
+    "dim_contract": {
+      "display_name": "合同维表",
+      "description": "合同主数据",
+      "columns": [
+        {
+          "name": "id",
+          "display_name": "合同ID",
+          "description": "主键"
+        },
+        {
+          "name": "contractCode",
+          "display_name": "合同编码"
+        },
+        {
+          "name": "contractName",
+          "display_name": "合同名称"
+        },
+        {
+          "name": "contractContent",
+          "display_name": "合同内容"
+        },
+        {
+          "name": "supplierName",
+          "display_name": "供应商名称"
+        },
+        {
+          "name": "contractAmount",
+          "display_name": "合同金额"
+        },
+        {
+          "paymentRatio": "paymentRatio",
+          "display_name": "付款比例"
+        },
+        {
+          "name": "taxRate",
+          "display_name": "税率"
+        },
+        {
+          "name": "settlementStatus",
+          "display_name": "结算状态"
+        },
+        {
+          "name": "projectId",
+          "display_name": "项目ID",
+          "description": "关联dim_project"
+        }
+      ]
+    },
+    "fact_project_output": {
+      "display_name": "项目产值事实表",
+      "description": "项目产值数据",
+      "columns": [
+        {
+          "name": "id",
+          "display_name": "产值记录ID",
+          "description": "主键"
+        },
+        {
+          "name": "projectId",
+          "display_name": "项目ID",
+          "description": "关联dim_project"
+        },
+        {
+          "name": "reportPeriod",
+          "display_name": "报告期间"
+        },
+        {
+          "name": "outputValue",
+          "display_name": "产值金额"
+        },
+        {
+          "name": "outputTax",
+          "display_name": "产值税额"
+        },
+        {
+          "name": "outputWithoutTax",
+          "display_name": "产值不含税"
+        },
+        {
+          "name": "outputType",
+          "display_name": "产值类型"
+        },
+        {
+          "name": "outputRatio",
+          "display_name": "产值占比"
+        }
+      ]
+    },
+    "fact_project_cost": {
+      "display_name": "项目成本事实表",
+      "description": "项目成本数据",
+      "columns": [
+        {
+          "name": "id",
+          "display_name": "成本记录ID",
+          "description": "主键"
+        },
+        {
+          "name": "projectId",
+          "display_name": "项目ID",
+          "description": "关联dim_project"
+        },
+        {
+          "name": "contractId",
+          "display_name": "合同ID",
+          "description": "关联dim_contract"
+        },
+        {
+          "name": "reportPeriod",
+          "display_name": "报告期间"
+        },
+        {
+          "name": "costAmount",
+          "display_name": "成本金额"
+        },
+        {
+          "name": "costType",
+          "display_name": "成本类型"
+        },
+        {
+          "name": "laborCost",
+          "display_name": "人工费"
+        },
+        {
+          "name": "materialCost",
+          "display_name": "材料费"
+        },
+        {
+          "name": "mechanicalCost",
+          "display_name": "机械费"
+        },
+        {
+          "name": "otherCost",
+          "display_name": "其他费用"
+        }
+      ]
+    },
+    "fact_project_indicator": {
+      "display_name": "项目指标事实表",
+      "description": "项目关键指标数据",
+      "columns": [
+        {
+          "name": "id",
+          "display_name": "指标记录ID",
+          "description": "主键"
+        },
+        {
+          "name": "projectId",
+          "display_name": "项目ID",
+          "description": "关联dim_project"
+        },
+        {
+          "name": "companyId",
+          "display_name": "分公司ID",
+          "description": "关联dim_company"
+        },
+        {
+          "name": "reportPeriod",
+          "display_name": "报告期间"
+        },
+        {
+          "name": "indicatorType",
+          "display_name": "指标类型"
+        },
+        {
+          "name": "indicatorValue",
+          "display_name": "指标值"
+        },
+        {
+          "name": "targetValue",
+          "display_name": "目标值"
+        },
+        {
+          "name": "achievementRate",
+          "display_name": "完成率"
+        },
+        {
+          "name": "rankLevel",
+          "display_name": "排名等级"
+        },
+        {
+          "name": "warningLevel",
+          "display_name": "预警级别"
+        }
+      ]
+    },
+    "fact_project_payment": {
+      "display_name": "项目付款事实表",
+      "description": "项目付款数据",
+      "columns": [
+        {
+          "name": "id",
+          "display_name": "付款记录ID",
+          "description": "主键"
+        },
+        {
+          "name": "projectId",
+          "display_name": "项目ID",
+          "description": "关联dim_project"
+        },
+        {
+          "name": "contractId",
+          "display_name": "合同ID",
+          "description": "关联dim_contract"
+        },
+        {
+          "name": "reportPeriod",
+          "display_name": "报告期间"
+        },
+        {
+          "name": "payableConfirmed",
+          "display_name": "已确认应付款"
+        },
+        {
+          "name": "laborPayable",
+          "display_name": "人工费应付款"
+        },
+        {
+          "name": "paidAmount",
+          "display_name": "已付款金额"
+        },
+        {
+          "name": "payableUnconfirmed",
+          "display_name": "待确认应付款"
+        },
+        {
+          "name": "paymentRatio",
+          "display_name": "付款比例"
+        }
+      ]
+    },
+    "fact_project_balance": {
+      "display_name": "项目收支事实表",
+      "description": "项目收支数据",
+      "columns": [
+        {
+          "name": "id",
+          "display_name": "收支记录ID",
+          "description": "主键"
+        },
+        {
+          "name": "projectId",
+          "display_name": "项目ID",
+          "description": "关联dim_project"
+        },
+        {
+          "name": "reportPeriod",
+          "display_name": "报告期间"
+        },
+        {
+          "name": "subjectCode",
+          "display_name": "科目编码"
+        },
+        {
+          "name": "subjectName",
+          "display_name": "科目名称"
+        },
+        {
+          "name": "projectAmount",
+          "display_name": "项目层面金额"
+        },
+        {
+          "name": "companyAmount",
+          "display_name": "公司层面金额"
+        },
+        {
+          "name": "totalAmount",
+          "display_name": "合计金额"
+        }
+      ]
+    },
+    "fact_project_risk": {
+      "display_name": "项目风险事实表",
+      "description": "项目风险预警数据",
+      "columns": [
+        {
+          "name": "id",
+          "display_name": "风险记录ID",
+          "description": "主键"
+        },
+        {
+          "name": "projectId",
+          "display_name": "项目ID",
+          "description": "关联dim_project"
+        },
+        {
+          "name": "reportPeriod",
+          "display_name": "报告期间"
+        },
+        {
+          "name": "riskType",
+          "display_name": "风险类型"
+        },
+        {
+          "name": "riskCode",
+          "display_name": "风险编码"
+        },
+        {
+          "name": "riskName",
+          "display_name": "风险名称"
+        },
+        {
+          "name": "riskValue",
+          "display_name": "风险值"
+        },
+        {
+          "name": "warningLevel",
+          "display_name": "预警级别"
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "name": "project_belongs_to_company",
+      "from_table": "dim_project",
+      "to_table": "dim_company",
+      "from_column": "companyId",
+      "to_column": "id",
+      "cardinality": "N:1"
+    },
+    {
+      "name": "supplier_belongs_to_company",
+      "from_table": "dim_supplier",
+      "to_table": "dim_company",
+      "from_column": "companyId",
+      "to_column": "id",
+      "cardinality": "N:1"
+    },
+    {
+      "name": "contract_belongs_to_project",
+      "from_table": "dim_contract",
+      "to_table": "dim_project",
+      "from_column": "projectId",
+      "to_column": "id",
+      "cardinality": "N:1"
+    },
+    {
+      "name": "output_belongs_to_project",
+      "from_table": "fact_project_output",
+      "to_table": "dim_project",
+      "from_column": "projectId",
+      "to_column": "id",
+      "cardinality": "N:1"
+    },
+    {
+      "name": "cost_belongs_to_project",
+      "from_table": "fact_project_cost",
+      "to_table": "dim_project",
+      "from_column": "projectId",
+      "to_column": "id",
+      "cardinality": "N:1"
+    },
+    {
+      "name": "cost_contains_contract",
+      "from_table": "fact_project_cost",
+      "to_table": "dim_contract",
+      "from_column": "contractId",
+      "to_column": "id",
+      "cardinality": "N:1"
+    },
+    {
+      "name": "indicator_belongs_to_project",
+      "from_table": "fact_project_indicator",
+      "to_table": "dim_project",
+      "from_column": "projectId",
+      "to_column": "id",
+      "cardinality": "N:1"
+    },
+    {
+      "name": "indicator_belongs_to_company",
+      "from_table": "fact_project_indicator",
+      "to_table": "dim_company",
+      "from_column": "companyId",
+      "to_column": "id",
+      "cardinality": "N:1"
+    },
+    {
+      "name": "payment_belongs_to_project",
+      "from_table": "fact_project_payment",
+      "to_table": "dim_project",
+      "from_column": "projectId",
+      "to_column": "id",
+      "cardinality": "N:1"
+    },
+    {
+      "name": "payment_contains_contract",
+      "from_table": "fact_project_payment",
+      "to_table": "dim_contract",
+      "from_column": "contractId",
+      "to_column": "id",
+      "cardinality": "N:1"
+    },
+    {
+      "name": "balance_belongs_to_project",
+      "from_table": "fact_project_balance",
+      "to_table": "dim_project",
+      "from_column": "projectId",
+      "to_column": "id",
+      "cardinality": "N:1"
+    },
+    {
+      "name": "risk_belongs_to_project",
+      "from_table": "fact_project_risk",
+      "to_table": "dim_project",
+      "from_column": "projectId",
+      "to_column": "id",
+      "cardinality": "N:1"
+    }
+  ],
+  "cubes": {
+    "ProjectCube": {
+      "display_name": "项目实体Cube",
+      "description": "项目主数据Cube",
+      "table_name": "dim_project",
+      "dimensions": [
+        "id",
+        "projectCode",
+        "projectName",
+        "projectType",
+        "projectStatus",
+        "province",
+        "city",
+        "companyId"
+      ],
+      "measures": [
+        "contractAmount"
+      ]
+    },
+    "ProjectOutputCube": {
+      "display_name": "项目产值Cube",
+      "description": "项目产值分析Cube",
+      "table_name": "fact_project_output",
+      "dimensions": [
+        "id",
+        "projectId",
+        "reportPeriod",
+        "outputType"
+      ],
+      "measures": [
+        "outputValue",
+        "outputTax",
+        "outputWithoutTax",
+        "outputRatio"
+      ],
+      "derived_measures": [
+        {
+          "name": "outputGrowthRate",
+          "expression": "同比增长率(outputValue)"
+        }
+      ]
+    },
+    "ProjectCostCube": {
+      "display_name": "项目成本Cube",
+      "description": "项目成本分析Cube",
+      "table_name": "fact_project_cost",
+      "dimensions": [
+        "id",
+        "projectId",
+        "contractId",
+        "reportPeriod",
+        "costType"
+      ],
+      "measures": [
+        "costAmount",
+        "laborCost",
+        "materialCost",
+        "mechanicalCost",
+        "otherCost"
+      ],
+      "derived_measures": [
+        {
+          "name": "costRatio",
+          "expression": "成本占比(costAmount)"
+        }
+      ]
+    },
+    "ProjectIndicatorCube": {
+      "display_name": "项目指标Cube",
+      "description": "项目关键指标Cube",
+      "table_name": "fact_project_indicator",
+      "dimensions": [
+        "id",
+        "projectId",
+        "companyId",
+        "reportPeriod",
+        "indicatorType",
+        "rankLevel",
+        "warningLevel"
+      ],
+      "measures": [
+        "indicatorValue",
+        "targetValue",
+        "achievementRate"
+      ]
+    },
+    "ProjectPaymentCube": {
+      "display_name": "项目付款Cube",
+      "description": "项目付款分析Cube",
+      "table_name": "fact_project_payment",
+      "dimensions": [
+        "id",
+        "projectId",
+        "contractId",
+        "reportPeriod"
+      ],
+      "measures": [
+        "payableConfirmed",
+        "laborPayable",
+        "paidAmount",
+        "payableUnconfirmed",
+        "paymentRatio"
+      ]
+    },
+    "ProjectBalanceCube": {
+      "display_name": "项目收支Cube",
+      "description": "项目收支分析Cube",
+      "table_name": "fact_project_balance",
+      "dimensions": [
+        "id",
+        "projectId",
+        "reportPeriod",
+        "subjectCode",
+        "subjectName"
+      ],
+      "measures": [
+        "projectAmount",
+        "companyAmount",
+        "totalAmount"
+      ]
+    },
+    "ProjectRiskCube": {
+      "display_name": "项目风险Cube",
+      "description": "项目风险预警Cube",
+      "table_name": "fact_project_risk",
+      "dimensions": [
+        "id",
+        "projectId",
+        "reportPeriod",
+        "riskType",
+        "riskCode",
+        "riskName",
+        "warningLevel"
+      ],
+      "measures": [
+        "riskValue"
+      ]
+    },
+    "ContractCube": {
+      "display_name": "合同Cube",
+      "description": "合同主数据Cube",
+      "table_name": "dim_contract",
+      "dimensions": [
+        "id",
+        "contractCode",
+        "contractName",
+        "supplierName",
+        "settlementStatus",
+        "projectId"
+      ],
+      "measures": [
+        "contractAmount",
+        "paymentRatio",
+        "taxRate"
+      ]
+    },
+    "SupplierCube": {
+      "display_name": "供应商Cube",
+      "description": "供应商主数据Cube",
+      "table_name": "dim_supplier",
+      "dimensions": [
+        "id",
+        "supplierName",
+        "supplierType",
+        "contactPerson",
+        "contactPhone",
+        "companyId"
+      ],
+      "measures": []
+    },
+    "CompanyCube": {
+      "display_name": "分公司Cube",
+      "description": "分公司主数据Cube",
+      "table_name": "dim_company",
+      "dimensions": [
+        "id",
+        "companyCode",
+        "companyName",
+        "province",
+        "city"
+      ],
+      "measures": []
+    }
+  },
+  "object_types": {
+    "Project": {
+      "display_name": "项目实体",
+      "description": "项目主数据",
+      "bind_source": "ProjectCube",
+      "properties": [
+        {
+          "name": "id",
+          "qualified_name": "ProjectCube.id",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "projectCode",
+          "qualified_name": "ProjectCube.projectCode",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "projectName",
+          "qualified_name": "ProjectCube.projectName",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "projectType",
+          "qualified_name": "ProjectCube.projectType",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "projectStatus",
+          "qualified_name": "ProjectCube.projectStatus",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "province",
+          "qualified_name": "ProjectCube.province",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "city",
+          "qualified_name": "ProjectCube.city",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "contractAmount",
+          "qualified_name": "ProjectCube.contractAmount",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "companyId",
+          "qualified_name": "ProjectCube.companyId",
+          "semantic_role": "dimension"
+        }
+      ]
+    },
+    "ProjectOutput": {
+      "display_name": "项目产值",
+      "description": "项目产值数据",
+      "bind_source": "ProjectOutputCube",
+      "properties": [
+        {
+          "name": "id",
+          "qualified_name": "ProjectOutputCube.id",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "projectId",
+          "qualified_name": "ProjectOutputCube.projectId",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "reportPeriod",
+          "qualified_name": "ProjectOutputCube.reportPeriod",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "outputValue",
+          "qualified_name": "ProjectOutputCube.outputValue",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "outputTax",
+          "qualified_name": "ProjectOutputCube.outputTax",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "outputWithoutTax",
+          "qualified_name": "ProjectOutputCube.outputWithoutTax",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "outputType",
+          "qualified_name": "ProjectOutputCube.outputType",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "outputRatio",
+          "qualified_name": "ProjectOutputCube.outputRatio",
+          "semantic_role": "measure"
+        }
+      ]
+    },
+    "ProjectCost": {
+      "display_name": "项目成本",
+      "description": "项目成本数据",
+      "bind_source": "ProjectCostCube",
+      "properties": [
+        {
+          "name": "id",
+          "qualified_name": "ProjectCostCube.id",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "projectId",
+          "qualified_name": "ProjectCostCube.projectId",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "contractId",
+          "qualified_name": "ProjectCostCube.contractId",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "reportPeriod",
+          "qualified_name": "ProjectCostCube.reportPeriod",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "costAmount",
+          "qualified_name": "ProjectCostCube.costAmount",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "costType",
+          "qualified_name": "ProjectCostCube.costType",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "laborCost",
+          "qualified_name": "ProjectCostCube.laborCost",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "materialCost",
+          "qualified_name": "ProjectCostCube.materialCost",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "mechanicalCost",
+          "qualified_name": "ProjectCostCube.mechanicalCost",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "otherCost",
+          "qualified_name": "ProjectCostCube.otherCost",
+          "semantic_role": "measure"
+        }
+      ]
+    },
+    "ProjectIndicator": {
+      "display_name": "项目指标",
+      "description": "项目关键指标",
+      "bind_source": "ProjectIndicatorCube",
+      "properties": [
+        {
+          "name": "id",
+          "qualified_name": "ProjectIndicatorCube.id",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "projectId",
+          "qualified_name": "ProjectIndicatorCube.projectId",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "companyId",
+          "qualified_name": "ProjectIndicatorCube.companyId",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "reportPeriod",
+          "qualified_name": "ProjectIndicatorCube.reportPeriod",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "indicatorType",
+          "qualified_name": "ProjectIndicatorCube.indicatorType",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "indicatorValue",
+          "qualified_name": "ProjectIndicatorCube.indicatorValue",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "targetValue",
+          "qualified_name": "ProjectIndicatorCube.targetValue",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "achievementRate",
+          "qualified_name": "ProjectIndicatorCube.achievementRate",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "rankLevel",
+          "qualified_name": "ProjectIndicatorCube.rankLevel",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "warningLevel",
+          "qualified_name": "ProjectIndicatorCube.warningLevel",
+          "semantic_role": "dimension"
+        }
+      ]
+    },
+    "ProjectPayment": {
+      "display_name": "项目付款",
+      "description": "项目付款数据",
+      "bind_source": "ProjectPaymentCube",
+      "properties": [
+        {
+          "name": "id",
+          "qualified_name": "ProjectPaymentCube.id",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "projectId",
+          "qualified_name": "ProjectPaymentCube.projectId",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "contractId",
+          "qualified_name": "ProjectPaymentCube.contractId",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "reportPeriod",
+          "qualified_name": "ProjectPaymentCube.reportPeriod",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "payableConfirmed",
+          "qualified_name": "ProjectPaymentCube.payableConfirmed",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "laborPayable",
+          "qualified_name": "ProjectPaymentCube.laborPayable",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "paidAmount",
+          "qualified_name": "ProjectPaymentCube.paidAmount",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "payableUnconfirmed",
+          "qualified_name": "ProjectPaymentCube.payableUnconfirmed",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "paymentRatio",
+          "qualified_name": "ProjectPaymentCube.paymentRatio",
+          "semantic_role": "measure"
+        }
+      ]
+    },
+    "ProjectBalance": {
+      "display_name": "项目收支",
+      "description": "项目收支数据",
+      "bind_source": "ProjectBalanceCube",
+      "properties": [
+        {
+          "name": "id",
+          "qualified_name": "ProjectBalanceCube.id",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "projectId",
+          "qualified_name": "ProjectBalanceCube.projectId",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "reportPeriod",
+          "qualified_name": "ProjectBalanceCube.reportPeriod",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "subjectCode",
+          "qualified_name": "ProjectBalanceCube.subjectCode",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "subjectName",
+          "qualified_name": "ProjectBalanceCube.subjectName",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "projectAmount",
+          "qualified_name": "ProjectBalanceCube.projectAmount",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "companyAmount",
+          "qualified_name": "ProjectBalanceCube.companyAmount",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "totalAmount",
+          "qualified_name": "ProjectBalanceCube.totalAmount",
+          "semantic_role": "measure"
+        }
+      ]
+    },
+    "ProjectRisk": {
+      "display_name": "风险预警",
+      "description": "项目风险预警",
+      "bind_source": "ProjectRiskCube",
+      "properties": [
+        {
+          "name": "id",
+          "qualified_name": "ProjectRiskCube.id",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "projectId",
+          "qualified_name": "ProjectRiskCube.projectId",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "reportPeriod",
+          "qualified_name": "ProjectRiskCube.reportPeriod",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "riskType",
+          "qualified_name": "ProjectRiskCube.riskType",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "riskCode",
+          "qualified_name": "ProjectRiskCube.riskCode",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "riskName",
+          "qualified_name": "ProjectRiskCube.riskName",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "riskValue",
+          "qualified_name": "ProjectRiskCube.riskValue",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "warningLevel",
+          "qualified_name": "ProjectRiskCube.warningLevel",
+          "semantic_role": "dimension"
+        }
+      ]
+    },
+    "Contract": {
+      "display_name": "合同",
+      "description": "合同数据",
+      "bind_source": "ContractCube",
+      "properties": [
+        {
+          "name": "id",
+          "qualified_name": "ContractCube.id",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "contractCode",
+          "qualified_name": "ContractCube.contractCode",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "contractName",
+          "qualified_name": "ContractCube.contractName",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "contractContent",
+          "qualified_name": "ContractCube.contractContent",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "supplierName",
+          "qualified_name": "ContractCube.supplierName",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "contractAmount",
+          "qualified_name": "ContractCube.contractAmount",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "paymentRatio",
+          "qualified_name": "ContractCube.paymentRatio",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "taxRate",
+          "qualified_name": "ContractCube.taxRate",
+          "semantic_role": "measure"
+        },
+        {
+          "name": "settlementStatus",
+          "qualified_name": "ContractCube.settlementStatus",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "projectId",
+          "qualified_name": "ContractCube.projectId",
+          "semantic_role": "dimension"
+        }
+      ]
+    },
+    "Supplier": {
+      "display_name": "供应商",
+      "description": "供应商数据",
+      "bind_source": "SupplierCube",
+      "properties": [
+        {
+          "name": "id",
+          "qualified_name": "SupplierCube.id",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "supplierName",
+          "qualified_name": "SupplierCube.supplierName",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "supplierType",
+          "qualified_name": "SupplierCube.supplierType",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "contactPerson",
+          "qualified_name": "SupplierCube.contactPerson",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "contactPhone",
+          "qualified_name": "SupplierCube.contactPhone",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "companyId",
+          "qualified_name": "SupplierCube.companyId",
+          "semantic_role": "dimension"
+        }
+      ]
+    },
+    "Company": {
+      "display_name": "分公司",
+      "description": "分公司数据",
+      "bind_source": "CompanyCube",
+      "properties": [
+        {
+          "name": "id",
+          "qualified_name": "CompanyCube.id",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "companyCode",
+          "qualified_name": "CompanyCube.companyCode",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "companyName",
+          "qualified_name": "CompanyCube.companyName",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "province",
+          "qualified_name": "CompanyCube.province",
+          "semantic_role": "dimension"
+        },
+        {
+          "name": "city",
+          "qualified_name": "CompanyCube.city",
+          "semantic_role": "dimension"
+        }
+      ]
+    }
+  },
+  "link_types": {
+    "belongsTo": {
+      "display_name": "属于",
+      "description": "表示实体间的归属关系",
+      "links": [
+        {
+          "source": "ProjectOutput",
+          "target": "Project",
+          "cardinality": "N:1"
+        },
+        {
+          "source": "ProjectCost",
+          "target": "Project",
+          "cardinality": "N:1"
+        },
+        {
+          "source": "ProjectPayment",
+          "target": "Project",
+          "cardinality": "N:1"
+        },
+        {
+          "source": "ProjectBalance",
+          "target": "Project",
+          "cardinality": "N:1"
+        },
+        {
+          "source": "ProjectIndicator",
+          "target": "Project",
+          "cardinality": "N:1"
+        },
+        {
+          "source": "ProjectRisk",
+          "target": "Project",
+          "cardinality": "N:1"
+        },
+        {
+          "source": "Contract",
+          "target": "Project",
+          "cardinality": "N:1"
+        },
+        {
+          "source": "Project",
+          "target": "Company",
+          "cardinality": "N:1"
+        },
+        {
+          "source": "Supplier",
+          "target": "Company",
+          "cardinality": "N:1"
+        }
+      ]
+    },
+    "contains": {
+      "display_name": "包含",
+      "description": "表示实体间的包含关系",
+      "links": [
+        {
+          "source": "ProjectCost",
+          "target": "Contract",
+          "cardinality": "N:1"
+        },
+        {
+          "source": "ProjectPayment",
+          "target": "Contract",
+          "cardinality": "N:1"
+        }
+      ]
+    }
+  }
+}

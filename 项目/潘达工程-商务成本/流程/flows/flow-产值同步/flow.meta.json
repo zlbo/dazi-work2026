@@ -1,0 +1,34 @@
+{
+  "flowId": "130",
+  "flowName": "产值数据同步",
+  "nodes": {
+    "8a0059ac-287b-444b-8a88-24c48984f78a": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "37ee757a-a849-4ede-b780-113202098adc": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    },
+    "9ca3b503-1e09-4fab-8f0b-e31a8f58361e": {
+      "nodeId": "n-628366a1d867",
+      "nodeType": "database-source",
+      "dir": "节点/SQL-查询产值",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "fb773836b246cfffa2cf5d2e790ef74c195797b9",
+      "codeVersion": 18
+    },
+    "ceb1a806-4748-48fc-9ae2-5458be45c1c8": {
+      "nodeId": "n-9bb25c689f4e",
+      "nodeType": "python-script",
+      "dir": "节点/数据转换",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "03005e8d191605bebc125e06b1e373f0b1c7bbfd",
+      "codeVersion": 4
+    }
+  },
+  "lastPulledAt": "2026-06-06T07:31:27.270Z",
+  "graphFingerprint": "sha1:7fd118d3c73fde998d84fb9142854fab86080fba"
+}

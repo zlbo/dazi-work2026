@@ -1,0 +1,102 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": 50,
+        "y": 250
+      },
+      "data": {
+        "label": "开始",
+        "type": "start",
+        "flowId": 130
+      },
+      "deletable": false,
+      "node_uuid": "8a0059ac-287b-444b-8a88-24c48984f78a"
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 850,
+        "y": 250
+      },
+      "data": {
+        "label": "结束",
+        "type": "end",
+        "flowId": 130
+      },
+      "deletable": false,
+      "node_uuid": "37ee757a-a849-4ede-b780-113202098adc"
+    },
+    {
+      "id": "n-628366a1d867",
+      "node_uuid": "9ca3b503-1e09-4fab-8f0b-e31a8f58361e",
+      "type": "custom",
+      "position": {
+        "x": 120,
+        "y": 240
+      },
+      "data": {
+        "label": "SQL-查询产值",
+        "type": "database-source",
+        "status": "idle",
+        "description": "新节点",
+        "flowId": 130,
+        "output_variable_name": "output_data",
+        "connectionId": "duckdb__建工成本01",
+        "queryConfig": {
+          "tableName": "tb_project_output",
+          "selectedFields": [
+            "project_id",
+            "report_period",
+            "output_confirmed",
+            "output_unconfirmed",
+            "output_last_year_confirmed",
+            "output_last_year_unconfirmed"
+          ],
+          "useAliases": true,
+          "distinct": false,
+          "rowLimit": 200000,
+          "filters": []
+        },
+        "tableName": "tb_project_output"
+      }
+    },
+    {
+      "id": "n-9bb25c689f4e",
+      "node_uuid": "ceb1a806-4748-48fc-9ae2-5458be45c1c8",
+      "type": "custom",
+      "position": {
+        "x": 340,
+        "y": 120
+      },
+      "data": {
+        "label": "数据转换",
+        "type": "python-script",
+        "status": "idle",
+        "flowId": 130,
+        "output_variable_name": "transformed_data",
+        "attached_variables": ["output_data"]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "start-node",
+      "target": "n-628366a1d867",
+      "id": "edge-start-to-sql"
+    },
+    {
+      "source": "n-628366a1d867",
+      "target": "n-9bb25c689f4e",
+      "id": "edge-sql-to-py"
+    },
+    {
+      "source": "n-9bb25c689f4e",
+      "target": "end-node",
+      "id": "edge-py-to-end"
+    }
+  ]
+}

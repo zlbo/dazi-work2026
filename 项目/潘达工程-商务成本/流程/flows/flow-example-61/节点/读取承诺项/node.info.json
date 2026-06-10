@@ -1,0 +1,39 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.sql，配置改 flow.json",
+  "node_uuid": "f4931c54-f6d2-44c8-92b0-bd157d7bab6c",
+  "nodeId": "database-source-1768981470231",
+  "nodeType": "database-source",
+  "label": "读取承诺项",
+  "codeFile": "code.sql",
+  "codeLanguage": "sql",
+  "position": {
+    "x": 250,
+    "y": 250
+  },
+  "data": {
+    "label": "读取承诺项",
+    "type": "database-source",
+    "description": "新节点",
+    "output_variable_name": "项目信息",
+    "dataSourceId": 7,
+    "queryConfig": {
+      "tableName": "FMCIT_承诺项",
+      "systemType": "SAP",
+      "selectedFields": [
+        "ID",
+        "名称",
+        "文本1",
+        "说明",
+        "B1"
+      ],
+      "useAliases": true,
+      "distinct": false,
+      "rowLimit": 200000,
+      "filters": []
+    },
+    "tableName": "FMCIT_承诺项",
+    "systemType": "SAP",
+    "status": "idle",
+    "flowId": 61
+  }
+}

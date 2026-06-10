@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": 50,
+        "y": 250
+      },
+      "data": {
+        "label": "开始",
+        "type": "start"
+      },
+      "deletable": false,
+      "node_uuid": "eaf113e6-cf08-4d55-8561-e1ad58ade3c1"
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 850,
+        "y": 250
+      },
+      "data": {
+        "label": "结束",
+        "type": "end"
+      },
+      "deletable": false,
+      "node_uuid": "3531cd3b-4a27-4de8-ba15-beb258804942"
+    }
+  ],
+  "edges": []
+}

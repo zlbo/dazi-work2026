@@ -1,0 +1,9 @@
+{
+  "node_id": "n-628366a1d867",
+  "status": "failed",
+  "error": "Catalog Error: Table with name tb_project_output does not exist!\nDid you mean \"tb_project_cost_pay_detail\"?\n\nLINE 7: FROM tb_project_output\n             ^",
+  "active_branch": null,
+  "output_file_id": null,
+  "output_variable_name": "output_data",
+  "extra_variables": {}
+}
