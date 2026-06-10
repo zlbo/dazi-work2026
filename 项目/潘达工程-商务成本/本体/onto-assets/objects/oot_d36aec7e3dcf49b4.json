@@ -1,0 +1,27 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:37:58.551Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\objects\\oot_d36aec7e3dcf49b4.json"
+  },
+  "id": "oot_d36aec7e3dcf49b4",
+  "code": "CostManagementAnalysis",
+  "name": "商务成本分析",
+  "description": "成本产值对比分析",
+  "search_summary": null,
+  "search_keywords": null,
+  "entity_synonyms_cache": null,
+  "object_kind": null,
+  "enabled": true,
+  "version": 1,
+  "properties": [],
+  "source_bindings": [
+    {
+      "id": "osb_dbbd832eb4684e56",
+      "source_kind": "dazi_cube",
+      "priority": 0,
+      "config": {
+        "cube": "CostOutputComparisonCube"
+      }
+    }
+  ]
+}

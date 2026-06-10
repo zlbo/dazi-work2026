@@ -1,27 +1,49 @@
 # -*- coding: utf-8 -*-
-# 上游 sql-query 的 output_variable_name = payment_data
-# 本节点 output_variable_name = project_payment_data
+# 付款同步 - 数据转换节点
+# output_variable_name = project_payment_data
+
 import pandas as pd
 
-output.print("[python-script] 开始付款数据转换")
+output.print("[付款同步] 开始数据转换")
 
-if df is None or df.empty:
-    df = get_variable("payment_data")
-    output.print(f"从变量获取数据 shape={df.shape}")
-else:
-    output.print(f"从入边获取数据 shape={df.shape}")
-
+# 获取上游数据
+df = get_variable("payment_raw_data")
+output.print(f"输入数据 shape={df.shape}")
 output.print(f"输入列: {list(df.columns)}")
 
 result_df = df.copy()
 
-result_df['payable_total'] = result_df['payable_confirmed'] + result_df['payable_unconfirmed']
-result_df['unpaid_amount'] = result_df['payable_total'] - result_df['paid_amount']
+# ========== 字段重命名 ==========
+result_df = result_df.rename(columns={'id': 'payment_id'})
 
-result_df['data_source'] = 'tb_project_payment'
+# ========== 派生字段计算 ==========
+def calculate_date_key(report_period):
+    try:
+        year = int(report_period[:4])
+        month = int(report_period[5:7])
+        if month in [1, 3, 5, 7, 8, 10, 12]:
+            day = 31
+        elif month == 2:
+            if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+                day = 29
+            else:
+                day = 28
+        else:
+            day = 30
+        return year * 10000 + month * 100 + day
+    except:
+        return None
+
+result_df['date_key'] = result_df['report_period'].apply(calculate_date_key)
+
+# ========== 数据类型转换 ==========
+result_df['pay_amount'] = pd.to_numeric(result_df['pay_amount'], errors='coerce')
+
+# 添加元数据字段
+result_df['data_source'] = 'tb_payment_record'
 result_df['sync_time'] = pd.Timestamp.now()
 
 output.print(f"输出 shape={result_df.shape}")
 output.print(f"输出列: {list(result_df.columns)}")
 
-output.print("[python-script] 付款数据转换完成")
+output.print("[付款同步] 数据转换完成")

@@ -3,30 +3,30 @@
 - 数据连接：`建工成本01`（ID: `duckdb__建工成本01`）
 - 表标识：`tb_cost_report_row`
 - 物理表名：`tb_cost_report_row`
-- 导出时间：2026-06-05T14:41:28.352Z
+- 导出时间：2026-06-10T10:39:53.195Z
 
 ## 字段结构
 
-| 显示名 | 字段名 | 类型 | 可空 |
-| --- | --- | --- | --- |
-| id | `id` | VARCHAR | 是 |
-| parent_id | `parent_id` | VARCHAR | 是 |
-| area | `area` | DOUBLE | 是 |
-| report_id | `report_id` | VARCHAR | 是 |
-| sheet_id | `sheet_id` | VARCHAR | 是 |
-| type | `type` | BIGINT | 是 |
-| meta | `meta` | VARCHAR | 是 |
-| removable | `removable` | BIGINT | 是 |
-| num | `num` | BIGINT | 是 |
-| level | `level` | BIGINT | 是 |
-| style | `style` | VARCHAR | 是 |
-| additions | `additions` | INTEGER | 是 |
-| remark | `remark` | INTEGER | 是 |
-| status | `status` | BIGINT | 是 |
-| create_by | `create_by` | VARCHAR | 是 |
-| create_time | `create_time` | INTEGER | 是 |
-| update_by | `update_by` | VARCHAR | 是 |
-| update_time | `update_time` | TIMESTAMP | 是 |
+| 显示名 | 字段名 | 类型 | 可空 | 说明 |
+| --- | --- | --- | --- | --- |
+| id | `id` | VARCHAR | 是 |  |
+| parent_id | `parent_id` | VARCHAR | 是 |  |
+| area | `area` | DOUBLE | 是 |  |
+| report_id | `report_id` | VARCHAR | 是 |  |
+| sheet_id | `sheet_id` | VARCHAR | 是 |  |
+| type | `type` | BIGINT | 是 |  |
+| meta | `meta` | VARCHAR | 是 |  |
+| removable | `removable` | BIGINT | 是 |  |
+| num | `num` | BIGINT | 是 |  |
+| level | `level` | BIGINT | 是 |  |
+| style | `style` | VARCHAR | 是 |  |
+| additions | `additions` | INTEGER | 是 |  |
+| remark | `remark` | INTEGER | 是 |  |
+| status | `status` | BIGINT | 是 |  |
+| create_by | `create_by` | VARCHAR | 是 |  |
+| create_time | `create_time` | INTEGER | 是 |  |
+| update_by | `update_by` | VARCHAR | 是 |  |
+| update_time | `update_time` | TIMESTAMP | 是 |  |
 
 ## 数据预览（前 10 行）
 

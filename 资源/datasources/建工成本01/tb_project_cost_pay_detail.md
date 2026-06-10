@@ -3,66 +3,66 @@
 - 数据连接：`建工成本01`（ID: `duckdb__建工成本01`）
 - 表标识：`tb_project_cost_pay_detail`
 - 物理表名：`tb_project_cost_pay_detail`
-- 导出时间：2026-06-05T14:41:36.003Z
+- 导出时间：2026-06-10T10:40:08.127Z
 
 ## 字段结构
 
-| 显示名 | 字段名 | 类型 | 可空 |
-| --- | --- | --- | --- |
-| id | `id` | VARCHAR | 是 |
-| project_id | `project_id` | VARCHAR | 是 |
-| contract_id | `contract_id` | VARCHAR | 是 |
-| year | `year` | BIGINT | 是 |
-| month | `month` | BIGINT | 是 |
-| no | `no` | VARCHAR | 是 |
-| sort_no | `sort_no` | BIGINT | 是 |
-| name | `name` | VARCHAR | 是 |
-| cost_code | `cost_code` | VARCHAR | 是 |
-| cost_attr | `cost_attr` | VARCHAR | 是 |
-| level | `level` | BIGINT | 是 |
-| base_contract_code | `base_contract_code` | VARCHAR | 是 |
-| base_contract_name | `base_contract_name` | VARCHAR | 是 |
-| base_contract_content | `base_contract_content` | VARCHAR | 是 |
-| base_contract_unit | `base_contract_unit` | VARCHAR | 是 |
-| base_contract_amount | `base_contract_amount` | DOUBLE | 是 |
-| base_contract_pay_ratio | `base_contract_pay_ratio` | DOUBLE | 是 |
-| base_contract_tax_rate | `base_contract_tax_rate` | DOUBLE | 是 |
-| base_contract_is_settlement | `base_contract_is_settlement` | DOUBLE | 是 |
-| cost_actual_confirmed_acc | `cost_actual_confirmed_acc` | DOUBLE | 是 |
-| cost_actual_unconfirmed_acc | `cost_actual_unconfirmed_acc` | DOUBLE | 是 |
-| cost_actual_acc | `cost_actual_acc` | DOUBLE | 是 |
-| cost_actual_confirmed_cmonth | `cost_actual_confirmed_cmonth` | DOUBLE | 是 |
-| cost_actual_unconfirmed_cmonth | `cost_actual_unconfirmed_cmonth` | DOUBLE | 是 |
-| cost_actual_cmonth | `cost_actual_cmonth` | DOUBLE | 是 |
-| cost_rigidity | `cost_rigidity` | DOUBLE | 是 |
-| pay_due_confirmed_contract_acc | `pay_due_confirmed_contract_acc` | DOUBLE | 是 |
-| pay_amount_acc | `pay_amount_acc` | DOUBLE | 是 |
-| pay_ratio_acc | `pay_ratio_acc` | DOUBLE | 是 |
-| unpaid_contract_acc | `unpaid_contract_acc` | DOUBLE | 是 |
-| unpaid_exclude_unconfirmed_acc | `unpaid_exclude_unconfirmed_acc` | DOUBLE | 是 |
-| unpaid_unconfirmed_acc | `unpaid_unconfirmed_acc` | DOUBLE | 是 |
-| unpaid_acc | `unpaid_acc` | DOUBLE | 是 |
-| fund_plan_pay_mode | `fund_plan_pay_mode` | DOUBLE | 是 |
-| fund_plan_pay_type | `fund_plan_pay_type` | DOUBLE | 是 |
-| fund_plan_outcome_plan | `fund_plan_outcome_plan` | DOUBLE | 是 |
-| fund_plan_pay_ratio_acc | `fund_plan_pay_ratio_acc` | DOUBLE | 是 |
-| fund_plan_approve_amount | `fund_plan_approve_amount` | DOUBLE | 是 |
-| fund_plan_approve_ratio_acc | `fund_plan_approve_ratio_acc` | DOUBLE | 是 |
-| last_month_plan_execute_approve_amount | `last_month_plan_execute_approve_amount` | DOUBLE | 是 |
-| last_month_plan_execute_actual_amount | `last_month_plan_execute_actual_amount` | DOUBLE | 是 |
-| retention_due_date | `retention_due_date` | VARCHAR | 是 |
-| retention_amount | `retention_amount` | DOUBLE | 是 |
-| has_retention | `has_retention` | DOUBLE | 是 |
-| cost_actual_labor_acc | `cost_actual_labor_acc` | DOUBLE | 是 |
-| pay_due_confirmed_contract_labor_acc | `pay_due_confirmed_contract_labor_acc` | DOUBLE | 是 |
-| unpaid_contract_labor_acc | `unpaid_contract_labor_acc` | DOUBLE | 是 |
-| unpaid_exclude_unconfirmed_acc_amend | `unpaid_exclude_unconfirmed_acc_amend` | DOUBLE | 是 |
-| remark | `remark` | VARCHAR | 是 |
-| status | `status` | BIGINT | 是 |
-| create_time | `create_time` | TIMESTAMP | 是 |
-| create_by | `create_by` | VARCHAR | 是 |
-| update_time | `update_time` | TIMESTAMP | 是 |
-| update_by | `update_by` | VARCHAR | 是 |
+| 显示名 | 字段名 | 类型 | 可空 | 说明 |
+| --- | --- | --- | --- | --- |
+| id | `id` | VARCHAR | 是 |  |
+| project_id | `project_id` | VARCHAR | 是 |  |
+| contract_id | `contract_id` | VARCHAR | 是 |  |
+| year | `year` | BIGINT | 是 |  |
+| month | `month` | BIGINT | 是 |  |
+| no | `no` | VARCHAR | 是 |  |
+| sort_no | `sort_no` | BIGINT | 是 |  |
+| name | `name` | VARCHAR | 是 |  |
+| cost_code | `cost_code` | VARCHAR | 是 |  |
+| cost_attr | `cost_attr` | VARCHAR | 是 |  |
+| level | `level` | BIGINT | 是 |  |
+| base_contract_code | `base_contract_code` | VARCHAR | 是 |  |
+| base_contract_name | `base_contract_name` | VARCHAR | 是 |  |
+| base_contract_content | `base_contract_content` | VARCHAR | 是 |  |
+| base_contract_unit | `base_contract_unit` | VARCHAR | 是 |  |
+| base_contract_amount | `base_contract_amount` | DOUBLE | 是 |  |
+| base_contract_pay_ratio | `base_contract_pay_ratio` | DOUBLE | 是 |  |
+| base_contract_tax_rate | `base_contract_tax_rate` | DOUBLE | 是 |  |
+| base_contract_is_settlement | `base_contract_is_settlement` | DOUBLE | 是 |  |
+| cost_actual_confirmed_acc | `cost_actual_confirmed_acc` | DOUBLE | 是 |  |
+| cost_actual_unconfirmed_acc | `cost_actual_unconfirmed_acc` | DOUBLE | 是 |  |
+| cost_actual_acc | `cost_actual_acc` | DOUBLE | 是 |  |
+| cost_actual_confirmed_cmonth | `cost_actual_confirmed_cmonth` | DOUBLE | 是 |  |
+| cost_actual_unconfirmed_cmonth | `cost_actual_unconfirmed_cmonth` | DOUBLE | 是 |  |
+| cost_actual_cmonth | `cost_actual_cmonth` | DOUBLE | 是 |  |
+| cost_rigidity | `cost_rigidity` | DOUBLE | 是 |  |
+| pay_due_confirmed_contract_acc | `pay_due_confirmed_contract_acc` | DOUBLE | 是 |  |
+| pay_amount_acc | `pay_amount_acc` | DOUBLE | 是 |  |
+| pay_ratio_acc | `pay_ratio_acc` | DOUBLE | 是 |  |
+| unpaid_contract_acc | `unpaid_contract_acc` | DOUBLE | 是 |  |
+| unpaid_exclude_unconfirmed_acc | `unpaid_exclude_unconfirmed_acc` | DOUBLE | 是 |  |
+| unpaid_unconfirmed_acc | `unpaid_unconfirmed_acc` | DOUBLE | 是 |  |
+| unpaid_acc | `unpaid_acc` | DOUBLE | 是 |  |
+| fund_plan_pay_mode | `fund_plan_pay_mode` | DOUBLE | 是 |  |
+| fund_plan_pay_type | `fund_plan_pay_type` | DOUBLE | 是 |  |
+| fund_plan_outcome_plan | `fund_plan_outcome_plan` | DOUBLE | 是 |  |
+| fund_plan_pay_ratio_acc | `fund_plan_pay_ratio_acc` | DOUBLE | 是 |  |
+| fund_plan_approve_amount | `fund_plan_approve_amount` | DOUBLE | 是 |  |
+| fund_plan_approve_ratio_acc | `fund_plan_approve_ratio_acc` | DOUBLE | 是 |  |
+| last_month_plan_execute_approve_amount | `last_month_plan_execute_approve_amount` | DOUBLE | 是 |  |
+| last_month_plan_execute_actual_amount | `last_month_plan_execute_actual_amount` | DOUBLE | 是 |  |
+| retention_due_date | `retention_due_date` | VARCHAR | 是 |  |
+| retention_amount | `retention_amount` | DOUBLE | 是 |  |
+| has_retention | `has_retention` | DOUBLE | 是 |  |
+| cost_actual_labor_acc | `cost_actual_labor_acc` | DOUBLE | 是 |  |
+| pay_due_confirmed_contract_labor_acc | `pay_due_confirmed_contract_labor_acc` | DOUBLE | 是 |  |
+| unpaid_contract_labor_acc | `unpaid_contract_labor_acc` | DOUBLE | 是 |  |
+| unpaid_exclude_unconfirmed_acc_amend | `unpaid_exclude_unconfirmed_acc_amend` | DOUBLE | 是 |  |
+| remark | `remark` | VARCHAR | 是 |  |
+| status | `status` | BIGINT | 是 |  |
+| create_time | `create_time` | TIMESTAMP | 是 |  |
+| create_by | `create_by` | VARCHAR | 是 |  |
+| update_time | `update_time` | TIMESTAMP | 是 |  |
+| update_by | `update_by` | VARCHAR | 是 |  |
 
 ## 数据预览（前 10 行）
 

@@ -3,27 +3,27 @@
 - 数据连接：`建工成本01`（ID: `duckdb__建工成本01`）
 - 表标识：`tb_cost_report_view_model_definition_item`
 - 物理表名：`tb_cost_report_view_model_definition_item`
-- 导出时间：2026-06-05T14:41:31.739Z
+- 导出时间：2026-06-10T10:40:01.945Z
 
 ## 字段结构
 
-| 显示名 | 字段名 | 类型 | 可空 |
-| --- | --- | --- | --- |
-| id | `id` | VARCHAR | 是 |
-| view_model_definition_id | `view_model_definition_id` | VARCHAR | 是 |
-| title | `title` | VARCHAR | 是 |
-| code | `code` | VARCHAR | 是 |
-| binding_type | `binding_type` | BIGINT | 是 |
-| meta | `meta` | VARCHAR | 是 |
-| editable | `editable` | DOUBLE | 是 |
-| role_codes | `role_codes` | VARCHAR | 是 |
-| index | `index` | BIGINT | 是 |
-| remark | `remark` | VARCHAR | 是 |
-| status | `status` | BIGINT | 是 |
-| create_time | `create_time` | TIMESTAMP | 是 |
-| create_by | `create_by` | VARCHAR | 是 |
-| update_time | `update_time` | TIMESTAMP | 是 |
-| update_by | `update_by` | VARCHAR | 是 |
+| 显示名 | 字段名 | 类型 | 可空 | 说明 |
+| --- | --- | --- | --- | --- |
+| id | `id` | VARCHAR | 是 |  |
+| view_model_definition_id | `view_model_definition_id` | VARCHAR | 是 |  |
+| title | `title` | VARCHAR | 是 |  |
+| code | `code` | VARCHAR | 是 |  |
+| binding_type | `binding_type` | BIGINT | 是 |  |
+| meta | `meta` | VARCHAR | 是 |  |
+| editable | `editable` | DOUBLE | 是 |  |
+| role_codes | `role_codes` | VARCHAR | 是 |  |
+| index | `index` | BIGINT | 是 |  |
+| remark | `remark` | VARCHAR | 是 |  |
+| status | `status` | BIGINT | 是 |  |
+| create_time | `create_time` | TIMESTAMP | 是 |  |
+| create_by | `create_by` | VARCHAR | 是 |  |
+| update_time | `update_time` | TIMESTAMP | 是 |  |
+| update_by | `update_by` | VARCHAR | 是 |  |
 
 ## 数据预览（前 10 行）
 

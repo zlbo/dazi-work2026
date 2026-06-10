@@ -1,0 +1,118 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:38:02.957Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\objects\\oot_845e2883c4eb4021.json"
+  },
+  "id": "oot_845e2883c4eb4021",
+  "code": "Employer",
+  "name": "发包人",
+  "description": "发包人/业主主数据",
+  "search_summary": null,
+  "search_keywords": null,
+  "entity_synonyms_cache": null,
+  "object_kind": null,
+  "enabled": true,
+  "version": 1,
+  "properties": [
+    {
+      "id": "opr_8dc54613115642c3",
+      "code": "code",
+      "name": "发包人编号",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "EmployerCube.employer_code",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_7f6fc432e80148ff",
+      "code": "creditCode",
+      "name": "统一社会信用代码",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "EmployerCube.credit_code",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_a10576e622c540fa",
+      "code": "id",
+      "name": "发包人ID",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "EmployerCube.employer_id",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_a6acc01d7fe247c8",
+      "code": "industry",
+      "name": "所属行业",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "EmployerCube.industry",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_5168caad48dc4ba1",
+      "code": "name",
+      "name": "发包人名称",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "EmployerCube.employer_name",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    }
+  ],
+  "source_bindings": [
+    {
+      "id": "osb_82ca8a87c95a4d08",
+      "source_kind": "dazi_cube",
+      "priority": 0,
+      "config": {
+        "cube": "EmployerCube"
+      }
+    }
+  ]
+}

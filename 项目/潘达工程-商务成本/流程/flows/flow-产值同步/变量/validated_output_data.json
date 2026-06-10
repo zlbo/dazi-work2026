@@ -1,0 +1,257 @@
+{
+  "name": "validated_output_data",
+  "type": "table",
+  "status": "ready",
+  "variableId": 110,
+  "nodeId": "python-quality-output",
+  "debugRunId": 51,
+  "updatedAt": "2026-06-10T10:52:58.655387",
+  "syncedAt": "2026-06-10T10:53:19.843Z",
+  "schema": {
+    "variable_name": "validated_output_data",
+    "variable_type": "table",
+    "columns": [
+      {
+        "name": "output_id",
+        "type": "large_string",
+        "dtype": "int"
+      },
+      {
+        "name": "date_key",
+        "type": "int64",
+        "dtype": "int"
+      },
+      {
+        "name": "project_id",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "project_name",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "unconfirmed_output",
+        "type": "double",
+        "dtype": "string"
+      },
+      {
+        "name": "output_last_year_confirmed",
+        "type": "double",
+        "dtype": "string"
+      },
+      {
+        "name": "output_last_year_unconfirmed",
+        "type": "double",
+        "dtype": "string"
+      },
+      {
+        "name": "output_current_confirmed",
+        "type": "double",
+        "dtype": "string"
+      },
+      {
+        "name": "output_current_unconfirmed",
+        "type": "double",
+        "dtype": "string"
+      },
+      {
+        "name": "total_output",
+        "type": "double",
+        "dtype": "string"
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp[us]",
+        "dtype": "string"
+      },
+      {
+        "name": "confirmed_output",
+        "type": "double",
+        "dtype": "string"
+      },
+      {
+        "name": "report_period",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "company_id",
+        "type": "large_string",
+        "dtype": "string"
+      }
+    ],
+    "row_count": 200000
+  },
+  "preview": {
+    "rows": [
+      {
+        "output_id": "",
+        "date_key": 20221231,
+        "project_id": "4fa8152c-1cc9-4d2b-b7f9-f2ebebd61a80",
+        "project_name": "其他手续费",
+        "unconfirmed_output": 0,
+        "output_last_year_confirmed": 0,
+        "output_last_year_unconfirmed": 0,
+        "output_current_confirmed": 1991111.11,
+        "output_current_unconfirmed": 0,
+        "total_output": 1991111.11,
+        "created_at": "2026-06-10T18:52:17.021601",
+        "confirmed_output": 1991111.11,
+        "report_period": "2022-12",
+        "company_id": ""
+      },
+      {
+        "output_id": "",
+        "date_key": 20220831,
+        "project_id": "eeba143e-3c83-4f8e-a776-05452a5b7536",
+        "project_name": "劳动保护费",
+        "unconfirmed_output": 0,
+        "output_last_year_confirmed": 0,
+        "output_last_year_unconfirmed": 0,
+        "output_current_confirmed": 0,
+        "output_current_unconfirmed": 0,
+        "total_output": 0,
+        "created_at": "2026-06-10T18:52:17.021601",
+        "confirmed_output": 0,
+        "report_period": "2022-08",
+        "company_id": ""
+      },
+      {
+        "output_id": "",
+        "date_key": 20220131,
+        "project_id": "97b78498-8c97-47c7-93ed-d1edb08008ed",
+        "project_name": "绩效",
+        "unconfirmed_output": 0,
+        "output_last_year_confirmed": 0,
+        "output_last_year_unconfirmed": 0,
+        "output_current_confirmed": 0,
+        "output_current_unconfirmed": 0,
+        "total_output": 0,
+        "created_at": "2026-06-10T18:52:17.021601",
+        "confirmed_output": 0,
+        "report_period": "2022-01",
+        "company_id": ""
+      },
+      {
+        "output_id": "",
+        "date_key": 20230831,
+        "project_id": "c6807d6f-5f33-4375-a065-13d740d2fe1c",
+        "project_name": "工程款（回款差额）",
+        "unconfirmed_output": 0,
+        "output_last_year_confirmed": 0,
+        "output_last_year_unconfirmed": 0,
+        "output_current_confirmed": 0,
+        "output_current_unconfirmed": 0,
+        "total_output": 0,
+        "created_at": "2026-06-10T18:52:17.021601",
+        "confirmed_output": 0,
+        "report_period": "2023-08",
+        "company_id": ""
+      },
+      {
+        "output_id": "",
+        "date_key": 20211231,
+        "project_id": "846e38b2-4192-4838-944d-02f9d12ee3fb",
+        "project_name": "其中：资金占用利息",
+        "unconfirmed_output": 0,
+        "output_last_year_confirmed": 0,
+        "output_last_year_unconfirmed": 0,
+        "output_current_confirmed": 0,
+        "output_current_unconfirmed": 0,
+        "total_output": 0,
+        "created_at": "2026-06-10T18:52:17.021601",
+        "confirmed_output": 0,
+        "report_period": "2021-12",
+        "company_id": ""
+      },
+      {
+        "output_id": "",
+        "date_key": 20221130,
+        "project_id": "5a73b85e-e3d9-4d87-8b51-5b04c089542c",
+        "project_name": "其他业主收入",
+        "unconfirmed_output": 0,
+        "output_last_year_confirmed": 0,
+        "output_last_year_unconfirmed": 0,
+        "output_current_confirmed": 0,
+        "output_current_unconfirmed": 0,
+        "total_output": 0,
+        "created_at": "2026-06-10T18:52:17.021601",
+        "confirmed_output": 0,
+        "report_period": "2022-11",
+        "company_id": ""
+      },
+      {
+        "output_id": "",
+        "date_key": 20221130,
+        "project_id": "5a73b85e-e3d9-4d87-8b51-5b04c089542c",
+        "project_name": "设计费",
+        "unconfirmed_output": 0,
+        "output_last_year_confirmed": 0,
+        "output_last_year_unconfirmed": 0,
+        "output_current_confirmed": 0,
+        "output_current_unconfirmed": 0,
+        "total_output": 0,
+        "created_at": "2026-06-10T18:52:17.021601",
+        "confirmed_output": 0,
+        "report_period": "2022-11",
+        "company_id": ""
+      },
+      {
+        "output_id": "",
+        "date_key": 20221130,
+        "project_id": "5a73b85e-e3d9-4d87-8b51-5b04c089542c",
+        "project_name": "工程款（回款差额）",
+        "unconfirmed_output": 0,
+        "output_last_year_confirmed": 0,
+        "output_last_year_unconfirmed": 0,
+        "output_current_confirmed": 0,
+        "output_current_unconfirmed": 0,
+        "total_output": 0,
+        "created_at": "2026-06-10T18:52:17.021601",
+        "confirmed_output": 0,
+        "report_period": "2022-11",
+        "company_id": ""
+      },
+      {
+        "output_id": "",
+        "date_key": 20240229,
+        "project_id": "f160fcbf-32d7-4fdb-a362-0b7f11efad36",
+        "project_name": "预提费用",
+        "unconfirmed_output": 0,
+        "output_last_year_confirmed": 0,
+        "output_last_year_unconfirmed": 0,
+        "output_current_confirmed": 0,
+        "output_current_unconfirmed": 0,
+        "total_output": 0,
+        "created_at": "2026-06-10T18:52:17.021601",
+        "confirmed_output": 0,
+        "report_period": "2024-02",
+        "company_id": ""
+      },
+      {
+        "output_id": "",
+        "date_key": 20220930,
+        "project_id": "17721e11-96fa-48c4-8c45-f1f3368526ff",
+        "project_name": "工会经费",
+        "unconfirmed_output": 0,
+        "output_last_year_confirmed": 0,
+        "output_last_year_unconfirmed": 0,
+        "output_current_confirmed": 0,
+        "output_current_unconfirmed": 0,
+        "total_output": 0,
+        "created_at": "2026-06-10T18:52:17.021601",
+        "confirmed_output": 0,
+        "report_period": "2022-09",
+        "company_id": ""
+      }
+    ],
+    "total": 200000,
+    "page": 1,
+    "limit": 10,
+    "variable_type": "table",
+    "variable_name": "validated_output_data",
+    "columns": []
+  }
+}

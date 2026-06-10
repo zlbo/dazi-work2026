@@ -1,0 +1,100 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:38:15.949Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\objects\\oot_40b5148136ae4d7a.json"
+  },
+  "id": "oot_40b5148136ae4d7a",
+  "code": "Penalty",
+  "name": "罚款",
+  "description": "违约/违规/质量安全罚款",
+  "search_summary": null,
+  "search_keywords": null,
+  "entity_synonyms_cache": null,
+  "object_kind": null,
+  "enabled": true,
+  "version": 1,
+  "properties": [
+    {
+      "id": "opr_32b6d8290acf4864",
+      "code": "id",
+      "name": "罚款ID",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "PenaltyCube.penalty_id",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_129741f60d5d46c3",
+      "code": "penaltyAmount",
+      "name": "罚款金额",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "measure",
+      "qualified_name": "PenaltyCube.penalty_amount_total",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_228111fe0ce04351",
+      "code": "penaltyType",
+      "name": "罚款类型",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "PenaltyCube.penalty_type",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_5eb7580c7c154cfc",
+      "code": "projectId",
+      "name": "项目ID",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "PenaltyCube.project_id",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    }
+  ],
+  "source_bindings": [
+    {
+      "id": "osb_61f86709ed3d47d8",
+      "source_kind": "dazi_cube",
+      "priority": 0,
+      "config": {
+        "cube": "PenaltyCube"
+      }
+    }
+  ]
+}

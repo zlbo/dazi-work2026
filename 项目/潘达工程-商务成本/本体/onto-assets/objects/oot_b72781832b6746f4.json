@@ -1,0 +1,118 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:38:07.007Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\objects\\oot_b72781832b6746f4.json"
+  },
+  "id": "oot_b72781832b6746f4",
+  "code": "Equipment",
+  "name": "机械设备",
+  "description": "项目设备台账",
+  "search_summary": null,
+  "search_keywords": null,
+  "entity_synonyms_cache": null,
+  "object_kind": null,
+  "enabled": true,
+  "version": 1,
+  "properties": [
+    {
+      "id": "opr_f66f69df9e7644ce",
+      "code": "equipmentCode",
+      "name": "设备编号",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "EquipmentCube.equipment_code",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_058359d8ce4b49c8",
+      "code": "equipmentName",
+      "name": "设备名称",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "EquipmentCube.equipment_name",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_e1cd5ac05b3c459d",
+      "code": "equipmentStatus",
+      "name": "设备状态",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "EquipmentCube.equipment_status",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_4cd717d0cb494402",
+      "code": "id",
+      "name": "设备ID",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "EquipmentCube.equipment_id",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_ffc5107c82884dfe",
+      "code": "projectId",
+      "name": "项目ID",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "EquipmentCube.project_id",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    }
+  ],
+  "source_bindings": [
+    {
+      "id": "osb_5084f70390a44779",
+      "source_kind": "dazi_cube",
+      "priority": 0,
+      "config": {
+        "cube": "EquipmentCube"
+      }
+    }
+  ]
+}

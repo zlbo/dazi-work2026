@@ -1,0 +1,100 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:38:55.185Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\objects\\oot_af5c84a723ec483c.json"
+  },
+  "id": "oot_af5c84a723ec483c",
+  "code": "Subcontractor",
+  "name": "分包商",
+  "description": "分包商主数据",
+  "search_summary": null,
+  "search_keywords": null,
+  "entity_synonyms_cache": null,
+  "object_kind": null,
+  "enabled": true,
+  "version": 1,
+  "properties": [
+    {
+      "id": "opr_40ac85e716404887",
+      "code": "code",
+      "name": "分包商编号",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "SubcontractorCube.subcontractor_code",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_9b092fc1582741a7",
+      "code": "id",
+      "name": "分包商ID",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "SubcontractorCube.subcontractor_id",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_1fabe87919114182",
+      "code": "name",
+      "name": "分包商名称",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "SubcontractorCube.subcontractor_name",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_1ff59b7c4f1e437a",
+      "code": "subcontractType",
+      "name": "分包类型",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "SubcontractorCube.subcontract_type",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    }
+  ],
+  "source_bindings": [
+    {
+      "id": "osb_32a8f59388684921",
+      "source_kind": "dazi_cube",
+      "priority": 0,
+      "config": {
+        "cube": "SubcontractorCube"
+      }
+    }
+  ]
+}

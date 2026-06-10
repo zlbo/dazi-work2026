@@ -3,27 +3,27 @@
 - 数据连接：`建工成本01`（ID: `duckdb__建工成本01`）
 - 表标识：`tb_project_income_outcome_summary`
 - 物理表名：`tb_project_income_outcome_summary`
-- 导出时间：2026-06-05T14:41:41.602Z
+- 导出时间：2026-06-10T10:40:21.340Z
 
 ## 字段结构
 
-| 显示名 | 字段名 | 类型 | 可空 |
-| --- | --- | --- | --- |
-| id | `id` | VARCHAR | 是 |
-| project_id | `project_id` | VARCHAR | 是 |
-| year | `year` | BIGINT | 是 |
-| month | `month` | BIGINT | 是 |
-| code | `code` | VARCHAR | 是 |
-| name | `name` | VARCHAR | 是 |
-| project_amount | `project_amount` | DOUBLE | 是 |
-| company_amount | `company_amount` | DOUBLE | 是 |
-| total | `total` | DOUBLE | 是 |
-| remark | `remark` | INTEGER | 是 |
-| status | `status` | BIGINT | 是 |
-| create_time | `create_time` | TIMESTAMP | 是 |
-| create_by | `create_by` | VARCHAR | 是 |
-| update_time | `update_time` | TIMESTAMP | 是 |
-| update_by | `update_by` | VARCHAR | 是 |
+| 显示名 | 字段名 | 类型 | 可空 | 说明 |
+| --- | --- | --- | --- | --- |
+| id | `id` | VARCHAR | 是 |  |
+| project_id | `project_id` | VARCHAR | 是 |  |
+| year | `year` | BIGINT | 是 |  |
+| month | `month` | BIGINT | 是 |  |
+| code | `code` | VARCHAR | 是 |  |
+| name | `name` | VARCHAR | 是 |  |
+| project_amount | `project_amount` | DOUBLE | 是 |  |
+| company_amount | `company_amount` | DOUBLE | 是 |  |
+| total | `total` | DOUBLE | 是 |  |
+| remark | `remark` | INTEGER | 是 |  |
+| status | `status` | BIGINT | 是 |  |
+| create_time | `create_time` | TIMESTAMP | 是 |  |
+| create_by | `create_by` | VARCHAR | 是 |  |
+| update_time | `update_time` | TIMESTAMP | 是 |  |
+| update_by | `update_by` | VARCHAR | 是 |  |
 
 ## 数据预览（前 10 行）
 

@@ -1,0 +1,33 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:40:58.649Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\functions\\panda_cost.fn.get_summary.json"
+  },
+  "id": "ofn_5c4cb137a7964803",
+  "function_id": "panda_cost.fn.get_summary",
+  "object_type_id": null,
+  "object_type_code": null,
+  "adapter": "dazi_script.ontology_function",
+  "adapter_config": {
+    "entry": "main",
+    "script_id": "9408bd05-f1ed-48bc-a3ba-419fbc46a98b"
+  },
+  "script_id": "9408bd05-f1ed-48bc-a3ba-419fbc46a98b",
+  "entry": "main",
+  "display_name": "panda_cost.fn.get_summary",
+  "function_synonyms_cache": null,
+  "description": null,
+  "test_arguments": {
+    "v": 1,
+    "meta": {
+      "last_source": "app_query_aggregate",
+      "last_saved_at": "2026-06-10T06:46:26.816726+00:00",
+      "last_input_shape": "ir"
+    },
+    "arguments": {
+      "report_period": "2025-06"
+    },
+    "object_type_code": "Bond"
+  },
+  "enabled": true
+}

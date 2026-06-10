@@ -1,0 +1,33 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:41:29.039Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\functions\\panda_cost.fn.payment_analysis.json"
+  },
+  "id": "ofn_bd1d6168fe0841cd",
+  "function_id": "panda_cost.fn.payment_analysis",
+  "object_type_id": null,
+  "object_type_code": null,
+  "adapter": "dazi_script.ontology_function",
+  "adapter_config": {
+    "entry": "main",
+    "script_id": "1df912a8-fb82-4501-ac90-faaf77ec2fbc"
+  },
+  "script_id": "1df912a8-fb82-4501-ac90-faaf77ec2fbc",
+  "entry": "main",
+  "display_name": "panda_cost.fn.payment_analysis",
+  "function_synonyms_cache": null,
+  "description": null,
+  "test_arguments": {
+    "v": 1,
+    "meta": {
+      "last_source": "admin_panel",
+      "last_saved_at": "2026-06-10T06:38:59.520393+00:00",
+      "last_input_shape": "json"
+    },
+    "arguments": {
+      "report_period": "2025-06"
+    },
+    "object_type_code": ""
+  },
+  "enabled": true
+}

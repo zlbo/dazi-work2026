@@ -1,0 +1,45 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.sql，配置改 flow.json",
+  "node_uuid": "d96222ce-aaa9-4050-b782-830c2f2de9ec",
+  "nodeId": "database-source-output",
+  "nodeType": "database-source",
+  "label": "读取产值数据",
+  "codeFile": "code.sql",
+  "codeLanguage": "sql",
+  "position": {
+    "x": 340,
+    "y": 250
+  },
+  "data": {
+    "label": "读取产值数据",
+    "type": "database-source",
+    "status": "idle",
+    "description": "从建工成本数据源读取项目产值数据",
+    "flowId": 63,
+    "output_variable_name": "output_raw_data",
+    "dataSourceId": 11,
+    "queryConfig": {
+      "tableName": "tb_project_income_outcome_summary",
+      "selectedFields": [
+        "id",
+        "project_id",
+        "project_name",
+        "report_period",
+        "income_amount",
+        "outcome_amount",
+        "profit_amount",
+        "profit_rate",
+        "tax_rate",
+        "contract_amount",
+        "progress_rate",
+        "created_at",
+        "updated_at"
+      ],
+      "useAliases": true,
+      "distinct": false,
+      "rowLimit": 200000,
+      "filters": []
+    },
+    "tableName": "tb_project_income_outcome_summary"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "id": 51,
+  "flow_id": 63,
+  "status": "failed",
+  "duration": 356367,
+  "node_status": {
+    "python-quality-output": {
+      "status": "pending",
+      "node_label": "质量检查",
+      "node_uuid": "f7c4e8d2-1a3b-5c6d-7e8f-9a0b1c2d3e4g",
+      "startTime": null,
+      "endTime": null,
+      "duration": null,
+      "error": null,
+      "traceback": null,
+      "output_variable_id": null,
+      "logs": null
+    },
+    "python-transform-output": {
+      "status": "pending",
+      "node_label": "数据转换",
+      "node_uuid": "e5f8a3b9-2c7d-4e8a-9f6b-1a2c3d4e5f6b",
+      "startTime": null,
+      "endTime": null,
+      "duration": null,
+      "error": null,
+      "traceback": null,
+      "output_variable_id": null,
+      "logs": null
+    },
+    "dataspace-sink-output": {
+      "status": "pending",
+      "node_label": "写入产值数据",
+      "node_uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "startTime": null,
+      "endTime": null,
+      "duration": null,
+      "error": null,
+      "traceback": null,
+      "output_variable_id": null,
+      "logs": null
+    },
+    "start-node": {
+      "status": "success",
+      "node_label": "开始",
+      "node_uuid": "aa1ba01e-bc96-41ab-b9e4-4b42e77aaae6",
+      "startTime": "2026-06-10T10:35:15.510114Z",
+      "endTime": "2026-06-10T10:35:15.510114Z",
+      "duration": 0,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": ""
+    },
+    "end-node": {
+      "status": "pending",
+      "node_label": "结束",
+      "node_uuid": "47c53b38-6005-4d7f-9f89-7ea56dab6b39",
+      "startTime": null,
+      "endTime": null,
+      "duration": null,
+      "error": null,
+      "traceback": null,
+      "output_variable_id": null,
+      "logs": null
+    },
+    "database-source-output": {
+      "status": "failed",
+      "node_label": "读取产值数据",
+      "node_uuid": "d96222ce-aaa9-4050-b782-830c2f2de9ec",
+      "startTime": "2026-06-10T10:35:15.525762Z",
+      "endTime": "2026-06-10T10:35:15.541388Z",
+      "duration": 15,
+      "error": "数据连接不存在",
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": ""
+    }
+  },
+  "execution_logs": [
+    {
+      "node_id": "start-node",
+      "node_label": "开始",
+      "status": "success",
+      "startTime": "2026-06-10T10:35:15.510114Z",
+      "endTime": "2026-06-10T10:35:15.510114Z",
+      "duration": 0,
+      "error": null,
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": "",
+      "step_order": 1,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "3a740eea-bfe4-438c-b9d0-3c0119d19bb6"
+    },
+    {
+      "node_id": "database-source-output",
+      "node_label": "读取产值数据",
+      "status": "failed",
+      "startTime": "2026-06-10T10:35:15.525762Z",
+      "endTime": "2026-06-10T10:35:15.541388Z",
+      "duration": 15,
+      "error": "数据连接不存在",
+      "traceback": "",
+      "output_variable_id": null,
+      "logs": "",
+      "step_order": 2,
+      "iteration": 0,
+      "active_branch": null,
+      "execution_id": "7e7baa68-f8bb-4874-be59-eb3209146566"
+    }
+  ],
+  "variables": {
+    "validated_output_data": {
+      "id": 110,
+      "value": "uploads/py_result_e4c352a8-f8da-4936-ab3c-7b4c278f8ca3.parquet",
+      "type": "table",
+      "node_id": "python-quality-output",
+      "updated_at": "2026-06-10T10:09:51.968806Z"
+    },
+    "output_raw_data": {
+      "id": 108,
+      "value": "uploads/1d11e665-b3d9-4b10-915b-6b7ebe0b0725.parquet",
+      "type": "table",
+      "node_id": "database-source-output",
+      "updated_at": "2026-06-10T10:09:46.202202Z"
+    },
+    "project_output_data": {
+      "id": 109,
+      "value": "uploads/py_result_f3b51f33-b8db-4921-8f2b-e317acffcc53.parquet",
+      "type": "table",
+      "node_id": "python-transform-output",
+      "updated_at": "2026-06-10T10:09:51.436581Z"
+    }
+  },
+  "created_at": "2026-06-06T07:35:47.548468Z",
+  "completed_at": "2026-06-10T10:35:15.541388Z"
+}

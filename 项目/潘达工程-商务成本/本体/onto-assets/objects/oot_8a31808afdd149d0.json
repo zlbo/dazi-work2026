@@ -1,0 +1,118 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:38:51.669Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\objects\\oot_8a31808afdd149d0.json"
+  },
+  "id": "oot_8a31808afdd149d0",
+  "code": "Settlement",
+  "name": "结算",
+  "description": "项目结算记录",
+  "search_summary": null,
+  "search_keywords": null,
+  "entity_synonyms_cache": null,
+  "object_kind": null,
+  "enabled": true,
+  "version": 1,
+  "properties": [
+    {
+      "id": "opr_68dd491c34e54fbe",
+      "code": "auditStatus",
+      "name": "审核状态",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "SettlementCube.audit_status",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_6cbacf7b67654161",
+      "code": "id",
+      "name": "结算ID",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "SettlementCube.settlement_id",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_68fdf69b2df147ec",
+      "code": "projectId",
+      "name": "项目ID",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "SettlementCube.project_id",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_b991e355f98a4e0f",
+      "code": "settlementAmount",
+      "name": "结算金额",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "measure",
+      "qualified_name": "SettlementCube.settlement_amount_total",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_5e12d1d9f1124e0d",
+      "code": "threeEstimateComparison",
+      "name": "三算对比",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "SettlementCube.three_estimate_comparison",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    }
+  ],
+  "source_bindings": [
+    {
+      "id": "osb_43bc029ddd534dcc",
+      "source_kind": "dazi_cube",
+      "priority": 0,
+      "config": {
+        "cube": "SettlementCube"
+      }
+    }
+  ]
+}

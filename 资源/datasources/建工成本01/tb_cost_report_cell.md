@@ -3,32 +3,32 @@
 - 数据连接：`建工成本01`（ID: `duckdb__建工成本01`）
 - 表标识：`tb_cost_report_cell`
 - 物理表名：`tb_cost_report_cell`
-- 导出时间：2026-06-05T14:41:24.631Z
+- 导出时间：2026-06-10T10:39:49.135Z
 
 ## 字段结构
 
-| 显示名 | 字段名 | 类型 | 可空 |
-| --- | --- | --- | --- |
-| id | `id` | VARCHAR | 是 |
-| row_id | `row_id` | VARCHAR | 是 |
-| row_num | `row_num` | BIGINT | 是 |
-| column_num | `column_num` | BIGINT | 是 |
-| colspan | `colspan` | DOUBLE | 是 |
-| rowspan | `rowspan` | DOUBLE | 是 |
-| style | `style` | VARCHAR | 是 |
-| format | `format` | VARCHAR | 是 |
-| value | `value` | VARCHAR | 是 |
-| type | `type` | VARCHAR | 是 |
-| data_type | `data_type` | BIGINT | 是 |
-| locked | `locked` | BIGINT | 是 |
-| meta | `meta` | VARCHAR | 是 |
-| formula | `formula` | VARCHAR | 是 |
-| formula_disabled | `formula_disabled` | BIGINT | 是 |
-| status | `status` | BIGINT | 是 |
-| create_by | `create_by` | VARCHAR | 是 |
-| create_time | `create_time` | INTEGER | 是 |
-| update_by | `update_by` | VARCHAR | 是 |
-| update_time | `update_time` | TIMESTAMP | 是 |
+| 显示名 | 字段名 | 类型 | 可空 | 说明 |
+| --- | --- | --- | --- | --- |
+| id | `id` | VARCHAR | 是 |  |
+| row_id | `row_id` | VARCHAR | 是 |  |
+| row_num | `row_num` | BIGINT | 是 |  |
+| column_num | `column_num` | BIGINT | 是 |  |
+| colspan | `colspan` | DOUBLE | 是 |  |
+| rowspan | `rowspan` | DOUBLE | 是 |  |
+| style | `style` | VARCHAR | 是 |  |
+| format | `format` | VARCHAR | 是 |  |
+| value | `value` | VARCHAR | 是 |  |
+| type | `type` | VARCHAR | 是 |  |
+| data_type | `data_type` | BIGINT | 是 |  |
+| locked | `locked` | BIGINT | 是 |  |
+| meta | `meta` | VARCHAR | 是 |  |
+| formula | `formula` | VARCHAR | 是 |  |
+| formula_disabled | `formula_disabled` | BIGINT | 是 |  |
+| status | `status` | BIGINT | 是 |  |
+| create_by | `create_by` | VARCHAR | 是 |  |
+| create_time | `create_time` | INTEGER | 是 |  |
+| update_by | `update_by` | VARCHAR | 是 |  |
+| update_time | `update_time` | TIMESTAMP | 是 |  |
 
 ## 数据预览（前 10 行）
 

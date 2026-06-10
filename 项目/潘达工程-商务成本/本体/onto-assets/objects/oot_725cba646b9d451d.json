@@ -1,0 +1,82 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:37:43.711Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\objects\\oot_725cba646b9d451d.json"
+  },
+  "id": "oot_725cba646b9d451d",
+  "code": "Compensation",
+  "name": "赔偿",
+  "description": "合同/侵权/工伤赔偿",
+  "search_summary": null,
+  "search_keywords": null,
+  "entity_synonyms_cache": null,
+  "object_kind": null,
+  "enabled": true,
+  "version": 1,
+  "properties": [
+    {
+      "id": "opr_e00589f9a2c24b92",
+      "code": "compensationAmount",
+      "name": "赔偿金额",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "measure",
+      "qualified_name": "CompensationCube.compensation_amount_total",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_aed7e95910ec4536",
+      "code": "id",
+      "name": "赔偿ID",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "CompensationCube.compensation_id",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_25c6db0c2af94961",
+      "code": "projectId",
+      "name": "项目ID",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "CompensationCube.project_id",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    }
+  ],
+  "source_bindings": [
+    {
+      "id": "osb_bc839cded65d4b18",
+      "source_kind": "dazi_cube",
+      "priority": 0,
+      "config": {
+        "cube": "CompensationCube"
+      }
+    }
+  ]
+}

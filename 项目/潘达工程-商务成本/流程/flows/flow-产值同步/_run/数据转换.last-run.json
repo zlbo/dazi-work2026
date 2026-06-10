@@ -1,0 +1,12 @@
+{
+  "node_id": "python-transform-output",
+  "status": "success",
+  "error": null,
+  "active_branch": null,
+  "output_file_id": "uploads/py_result_859fb7d5-a57f-4269-801f-b4f23338b989.parquet",
+  "output_variable_name": "project_output_data",
+  "extra_variables": {},
+  "output_file": "D:\\dazi\\dazi-backend\\storage\\uploads\\py_result_859fb7d5-a57f-4269-801f-b4f23338b989.parquet",
+  "output_variable_id": 109,
+  "debug_run_id": 51
+}

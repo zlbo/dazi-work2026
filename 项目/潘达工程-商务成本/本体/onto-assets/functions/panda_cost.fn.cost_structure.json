@@ -1,0 +1,33 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:40:52.802Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\functions\\panda_cost.fn.cost_structure.json"
+  },
+  "id": "ofn_3cacc9b951c049c8",
+  "function_id": "panda_cost.fn.cost_structure",
+  "object_type_id": null,
+  "object_type_code": null,
+  "adapter": "dazi_script.ontology_function",
+  "adapter_config": {
+    "entry": "main",
+    "script_id": "eaf867e7-283b-4868-b7c6-99b4492e1f5b"
+  },
+  "script_id": "eaf867e7-283b-4868-b7c6-99b4492e1f5b",
+  "entry": "main",
+  "display_name": "panda_cost.fn.cost_structure",
+  "function_synonyms_cache": null,
+  "description": null,
+  "test_arguments": {
+    "v": 1,
+    "meta": {
+      "last_source": "admin_panel",
+      "last_saved_at": "2026-06-10T06:38:59.207869+00:00",
+      "last_input_shape": "json"
+    },
+    "arguments": {
+      "report_period": "2025-06"
+    },
+    "object_type_code": ""
+  },
+  "enabled": true
+}

@@ -1,0 +1,28 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.sql，配置改 flow.json",
+  "node_uuid": "d96222ce-aaa9-4050-b782-830c2f2de9eb",
+  "nodeId": "database-source-cost",
+  "nodeType": "database-source",
+  "label": "读取成本数据",
+  "codeFile": "code.sql",
+  "codeLanguage": "sql",
+  "position": { "x": 340, "y": 250 },
+  "data": {
+    "label": "读取成本数据",
+    "type": "database-source",
+    "status": "idle",
+    "description": "从建工成本数据源读取项目成本明细",
+    "flowId": 1001,
+    "output_variable_name": "cost_raw_data",
+    "dataSourceId": 11,
+    "queryConfig": {
+      "tableName": "tb_project_cost_pay_detail",
+      "selectedFields": ["id", "project_id", "project_name", "cost_item_code", "cost_item_name", "contract_no", "contract_name", "pay_date", "pay_amount", "tax_amount", "total_amount", "pay_type", "pay_status", "report_period", "created_at", "updated_at"],
+      "useAliases": true,
+      "distinct": false,
+      "rowLimit": 200000,
+      "filters": []
+    },
+    "tableName": "tb_project_cost_pay_detail"
+  }
+}
