@@ -3,3 +3,5 @@ packages:
   - 'templates/*'
   - 'cli'
   - 'apps/*'
+allowBuilds:
+  esbuild: true
