@@ -1,0 +1,118 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:38:48.491Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\objects\\oot_3cd763f04f124de4.json"
+  },
+  "id": "oot_3cd763f04f124de4",
+  "code": "Receipt",
+  "name": "收款",
+  "description": "项目收款记录",
+  "search_summary": null,
+  "search_keywords": null,
+  "entity_synonyms_cache": null,
+  "object_kind": null,
+  "enabled": true,
+  "version": 1,
+  "properties": [
+    {
+      "id": "opr_1639cc6f69fa4d36",
+      "code": "id",
+      "name": "收款ID",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "ReceiptCube.receipt_id",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_2511223dacb54557",
+      "code": "overdueDays",
+      "name": "逾期天数",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "measure",
+      "qualified_name": "ReceiptCube.overdue_days_avg",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_44af2262b37f4ddb",
+      "code": "projectId",
+      "name": "项目ID",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "ReceiptCube.project_id",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_a9be63add0054a20",
+      "code": "receiptAmount",
+      "name": "收款金额",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "measure",
+      "qualified_name": "ReceiptCube.receipt_amount_total",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_05e7410cdd9a4894",
+      "code": "receiptType",
+      "name": "收款类型",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "ReceiptCube.receipt_type",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    }
+  ],
+  "source_bindings": [
+    {
+      "id": "osb_fdf1ac16cd704aff",
+      "source_kind": "dazi_cube",
+      "priority": 0,
+      "config": {
+        "cube": "ReceiptCube"
+      }
+    }
+  ]
+}

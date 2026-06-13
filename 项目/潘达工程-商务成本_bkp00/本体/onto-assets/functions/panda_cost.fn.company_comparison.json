@@ -1,0 +1,34 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:40:19.964Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\functions\\panda_cost.fn.company_comparison.json"
+  },
+  "id": "ofn_2686bf4f0e5a43a7",
+  "function_id": "panda_cost.fn.company_comparison",
+  "object_type_id": null,
+  "object_type_code": null,
+  "adapter": "dazi_script.ontology_function",
+  "adapter_config": {
+    "entry": "main",
+    "script_id": "07a9059d-0bef-463e-8e2c-32bb59241ffc"
+  },
+  "script_id": "07a9059d-0bef-463e-8e2c-32bb59241ffc",
+  "entry": "main",
+  "display_name": "panda_cost.fn.company_comparison",
+  "function_synonyms_cache": null,
+  "description": null,
+  "test_arguments": {
+    "v": 1,
+    "meta": {
+      "last_source": "admin_panel",
+      "last_saved_at": "2026-06-10T06:39:01.492043+00:00",
+      "last_input_shape": "json"
+    },
+    "arguments": {
+      "metric": "profit_rate",
+      "report_period": "2025-06"
+    },
+    "object_type_code": ""
+  },
+  "enabled": true
+}

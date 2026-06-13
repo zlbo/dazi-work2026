@@ -1,0 +1,332 @@
+{
+  "name": "payment_raw_data",
+  "type": "table",
+  "status": "ready",
+  "variableId": 117,
+  "nodeId": "database-source-payment",
+  "debugRunId": 59,
+  "updatedAt": "2026-06-10T13:08:35.230217",
+  "syncedAt": "2026-06-10T13:10:06.100Z",
+  "schema": {
+    "variable_name": "payment_raw_data",
+    "variable_type": "table",
+    "columns": [
+      {
+        "name": "id",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "project_id",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "contract_id",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "year",
+        "type": "int64",
+        "dtype": "int"
+      },
+      {
+        "name": "month",
+        "type": "int64",
+        "dtype": "int"
+      },
+      {
+        "name": "base_contract_code",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "base_contract_name",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "base_contract_amount",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "base_contract_pay_ratio",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "base_contract_tax_rate",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "base_contract_is_settlement",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "cost_actual_confirmed_acc",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "cost_actual_unconfirmed_acc",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "cost_actual_labor_acc",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "fund_plan_approve_amount",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "pay_amount_acc",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "pay_ratio_acc",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "create_time",
+        "type": "timestamp[us]",
+        "dtype": "datetime"
+      },
+      {
+        "name": "update_time",
+        "type": "timestamp[us]",
+        "dtype": "datetime"
+      }
+    ],
+    "row_count": 200000
+  },
+  "preview": {
+    "rows": [
+      {
+        "id": "00001590546e45608f187f1ccc37f06f",
+        "project_id": "217c4ec8-45f5-4ef5-ad05-8a954063ba5f",
+        "contract_id": "74b10090-8e16-4bb0-8106-00afc24881af",
+        "year": 2022,
+        "month": 10,
+        "base_contract_code": "A01201123100052019005000",
+        "base_contract_name": "施工升降机租赁合同（重庆同涞）",
+        "base_contract_amount": 104000,
+        "base_contract_pay_ratio": 1,
+        "base_contract_tax_rate": 0.03,
+        "base_contract_is_settlement": 1,
+        "cost_actual_confirmed_acc": 134323.56,
+        "cost_actual_unconfirmed_acc": null,
+        "cost_actual_labor_acc": null,
+        "fund_plan_approve_amount": null,
+        "pay_amount_acc": 92680.2,
+        "pay_ratio_acc": 0.69,
+        "create_time": "2022-11-09T09:54:28",
+        "update_time": "2022-11-09T09:54:28"
+      },
+      {
+        "id": "00002d1145cc499386b20bbf9b052c3f",
+        "project_id": "7b00bfd7-9cdf-4e0f-a696-abf2546fdf03",
+        "contract_id": null,
+        "year": 2022,
+        "month": 1,
+        "base_contract_code": "ZX_WHT_7_BX",
+        "base_contract_name": "其它直接费(报销)",
+        "base_contract_amount": null,
+        "base_contract_pay_ratio": null,
+        "base_contract_tax_rate": null,
+        "base_contract_is_settlement": null,
+        "cost_actual_confirmed_acc": 0,
+        "cost_actual_unconfirmed_acc": null,
+        "cost_actual_labor_acc": null,
+        "fund_plan_approve_amount": null,
+        "pay_amount_acc": 0,
+        "pay_ratio_acc": null,
+        "create_time": "2022-02-22T10:21:27",
+        "update_time": "2022-02-22T10:21:27"
+      },
+      {
+        "id": "0000a6cd50d64db6a0aea7431430e4b9",
+        "project_id": "bd118165-2c0d-4d7e-b325-2be4c1d171fc",
+        "contract_id": null,
+        "year": 2022,
+        "month": 8,
+        "base_contract_code": null,
+        "base_contract_name": null,
+        "base_contract_amount": null,
+        "base_contract_pay_ratio": null,
+        "base_contract_tax_rate": null,
+        "base_contract_is_settlement": null,
+        "cost_actual_confirmed_acc": 0,
+        "cost_actual_unconfirmed_acc": null,
+        "cost_actual_labor_acc": null,
+        "fund_plan_approve_amount": null,
+        "pay_amount_acc": 0,
+        "pay_ratio_acc": null,
+        "create_time": "2022-08-26T09:23:15",
+        "update_time": "2022-08-26T09:23:15"
+      },
+      {
+        "id": "0000b78b11604bd2831bae3113b939f1",
+        "project_id": "56e04b6b-e960-4466-9582-e9347fcf68eb",
+        "contract_id": null,
+        "year": 2022,
+        "month": 5,
+        "base_contract_code": null,
+        "base_contract_name": null,
+        "base_contract_amount": null,
+        "base_contract_pay_ratio": null,
+        "base_contract_tax_rate": null,
+        "base_contract_is_settlement": null,
+        "cost_actual_confirmed_acc": 0,
+        "cost_actual_unconfirmed_acc": null,
+        "cost_actual_labor_acc": null,
+        "fund_plan_approve_amount": null,
+        "pay_amount_acc": 0,
+        "pay_ratio_acc": null,
+        "create_time": "2022-05-25T14:01:43",
+        "update_time": "2022-05-25T14:01:43"
+      },
+      {
+        "id": "0000d94f0dd04b8193da2818bf98dc5e",
+        "project_id": "c8939a12-8617-478b-9b0a-0f9dafa70f2d",
+        "contract_id": null,
+        "year": 2022,
+        "month": 5,
+        "base_contract_code": null,
+        "base_contract_name": null,
+        "base_contract_amount": null,
+        "base_contract_pay_ratio": null,
+        "base_contract_tax_rate": null,
+        "base_contract_is_settlement": null,
+        "cost_actual_confirmed_acc": 0,
+        "cost_actual_unconfirmed_acc": null,
+        "cost_actual_labor_acc": null,
+        "fund_plan_approve_amount": null,
+        "pay_amount_acc": 0,
+        "pay_ratio_acc": null,
+        "create_time": "2022-05-25T14:01:43",
+        "update_time": "2022-05-25T14:01:43"
+      },
+      {
+        "id": "0000e4dd8d9d4232a80944d48e2bf50c",
+        "project_id": "80a57e77-b682-45fe-824c-5a1e52745ef1",
+        "contract_id": null,
+        "year": 2022,
+        "month": 4,
+        "base_contract_code": null,
+        "base_contract_name": null,
+        "base_contract_amount": null,
+        "base_contract_pay_ratio": null,
+        "base_contract_tax_rate": null,
+        "base_contract_is_settlement": null,
+        "cost_actual_confirmed_acc": null,
+        "cost_actual_unconfirmed_acc": null,
+        "cost_actual_labor_acc": null,
+        "fund_plan_approve_amount": 0,
+        "pay_amount_acc": 0,
+        "pay_ratio_acc": null,
+        "create_time": "2022-05-13T16:51:19",
+        "update_time": "2022-05-13T16:51:19"
+      },
+      {
+        "id": "00015bc7772942b5b767ee016fc7fa05",
+        "project_id": "06af29e8-38f9-4961-a4c9-dfc3fd4732db",
+        "contract_id": null,
+        "year": 2022,
+        "month": 8,
+        "base_contract_code": null,
+        "base_contract_name": null,
+        "base_contract_amount": null,
+        "base_contract_pay_ratio": null,
+        "base_contract_tax_rate": null,
+        "base_contract_is_settlement": null,
+        "cost_actual_confirmed_acc": null,
+        "cost_actual_unconfirmed_acc": null,
+        "cost_actual_labor_acc": null,
+        "fund_plan_approve_amount": null,
+        "pay_amount_acc": 0,
+        "pay_ratio_acc": null,
+        "create_time": "2022-08-26T09:23:15",
+        "update_time": "2022-08-26T09:23:15"
+      },
+      {
+        "id": "00015e474c7c4680a2a78ec9f012c135",
+        "project_id": "7732f58d-9da9-4836-936b-d5f65cf60b4e",
+        "contract_id": "ZX_WHT_999",
+        "year": 2022,
+        "month": 2,
+        "base_contract_code": "ZX_WHT_999",
+        "base_contract_name": "未签合同其它直接费",
+        "base_contract_amount": 0,
+        "base_contract_pay_ratio": 0,
+        "base_contract_tax_rate": 0,
+        "base_contract_is_settlement": 2,
+        "cost_actual_confirmed_acc": 0,
+        "cost_actual_unconfirmed_acc": null,
+        "cost_actual_labor_acc": null,
+        "fund_plan_approve_amount": null,
+        "pay_amount_acc": 0,
+        "pay_ratio_acc": null,
+        "create_time": "2022-03-14T10:20:13",
+        "update_time": "2022-03-14T10:20:13"
+      },
+      {
+        "id": "00017d33d7754b1da9d9d77b76c25024",
+        "project_id": "35ff9c3a-2b40-461e-b59d-f404183626ee",
+        "contract_id": null,
+        "year": 2022,
+        "month": 10,
+        "base_contract_code": null,
+        "base_contract_name": null,
+        "base_contract_amount": null,
+        "base_contract_pay_ratio": null,
+        "base_contract_tax_rate": null,
+        "base_contract_is_settlement": null,
+        "cost_actual_confirmed_acc": 0,
+        "cost_actual_unconfirmed_acc": null,
+        "cost_actual_labor_acc": null,
+        "fund_plan_approve_amount": null,
+        "pay_amount_acc": 0,
+        "pay_ratio_acc": null,
+        "create_time": "2022-10-25T20:31:25",
+        "update_time": "2022-10-25T20:31:25"
+      },
+      {
+        "id": "0001cbeaf5fa47a5a82b99fe8d4edfbd",
+        "project_id": "c9804473-2560-403e-b88f-32d5be383208",
+        "contract_id": "f67fc130-49b1-46e6-8268-39e34d733dbf",
+        "year": 2022,
+        "month": 5,
+        "base_contract_code": "A01101139000022019007000",
+        "base_contract_name": "空调及防排烟工程劳务分包合同（天润）",
+        "base_contract_amount": 30926260.6,
+        "base_contract_pay_ratio": 0.8,
+        "base_contract_tax_rate": 0.03,
+        "base_contract_is_settlement": 2,
+        "cost_actual_confirmed_acc": 2841621.29,
+        "cost_actual_unconfirmed_acc": null,
+        "cost_actual_labor_acc": null,
+        "fund_plan_approve_amount": null,
+        "pay_amount_acc": 1900000,
+        "pay_ratio_acc": 0.6686,
+        "create_time": "2022-06-13T10:26:55",
+        "update_time": "2022-06-13T10:26:55"
+      }
+    ],
+    "total": 200000,
+    "page": 1,
+    "limit": 10,
+    "variable_type": "table",
+    "variable_name": "payment_raw_data",
+    "columns": []
+  }
+}

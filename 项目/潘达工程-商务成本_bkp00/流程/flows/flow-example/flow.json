@@ -1,0 +1,573 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": 48.06949806949808,
+        "y": 128.3783783783784
+      },
+      "data": {
+        "label": "开始",
+        "type": "start",
+        "flowId": 63
+      },
+      "deletable": false,
+      "measured": {
+        "width": 200,
+        "height": 95
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "f8a18224-40de-4233-b95c-020d841ada99"
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 961.4329525005642,
+        "y": 321.43088761994954
+      },
+      "data": {
+        "label": "结束",
+        "type": "end",
+        "flowId": 63
+      },
+      "deletable": false,
+      "measured": {
+        "width": 200,
+        "height": 95
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "f7dea389-be0d-4e9d-8934-59d4f3d1e05e"
+    },
+    {
+      "id": "database-source-1776393912087",
+      "type": "custom",
+      "position": {
+        "x": 279.3625698832057,
+        "y": 164.77155284230807
+      },
+      "data": {
+        "label": "读取实际发生",
+        "type": "database-source",
+        "status": "idle",
+        "description": "新节点",
+        "flowId": 63,
+        "output_variable_name": "fact_actual",
+        "dataSourceId": 11,
+        "queryConfig": {
+          "tableName": "fact_actual",
+          "selectedFields": [
+            "id",
+            "date_key",
+            "actual_account_code",
+            "amount",
+            "quantity",
+            "department",
+            "product_line",
+            "region",
+            "voucher_no",
+            "created_at"
+          ],
+          "useAliases": true,
+          "distinct": false,
+          "rowLimit": 200000,
+          "filters": []
+        },
+        "tableName": "fact_actual"
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "89e8e142-8b10-4de7-a28d-f70d12ca4629"
+    },
+    {
+      "id": "database-source-1776395493485",
+      "type": "custom",
+      "position": {
+        "x": 509.5955896329506,
+        "y": 326.10259862092227
+      },
+      "data": {
+        "label": "读取实际预算",
+        "type": "database-source",
+        "status": "idle",
+        "description": "新节点",
+        "flowId": 63,
+        "output_variable_name": "fact_budget",
+        "dataSourceId": 11,
+        "queryConfig": {
+          "tableName": "fact_budget",
+          "selectedFields": [
+            "id",
+            "date_key",
+            "budget_account_code",
+            "budget_amount",
+            "budget_version",
+            "budget_type",
+            "created_at",
+            "updated_at",
+            "created_by",
+            "remarks"
+          ],
+          "useAliases": true,
+          "distinct": false,
+          "rowLimit": 200000,
+          "filters": []
+        },
+        "tableName": "fact_budget"
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "62d603c2-f47b-44a7-8190-1322f2508932"
+    },
+    {
+      "id": "database-source-1776395569147",
+      "type": "custom",
+      "position": {
+        "x": 286.9556206238444,
+        "y": 42.27246577670426
+      },
+      "data": {
+        "label": "读取时间维度",
+        "type": "database-source",
+        "status": "idle",
+        "description": "新节点",
+        "flowId": 63,
+        "output_variable_name": "dim_time",
+        "dataSourceId": 11,
+        "queryConfig": {
+          "tableName": "dim_time",
+          "selectedFields": [
+            "date_key",
+            "date_date",
+            "year",
+            "quarter",
+            "month",
+            "month_name",
+            "week",
+            "day_of_month",
+            "day_of_week",
+            "is_weekend",
+            "is_holiday",
+            "fiscal_year",
+            "fiscal_period"
+          ],
+          "useAliases": true,
+          "distinct": false,
+          "rowLimit": 200000,
+          "filters": []
+        },
+        "tableName": "dim_time"
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "281d2509-7a9d-4d7b-bf78-7f58a69dc806"
+    },
+    {
+      "id": "database-source-1776395626555",
+      "type": "custom",
+      "position": {
+        "x": 199.88123955336323,
+        "y": -84.75773839721782
+      },
+      "data": {
+        "label": "读取实际科目",
+        "type": "database-source",
+        "status": "idle",
+        "description": "新节点",
+        "flowId": 63,
+        "output_variable_name": "dim_actual_account",
+        "dataSourceId": 11,
+        "queryConfig": {
+          "tableName": "dim_actual_account",
+          "selectedFields": [
+            "account_code",
+            "account_name",
+            "account_type",
+            "parent_code",
+            "level",
+            "is_active",
+            "erp_code",
+            "description",
+            "created_at"
+          ],
+          "useAliases": true,
+          "distinct": false,
+          "rowLimit": 200000,
+          "filters": []
+        },
+        "tableName": "dim_actual_account"
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "f2830673-da90-4e8d-a019-f2ef0501cc67"
+    },
+    {
+      "id": "database-source-1776395689459",
+      "type": "custom",
+      "position": {
+        "x": 462.80599699997015,
+        "y": -90.7107517733674
+      },
+      "data": {
+        "label": "读取预算科目",
+        "type": "database-source",
+        "status": "idle",
+        "description": "新节点",
+        "flowId": 63,
+        "output_variable_name": "dim_budget_account",
+        "dataSourceId": 11,
+        "queryConfig": {
+          "tableName": "dim_budget_account",
+          "selectedFields": [
+            "account_code",
+            "account_name",
+            "account_type",
+            "parent_code",
+            "level",
+            "report_order",
+            "is_active",
+            "description",
+            "created_at"
+          ],
+          "useAliases": true,
+          "distinct": false,
+          "rowLimit": 200000,
+          "filters": []
+        },
+        "tableName": "dim_budget_account"
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "ca5736cf-b00b-4df8-836c-b0de8a8b9f7b"
+    },
+    {
+      "id": "database-source-1776395742780",
+      "type": "custom",
+      "position": {
+        "x": 714.8168965903028,
+        "y": -75.82821833299346
+      },
+      "data": {
+        "label": "读取科目映射",
+        "type": "database-source",
+        "status": "idle",
+        "description": "新节点",
+        "flowId": 63,
+        "output_variable_name": "dim_account_mapping",
+        "dataSourceId": 11,
+        "queryConfig": {
+          "tableName": "dim_account_mapping",
+          "selectedFields": [
+            "mapping_id",
+            "actual_account_code",
+            "budget_account_code",
+            "allocation_percent",
+            "allocation_method",
+            "effective_from",
+            "effective_to",
+            "is_active",
+            "created_by",
+            "created_at",
+            "updated_at",
+            "remarks"
+          ],
+          "useAliases": true,
+          "distinct": false,
+          "rowLimit": 200000,
+          "filters": []
+        },
+        "tableName": "dim_account_mapping"
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "b40c19e5-cdb4-4fa2-9844-7bcfc47b5d25"
+    },
+    {
+      "id": "sql-query-1776395876955",
+      "type": "custom",
+      "position": {
+        "x": 555.33311529829,
+        "y": 36.2868669178238
+      },
+      "data": {
+        "label": "实际和时间关联",
+        "type": "sql-query",
+        "status": "idle",
+        "description": "执行 SQL 查询",
+        "flowId": 63,
+        "output_variable_name": "实际发生时间关联"
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "c94337a7-5f94-4c96-97d1-d02e91b9554d"
+    },
+    {
+      "id": "python-script-1776397080492",
+      "type": "custom",
+      "position": {
+        "x": 548.7358275484635,
+        "y": 160.53080440621042
+      },
+      "data": {
+        "label": "预算科目关联",
+        "type": "python-script",
+        "status": "idle",
+        "description": "AI 生成的 Python 代码",
+        "flowId": 63,
+        "output_variable_name": "预算与科目关联数据",
+        "attached_variables": [
+          "fact_budget",
+          "dim_budget_account"
+        ]
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "4264fa91-2cff-4a3e-8338-461c7cfd6af0"
+    },
+    {
+      "id": "python-script-1776405831497",
+      "type": "custom",
+      "position": {
+        "x": 45.92014777136865,
+        "y": 260.15323469933986
+      },
+      "data": {
+        "label": "Python脚本 11",
+        "type": "python-script",
+        "status": "idle",
+        "description": "AI 生成的 Python 代码",
+        "flowId": 63,
+        "output_variable_name": "关联后的实际发生与科目信息",
+        "attached_variables": [
+          "dim_actual_account"
+        ]
+      },
+      "measured": {
+        "width": 222,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "4ba75bb4-209f-40d5-9b30-60497d2fa5d0"
+    },
+    {
+      "id": "sql-query-1776405948335",
+      "type": "custom",
+      "position": {
+        "x": 265.1538781805747,
+        "y": 360.0980235623603
+      },
+      "data": {
+        "label": "SQL 查询 12",
+        "type": "sql-query",
+        "status": "idle",
+        "description": "AI 生成的 SQL 查询",
+        "flowId": 63,
+        "output_variable_name": "实际发生与科目信息关联数据",
+        "attached_variables": [
+          "dim_actual_account"
+        ]
+      },
+      "measured": {
+        "width": 224,
+        "height": 100
+      },
+      "selected": true,
+      "dragging": false,
+      "node_uuid": "1b0b6b80-3b72-4a07-8be8-32806de04d4a"
+    }
+  ],
+  "edges": [
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "start-node",
+      "sourceHandle": "r",
+      "target": "database-source-1776393912087",
+      "targetHandle": "l",
+      "id": "xy-edge__start-noder-database-source-1776393912087l"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "start-node",
+      "sourceHandle": "r",
+      "target": "database-source-1776395569147",
+      "targetHandle": "l",
+      "id": "xy-edge__start-noder-database-source-1776395569147l"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "start-node",
+      "sourceHandle": "r",
+      "target": "database-source-1776395626555",
+      "targetHandle": "l",
+      "id": "xy-edge__start-noder-database-source-1776395626555l"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "database-source-1776395626555",
+      "sourceHandle": "r",
+      "target": "database-source-1776395689459",
+      "targetHandle": "l",
+      "id": "xy-edge__database-source-1776395626555r-database-source-1776395689459l"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "database-source-1776395689459",
+      "sourceHandle": "r",
+      "target": "database-source-1776395742780",
+      "targetHandle": "t",
+      "id": "xy-edge__database-source-1776395689459r-database-source-1776395742780t"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "database-source-1776393912087",
+      "sourceHandle": "r",
+      "target": "database-source-1776395493485",
+      "targetHandle": "l",
+      "id": "xy-edge__database-source-1776393912087r-database-source-1776395493485l"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "database-source-1776395493485",
+      "sourceHandle": "r",
+      "target": "end-node",
+      "targetHandle": "l",
+      "id": "xy-edge__database-source-1776395493485r-end-nodel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "database-source-1776393912087",
+      "sourceHandle": "r",
+      "target": "sql-query-1776395876955",
+      "targetHandle": "l",
+      "id": "xy-edge__database-source-1776393912087r-sql-query-1776395876955l"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "database-source-1776395742780",
+      "sourceHandle": "r",
+      "target": "end-node",
+      "targetHandle": "t",
+      "id": "xy-edge__database-source-1776395742780r-end-nodet"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "sql-query-1776395876955",
+      "sourceHandle": "r",
+      "target": "end-node",
+      "targetHandle": "t",
+      "id": "xy-edge__sql-query-1776395876955r-end-nodet"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "database-source-1776395569147",
+      "sourceHandle": "r",
+      "target": "sql-query-1776395876955",
+      "targetHandle": "l",
+      "id": "xy-edge__database-source-1776395569147r-sql-query-1776395876955l"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "python-script-1776397080492",
+      "sourceHandle": "b",
+      "target": "database-source-1776395493485",
+      "targetHandle": "t",
+      "id": "xy-edge__python-script-1776397080492b-database-source-1776395493485t"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "python-script-1776397080492",
+      "sourceHandle": "r",
+      "target": "end-node",
+      "targetHandle": "l",
+      "id": "xy-edge__python-script-1776397080492r-end-nodel"
+    }
+  ]
+}

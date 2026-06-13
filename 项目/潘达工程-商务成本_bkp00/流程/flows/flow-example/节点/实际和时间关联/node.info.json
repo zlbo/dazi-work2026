@@ -1,0 +1,21 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.sql，配置改 flow.json",
+  "node_uuid": "c94337a7-5f94-4c96-97d1-d02e91b9554d",
+  "nodeId": "sql-query-1776395876955",
+  "nodeType": "sql-query",
+  "label": "实际和时间关联",
+  "codeFile": "code.sql",
+  "codeLanguage": "sql",
+  "position": {
+    "x": 555.33311529829,
+    "y": 36.2868669178238
+  },
+  "data": {
+    "label": "实际和时间关联",
+    "type": "sql-query",
+    "status": "idle",
+    "description": "执行 SQL 查询",
+    "flowId": 63,
+    "output_variable_name": "实际发生时间关联"
+  }
+}

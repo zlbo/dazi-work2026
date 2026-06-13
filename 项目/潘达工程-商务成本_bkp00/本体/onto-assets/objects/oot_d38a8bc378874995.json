@@ -1,0 +1,82 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:38:24.186Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\objects\\oot_d38a8bc378874995.json"
+  },
+  "id": "oot_d38a8bc378874995",
+  "code": "ProjectBalance",
+  "name": "项目收支",
+  "description": "收支科目汇总事务",
+  "search_summary": null,
+  "search_keywords": null,
+  "entity_synonyms_cache": null,
+  "object_kind": null,
+  "enabled": true,
+  "version": 1,
+  "properties": [
+    {
+      "id": "opr_4ee9407ff289408d",
+      "code": "balanceAmount",
+      "name": "收支差额",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "measure",
+      "qualified_name": "ProjectBalanceCube.balance_gap",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_904ce3af25a04efe",
+      "code": "companyAmount",
+      "name": "公司层面金额",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "measure",
+      "qualified_name": "ProjectBalanceCube.company_amount_total",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_95b40cf06b1747a5",
+      "code": "projectAmount",
+      "name": "项目层面金额",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "measure",
+      "qualified_name": "ProjectBalanceCube.project_amount_total",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    }
+  ],
+  "source_bindings": [
+    {
+      "id": "osb_9d815059f4cd435b",
+      "source_kind": "dazi_cube",
+      "priority": 0,
+      "config": {
+        "cube": "ProjectBalanceCube"
+      }
+    }
+  ]
+}

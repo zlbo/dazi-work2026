@@ -1,0 +1,55 @@
+{
+  "flowId": "136",
+  "flowName": "收支数据同步",
+  "nodes": {
+    "1dec2643-ad7c-4130-8260-e85516d19758": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "89ce4101-460f-4a90-a0b5-3fb460d2591f": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    },
+    "fa3df7cc-7038-415a-87dd-9c4688804625": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "d96222ce-aaa9-4050-b782-830c2f2de9eb": {
+      "nodeId": "database-source-balance",
+      "nodeType": "database-source",
+      "dir": "节点/读取收支数据",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "c803ea1e7349ed03b1f937db6beaeb72c877f0b7",
+      "codeVersion": 4
+    },
+    "e5f8a3b9-2c7d-4e8a-9f6b-1a2c3d4e5f6a": {
+      "nodeId": "python-transform-balance",
+      "nodeType": "python-script",
+      "dir": "节点/数据转换",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "7e8c9c49115b7df4129b3b20074037a65bce554d",
+      "codeVersion": 4
+    },
+    "f7c4e8d2-1a3b-5c6d-7e8f-9a0b1c2d3e4g": {
+      "nodeId": "python-quality-balance",
+      "nodeType": "python-script",
+      "dir": "节点/质量检查",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "0b156b3eb1cac8ae24956e47d12832ac8d5f81dd",
+      "codeVersion": 4
+    },
+    "a1b2c3d4-e5f6-7890-abcd-ef1234567890": {
+      "nodeId": "dataspace-sink-balance",
+      "nodeType": "dataspace-sink"
+    },
+    "59b0f551-6e19-4b69-b2b4-e71a72807063": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    }
+  },
+  "lastPulledAt": "2026-06-10T12:11:00.311Z",
+  "graphFingerprint": "sha1:935fafacc4b044b0451de7bcbbffe29bde4e0cd6"
+}

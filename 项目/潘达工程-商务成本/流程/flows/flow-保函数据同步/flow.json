@@ -1,0 +1,233 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": 80,
+        "y": 250
+      },
+      "data": {
+        "label": "开始",
+        "type": "start",
+        "flowId": 139
+      },
+      "deletable": false,
+      "measured": {
+        "width": 200,
+        "height": 95
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "3ab0ef54-d350-4bff-8ec5-fddb109435ed"
+    },
+    {
+      "id": "database-source-guarantee",
+      "type": "custom",
+      "position": {
+        "x": 340,
+        "y": 250
+      },
+      "data": {
+        "label": "读取保函数据",
+        "type": "database-source",
+        "status": "idle",
+        "description": "从建工成本数据源读取项目保函数据",
+        "flowId": 139,
+        "output_variable_name": "guarantee_raw_data",
+        "connectionId": "duckdb__建工成本01",
+        "queryConfig": {
+          "tableName": "tb_project_cost_guarantee_detail",
+          "selectedFields": [
+            "id",
+            "project_id",
+            "contract_id",
+            "year",
+            "month",
+            "guarantee_type",
+            "guarantee_amount",
+            "guarantee_date",
+            "expire_date",
+            "guarantee_status",
+            "create_time",
+            "update_time"
+          ],
+          "useAliases": true,
+          "distinct": false,
+          "rowLimit": 200000,
+          "filters": []
+        },
+        "tableName": "tb_project_cost_guarantee_detail"
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "d96222ce-aaa9-4050-b782-830c2f2de9f0"
+    },
+    {
+      "id": "python-transform-guarantee",
+      "type": "custom",
+      "position": {
+        "x": 600,
+        "y": 250
+      },
+      "data": {
+        "label": "数据转换",
+        "type": "python-script",
+        "status": "idle",
+        "description": "字段映射、派生字段计算",
+        "flowId": 139,
+        "output_variable_name": "project_guarantee_data",
+        "attached_variables": [
+          "guarantee_raw_data"
+        ]
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "e5f8a3b9-2c7d-4e8a-9f6b-1a2c3d4e5f6f"
+    },
+    {
+      "id": "python-quality-guarantee",
+      "type": "custom",
+      "position": {
+        "x": 860,
+        "y": 250
+      },
+      "data": {
+        "label": "质量检查",
+        "type": "python-script",
+        "status": "idle",
+        "description": "数据质量校验",
+        "flowId": 139,
+        "output_variable_name": "validated_guarantee_data",
+        "attached_variables": [
+          "project_guarantee_data"
+        ]
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "f7c4e8d2-1a3b-5c6d-7e8f-9a0b1c2d3e4k"
+    },
+    {
+      "id": "dataspace-sink-guarantee",
+      "type": "custom",
+      "position": {
+        "x": 1120,
+        "y": 250
+      },
+      "data": {
+        "label": "写入保函数据",
+        "type": "dataspace-sink",
+        "status": "idle",
+        "description": "将保函数据写入本体模型表",
+        "flowId": 139,
+        "spaceId": "space__panda_construction",
+        "tableName": "fact_project_guarantee",
+        "input_variable_name": "validated_guarantee_data",
+        "writeMode": "append",
+        "syncMetadata": true
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567893"
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 1380,
+        "y": 250
+      },
+      "data": {
+        "label": "结束",
+        "type": "end",
+        "flowId": 139
+      },
+      "deletable": false,
+      "measured": {
+        "width": 200,
+        "height": 95
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "1c71a3c0-9106-42a7-824d-34c6a13030d0"
+    }
+  ],
+  "edges": [
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "start-node",
+      "sourceHandle": "r",
+      "target": "database-source-guarantee",
+      "targetHandle": "l",
+      "id": "xy-edge__start-noder-database-source-guaranteel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "database-source-guarantee",
+      "sourceHandle": "r",
+      "target": "python-transform-guarantee",
+      "targetHandle": "l",
+      "id": "xy-edge__database-source-guaranteer-python-transform-guaranteel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "python-transform-guarantee",
+      "sourceHandle": "r",
+      "target": "python-quality-guarantee",
+      "targetHandle": "l",
+      "id": "xy-edge__python-transform-guaranteer-python-quality-guaranteel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "python-quality-guarantee",
+      "sourceHandle": "r",
+      "target": "dataspace-sink-guarantee",
+      "targetHandle": "l",
+      "id": "xy-edge__python-quality-guaranteer-dataspace-sink-guaranteel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "dataspace-sink-guarantee",
+      "sourceHandle": "r",
+      "target": "end-node",
+      "targetHandle": "l",
+      "id": "xy-edge__dataspace-sink-guaranteer-end-nodel"
+    }
+  ]
+}

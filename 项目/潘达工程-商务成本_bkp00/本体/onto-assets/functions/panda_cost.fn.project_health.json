@@ -1,0 +1,34 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:41:42.030Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\functions\\panda_cost.fn.project_health.json"
+  },
+  "id": "ofn_fb81712df111447c",
+  "function_id": "panda_cost.fn.project_health",
+  "object_type_id": null,
+  "object_type_code": null,
+  "adapter": "dazi_script.ontology_function",
+  "adapter_config": {
+    "entry": "main",
+    "script_id": "58da0cf7-b6a7-403a-af36-8d368dd263ca"
+  },
+  "script_id": "58da0cf7-b6a7-403a-af36-8d368dd263ca",
+  "entry": "main",
+  "display_name": "panda_cost.fn.project_health",
+  "function_synonyms_cache": null,
+  "description": null,
+  "test_arguments": {
+    "v": 1,
+    "meta": {
+      "last_source": "admin_panel",
+      "last_saved_at": "2026-06-10T06:39:02.461770+00:00",
+      "last_input_shape": "json"
+    },
+    "arguments": {
+      "project_id": "P001",
+      "report_period": "2025-06"
+    },
+    "object_type_code": ""
+  },
+  "enabled": true
+}

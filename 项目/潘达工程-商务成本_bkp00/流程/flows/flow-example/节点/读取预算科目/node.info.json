@@ -1,0 +1,41 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.sql，配置改 flow.json",
+  "node_uuid": "ca5736cf-b00b-4df8-836c-b0de8a8b9f7b",
+  "nodeId": "database-source-1776395689459",
+  "nodeType": "database-source",
+  "label": "读取预算科目",
+  "codeFile": "code.sql",
+  "codeLanguage": "sql",
+  "position": {
+    "x": 462.80599699997015,
+    "y": -90.7107517733674
+  },
+  "data": {
+    "label": "读取预算科目",
+    "type": "database-source",
+    "status": "idle",
+    "description": "新节点",
+    "flowId": 63,
+    "output_variable_name": "dim_budget_account",
+    "dataSourceId": 11,
+    "queryConfig": {
+      "tableName": "dim_budget_account",
+      "selectedFields": [
+        "account_code",
+        "account_name",
+        "account_type",
+        "parent_code",
+        "level",
+        "report_order",
+        "is_active",
+        "description",
+        "created_at"
+      ],
+      "useAliases": true,
+      "distinct": false,
+      "rowLimit": 200000,
+      "filters": []
+    },
+    "tableName": "dim_budget_account"
+  }
+}

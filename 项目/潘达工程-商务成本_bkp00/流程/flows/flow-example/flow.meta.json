@@ -1,0 +1,96 @@
+{
+  "flowId": "63",
+  "flowName": "利润成本分析",
+  "nodes": {
+    "f8a18224-40de-4233-b95c-020d841ada99": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "f7dea389-be0d-4e9d-8934-59d4f3d1e05e": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    },
+    "89e8e142-8b10-4de7-a28d-f70d12ca4629": {
+      "nodeId": "database-source-1776393912087",
+      "nodeType": "database-source",
+      "dir": "节点/读取实际发生",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "13528442cdb8ae5aa20e12285e8a5970175812c4"
+    },
+    "62d603c2-f47b-44a7-8190-1322f2508932": {
+      "nodeId": "database-source-1776395493485",
+      "nodeType": "database-source",
+      "dir": "节点/读取实际预算",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "253eb0061111570a6849026ef04f37d9d58571d8"
+    },
+    "281d2509-7a9d-4d7b-bf78-7f58a69dc806": {
+      "nodeId": "database-source-1776395569147",
+      "nodeType": "database-source",
+      "dir": "节点/读取时间维度",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "6b43fbd66d604feb0ec15eac01a3d9b51340048a"
+    },
+    "f2830673-da90-4e8d-a019-f2ef0501cc67": {
+      "nodeId": "database-source-1776395626555",
+      "nodeType": "database-source",
+      "dir": "节点/读取实际科目",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "8d9cc22fb69b4765ddc9c8a86c0a78ab1914750d"
+    },
+    "ca5736cf-b00b-4df8-836c-b0de8a8b9f7b": {
+      "nodeId": "database-source-1776395689459",
+      "nodeType": "database-source",
+      "dir": "节点/读取预算科目",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "c552361ec0e2ab5f8485a8b554245059ce2a3c2a"
+    },
+    "b40c19e5-cdb4-4fa2-9844-7bcfc47b5d25": {
+      "nodeId": "database-source-1776395742780",
+      "nodeType": "database-source",
+      "dir": "节点/读取科目映射",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "62bc06f5bd7e95e45866f6d5275fdedd95db2600"
+    },
+    "c94337a7-5f94-4c96-97d1-d02e91b9554d": {
+      "nodeId": "sql-query-1776395876955",
+      "nodeType": "sql-query",
+      "dir": "节点/实际和时间关联",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "e8450b9b4394deb5af8cd4e7b791462369b09326"
+    },
+    "4264fa91-2cff-4a3e-8338-461c7cfd6af0": {
+      "nodeId": "python-script-1776397080492",
+      "nodeType": "python-script",
+      "dir": "节点/预算科目关联",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "b680d604b8da984eb57a036e0021c1bd6ac14f72"
+    },
+    "4ba75bb4-209f-40d5-9b30-60497d2fa5d0": {
+      "nodeId": "python-script-1776405831497",
+      "nodeType": "python-script",
+      "dir": "节点/Python脚本_11",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "2874205434da3b7e2fc8aba8c1a16b32057b496f"
+    },
+    "1b0b6b80-3b72-4a07-8be8-32806de04d4a": {
+      "nodeId": "sql-query-1776405948335",
+      "nodeType": "sql-query",
+      "dir": "节点/SQL_查询_12",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "951859058b54556bc94986ac156b2cd484c03a2d"
+    }
+  },
+  "lastPulledAt": "2026-06-06T07:35:31.810Z",
+  "graphFingerprint": "sha1:8c055d9684f0d466dca96e43a14c9f5772a00706"
+}

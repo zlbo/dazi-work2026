@@ -1,0 +1,257 @@
+{
+  "name": "risk_raw_data",
+  "type": "table",
+  "status": "ready",
+  "variableId": 114,
+  "nodeId": "database-source-risk",
+  "debugRunId": 57,
+  "updatedAt": "2026-06-10T12:35:22.284490",
+  "syncedAt": "2026-06-10T12:35:45.788Z",
+  "schema": {
+    "variable_name": "risk_raw_data",
+    "variable_type": "table",
+    "columns": [
+      {
+        "name": "id",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "project_id",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "year",
+        "type": "int64",
+        "dtype": "int"
+      },
+      {
+        "name": "month",
+        "type": "int64",
+        "dtype": "int"
+      },
+      {
+        "name": "risk_type",
+        "type": "int64",
+        "dtype": "int"
+      },
+      {
+        "name": "code",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "name",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "value",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "value_type",
+        "type": "int64",
+        "dtype": "int"
+      },
+      {
+        "name": "value_remark",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "warning",
+        "type": "int64",
+        "dtype": "int"
+      },
+      {
+        "name": "analyse_reason",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "analyse_correction",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "remark",
+        "type": "large_string",
+        "dtype": "string"
+      }
+    ],
+    "row_count": 63200
+  },
+  "preview": {
+    "rows": [
+      {
+        "id": "0000c0655598426f8fb77dc668a92e32",
+        "project_id": "5a69e6be-a2f1-4987-bf4c-80b71f05b487",
+        "year": 2022,
+        "month": 7,
+        "risk_type": 2,
+        "code": "223",
+        "name": "利润额 已确产值-(已确成本+待确成本)",
+        "value": "9619311.49983528",
+        "value_type": 2,
+        "value_remark": "≥±100万元（在建项目）；≥目标利润额（完工项目）\n受确权产值影响，需根据合同约定具体分析",
+        "warning": 3,
+        "analyse_reason": null,
+        "analyse_correction": null,
+        "remark": null
+      },
+      {
+        "id": "0003b67f5d694b99b6bee5b512e25a0e",
+        "project_id": "3d8f17f7-3436-4106-a2e0-9f78e37f5f0c",
+        "year": 2021,
+        "month": 10,
+        "risk_type": 1,
+        "code": "110",
+        "name": "开累产值完成额",
+        "value": "195959121.5",
+        "value_type": 2,
+        "value_remark": null,
+        "warning": 3,
+        "analyse_reason": null,
+        "analyse_correction": null,
+        "remark": null
+      },
+      {
+        "id": "0005465ff5204c92b34dc9e25fa39ab2",
+        "project_id": "1f2051bd-8193-4aab-b591-f7905d729189",
+        "year": 2023,
+        "month": 4,
+        "risk_type": 1,
+        "code": "110",
+        "name": "开累产值完成额",
+        "value": "60574944.68",
+        "value_type": 2,
+        "value_remark": null,
+        "warning": 3,
+        "analyse_reason": null,
+        "analyse_correction": null,
+        "remark": null
+      },
+      {
+        "id": "00057d9489364361948811c3cafc8040",
+        "project_id": "d03529b0-0fab-4c7b-96dd-e2bf97c83e08",
+        "year": 2022,
+        "month": 7,
+        "risk_type": 3,
+        "code": "310",
+        "name": "施工图预算",
+        "value": null,
+        "value_type": 1,
+        "value_remark": "1.是否按要求时间办理；\n2.是否存在重大争议项",
+        "warning": 3,
+        "analyse_reason": null,
+        "analyse_correction": null,
+        "remark": null
+      },
+      {
+        "id": "0006675634b04e75a6aa34f6aba1afd9",
+        "project_id": "aa3bf73d-0458-4bf3-964c-44d0f18e6554",
+        "year": 2021,
+        "month": 12,
+        "risk_type": 3,
+        "code": "320",
+        "name": "签证、索赔办理情况",
+        "value": null,
+        "value_type": 1,
+        "value_remark": "描述办理情况及完成率；",
+        "warning": 3,
+        "analyse_reason": null,
+        "analyse_correction": null,
+        "remark": null
+      },
+      {
+        "id": "0007465ecaf743fa987c17468adca2f9",
+        "project_id": "be3b8072-d680-468e-881c-3bac9f7a4cd7",
+        "year": 2023,
+        "month": 5,
+        "risk_type": 3,
+        "code": "340",
+        "name": "业主结算",
+        "value": null,
+        "value_type": 1,
+        "value_remark": "1.是否按要求时间办理；\n2.是否存在重大争议项",
+        "warning": 3,
+        "analyse_reason": null,
+        "analyse_correction": null,
+        "remark": null
+      },
+      {
+        "id": "0007c801b9144940bd3c5cd3835e5824",
+        "project_id": "4fa8152c-1cc9-4d2b-b7f9-f2ebebd61a80",
+        "year": 2021,
+        "month": 12,
+        "risk_type": 2,
+        "code": "220",
+        "name": "利润率（%）\n（已确+待确）",
+        "value": "0.0540186737066361",
+        "value_type": 2,
+        "value_remark": "≥±5%（在建项目）；≥目标利润率（完工项目）",
+        "warning": 3,
+        "analyse_reason": null,
+        "analyse_correction": null,
+        "remark": null
+      },
+      {
+        "id": "000876cdafb94c7fa80b86a46437b059",
+        "project_id": "b97f34ef-9beb-412c-8e77-d150214cae5c",
+        "year": 2022,
+        "month": 1,
+        "risk_type": 3,
+        "code": "350",
+        "name": "目标成本",
+        "value": null,
+        "value_type": 1,
+        "value_remark": "1.是否完成；\n2.是否在目标管理范围内",
+        "warning": 3,
+        "analyse_reason": null,
+        "analyse_correction": null,
+        "remark": null
+      },
+      {
+        "id": "00088e76188a4e7299551d348729e016",
+        "project_id": "68215977-bce2-4cc6-9f7e-cb6e11a4de92",
+        "year": 2021,
+        "month": 11,
+        "risk_type": 3,
+        "code": "310",
+        "name": "施工图预算",
+        "value": null,
+        "value_type": 1,
+        "value_remark": "1.是否按要求时间办理；\n2.是否存在重大争议项",
+        "warning": 3,
+        "analyse_reason": null,
+        "analyse_correction": null,
+        "remark": "一期已结算，二期施工图预算未293737184.57元"
+      },
+      {
+        "id": "000aef1b34174beb97e79961e806b032",
+        "project_id": "45bbb495-fb63-427f-8073-c340fa7e421d",
+        "year": 2023,
+        "month": 6,
+        "risk_type": 1,
+        "code": "110",
+        "name": "开累产值完成额",
+        "value": "202377165.4",
+        "value_type": 2,
+        "value_remark": null,
+        "warning": 3,
+        "analyse_reason": null,
+        "analyse_correction": null,
+        "remark": null
+      }
+    ],
+    "total": 63200,
+    "page": 1,
+    "limit": 10,
+    "variable_type": "table",
+    "variable_name": "risk_raw_data",
+    "columns": []
+  }
+}

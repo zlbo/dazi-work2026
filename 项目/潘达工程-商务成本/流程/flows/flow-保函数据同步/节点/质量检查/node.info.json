@@ -1,0 +1,19 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.py，配置改 flow.json",
+  "node_uuid": "f7c4e8d2-1a3b-5c6d-7e8f-9a0b1c2d3e4k",
+  "nodeId": "python-quality-guarantee",
+  "nodeType": "python-script",
+  "label": "质量检查",
+  "codeFile": "code.py",
+  "codeLanguage": "python",
+  "position": { "x": 860, "y": 250 },
+  "data": {
+    "label": "质量检查",
+    "type": "python-script",
+    "status": "idle",
+    "description": "数据质量校验",
+    "flowId": 142,
+    "output_variable_name": "validated_guarantee_data",
+    "attached_variables": ["project_guarantee_data"]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.py，配置改 flow.json",
+  "node_uuid": "4264fa91-2cff-4a3e-8338-461c7cfd6af0",
+  "nodeId": "python-script-1776397080492",
+  "nodeType": "python-script",
+  "label": "预算科目关联",
+  "codeFile": "code.py",
+  "codeLanguage": "python",
+  "position": {
+    "x": 548.7358275484635,
+    "y": 160.53080440621042
+  },
+  "data": {
+    "label": "预算科目关联",
+    "type": "python-script",
+    "status": "idle",
+    "description": "AI 生成的 Python 代码",
+    "flowId": 63,
+    "output_variable_name": "预算与科目关联数据",
+    "attached_variables": [
+      "fact_budget",
+      "dim_budget_account"
+    ]
+  }
+}

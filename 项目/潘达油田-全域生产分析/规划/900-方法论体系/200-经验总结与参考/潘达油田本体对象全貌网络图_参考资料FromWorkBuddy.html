@@ -1,0 +1,204 @@
+<svg viewBox="0 0 680 900" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<style>
+text { font-family: var(--font-sans); fill: var(--color-text-primary); }
+.ts { font-size: 12px; fill: var(--color-text-secondary); }
+.th { font-size: 13px; font-weight: 500; }
+.legend { font-size: 11px; fill: var(--color-text-tertiary); }
+</style>
+
+<!-- Title -->
+<text x="340" y="28" text-anchor="middle" class="th" style="font-size:15px;">潘达油田·本体对象全貌网络</text>
+<text x="340" y="46" text-anchor="middle" class="ts">10个业务领域 · 48个核心本体对象 · 跨领域关系示意</text>
+
+<!-- D1 地质勘探 cluster - top left -->
+<g>
+  <rect x="20" y="65" width="140" height="140" rx="12" fill="var(--color-background-tertiary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+  <text x="90" y="84" text-anchor="middle" class="th" style="font-size:12px;fill:var(--c-teal-800);">D1 地质勘探</text>
+  <text x="30" y="104" class="ts">▣ 地质构造</text>
+  <text x="30" y="120" class="ts">▣ 地层/层位</text>
+  <text x="30" y="136" class="ts">▣ 储层</text>
+  <text x="30" y="152" class="ts">▣ 圈闭</text>
+  <text x="30" y="168" class="ts">▣ 勘探区块</text>
+</g>
+
+<!-- D2 钻井工程 cluster - top center -->
+<g>
+  <rect x="180" y="65" width="140" height="140" rx="12" fill="var(--color-background-tertiary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+  <text x="250" y="84" text-anchor="middle" class="th" style="font-size:12px;fill:var(--c-blue-800);">D2 钻井工程</text>
+  <text x="190" y="104" class="ts">▣ 井（Well）</text>
+  <text x="190" y="120" class="ts">▣ 井身结构</text>
+  <text x="190" y="136" class="ts">▣ 钻井平台</text>
+  <text x="190" y="152" class="ts">▣ 钻井作业记录</text>
+  <text x="190" y="168" style="font-size:11px;fill:var(--c-red-600);" class="ts">←核心实体贯穿全链</text>
+</g>
+
+<!-- D3 完井与储层改造 - top right -->
+<g>
+  <rect x="340" y="65" width="140" height="140" rx="12" fill="var(--color-background-tertiary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+  <text x="410" y="84" text-anchor="middle" class="th" style="font-size:12px;fill:var(--c-amber-800);">D3 完井与改造</text>
+  <text x="350" y="104" class="ts">▣ 完井方案</text>
+  <text x="350" y="120" class="ts">▣ 射孔作业</text>
+  <text x="350" y="136" class="ts">▣ 压裂方案</text>
+  <text x="350" y="152" class="ts">▣ 压裂作业</text>
+  <text x="350" y="168" class="ts">▣ 防砂方案</text>
+</g>
+
+<!-- D4 采油采气生产 - middle left -->
+<g>
+  <rect x="20" y="225" width="140" height="130" rx="12" fill="var(--color-background-tertiary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+  <text x="90" y="244" text-anchor="middle" class="th" style="font-size:12px;fill:var(--c-green-800);">D4 采油采气生产</text>
+  <text x="30" y="264" class="ts">▣ 生产井</text>
+  <text x="30" y="280" class="ts">▣ 油气田</text>
+  <text x="30" y="296" class="ts">▣ 日产量记录</text>
+  <text x="30" y="312" class="ts">▣ 人工举升方式</text>
+  <text x="30" y="328" class="ts">▣ 生产状态</text>
+</g>
+
+<!-- D5 增产措施 - middle center -->
+<g>
+  <rect x="180" y="225" width="140" height="130" rx="12" fill="var(--color-background-tertiary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+  <text x="250" y="244" text-anchor="middle" class="th" style="font-size:12px;fill:var(--c-coral-800);">D5 增产措施</text>
+  <text x="190" y="264" class="ts">▣ 措施方案</text>
+  <text x="190" y="280" class="ts">▣ 措施作业记录</text>
+  <text x="190" y="296" class="ts">▣ 措施效果评价</text>
+  <text x="190" y="312" class="ts">▣ 修井作业</text>
+</g>
+
+<!-- D6 生产动态管理 - middle right -->
+<g>
+  <rect x="340" y="225" width="140" height="130" rx="12" fill="var(--color-background-tertiary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+  <text x="410" y="244" text-anchor="middle" class="th" style="font-size:12px;fill:var(--c-purple-800);">D6 生产动态管理</text>
+  <text x="350" y="264" class="ts">▣ 产量指标</text>
+  <text x="350" y="280" class="ts">▣ 递减分析</text>
+  <text x="350" y="296" class="ts">▣ 含水率分析</text>
+  <text x="350" y="312" class="ts">▣ 生产异常事件</text>
+</g>
+
+<!-- D7 油藏工程 - bottom left -->
+<g>
+  <rect x="20" y="380" width="140" height="130" rx="12" fill="var(--color-background-tertiary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+  <text x="90" y="399" text-anchor="middle" class="th" style="font-size:12px;fill:var(--c-teal-800);">D7 油藏工程</text>
+  <text x="30" y="419" class="ts">▣ 油藏</text>
+  <text x="30" y="435" class="ts">▣ 注采井组</text>
+  <text x="30" y="451" class="ts">▣ 注水井</text>
+  <text x="30" y="467" class="ts">▣ 压力监测记录</text>
+  <text x="30" y="483" class="ts">▣ 注气井</text>
+</g>
+
+<!-- D8 地面集输 - bottom center -->
+<g>
+  <rect x="180" y="380" width="140" height="130" rx="12" fill="var(--color-background-tertiary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+  <text x="250" y="399" text-anchor="middle" class="th" style="font-size:12px;fill:var(--c-blue-800);">D8 地面集输</text>
+  <text x="190" y="419" class="ts">▣ 集输管网</text>
+  <text x="190" y="435" class="ts">▣ 处理站</text>
+  <text x="190" y="451" class="ts">▣ 计量站</text>
+  <text x="190" y="467" class="ts">▣ 注水系统</text>
+  <text x="190" y="483" class="ts">▣ 集输节点</text>
+</g>
+
+<!-- D9 设备资产 - bottom right -->
+<g>
+  <rect x="340" y="380" width="140" height="130" rx="12" fill="var(--color-background-tertiary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+  <text x="410" y="399" text-anchor="middle" class="th" style="font-size:12px;fill:var(--c-amber-800);">D9 设备资产</text>
+  <text x="350" y="419" class="ts">▣ 抽油机</text>
+  <text x="350" y="435" class="ts">▣ 电潜泵ESP</text>
+  <text x="350" y="451" class="ts">▣ 压缩机</text>
+  <text x="350" y="467" class="ts">▣ 井下管柱</text>
+  <text x="350" y="483" class="ts">▣ 设备维护记录</text>
+</g>
+
+<!-- D10 QHSE - bottom center below -->
+<g>
+  <rect x="180" y="535" width="300" height="90" rx="12" fill="var(--color-background-tertiary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+  <text x="330" y="554" text-anchor="middle" class="th" style="font-size:12px;fill:var(--c-red-800);">D10 QHSE与井完整性</text>
+  <text x="190" y="574" class="ts">▣ 井完整性状态</text>
+  <text x="190" y="590" class="ts">▣ 安全事件</text>
+  <text x="190" y="606" class="ts">▣ 环保记录</text>
+  <text x="350" y="574" class="ts">▣ 井屏障元件</text>
+  <text x="350" y="590" class="ts">（跨所有井的监控）</text>
+</g>
+
+<!-- Core entity: Well - highlight in center -->
+<g>
+  <rect x="280" y="640" width="120" height="32" rx="8" fill="var(--c-red-100)" stroke="var(--c-red-600)" stroke-width="1.5"/>
+  <text x="340" y="661" text-anchor="middle" class="th" style="font-size:12px;fill:var(--c-red-800);">「井」核心实体</text>
+</g>
+<text x="340" y="686" text-anchor="middle" class="ts" style="font-size:11px;">贯穿 D2→D3→D4→D5→D7→D9→D10 全部领域</text>
+
+<!-- Relationship arrows - D1 to D2 -->
+<path d="M160 125 L178 125" stroke="var(--c-teal-400)" stroke-width="1" marker-end="url(#arrow)" fill="none"/>
+<text x="165" y="119" class="legend" style="fill:var(--c-teal-600);">揭开</text>
+
+<!-- D2 to D3 -->
+<path d="M320 125 L338 125" stroke="var(--c-blue-400)" stroke-width="1" marker-end="url(#arrow)" fill="none"/>
+<text x="325" y="119" class="legend" style="fill:var(--c-blue-600);">施用于</text>
+
+<!-- D2/D3 to D4 -->
+<path d="M250 205 L250 223" stroke="var(--c-green-400)" stroke-width="1" marker-end="url(#arrow)" fill="none"/>
+<path d="M410 205 L340 223" stroke="var(--c-green-400)" stroke-width="1" marker-end="url(#arrow)" fill="none"/>
+<text x="330" y="215" class="legend" style="fill:var(--c-green-600);">投产</text>
+
+<!-- D4 to D5 -->
+<path d="M250 355 L250 373" stroke="var(--c-coral-400)" stroke-width="1" marker-end="url(#arrow)" fill="none"/>
+<text x="255" y="365" class="legend" style="fill:var(--c-coral-600);">产量下降→措施</text>
+
+<!-- D4 to D6 -->
+<path d="M410 290 L410 318" stroke="var(--c-purple-400)" stroke-width="1" marker-end="url(#arrow)" fill="none"/>
+<text x="415" y="308" class="legend" style="fill:var(--c-purple-600);">分析</text>
+
+<!-- D7 to D4 -->
+<path d="M160 410 L90 342" stroke="var(--c-teal-400)" stroke-width="1" marker-end="url(#arrow)" fill="none"/>
+<text x="115" y="378" class="legend" style="fill:var(--c-teal-600);">注水受效</text>
+
+<!-- D8 to D4 -->
+<path d="M250 410 L250 355" stroke="var(--c-blue-400)" stroke-width="1" marker-end="url(#arrow)" fill="none" stroke-dasharray="4"/>
+<text x="255" y="385" class="legend" style="fill:var(--c-blue-600);">集输</text>
+
+<!-- D9 to D4 -->
+<path d="M410 410 L370 342" stroke="var(--c-amber-400)" stroke-width="1" marker-end="url(#arrow)" fill="none" stroke-dasharray="4"/>
+<text x="405" y="378" class="legend" style="fill:var(--c-amber-600);">装备</text>
+
+<!-- D10 to Well -->
+<path d="M330 625 L330 637" stroke="var(--c-red-400)" stroke-width="1" marker-end="url(#arrow)" fill="none"/>
+<text x="335" y="632" class="legend" style="fill:var(--c-red-600);">监控</text>
+
+<!-- Legend box -->
+<g>
+  <rect x="500" y="65" width="168" height="180" rx="8" fill="var(--color-background-secondary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+  <text x="510" y="86" style="font-size:12px;font-weight:500;" class="th">图例</text>
+  <text x="510" y="106" class="ts">▣ = 本体对象</text>
+  <text x="510" y="124" class="ts">实线箭头 = 直接关系</text>
+  <text x="510" y="142" class="ts">虚线箭头 = 设施关联</text>
+  <text x="510" y="162" style="font-size:11px;fill:var(--c-red-600);" class="ts">红色高亮 = 跨领域</text>
+  <text x="510" y="180" style="font-size:11px;fill:var(--c-red-600);" class="ts">核心实体</text>
+  <text x="510" y="200" style="font-size:11px;fill:var(--color-text-tertiary);" class="ts">共48个对象</text>
+  <text x="510" y="216" style="font-size:11px;fill:var(--color-text-tertiary);" class="ts">10个业务领域</text>
+  <text x="510" y="232" style="font-size:11px;fill:var(--color-text-tertiary);" class="ts">跨领域关系约60条</text>
+</g>
+
+<!-- 潘达油田标注 -->
+<g>
+  <rect x="20" y="710" width="640" height="36" rx="8" fill="var(--c-purple-50)" stroke="var(--c-purple-200)" stroke-width="0.5"/>
+  <text x="340" y="733" text-anchor="middle" class="th" style="font-size:13px;fill:var(--c-purple-800);">虚构示范企业：潘达油田（Panda Oilfield）| 油 + 气 + 页岩气</text>
+</g>
+
+<!-- 说明文字 -->
+<text x="340" y="770" text-anchor="middle" class="legend" style="font-size:11px;">本全貌图覆盖油气田上游完整业务链，对象间存在自然业务关联，</text>
+<text x="340" y="788" text-anchor="middle" class="legend" style="font-size:11px;">形成网状知识结构。首版demo可先实现20-25个高频对象。</text>
+
+<!-- 页岩气差异标注 -->
+<g>
+  <rect x="20" y="800" width="640" height="80" rx="8" fill="var(--color-background-secondary)" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+  <text x="30" y="822" style="font-size:12px;font-weight:500;" class="th">页岩气差异说明</text>
+  <text x="30" y="842" class="ts">• 页岩气井为水平井，增加"水平段长度""压裂段数"等属性</text>
+  <text x="30" y="860" class="ts">• 页岩气开发增加"井场集群"对象（多口水平井共用一个井场）</text>
+  <text x="30" y="878" class="ts">• 压裂方案对象可复用，增加"体积压裂"子类属性</text>
+</g>
+
+</svg>

@@ -1,0 +1,233 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": 80,
+        "y": 250
+      },
+      "data": {
+        "label": "开始",
+        "type": "start",
+        "flowId": 142
+      },
+      "deletable": false,
+      "measured": {
+        "width": 200,
+        "height": 95
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "3ab0ef54-d350-4bff-8ec5-fddb109435ee"
+    },
+    {
+      "id": "database-source-fine",
+      "type": "custom",
+      "position": {
+        "x": 340,
+        "y": 250
+      },
+      "data": {
+        "label": "读取罚款数据",
+        "type": "database-source",
+        "status": "idle",
+        "description": "从建工成本数据源读取项目罚款数据",
+        "flowId": 142,
+        "output_variable_name": "fine_raw_data",
+        "connectionId": "duckdb__建工成本01",
+        "queryConfig": {
+          "tableName": "tb_project_cost_fine_detail",
+          "selectedFields": [
+            "id",
+            "project_id",
+            "contract_id",
+            "year",
+            "month",
+            "fine_type",
+            "fine_amount",
+            "fine_date",
+            "fine_reason",
+            "fine_status",
+            "create_time",
+            "update_time"
+          ],
+          "useAliases": true,
+          "distinct": false,
+          "rowLimit": 200000,
+          "filters": []
+        },
+        "tableName": "tb_project_cost_fine_detail"
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "d96222ce-aaa9-4050-b782-830c2f2de9f1"
+    },
+    {
+      "id": "python-transform-fine",
+      "type": "custom",
+      "position": {
+        "x": 600,
+        "y": 250
+      },
+      "data": {
+        "label": "数据转换",
+        "type": "python-script",
+        "status": "idle",
+        "description": "字段映射、派生字段计算",
+        "flowId": 142,
+        "output_variable_name": "project_fine_data",
+        "attached_variables": [
+          "fine_raw_data"
+        ]
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "e5f8a3b9-2c7d-4e8a-9f6b-1a2c3d4e5f70"
+    },
+    {
+      "id": "python-quality-fine",
+      "type": "custom",
+      "position": {
+        "x": 860,
+        "y": 250
+      },
+      "data": {
+        "label": "质量检查",
+        "type": "python-script",
+        "status": "idle",
+        "description": "数据质量校验",
+        "flowId": 142,
+        "output_variable_name": "validated_fine_data",
+        "attached_variables": [
+          "project_fine_data"
+        ]
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "f7c4e8d2-1a3b-5c6d-7e8f-9a0b1c2d3e4l"
+    },
+    {
+      "id": "dataspace-sink-fine",
+      "type": "custom",
+      "position": {
+        "x": 1120,
+        "y": 250
+      },
+      "data": {
+        "label": "写入罚款数据",
+        "type": "dataspace-sink",
+        "status": "idle",
+        "description": "将罚款数据写入本体模型表",
+        "flowId": 142,
+        "spaceId": "space__panda_construction",
+        "tableName": "fact_project_fine",
+        "input_variable_name": "validated_fine_data",
+        "writeMode": "append",
+        "syncMetadata": true
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567894"
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 1380,
+        "y": 250
+      },
+      "data": {
+        "label": "结束",
+        "type": "end",
+        "flowId": 142
+      },
+      "deletable": false,
+      "measured": {
+        "width": 200,
+        "height": 95
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "1c71a3c0-9106-42a7-824d-34c6a13030d1"
+    }
+  ],
+  "edges": [
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "start-node",
+      "sourceHandle": "r",
+      "target": "database-source-fine",
+      "targetHandle": "l",
+      "id": "xy-edge__start-noder-database-source-finel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "database-source-fine",
+      "sourceHandle": "r",
+      "target": "python-transform-fine",
+      "targetHandle": "l",
+      "id": "xy-edge__database-source-finer-python-transform-finel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "python-transform-fine",
+      "sourceHandle": "r",
+      "target": "python-quality-fine",
+      "targetHandle": "l",
+      "id": "xy-edge__python-transform-finer-python-quality-finel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "python-quality-fine",
+      "sourceHandle": "r",
+      "target": "dataspace-sink-fine",
+      "targetHandle": "l",
+      "id": "xy-edge__python-quality-finer-dataspace-sink-finel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "dataspace-sink-fine",
+      "sourceHandle": "r",
+      "target": "end-node",
+      "targetHandle": "l",
+      "id": "xy-edge__dataspace-sink-finer-end-nodel"
+    }
+  ]
+}

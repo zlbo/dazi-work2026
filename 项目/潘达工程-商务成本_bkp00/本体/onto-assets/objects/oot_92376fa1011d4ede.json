@@ -1,0 +1,100 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:37:53.549Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\objects\\oot_92376fa1011d4ede.json"
+  },
+  "id": "oot_92376fa1011d4ede",
+  "code": "Contractor",
+  "name": "总承包人",
+  "description": "总承包人/施工单位",
+  "search_summary": null,
+  "search_keywords": null,
+  "entity_synonyms_cache": null,
+  "object_kind": null,
+  "enabled": true,
+  "version": 1,
+  "properties": [
+    {
+      "id": "opr_bf3b5d4af05547da",
+      "code": "code",
+      "name": "总承包人编号",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "ContractorCube.contractor_code",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_2b0696202e514933",
+      "code": "id",
+      "name": "总承包人ID",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "ContractorCube.contractor_id",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_ba433fad6c6c4964",
+      "code": "name",
+      "name": "总承包人名称",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "ContractorCube.contractor_name",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_b8cbce52b0e740ef",
+      "code": "qualificationLevel",
+      "name": "资质等级",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "ContractorCube.qualification_level",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    }
+  ],
+  "source_bindings": [
+    {
+      "id": "osb_c8caa3145eec4dbb",
+      "source_kind": "dazi_cube",
+      "priority": 0,
+      "config": {
+        "cube": "ContractorCube"
+      }
+    }
+  ]
+}

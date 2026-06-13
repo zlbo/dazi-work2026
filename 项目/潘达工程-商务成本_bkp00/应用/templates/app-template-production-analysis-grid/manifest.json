@@ -1,0 +1,67 @@
+{
+  "appId": "production-analysis-grid",
+  "name": "生产明细分析网格",
+  "description": "生产明细分析网格（DRAP 页模式演示模板）",
+  "version": "0.1.0",
+  "framework": {
+    "react": "^18",
+    "ts": true
+  },
+  "entry": "index.html",
+  "styles": [
+    "style.css"
+  ],
+  "assets": [
+    "assets/"
+  ],
+  "permissions": [
+    "dataspace:space__0519"
+  ],
+  "data_sources": [
+    {
+      "key": "table",
+      "kind": "static",
+      "data": {
+        "columns": [
+          "work_order",
+          "line",
+          "qty",
+          "yield_pct",
+          "shift"
+        ],
+        "rows": [
+          {
+            "work_order": "WO-1001",
+            "line": "产线A",
+            "qty": 1200,
+            "yield_pct": 98.2,
+            "shift": "白班"
+          },
+          {
+            "work_order": "WO-1002",
+            "line": "产线B",
+            "qty": 980,
+            "yield_pct": 96.5,
+            "shift": "夜班"
+          }
+        ]
+      }
+    }
+  ],
+  "sdk": {
+    "min_version": "0.1.0",
+    "contract": "drap-1"
+  },
+  "mount": {
+    "type": "page",
+    "sandbox": "shadow_dom"
+  },
+  "refresh": {
+    "on_mount": true,
+    "stale_ms": 60000
+  },
+  "ai": {
+    "scene_tag": "production_detail",
+    "template_origin": "@dazi/app-template-production-analysis-grid@0.1.0"
+  }
+}

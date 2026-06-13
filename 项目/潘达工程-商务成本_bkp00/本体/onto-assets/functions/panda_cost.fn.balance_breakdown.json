@@ -1,0 +1,33 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:40:19.065Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\functions\\panda_cost.fn.balance_breakdown.json"
+  },
+  "id": "ofn_18beb898f789471f",
+  "function_id": "panda_cost.fn.balance_breakdown",
+  "object_type_id": null,
+  "object_type_code": null,
+  "adapter": "dazi_script.ontology_function",
+  "adapter_config": {
+    "entry": "main",
+    "script_id": "4ee38f89-878f-4f7f-884a-8010a8991c00"
+  },
+  "script_id": "4ee38f89-878f-4f7f-884a-8010a8991c00",
+  "entry": "main",
+  "display_name": "panda_cost.fn.balance_breakdown",
+  "function_synonyms_cache": null,
+  "description": null,
+  "test_arguments": {
+    "v": 1,
+    "meta": {
+      "last_source": "admin_panel",
+      "last_saved_at": "2026-06-10T06:38:59.832867+00:00",
+      "last_input_shape": "json"
+    },
+    "arguments": {
+      "report_period": "2025-06"
+    },
+    "object_type_code": ""
+  },
+  "enabled": true
+}

@@ -1,0 +1,7 @@
+{
+  "name": "关联后的实际发生与科目信息",
+  "status": "not_materialized",
+  "debugRunId": 51,
+  "syncedAt": "2026-06-06T07:35:32.004Z",
+  "hint": "已在 flow.json 声明，debug_run_id=51 中尚未产出。请运行对应节点后刷新。"
+}

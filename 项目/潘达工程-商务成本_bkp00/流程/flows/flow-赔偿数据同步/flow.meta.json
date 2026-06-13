@@ -1,0 +1,44 @@
+{
+  "flowId": "143",
+  "flowName": "赔偿数据同步",
+  "nodes": {
+    "3ab0ef54-d350-4bff-8ec5-fddb109435ef": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "d96222ce-aaa9-4050-b782-830c2f2de9f2": {
+      "nodeId": "database-source-compensation",
+      "nodeType": "database-source",
+      "dir": "节点/读取赔偿数据",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "8ef0f7b2c7356a6a26f26c485752b325230a6efe"
+    },
+    "e5f8a3b9-2c7d-4e8a-9f6b-1a2c3d4e5f71": {
+      "nodeId": "python-transform-compensation",
+      "nodeType": "python-script",
+      "dir": "节点/数据转换",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "38a573e7110aaa65260c5d143d6c34cbd896d8fa"
+    },
+    "f7c4e8d2-1a3b-5c6d-7e8f-9a0b1c2d3e4m": {
+      "nodeId": "python-quality-compensation",
+      "nodeType": "python-script",
+      "dir": "节点/质量检查",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "a3b9ff1353114dc20b8a41a4ebfbf491e4575dd2"
+    },
+    "a1b2c3d4-e5f6-7890-abcd-ef1234567895": {
+      "nodeId": "dataspace-sink-compensation",
+      "nodeType": "dataspace-sink"
+    },
+    "1c71a3c0-9106-42a7-824d-34c6a13030d2": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    }
+  },
+  "lastPulledAt": "2026-06-10T09:40:25.182Z",
+  "graphFingerprint": "sha1:75908363984cbc6942687229ca159939d1c4136c"
+}

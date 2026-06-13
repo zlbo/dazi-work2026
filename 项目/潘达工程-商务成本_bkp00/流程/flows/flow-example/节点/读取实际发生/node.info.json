@@ -1,0 +1,42 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.sql，配置改 flow.json",
+  "node_uuid": "89e8e142-8b10-4de7-a28d-f70d12ca4629",
+  "nodeId": "database-source-1776393912087",
+  "nodeType": "database-source",
+  "label": "读取实际发生",
+  "codeFile": "code.sql",
+  "codeLanguage": "sql",
+  "position": {
+    "x": 279.3625698832057,
+    "y": 164.77155284230807
+  },
+  "data": {
+    "label": "读取实际发生",
+    "type": "database-source",
+    "status": "idle",
+    "description": "新节点",
+    "flowId": 63,
+    "output_variable_name": "fact_actual",
+    "dataSourceId": 11,
+    "queryConfig": {
+      "tableName": "fact_actual",
+      "selectedFields": [
+        "id",
+        "date_key",
+        "actual_account_code",
+        "amount",
+        "quantity",
+        "department",
+        "product_line",
+        "region",
+        "voucher_no",
+        "created_at"
+      ],
+      "useAliases": true,
+      "distinct": false,
+      "rowLimit": 200000,
+      "filters": []
+    },
+    "tableName": "fact_actual"
+  }
+}

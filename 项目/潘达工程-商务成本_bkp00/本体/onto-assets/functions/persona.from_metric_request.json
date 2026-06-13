@@ -1,0 +1,19 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:42:10.872Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\functions\\persona.from_metric_request.json"
+  },
+  "id": "ofn_1b586fa56ab04eeb",
+  "function_id": "persona.from_metric_request",
+  "object_type_id": null,
+  "object_type_code": null,
+  "adapter": "native.load_query",
+  "adapter_config": null,
+  "script_id": null,
+  "entry": null,
+  "display_name": null,
+  "function_synonyms_cache": null,
+  "description": "Persona metric_request → SemanticLayerGateway.load_query（Runtime 脊骨）",
+  "test_arguments": null,
+  "enabled": true
+}

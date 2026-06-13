@@ -1,0 +1,347 @@
+{
+  "name": "project_payment_data",
+  "type": "table",
+  "status": "ready",
+  "variableId": 118,
+  "nodeId": "python-transform-payment",
+  "debugRunId": 59,
+  "updatedAt": "2026-06-10T13:08:57.905009",
+  "syncedAt": "2026-06-10T13:10:05.942Z",
+  "schema": {
+    "variable_name": "project_payment_data",
+    "variable_type": "table",
+    "columns": [
+      {
+        "name": "payment_id",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "date_key",
+        "type": "int64",
+        "dtype": "int"
+      },
+      {
+        "name": "contract_id",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "contract_name",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "contract_amount",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "settlement_status",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "supplier_id",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "report_period",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "payable_confirmed",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "payable_unconfirmed",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "labor_payable",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "approval_status",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "approval_amount",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "paid_amount",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "tax_rate",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "payment_ratio",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "project_id",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp[us]",
+        "dtype": "datetime"
+      },
+      {
+        "name": "supplier_name",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "contract_code",
+        "type": "large_string",
+        "dtype": "string"
+      }
+    ],
+    "row_count": 200000
+  },
+  "preview": {
+    "rows": [
+      {
+        "payment_id": "00001590546e45608f187f1ccc37f06f",
+        "date_key": 20221031,
+        "contract_id": "74b10090-8e16-4bb0-8106-00afc24881af",
+        "contract_name": "施工升降机租赁合同（重庆同涞）",
+        "contract_amount": 104000,
+        "settlement_status": "已结算",
+        "supplier_id": "",
+        "report_period": "2022-10",
+        "payable_confirmed": 134323.56,
+        "payable_unconfirmed": 0,
+        "labor_payable": 0,
+        "approval_status": "",
+        "approval_amount": 0,
+        "paid_amount": 92680.2,
+        "tax_rate": 0.03,
+        "payment_ratio": 1,
+        "project_id": "217c4ec8-45f5-4ef5-ad05-8a954063ba5f",
+        "created_at": "2026-06-10T21:08:35.365967",
+        "supplier_name": "",
+        "contract_code": "A01201123100052019005000"
+      },
+      {
+        "payment_id": "00002d1145cc499386b20bbf9b052c3f",
+        "date_key": 20220131,
+        "contract_id": "",
+        "contract_name": "其它直接费(报销)",
+        "contract_amount": 0,
+        "settlement_status": "",
+        "supplier_id": "",
+        "report_period": "2022-01",
+        "payable_confirmed": 0,
+        "payable_unconfirmed": 0,
+        "labor_payable": 0,
+        "approval_status": "",
+        "approval_amount": 0,
+        "paid_amount": 0,
+        "tax_rate": 0.09,
+        "payment_ratio": 0,
+        "project_id": "7b00bfd7-9cdf-4e0f-a696-abf2546fdf03",
+        "created_at": "2026-06-10T21:08:35.365967",
+        "supplier_name": "",
+        "contract_code": "ZX_WHT_7_BX"
+      },
+      {
+        "payment_id": "0000a6cd50d64db6a0aea7431430e4b9",
+        "date_key": 20220831,
+        "contract_id": "",
+        "contract_name": "",
+        "contract_amount": 0,
+        "settlement_status": "",
+        "supplier_id": "",
+        "report_period": "2022-08",
+        "payable_confirmed": 0,
+        "payable_unconfirmed": 0,
+        "labor_payable": 0,
+        "approval_status": "",
+        "approval_amount": 0,
+        "paid_amount": 0,
+        "tax_rate": 0.09,
+        "payment_ratio": 0,
+        "project_id": "bd118165-2c0d-4d7e-b325-2be4c1d171fc",
+        "created_at": "2026-06-10T21:08:35.365967",
+        "supplier_name": "",
+        "contract_code": ""
+      },
+      {
+        "payment_id": "0000b78b11604bd2831bae3113b939f1",
+        "date_key": 20220531,
+        "contract_id": "",
+        "contract_name": "",
+        "contract_amount": 0,
+        "settlement_status": "",
+        "supplier_id": "",
+        "report_period": "2022-05",
+        "payable_confirmed": 0,
+        "payable_unconfirmed": 0,
+        "labor_payable": 0,
+        "approval_status": "",
+        "approval_amount": 0,
+        "paid_amount": 0,
+        "tax_rate": 0.09,
+        "payment_ratio": 0,
+        "project_id": "56e04b6b-e960-4466-9582-e9347fcf68eb",
+        "created_at": "2026-06-10T21:08:35.365967",
+        "supplier_name": "",
+        "contract_code": ""
+      },
+      {
+        "payment_id": "0000d94f0dd04b8193da2818bf98dc5e",
+        "date_key": 20220531,
+        "contract_id": "",
+        "contract_name": "",
+        "contract_amount": 0,
+        "settlement_status": "",
+        "supplier_id": "",
+        "report_period": "2022-05",
+        "payable_confirmed": 0,
+        "payable_unconfirmed": 0,
+        "labor_payable": 0,
+        "approval_status": "",
+        "approval_amount": 0,
+        "paid_amount": 0,
+        "tax_rate": 0.09,
+        "payment_ratio": 0,
+        "project_id": "c8939a12-8617-478b-9b0a-0f9dafa70f2d",
+        "created_at": "2026-06-10T21:08:35.365967",
+        "supplier_name": "",
+        "contract_code": ""
+      },
+      {
+        "payment_id": "0000e4dd8d9d4232a80944d48e2bf50c",
+        "date_key": 20220430,
+        "contract_id": "",
+        "contract_name": "",
+        "contract_amount": 0,
+        "settlement_status": "",
+        "supplier_id": "",
+        "report_period": "2022-04",
+        "payable_confirmed": 0,
+        "payable_unconfirmed": 0,
+        "labor_payable": 0,
+        "approval_status": "",
+        "approval_amount": 0,
+        "paid_amount": 0,
+        "tax_rate": 0.09,
+        "payment_ratio": 0,
+        "project_id": "80a57e77-b682-45fe-824c-5a1e52745ef1",
+        "created_at": "2026-06-10T21:08:35.365967",
+        "supplier_name": "",
+        "contract_code": ""
+      },
+      {
+        "payment_id": "00015bc7772942b5b767ee016fc7fa05",
+        "date_key": 20220831,
+        "contract_id": "",
+        "contract_name": "",
+        "contract_amount": 0,
+        "settlement_status": "",
+        "supplier_id": "",
+        "report_period": "2022-08",
+        "payable_confirmed": 0,
+        "payable_unconfirmed": 0,
+        "labor_payable": 0,
+        "approval_status": "",
+        "approval_amount": 0,
+        "paid_amount": 0,
+        "tax_rate": 0.09,
+        "payment_ratio": 0,
+        "project_id": "06af29e8-38f9-4961-a4c9-dfc3fd4732db",
+        "created_at": "2026-06-10T21:08:35.365967",
+        "supplier_name": "",
+        "contract_code": ""
+      },
+      {
+        "payment_id": "00015e474c7c4680a2a78ec9f012c135",
+        "date_key": 20220228,
+        "contract_id": "ZX_WHT_999",
+        "contract_name": "未签合同其它直接费",
+        "contract_amount": 0,
+        "settlement_status": "进行中",
+        "supplier_id": "",
+        "report_period": "2022-02",
+        "payable_confirmed": 0,
+        "payable_unconfirmed": 0,
+        "labor_payable": 0,
+        "approval_status": "",
+        "approval_amount": 0,
+        "paid_amount": 0,
+        "tax_rate": 0,
+        "payment_ratio": 0,
+        "project_id": "7732f58d-9da9-4836-936b-d5f65cf60b4e",
+        "created_at": "2026-06-10T21:08:35.365967",
+        "supplier_name": "",
+        "contract_code": "ZX_WHT_999"
+      },
+      {
+        "payment_id": "00017d33d7754b1da9d9d77b76c25024",
+        "date_key": 20221031,
+        "contract_id": "",
+        "contract_name": "",
+        "contract_amount": 0,
+        "settlement_status": "",
+        "supplier_id": "",
+        "report_period": "2022-10",
+        "payable_confirmed": 0,
+        "payable_unconfirmed": 0,
+        "labor_payable": 0,
+        "approval_status": "",
+        "approval_amount": 0,
+        "paid_amount": 0,
+        "tax_rate": 0.09,
+        "payment_ratio": 0,
+        "project_id": "35ff9c3a-2b40-461e-b59d-f404183626ee",
+        "created_at": "2026-06-10T21:08:35.365967",
+        "supplier_name": "",
+        "contract_code": ""
+      },
+      {
+        "payment_id": "0001cbeaf5fa47a5a82b99fe8d4edfbd",
+        "date_key": 20220531,
+        "contract_id": "f67fc130-49b1-46e6-8268-39e34d733dbf",
+        "contract_name": "空调及防排烟工程劳务分包合同（天润）",
+        "contract_amount": 30926260.6,
+        "settlement_status": "进行中",
+        "supplier_id": "",
+        "report_period": "2022-05",
+        "payable_confirmed": 2841621.29,
+        "payable_unconfirmed": 0,
+        "labor_payable": 0,
+        "approval_status": "",
+        "approval_amount": 0,
+        "paid_amount": 1900000,
+        "tax_rate": 0.03,
+        "payment_ratio": 0.8,
+        "project_id": "c9804473-2560-403e-b88f-32d5be383208",
+        "created_at": "2026-06-10T21:08:35.365967",
+        "supplier_name": "",
+        "contract_code": "A01101139000022019007000"
+      }
+    ],
+    "total": 200000,
+    "page": 1,
+    "limit": 10,
+    "variable_type": "table",
+    "variable_name": "project_payment_data",
+    "columns": []
+  }
+}

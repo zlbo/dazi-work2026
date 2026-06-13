@@ -1,0 +1,197 @@
+{
+  "name": "validated_balance_data",
+  "type": "table",
+  "status": "ready",
+  "variableId": 122,
+  "nodeId": "python-quality-balance",
+  "debugRunId": 58,
+  "updatedAt": "2026-06-10T13:10:58.145148",
+  "syncedAt": "2026-06-10T13:11:24.622Z",
+  "schema": {
+    "variable_name": "validated_balance_data",
+    "variable_type": "table",
+    "columns": [
+      {
+        "name": "balance_id",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "date_key",
+        "type": "int64",
+        "dtype": "int"
+      },
+      {
+        "name": "project_id",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "subject_code",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "subject_name",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "report_period",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "project_amount",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "company_amount",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "total_amount",
+        "type": "double",
+        "dtype": "float"
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp[us]",
+        "dtype": "datetime"
+      }
+    ],
+    "row_count": 200000
+  },
+  "preview": {
+    "rows": [
+      {
+        "balance_id": "000008ae81c747159260b7038b2e422f",
+        "date_key": 20221231,
+        "project_id": "4fa8152c-1cc9-4d2b-b7f9-f2ebebd61a80",
+        "subject_code": "4.2.2.14",
+        "subject_name": "其他手续费",
+        "report_period": "2022-12",
+        "project_amount": 1991111.11,
+        "company_amount": 0,
+        "total_amount": 1991111.11,
+        "created_at": "2026-06-10T21:10:16.696948"
+      },
+      {
+        "balance_id": "00000b795e26418d945d639aad2943f6",
+        "date_key": 20220831,
+        "project_id": "eeba143e-3c83-4f8e-a776-05452a5b7536",
+        "subject_code": "4.2.1.20",
+        "subject_name": "劳动保护费",
+        "report_period": "2022-08",
+        "project_amount": 0,
+        "company_amount": 0,
+        "total_amount": 0,
+        "created_at": "2026-06-10T21:10:16.696948"
+      },
+      {
+        "balance_id": "00001703031a42a7abad8586e9370f05",
+        "date_key": 20220131,
+        "project_id": "97b78498-8c97-47c7-93ed-d1edb08008ed",
+        "subject_code": "4.2.1.2",
+        "subject_name": "绩效",
+        "report_period": "2022-01",
+        "project_amount": 0,
+        "company_amount": 0,
+        "total_amount": 0,
+        "created_at": "2026-06-10T21:10:16.696948"
+      },
+      {
+        "balance_id": "000040ec9822423c95682281b0556ecf",
+        "date_key": 20230831,
+        "project_id": "c6807d6f-5f33-4375-a065-13d740d2fe1c",
+        "subject_code": "2.3",
+        "subject_name": "工程款（回款差额）",
+        "report_period": "2023-08",
+        "project_amount": 0,
+        "company_amount": 0,
+        "total_amount": 0,
+        "created_at": "2026-06-10T21:10:16.696948"
+      },
+      {
+        "balance_id": "000045ba7e1c4bdd823242e446947e2f",
+        "date_key": 20211231,
+        "project_id": "846e38b2-4192-4838-944d-02f9d12ee3fb",
+        "subject_code": "3.3.1",
+        "subject_name": "其中：资金占用利息",
+        "report_period": "2021-12",
+        "project_amount": 0,
+        "company_amount": 0,
+        "total_amount": 0,
+        "created_at": "2026-06-10T21:10:16.696948"
+      },
+      {
+        "balance_id": "000049ed6ebf11ed8d61286ed488c884",
+        "date_key": 20221130,
+        "project_id": "5a73b85e-e3d9-4d87-8b51-5b04c089542c",
+        "subject_code": "2.8",
+        "subject_name": "其他业主收入",
+        "report_period": "2022-11",
+        "project_amount": 0,
+        "company_amount": 0,
+        "total_amount": 0,
+        "created_at": "2026-06-10T21:10:16.696948"
+      },
+      {
+        "balance_id": "00004b256ebf11ed8d61286ed488c884",
+        "date_key": 20221130,
+        "project_id": "5a73b85e-e3d9-4d87-8b51-5b04c089542c",
+        "subject_code": "4.2.2.1",
+        "subject_name": "设计费",
+        "report_period": "2022-11",
+        "project_amount": 0,
+        "company_amount": 0,
+        "total_amount": 0,
+        "created_at": "2026-06-10T21:10:16.696948"
+      },
+      {
+        "balance_id": "00004be16ebf11ed8d61286ed488c884",
+        "date_key": 20221130,
+        "project_id": "5a73b85e-e3d9-4d87-8b51-5b04c089542c",
+        "subject_code": "2.3",
+        "subject_name": "工程款（回款差额）",
+        "report_period": "2022-11",
+        "project_amount": 0,
+        "company_amount": 0,
+        "total_amount": 0,
+        "created_at": "2026-06-10T21:10:16.696948"
+      },
+      {
+        "balance_id": "00004f2113954a25a371036ee4d95d21",
+        "date_key": 20240229,
+        "project_id": "f160fcbf-32d7-4fdb-a362-0b7f11efad36",
+        "subject_code": "4.3.5",
+        "subject_name": "预提费用",
+        "report_period": "2024-02",
+        "project_amount": 0,
+        "company_amount": 0,
+        "total_amount": 0,
+        "created_at": "2026-06-10T21:10:16.696948"
+      },
+      {
+        "balance_id": "00005fdaacd6418e970154f671fba2ed",
+        "date_key": 20220930,
+        "project_id": "17721e11-96fa-48c4-8c45-f1f3368526ff",
+        "subject_code": "4.2.1.8",
+        "subject_name": "工会经费",
+        "report_period": "2022-09",
+        "project_amount": 0,
+        "company_amount": 0,
+        "total_amount": 0,
+        "created_at": "2026-06-10T21:10:16.696948"
+      }
+    ],
+    "total": 200000,
+    "page": 1,
+    "limit": 10,
+    "variable_type": "table",
+    "variable_name": "validated_balance_data",
+    "columns": []
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "appId": "purchase-order",
+  "name": "采购单维护",
+  "description": "采购单维护（DRAP 页模式演示模板）",
+  "version": "0.1.0",
+  "framework": {
+    "react": "^18",
+    "ts": true
+  },
+  "entry": "index.html",
+  "styles": [
+    "style.css"
+  ],
+  "assets": [
+    "assets/"
+  ],
+  "permissions": [
+    "dataspace:space__0519"
+  ],
+  "data_sources": [
+    {
+      "key": "form",
+      "kind": "static",
+      "data": {
+        "columns": [
+          "field",
+          "value"
+        ],
+        "rows": []
+      }
+    }
+  ],
+  "sdk": {
+    "min_version": "0.1.0",
+    "contract": "drap-1"
+  },
+  "mount": {
+    "type": "page",
+    "sandbox": "shadow_dom"
+  },
+  "refresh": {
+    "on_mount": true,
+    "stale_ms": 60000
+  },
+  "ai": {
+    "scene_tag": "purchase",
+    "template_origin": "@dazi/app-template-purchase-order-form@0.1.0"
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": {
+        "x": 80,
+        "y": 250
+      },
+      "data": {
+        "label": "开始",
+        "type": "start",
+        "flowId": 136
+      },
+      "deletable": false,
+      "measured": {
+        "width": 200,
+        "height": 95
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "fa3df7cc-7038-415a-87dd-9c4688804625"
+    },
+    {
+      "id": "database-source-balance",
+      "type": "custom",
+      "position": {
+        "x": 340,
+        "y": 250
+      },
+      "data": {
+        "label": "读取收支数据",
+        "type": "database-source",
+        "status": "idle",
+        "description": "从建工成本数据源读取项目收支数据",
+        "flowId": 136,
+        "output_variable_name": "balance_raw_data",
+        "connectionId": "duckdb__建工成本01",
+        "queryConfig": {
+          "tableName": "tb_project_income_outcome_summary",
+          "selectedFields": [
+            "id",
+            "project_id",
+            "year",
+            "month",
+            "code",
+            "name",
+            "project_amount",
+            "company_amount",
+            "total",
+            "remark",
+            "status",
+            "create_time",
+            "create_by",
+            "update_time",
+            "update_by"
+          ],
+          "useAliases": true,
+          "distinct": false,
+          "rowLimit": 200000,
+          "filters": []
+        },
+        "tableName": "tb_project_income_outcome_summary"
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "d96222ce-aaa9-4050-b782-830c2f2de9eb"
+    },
+    {
+      "id": "python-transform-balance",
+      "type": "custom",
+      "position": {
+        "x": 600,
+        "y": 250
+      },
+      "data": {
+        "label": "数据转换",
+        "type": "python-script",
+        "status": "idle",
+        "description": "字段映射、派生字段计算",
+        "flowId": 136,
+        "output_variable_name": "project_balance_data",
+        "attached_variables": [
+          "balance_raw_data"
+        ]
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "e5f8a3b9-2c7d-4e8a-9f6b-1a2c3d4e5f6a"
+    },
+    {
+      "id": "python-quality-balance",
+      "type": "custom",
+      "position": {
+        "x": 860,
+        "y": 250
+      },
+      "data": {
+        "label": "质量检查",
+        "type": "python-script",
+        "status": "idle",
+        "description": "数据质量校验",
+        "flowId": 136,
+        "output_variable_name": "validated_balance_data",
+        "attached_variables": [
+          "project_balance_data"
+        ]
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "f7c4e8d2-1a3b-5c6d-7e8f-9a0b1c2d3e4g"
+    },
+    {
+      "id": "dataspace-sink-balance",
+      "type": "custom",
+      "position": {
+        "x": 1120,
+        "y": 250
+      },
+      "data": {
+        "label": "写入收支数据",
+        "type": "dataspace-sink",
+        "status": "idle",
+        "description": "将收支数据写入本体模型表",
+        "flowId": 136,
+        "spaceId": "space__panda_construction",
+        "tableName": "fact_project_balance",
+        "input_variable_name": "validated_balance_data",
+        "writeMode": "append",
+        "syncMetadata": true
+      },
+      "measured": {
+        "width": 200,
+        "height": 97
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": {
+        "x": 1380,
+        "y": 250
+      },
+      "data": {
+        "label": "结束",
+        "type": "end",
+        "flowId": 136
+      },
+      "deletable": false,
+      "measured": {
+        "width": 200,
+        "height": 95
+      },
+      "selected": false,
+      "dragging": false,
+      "node_uuid": "59b0f551-6e19-4b69-b2b4-e71a72807063"
+    }
+  ],
+  "edges": [
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "start-node",
+      "sourceHandle": "r",
+      "target": "database-source-balance",
+      "targetHandle": "l",
+      "id": "xy-edge__start-noder-database-source-balancel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "database-source-balance",
+      "sourceHandle": "r",
+      "target": "python-transform-balance",
+      "targetHandle": "l",
+      "id": "xy-edge__database-source-balancer-python-transform-balancel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "python-transform-balance",
+      "sourceHandle": "r",
+      "target": "python-quality-balance",
+      "targetHandle": "l",
+      "id": "xy-edge__python-transform-balancer-python-quality-balancel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "python-quality-balance",
+      "sourceHandle": "r",
+      "target": "dataspace-sink-balance",
+      "targetHandle": "l",
+      "id": "xy-edge__python-quality-balancer-dataspace-sink-balancel"
+    },
+    {
+      "type": "custom",
+      "markerEnd": {
+        "type": "arrowclosed",
+        "color": "#64748b"
+      },
+      "source": "dataspace-sink-balance",
+      "sourceHandle": "r",
+      "target": "end-node",
+      "targetHandle": "l",
+      "id": "xy-edge__dataspace-sink-balancer-end-nodel"
+    }
+  ]
+}

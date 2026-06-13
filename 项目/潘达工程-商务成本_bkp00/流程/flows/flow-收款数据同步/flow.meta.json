@@ -1,0 +1,44 @@
+{
+  "flowId": "140",
+  "flowName": "收款数据同步",
+  "nodes": {
+    "3ab0ef54-d350-4bff-8ec5-fddb109435eb": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "d96222ce-aaa9-4050-b782-830c2f2de9ee": {
+      "nodeId": "database-source-receipt",
+      "nodeType": "database-source",
+      "dir": "节点/读取收款数据",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "26a61580f2249a5e692f4579d7c3f308277d798b"
+    },
+    "e5f8a3b9-2c7d-4e8a-9f6b-1a2c3d4e5f6d": {
+      "nodeId": "python-transform-receipt",
+      "nodeType": "python-script",
+      "dir": "节点/数据转换",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "e6efa91fb71c566da1d247c78e839282ccb80c51"
+    },
+    "f7c4e8d2-1a3b-5c6d-7e8f-9a0b1c2d3e4i": {
+      "nodeId": "python-quality-receipt",
+      "nodeType": "python-script",
+      "dir": "节点/质量检查",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "29184414cce42dcda13f257c76360a27f12fa8fc"
+    },
+    "a1b2c3d4-e5f6-7890-abcd-ef1234567891": {
+      "nodeId": "dataspace-sink-receipt",
+      "nodeType": "dataspace-sink"
+    },
+    "1c71a3c0-9106-42a7-824d-34c6a13030ce": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    }
+  },
+  "lastPulledAt": "2026-06-10T09:40:25.182Z",
+  "graphFingerprint": "sha1:719bd3aed866747d06e5f4410af710505104f71a"
+}

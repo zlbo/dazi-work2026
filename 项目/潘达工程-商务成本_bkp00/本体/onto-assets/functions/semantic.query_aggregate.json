@@ -1,0 +1,19 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:42:22.070Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\functions\\semantic.query_aggregate.json"
+  },
+  "id": "ofn_75a2184d52cd4bf4",
+  "function_id": "semantic.query_aggregate",
+  "object_type_id": null,
+  "object_type_code": null,
+  "adapter": "semantic.query_aggregate",
+  "adapter_config": null,
+  "script_id": null,
+  "entry": null,
+  "display_name": null,
+  "function_synonyms_cache": null,
+  "description": "IR 聚合查询：measures 使用对象派生度量属性 code，运行时解析为 qualified_name 并 load_query",
+  "test_arguments": null,
+  "enabled": true
+}

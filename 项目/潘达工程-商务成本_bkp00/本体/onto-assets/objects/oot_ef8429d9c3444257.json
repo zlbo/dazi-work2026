@@ -1,0 +1,64 @@
+{
+  "_onto_asset": {
+    "pulled_at": "2026-06-10T07:38:58.914Z",
+    "path": "D:\\GitHub\\dazi-work\\项目\\潘达工程-商务成本\\本体\\onto-assets\\objects\\oot_ef8429d9c3444257.json"
+  },
+  "id": "oot_ef8429d9c3444257",
+  "code": "Supplier",
+  "name": "供应商",
+  "description": "供应商主数据",
+  "search_summary": null,
+  "search_keywords": null,
+  "entity_synonyms_cache": null,
+  "object_kind": null,
+  "enabled": true,
+  "version": 1,
+  "properties": [
+    {
+      "id": "opr_fd8e3565f1f341a2",
+      "code": "id",
+      "name": "供应商ID",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "ProjectPaymentCube.supplier_id",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    },
+    {
+      "id": "opr_918606fe47314e7e",
+      "code": "name",
+      "name": "供应商名称",
+      "description": null,
+      "value_type": "string",
+      "sort_order": 0,
+      "extra": null,
+      "semantic_role": "dimension",
+      "qualified_name": "ProjectPaymentCube.supplier_name",
+      "filterable": true,
+      "sample_enabled": false,
+      "sample_size": 10,
+      "sample_cache": null,
+      "sample_cache_time": null,
+      "sample_cache_ttl": 3600,
+      "attribute_synonyms_cache": null
+    }
+  ],
+  "source_bindings": [
+    {
+      "id": "osb_ea5f86ec37454b72",
+      "source_kind": "dazi_cube",
+      "priority": 0,
+      "config": {
+        "cube": "ProjectPaymentCube"
+      }
+    }
+  ]
+}

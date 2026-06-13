@@ -1,0 +1,45 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.sql，配置改 flow.json",
+  "node_uuid": "281d2509-7a9d-4d7b-bf78-7f58a69dc806",
+  "nodeId": "database-source-1776395569147",
+  "nodeType": "database-source",
+  "label": "读取时间维度",
+  "codeFile": "code.sql",
+  "codeLanguage": "sql",
+  "position": {
+    "x": 286.9556206238444,
+    "y": 42.27246577670426
+  },
+  "data": {
+    "label": "读取时间维度",
+    "type": "database-source",
+    "status": "idle",
+    "description": "新节点",
+    "flowId": 63,
+    "output_variable_name": "dim_time",
+    "dataSourceId": 11,
+    "queryConfig": {
+      "tableName": "dim_time",
+      "selectedFields": [
+        "date_key",
+        "date_date",
+        "year",
+        "quarter",
+        "month",
+        "month_name",
+        "week",
+        "day_of_month",
+        "day_of_week",
+        "is_weekend",
+        "is_holiday",
+        "fiscal_year",
+        "fiscal_period"
+      ],
+      "useAliases": true,
+      "distinct": false,
+      "rowLimit": 200000,
+      "filters": []
+    },
+    "tableName": "dim_time"
+  }
+}

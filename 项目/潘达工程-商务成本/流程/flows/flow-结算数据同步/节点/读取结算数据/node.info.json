@@ -1,0 +1,45 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.sql，配置改 flow.json",
+  "node_uuid": "d96222ce-aaa9-4050-b782-830c2f2de9ef",
+  "nodeId": "database-source-settlement",
+  "nodeType": "database-source",
+  "label": "读取结算数据",
+  "codeFile": "code.sql",
+  "codeLanguage": "sql",
+  "position": {
+    "x": 340,
+    "y": 250
+  },
+  "data": {
+    "label": "读取结算数据",
+    "type": "database-source",
+    "status": "idle",
+    "description": "从建工成本数据源读取项目结算数据",
+    "flowId": 141,
+    "output_variable_name": "settlement_raw_data",
+    "connectionId": "duckdb__建工成本01",
+    "queryConfig": {
+      "tableName": "tb_project_cost_settlement_detail",
+      "selectedFields": [
+        "id",
+        "project_id",
+        "contract_id",
+        "year",
+        "month",
+        "base_contract_code",
+        "base_contract_name",
+        "base_contract_amount",
+        "settlement_amount",
+        "settlement_date",
+        "settlement_status",
+        "create_time",
+        "update_time"
+      ],
+      "useAliases": true,
+      "distinct": false,
+      "rowLimit": 200000,
+      "filters": []
+    },
+    "tableName": "tb_project_cost_settlement_detail"
+  }
+}

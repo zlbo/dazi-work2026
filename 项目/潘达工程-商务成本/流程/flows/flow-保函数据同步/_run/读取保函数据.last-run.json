@@ -1,0 +1,9 @@
+{
+  "node_id": "database-source-guarantee",
+  "status": "failed",
+  "error": "Catalog Error: Table with name tb_project_cost_guarantee_detail does not exist!\nDid you mean \"tb_project_cost_pay_detail\"?\n\nLINE 14: FROM \"tb_project_cost_guarantee_detail\"\n              ^",
+  "active_branch": null,
+  "output_file_id": null,
+  "output_variable_name": "guarantee_raw_data",
+  "extra_variables": {}
+}

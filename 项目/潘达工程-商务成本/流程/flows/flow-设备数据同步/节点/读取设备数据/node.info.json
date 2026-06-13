@@ -1,0 +1,25 @@
+{
+  "_readonly": "此文件由 dazi-flow 生成，仅供查看；编辑代码请改 code.sql，配置改 flow.json",
+  "node_uuid": "d96222ce-aaa9-4050-b782-830c2f2de9f4",
+  "nodeId": "database-source-equipment",
+  "nodeType": "database-source",
+  "label": "读取设备数据",
+  "codeFile": "code.sql",
+  "codeLanguage": "sql",
+  "position": { "x": 340, "y": 250 },
+  "data": {
+    "label": "读取设备数据",
+    "type": "database-source",
+    "status": "idle",
+    "description": "从建工成本数据源读取项目设备数据",
+    "flowId": 146,
+    "output_variable_name": "equipment_raw_data",
+    "connectionId": "duckdb__建工成本01",
+    "queryConfig": {
+      "tableName": "tb_project_cost_equipment_detail",
+      "selectedFields": ["id", "project_id", "contract_id", "year", "month", "equipment_code", "equipment_name", "equipment_type", "equipment_value", "purchase_date", "equipment_status", "depreciation_method", "create_time", "update_time"],
+      "useAliases": true, "distinct": false, "rowLimit": 200000, "filters": []
+    },
+    "tableName": "tb_project_cost_equipment_detail"
+  }
+}

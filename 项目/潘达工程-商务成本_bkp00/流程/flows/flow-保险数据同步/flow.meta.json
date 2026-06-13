@@ -1,0 +1,44 @@
+{
+  "flowId": "144",
+  "flowName": "保险数据同步",
+  "nodes": {
+    "3ab0ef54-d350-4bff-8ec5-fddb109435f0": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "d96222ce-aaa9-4050-b782-830c2f2de9f3": {
+      "nodeId": "database-source-insurance",
+      "nodeType": "database-source",
+      "dir": "节点/读取保险数据",
+      "codeFile": "code.sql",
+      "codeLanguage": "sql",
+      "codeHash": "89eec1a042cdc3926433b13adb5afbb0e1c6f837"
+    },
+    "e5f8a3b9-2c7d-4e8a-9f6b-1a2c3d4e5f72": {
+      "nodeId": "python-transform-insurance",
+      "nodeType": "python-script",
+      "dir": "节点/数据转换",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "a271cc1e4653bc29469ac189e5f8568ce196f690"
+    },
+    "f7c4e8d2-1a3b-5c6d-7e8f-9a0b1c2d3e4n": {
+      "nodeId": "python-quality-insurance",
+      "nodeType": "python-script",
+      "dir": "节点/质量检查",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": "536b51f73dd45a10b8d50bbaae1dab6175961040"
+    },
+    "a1b2c3d4-e5f6-7890-abcd-ef1234567896": {
+      "nodeId": "dataspace-sink-insurance",
+      "nodeType": "dataspace-sink"
+    },
+    "1c71a3c0-9106-42a7-824d-34c6a13030d3": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    }
+  },
+  "lastPulledAt": "2026-06-10T09:40:25.182Z",
+  "graphFingerprint": "sha1:f61b121675a2a5bb87b12e2165e7cce96ae20f02"
+}

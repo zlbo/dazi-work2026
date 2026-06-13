@@ -1,0 +1,16 @@
+[
+  {
+    "risk_id": "RISK000001",
+    "project_id": "P001",
+    "report_period": "2025-01",
+    "risk_type": "成本风险",
+    "risk_code": "RK-成本-0001",
+    "risk_name": "成本超支风险",
+    "risk_value": 75,
+    "warning_level": "red",
+    "risk_description": "项目成本存在超支风险",
+    "overall_warning_level": "red",
+    "date_key": 20250131,
+    "created_at": "2026-06-10T16:11:04.947548"
+  }
+]

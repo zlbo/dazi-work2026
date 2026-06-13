@@ -1,0 +1,227 @@
+{
+  "name": "project_risk_data",
+  "type": "table",
+  "status": "ready",
+  "variableId": 115,
+  "nodeId": "python-transform-risk",
+  "debugRunId": 57,
+  "updatedAt": "2026-06-10T12:35:28.480768",
+  "syncedAt": "2026-06-10T12:35:45.635Z",
+  "schema": {
+    "variable_name": "project_risk_data",
+    "variable_type": "table",
+    "columns": [
+      {
+        "name": "risk_id",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "date_key",
+        "type": "int64",
+        "dtype": "int"
+      },
+      {
+        "name": "project_id",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "risk_type",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "risk_code",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "risk_name",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "risk_value",
+        "type": "int64",
+        "dtype": "float"
+      },
+      {
+        "name": "warning_level",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "risk_description",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "overall_warning_level",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "report_period",
+        "type": "large_string",
+        "dtype": "string"
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp[us]",
+        "dtype": "datetime"
+      }
+    ],
+    "row_count": 63200
+  },
+  "preview": {
+    "rows": [
+      {
+        "risk_id": "0000c0655598426f8fb77dc668a92e32",
+        "date_key": 20220731,
+        "project_id": "5a69e6be-a2f1-4987-bf4c-80b71f05b487",
+        "risk_type": "2",
+        "risk_code": "223",
+        "risk_name": "利润额 已确产值-(已确成本+待确成本)",
+        "risk_value": 9619311,
+        "warning_level": "green",
+        "risk_description": "",
+        "overall_warning_level": "",
+        "report_period": "2022-07",
+        "created_at": "2026-06-10T20:35:22.331363"
+      },
+      {
+        "risk_id": "0003b67f5d694b99b6bee5b512e25a0e",
+        "date_key": 20211031,
+        "project_id": "3d8f17f7-3436-4106-a2e0-9f78e37f5f0c",
+        "risk_type": "1",
+        "risk_code": "110",
+        "risk_name": "开累产值完成额",
+        "risk_value": 195959121,
+        "warning_level": "green",
+        "risk_description": "",
+        "overall_warning_level": "",
+        "report_period": "2021-10",
+        "created_at": "2026-06-10T20:35:22.331363"
+      },
+      {
+        "risk_id": "0005465ff5204c92b34dc9e25fa39ab2",
+        "date_key": 20230430,
+        "project_id": "1f2051bd-8193-4aab-b591-f7905d729189",
+        "risk_type": "1",
+        "risk_code": "110",
+        "risk_name": "开累产值完成额",
+        "risk_value": 60574944,
+        "warning_level": "green",
+        "risk_description": "",
+        "overall_warning_level": "",
+        "report_period": "2023-04",
+        "created_at": "2026-06-10T20:35:22.331363"
+      },
+      {
+        "risk_id": "00057d9489364361948811c3cafc8040",
+        "date_key": 20220731,
+        "project_id": "d03529b0-0fab-4c7b-96dd-e2bf97c83e08",
+        "risk_type": "3",
+        "risk_code": "310",
+        "risk_name": "施工图预算",
+        "risk_value": 0,
+        "warning_level": "green",
+        "risk_description": "",
+        "overall_warning_level": "",
+        "report_period": "2022-07",
+        "created_at": "2026-06-10T20:35:22.331363"
+      },
+      {
+        "risk_id": "0006675634b04e75a6aa34f6aba1afd9",
+        "date_key": 20211231,
+        "project_id": "aa3bf73d-0458-4bf3-964c-44d0f18e6554",
+        "risk_type": "3",
+        "risk_code": "320",
+        "risk_name": "签证、索赔办理情况",
+        "risk_value": 0,
+        "warning_level": "green",
+        "risk_description": "",
+        "overall_warning_level": "",
+        "report_period": "2021-12",
+        "created_at": "2026-06-10T20:35:22.331363"
+      },
+      {
+        "risk_id": "0007465ecaf743fa987c17468adca2f9",
+        "date_key": 20230531,
+        "project_id": "be3b8072-d680-468e-881c-3bac9f7a4cd7",
+        "risk_type": "3",
+        "risk_code": "340",
+        "risk_name": "业主结算",
+        "risk_value": 0,
+        "warning_level": "green",
+        "risk_description": "",
+        "overall_warning_level": "",
+        "report_period": "2023-05",
+        "created_at": "2026-06-10T20:35:22.331363"
+      },
+      {
+        "risk_id": "0007c801b9144940bd3c5cd3835e5824",
+        "date_key": 20211231,
+        "project_id": "4fa8152c-1cc9-4d2b-b7f9-f2ebebd61a80",
+        "risk_type": "2",
+        "risk_code": "220",
+        "risk_name": "利润率（%）\n（已确+待确）",
+        "risk_value": 0,
+        "warning_level": "green",
+        "risk_description": "",
+        "overall_warning_level": "",
+        "report_period": "2021-12",
+        "created_at": "2026-06-10T20:35:22.331363"
+      },
+      {
+        "risk_id": "000876cdafb94c7fa80b86a46437b059",
+        "date_key": 20220131,
+        "project_id": "b97f34ef-9beb-412c-8e77-d150214cae5c",
+        "risk_type": "3",
+        "risk_code": "350",
+        "risk_name": "目标成本",
+        "risk_value": 0,
+        "warning_level": "green",
+        "risk_description": "",
+        "overall_warning_level": "",
+        "report_period": "2022-01",
+        "created_at": "2026-06-10T20:35:22.331363"
+      },
+      {
+        "risk_id": "00088e76188a4e7299551d348729e016",
+        "date_key": 20211130,
+        "project_id": "68215977-bce2-4cc6-9f7e-cb6e11a4de92",
+        "risk_type": "3",
+        "risk_code": "310",
+        "risk_name": "施工图预算",
+        "risk_value": 0,
+        "warning_level": "green",
+        "risk_description": "",
+        "overall_warning_level": "",
+        "report_period": "2021-11",
+        "created_at": "2026-06-10T20:35:22.331363"
+      },
+      {
+        "risk_id": "000aef1b34174beb97e79961e806b032",
+        "date_key": 20230630,
+        "project_id": "45bbb495-fb63-427f-8073-c340fa7e421d",
+        "risk_type": "1",
+        "risk_code": "110",
+        "risk_name": "开累产值完成额",
+        "risk_value": 202377165,
+        "warning_level": "green",
+        "risk_description": "",
+        "overall_warning_level": "",
+        "report_period": "2023-06",
+        "created_at": "2026-06-10T20:35:22.331363"
+      }
+    ],
+    "total": 63200,
+    "page": 1,
+    "limit": 10,
+    "variable_type": "table",
+    "variable_name": "project_risk_data",
+    "columns": []
+  }
+}

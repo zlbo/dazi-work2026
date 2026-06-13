@@ -1,0 +1,12 @@
+{
+  "node_id": "database-source-output",
+  "status": "success",
+  "error": null,
+  "active_branch": null,
+  "output_file_id": "uploads/7f6c0512-87a7-4f30-bf0e-ce9c4cbbe534.parquet",
+  "output_variable_name": "output_raw_data",
+  "extra_variables": {},
+  "output_file": "D:\\dazi\\dazi-backend\\storage\\uploads\\7f6c0512-87a7-4f30-bf0e-ce9c4cbbe534.parquet",
+  "output_variable_id": 108,
+  "debug_run_id": 51
+}
