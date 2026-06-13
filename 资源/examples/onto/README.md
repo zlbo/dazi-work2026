@@ -12,6 +12,8 @@
 
 **规划 / 脚本前**：须至少阅读 **一个** 示例的 `README.md` + `plans/*.md`。索引见 **`index.yaml`** / **`index.json`**（`dazi examples onto list`）。
 
+**实施顺序**（各示例 `setup/*_category_mount.py`）：init → seed → 发布全部函数 → **平台分类**（`s.categories.apply_registry`）→ **本体域成员**（`s.domain.apply_registry`；域 code 与 `*.fn.*` 前缀一致）。复制到业务项目时 **`DOMAIN_CODE` 改为快速启动 §1**。
+
 ## 示例一览
 
 | 目录 | 域 | 规划（plans/） | 函数数 |
@@ -36,6 +38,7 @@
 | 路径 | 说明 |
 |------|------|
 | [_templates/ontology_function_template.py](./_templates/ontology_function_template.py) | 新建函数结构模板 |
+| [_templates/remount_domain.ps1](./_templates/remount_domain.ps1) | 域成员补挂（category_mount + 函数 `--mount-domain auto`） |
 | [_templates/onto_preflight.ps1](./_templates/onto_preflight.ps1) | 函数数 / publish-preview 门禁 |
 
 ```powershell

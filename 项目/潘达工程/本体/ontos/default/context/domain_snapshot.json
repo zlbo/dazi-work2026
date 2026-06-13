@@ -1,0 +1,3291 @@
+{
+  "pulledAt": "2026-06-13T12:22:27.211Z",
+  "domain": {
+    "id": "3dc87cac8ba94dad9d4b6b5460bf1494",
+    "space_id": "space__onto_engine_test",
+    "code": "default",
+    "name": "本体引擎测试",
+    "description": "存量回填默认域（空间 本体引擎测试）",
+    "domain_kind": "business",
+    "icon": null,
+    "color": null,
+    "status": "active",
+    "llm_profile": null,
+    "source_plan": null,
+    "created_at": "2026-06-10T16:14:05.801104",
+    "updated_at": "2026-06-13T09:43:48.128417"
+  },
+  "inventory": {
+    "tables": [
+      "产值事实表",
+      "成本科目维表",
+      "成本科目映射表",
+      "成本事实表",
+      "利润预算明细",
+      "日期维表",
+      "损益科目维表",
+      "项目利润快照",
+      "项目维表",
+      "组织维表"
+    ],
+    "cubes": [
+      "产值分析Cube",
+      "成本分析Cube",
+      "利润预算Cube",
+      "损益科目成本Cube",
+      "项目利润Cube",
+      "预实对比Cube"
+    ],
+    "objectTypes": [
+      "产值记录",
+      "成本分析",
+      "成本记录",
+      "成本科目",
+      "利润分析",
+      "损益科目",
+      "项目",
+      "营收记录",
+      "预算分析",
+      "预算行",
+      "组织"
+    ],
+    "linkTypes": [
+      "产值归属项目",
+      "成本归属科目",
+      "成本归属项目",
+      "成本映射损益科目",
+      "分析归因项目",
+      "科目上级",
+      "利润归因科目",
+      "利润归因项目",
+      "项目归属组织",
+      "营收归属项目",
+      "预算对比实际",
+      "预算对应科目",
+      "预算对应项目",
+      "组织上级"
+    ],
+    "functions": [
+      "成本 Top-N 项目",
+      "成本极值与差值",
+      "成本科目结构",
+      "空间总览汇总",
+      "片区成本汇总",
+      "项目成本产值汇总",
+      "项目预实对比",
+      "profit01.fn.account_breakdown",
+      "profit01.fn.budget_vs_actual",
+      "profit01.fn.cost_type_breakdown",
+      "profit01.fn.get_summary",
+      "profit01.fn.org_profit",
+      "profit01.fn.project_profit",
+      "profit01.fn.region_profit",
+      "semantic.query_aggregate"
+    ],
+    "relations": [
+      "142a9528d4744e00",
+      "16dc44913e624df0",
+      "18136dfde8c441f7",
+      "486232c65a324a52",
+      "5f82a3a6df37490f",
+      "66ef982497c84fa6",
+      "6b794f2db79d43f6",
+      "8544ad0bcdae444f",
+      "8807aaefae304af0",
+      "8fadbf1d5f4f4528",
+      "a103174bb0d9404c",
+      "a2e7ca1ecd11428e",
+      "ad25ee5c2aa64ad4",
+      "b4d365af8cb74ad8",
+      "c0a822401ce74c45",
+      "c0bd3324a8354706",
+      "d2170c4941a047be",
+      "d3201f3ad71d45fd",
+      "ebe7301d6adc45f2",
+      "edccb8ca632f467b"
+    ],
+    "scripts": [
+      "onto_engine_fn_budget_vs_actual",
+      "onto_engine_fn_cost_extremes",
+      "onto_engine_fn_cost_structure",
+      "onto_engine_fn_get_summary",
+      "onto_engine_fn_project_summary",
+      "onto_engine_fn_region_cost",
+      "onto_engine_fn_top_cost_projects",
+      "onto_engine_test_category_mount",
+      "onto_engine_test_engine_verify",
+      "onto_engine_test_engine_verify_advanced",
+      "onto_engine_test_function_rules_seed",
+      "onto_engine_test_functions_register",
+      "onto_engine_test_graph_verify",
+      "onto_engine_test_meta_seed",
+      "onto_engine_test_ontology_init",
+      "onto_engine_test_seed_data",
+      "profit01_category_mount",
+      "profit01_fn_account_breakdown",
+      "profit01_fn_budget_vs_actual",
+      "profit01_fn_cost_type_breakdown",
+      "profit01_fn_get_summary",
+      "profit01_fn_org_profit",
+      "profit01_fn_project_profit",
+      "profit01_fn_region_profit",
+      "profit01_ontology_init",
+      "profit01_seed_data"
+    ],
+    "workflows": [],
+    "components": []
+  },
+  "tree": {
+    "domain": {
+      "id": "3dc87cac8ba94dad9d4b6b5460bf1494",
+      "space_id": "space__onto_engine_test",
+      "code": "default",
+      "name": "本体引擎测试",
+      "description": "存量回填默认域（空间 本体引擎测试）",
+      "domain_kind": "business",
+      "icon": null,
+      "color": null,
+      "status": "active",
+      "llm_profile": null,
+      "source_plan": null,
+      "created_at": "2026-06-10T16:14:05.801104",
+      "updated_at": "2026-06-13T09:43:48.128417"
+    },
+    "groups": [
+      {
+        "group": "planning",
+        "name": "规划",
+        "kinds": [
+          {
+            "kind": "plan",
+            "items": [],
+            "categories": [],
+            "uncategorized": [],
+            "count": 0
+          }
+        ]
+      },
+      {
+        "group": "ontology",
+        "name": "本体",
+        "kinds": [
+          {
+            "kind": "object_type",
+            "items": [
+              {
+                "member_id": "1c8d562ef2034780bb485c5840f9d24d",
+                "resource_id": "oot_e6f84b6580f34771",
+                "pinned": false,
+                "note": null,
+                "sort_order": 0,
+                "name": "成本记录",
+                "code": "CostRecord",
+                "subtitle": null,
+                "enabled": true
+              },
+              {
+                "member_id": "0ff7e343fd2f4e76a9fcd983c1582525",
+                "resource_id": "oot_a43dde817cc54f92",
+                "pinned": false,
+                "note": null,
+                "sort_order": 1,
+                "name": "组织",
+                "code": "Org",
+                "subtitle": null,
+                "enabled": true
+              },
+              {
+                "member_id": "e843c2f1387a4dd09f0640c26b316bca",
+                "resource_id": "oot_9737c5e1c4d246ca",
+                "pinned": false,
+                "note": null,
+                "sort_order": 2,
+                "name": "项目",
+                "code": "Project",
+                "subtitle": null,
+                "enabled": true
+              },
+              {
+                "member_id": "447bc770c48b40f396a1f6f40d3f2cd4",
+                "resource_id": "oot_d79954f3a9e04ffe",
+                "pinned": false,
+                "note": null,
+                "sort_order": 3,
+                "name": "成本科目",
+                "code": "CostType",
+                "subtitle": null,
+                "enabled": true
+              },
+              {
+                "member_id": "cc239b80888a455fb4e728fe70ff2097",
+                "resource_id": "oot_55b2c2ddad2d45a4",
+                "pinned": false,
+                "note": null,
+                "sort_order": 4,
+                "name": "产值记录",
+                "code": "OutputRecord",
+                "subtitle": null,
+                "enabled": true
+              },
+              {
+                "member_id": "d1d49981872f4ed68f4a2cd3d4af9feb",
+                "resource_id": "oot_328a200e54b34b15",
+                "pinned": false,
+                "note": null,
+                "sort_order": 5,
+                "name": "成本分析",
+                "code": "CostAnalysis",
+                "subtitle": null,
+                "enabled": true
+              },
+              {
+                "member_id": "edc621c0d19344cf82d9a8e996d22aaf",
+                "resource_id": "oot_f277dda6275249f1",
+                "pinned": false,
+                "note": null,
+                "sort_order": 12,
+                "name": "营收记录",
+                "code": "RevenueRecord",
+                "subtitle": null,
+                "enabled": true
+              },
+              {
+                "member_id": "a98cd04f56c94667b546b6798ed93b04",
+                "resource_id": "oot_e40a10fa8987460b",
+                "pinned": false,
+                "note": null,
+                "sort_order": 13,
+                "name": "预算行",
+                "code": "BudgetLine",
+                "subtitle": null,
+                "enabled": true
+              },
+              {
+                "member_id": "dce0e71116ee428e95a445bbbe888431",
+                "resource_id": "oot_336cea7a47924c32",
+                "pinned": false,
+                "note": null,
+                "sort_order": 14,
+                "name": "损益科目",
+                "code": "Account",
+                "subtitle": null,
+                "enabled": true
+              },
+              {
+                "member_id": "440d8d8880594b61b51c61e9d426cb8b",
+                "resource_id": "oot_9207152258544ca4",
+                "pinned": false,
+                "note": null,
+                "sort_order": 15,
+                "name": "利润分析",
+                "code": "ProfitAnalysis",
+                "subtitle": null,
+                "enabled": true
+              },
+              {
+                "member_id": "d1dbb18f86f44f4db99438c3bb281c89",
+                "resource_id": "oot_0e6b84489f354445",
+                "pinned": false,
+                "note": null,
+                "sort_order": 16,
+                "name": "预算分析",
+                "code": "BudgetAnalysis",
+                "subtitle": null,
+                "enabled": true
+              }
+            ],
+            "categories": [
+              {
+                "category_id": "d9e17193ab4341c4",
+                "name": "参考",
+                "node_role": "folder",
+                "code": "reference__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "bff39ab32fdb483c",
+                    "name": "成本科目",
+                    "node_role": "resource",
+                    "code": "CostType",
+                    "item": {
+                      "member_id": "447bc770c48b40f396a1f6f40d3f2cd4",
+                      "resource_id": "oot_d79954f3a9e04ffe",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 3,
+                      "name": "成本科目",
+                      "code": "CostType",
+                      "subtitle": null,
+                      "enabled": true
+                    }
+                  }
+                ]
+              },
+              {
+                "category_id": "c72d68f3e05e4258",
+                "name": "分析",
+                "node_role": "folder",
+                "code": "analytical__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "7239124f42484aa2",
+                    "name": "成本分析",
+                    "node_role": "resource",
+                    "code": "CostAnalysis",
+                    "item": {
+                      "member_id": "d1d49981872f4ed68f4a2cd3d4af9feb",
+                      "resource_id": "oot_328a200e54b34b15",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 5,
+                      "name": "成本分析",
+                      "code": "CostAnalysis",
+                      "subtitle": null,
+                      "enabled": true
+                    }
+                  },
+                  {
+                    "category_id": "6eb22d42b67046ab",
+                    "name": "利润分析",
+                    "node_role": "resource",
+                    "code": "ProfitAnalysis",
+                    "item": {
+                      "member_id": "440d8d8880594b61b51c61e9d426cb8b",
+                      "resource_id": "oot_9207152258544ca4",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 15,
+                      "name": "利润分析",
+                      "code": "ProfitAnalysis",
+                      "subtitle": null,
+                      "enabled": true
+                    }
+                  },
+                  {
+                    "category_id": "d8f01ee88f4e4f31",
+                    "name": "预算分析",
+                    "node_role": "resource",
+                    "code": "BudgetAnalysis",
+                    "item": {
+                      "member_id": "d1dbb18f86f44f4db99438c3bb281c89",
+                      "resource_id": "oot_0e6b84489f354445",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 16,
+                      "name": "预算分析",
+                      "code": "BudgetAnalysis",
+                      "subtitle": null,
+                      "enabled": true
+                    }
+                  }
+                ]
+              },
+              {
+                "category_id": "a7fb18ebaf1649e6",
+                "name": "事务",
+                "node_role": "folder",
+                "code": "transaction__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "d41d5caae0a54bf5",
+                    "name": "成本记录",
+                    "node_role": "resource",
+                    "code": "CostRecord",
+                    "item": {
+                      "member_id": "1c8d562ef2034780bb485c5840f9d24d",
+                      "resource_id": "oot_e6f84b6580f34771",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 0,
+                      "name": "成本记录",
+                      "code": "CostRecord",
+                      "subtitle": null,
+                      "enabled": true
+                    }
+                  },
+                  {
+                    "category_id": "1b38f7f2f8ab4ef5",
+                    "name": "产值记录",
+                    "node_role": "resource",
+                    "code": "OutputRecord",
+                    "item": {
+                      "member_id": "cc239b80888a455fb4e728fe70ff2097",
+                      "resource_id": "oot_55b2c2ddad2d45a4",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 4,
+                      "name": "产值记录",
+                      "code": "OutputRecord",
+                      "subtitle": null,
+                      "enabled": true
+                    }
+                  },
+                  {
+                    "category_id": "400480b708c84c84",
+                    "name": "营收记录",
+                    "node_role": "resource",
+                    "code": "RevenueRecord",
+                    "item": {
+                      "member_id": "edc621c0d19344cf82d9a8e996d22aaf",
+                      "resource_id": "oot_f277dda6275249f1",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 12,
+                      "name": "营收记录",
+                      "code": "RevenueRecord",
+                      "subtitle": null,
+                      "enabled": true
+                    }
+                  },
+                  {
+                    "category_id": "fa7f22ec56fd4d9b",
+                    "name": "预算行",
+                    "node_role": "resource",
+                    "code": "BudgetLine",
+                    "item": {
+                      "member_id": "a98cd04f56c94667b546b6798ed93b04",
+                      "resource_id": "oot_e40a10fa8987460b",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 13,
+                      "name": "预算行",
+                      "code": "BudgetLine",
+                      "subtitle": null,
+                      "enabled": true
+                    }
+                  }
+                ]
+              },
+              {
+                "category_id": "722a0cb44eb547b1",
+                "name": "主数据",
+                "node_role": "folder",
+                "code": "master__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "f376e19d9c76459a",
+                    "name": "项目",
+                    "node_role": "resource",
+                    "code": "Project",
+                    "item": {
+                      "member_id": "e843c2f1387a4dd09f0640c26b316bca",
+                      "resource_id": "oot_9737c5e1c4d246ca",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 2,
+                      "name": "项目",
+                      "code": "Project",
+                      "subtitle": null,
+                      "enabled": true
+                    }
+                  },
+                  {
+                    "category_id": "113430386cea45e3",
+                    "name": "组织",
+                    "node_role": "resource",
+                    "code": "Org",
+                    "item": {
+                      "member_id": "0ff7e343fd2f4e76a9fcd983c1582525",
+                      "resource_id": "oot_a43dde817cc54f92",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 1,
+                      "name": "组织",
+                      "code": "Org",
+                      "subtitle": null,
+                      "enabled": true
+                    }
+                  },
+                  {
+                    "category_id": "0cc405001a6d4b22",
+                    "name": "损益科目",
+                    "node_role": "resource",
+                    "code": "Account",
+                    "item": {
+                      "member_id": "dce0e71116ee428e95a445bbbe888431",
+                      "resource_id": "oot_336cea7a47924c32",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 14,
+                      "name": "损益科目",
+                      "code": "Account",
+                      "subtitle": null,
+                      "enabled": true
+                    }
+                  }
+                ]
+              }
+            ],
+            "uncategorized": [],
+            "count": 11
+          },
+          {
+            "kind": "link_type",
+            "items": [
+              {
+                "member_id": "79e7a3d361f246e1b4f637a7561efd04",
+                "resource_id": "olt_fd11ab68dbb84dd1",
+                "pinned": false,
+                "note": null,
+                "sort_order": 0,
+                "name": "成本归属项目",
+                "code": "cost_for_project"
+              },
+              {
+                "member_id": "d8aa16f0df6e4ab4a5fedeef69968364",
+                "resource_id": "olt_545c1eb765cb4d17",
+                "pinned": false,
+                "note": null,
+                "sort_order": 1,
+                "name": "产值归属项目",
+                "code": "output_for_project"
+              },
+              {
+                "member_id": "a382342983854f8b8c8f1daa64420cc8",
+                "resource_id": "olt_4e2a1cf43e8b4d87",
+                "pinned": false,
+                "note": null,
+                "sort_order": 2,
+                "name": "项目归属组织",
+                "code": "project_belongs_org"
+              },
+              {
+                "member_id": "0aa9e80714d845b289ff6f2f27ef1036",
+                "resource_id": "olt_4241999f83ad47d6",
+                "pinned": false,
+                "note": null,
+                "sort_order": 3,
+                "name": "组织上级",
+                "code": "org_has_parent"
+              },
+              {
+                "member_id": "cba884b32ff04f9a89022b666d24188a",
+                "resource_id": "olt_deaead543a7a4fbc",
+                "pinned": false,
+                "note": null,
+                "sort_order": 4,
+                "name": "成本归属科目",
+                "code": "cost_has_type"
+              },
+              {
+                "member_id": "e18f9cc3fa02412c95dfdf4a659f0983",
+                "resource_id": "olt_a27daab04d654d73",
+                "pinned": false,
+                "note": null,
+                "sort_order": 5,
+                "name": "科目上级",
+                "code": "costtype_has_parent"
+              },
+              {
+                "member_id": "257a17830fc94eac9a90a0e4aea9b6fd",
+                "resource_id": "olt_de6047a32a3746ee",
+                "pinned": false,
+                "note": null,
+                "sort_order": 6,
+                "name": "分析归因项目",
+                "code": "analysis_by_project"
+              },
+              {
+                "member_id": "9e478946df004422913f3158782894cb",
+                "resource_id": "olt_11c46f4bbd2a48ba",
+                "pinned": false,
+                "note": null,
+                "sort_order": 7,
+                "name": "成本映射损益科目",
+                "code": "cost_maps_account"
+              },
+              {
+                "member_id": "71ea37f65b524310b8c498163f12be1f",
+                "resource_id": "olt_20dabc765ccb46d6",
+                "pinned": false,
+                "note": null,
+                "sort_order": 8,
+                "name": "营收归属项目",
+                "code": "revenue_belongs_project"
+              },
+              {
+                "member_id": "f79b09bd5786471ea217ef3d75780cf7",
+                "resource_id": "olt_74aa323773f64aea",
+                "pinned": false,
+                "note": null,
+                "sort_order": 9,
+                "name": "预算对应科目",
+                "code": "budget_for_account"
+              },
+              {
+                "member_id": "b14538cc5a4b4a069fc3ac0fdad635b1",
+                "resource_id": "olt_10ec4b035abc4c62",
+                "pinned": false,
+                "note": null,
+                "sort_order": 10,
+                "name": "预算对应项目",
+                "code": "budget_for_project"
+              },
+              {
+                "member_id": "81da9991f6484684bfb295ed409b7f47",
+                "resource_id": "olt_996c3d1be0a5407e",
+                "pinned": false,
+                "note": null,
+                "sort_order": 11,
+                "name": "科目上级",
+                "code": "account_has_parent"
+              },
+              {
+                "member_id": "56b942ed18914a39b8f278b790efda9a",
+                "resource_id": "olt_0de644a727914493",
+                "pinned": false,
+                "note": null,
+                "sort_order": 12,
+                "name": "利润归因项目",
+                "code": "profit_analysis_by_project"
+              },
+              {
+                "member_id": "625732419c6d4319ab890a3930731ddc",
+                "resource_id": "olt_9da56336bbc94c2d",
+                "pinned": false,
+                "note": null,
+                "sort_order": 13,
+                "name": "利润归因科目",
+                "code": "profit_analysis_by_account"
+              },
+              {
+                "member_id": "eb92af5f1ed14ab7b7a705163d58d618",
+                "resource_id": "olt_7228404c192a4889",
+                "pinned": false,
+                "note": null,
+                "sort_order": 14,
+                "name": "预算对比实际",
+                "code": "budget_compared_to_actual"
+              }
+            ],
+            "categories": [
+              {
+                "category_id": "c8ab278f61b5495b",
+                "name": "层级关系",
+                "node_role": "folder",
+                "code": "hierarchy__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "6e049319ac084c0f",
+                    "name": "组织上级",
+                    "node_role": "resource",
+                    "code": "org_has_parent",
+                    "item": {
+                      "member_id": "0aa9e80714d845b289ff6f2f27ef1036",
+                      "resource_id": "olt_4241999f83ad47d6",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 3,
+                      "name": "组织上级",
+                      "code": "org_has_parent"
+                    }
+                  },
+                  {
+                    "category_id": "23558df7095a405e",
+                    "name": "科目上级",
+                    "node_role": "resource",
+                    "code": "costtype_has_parent",
+                    "item": {
+                      "member_id": "e18f9cc3fa02412c95dfdf4a659f0983",
+                      "resource_id": "olt_a27daab04d654d73",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 5,
+                      "name": "科目上级",
+                      "code": "costtype_has_parent"
+                    }
+                  },
+                  {
+                    "category_id": "0d1e63dd72084533",
+                    "name": "科目上级",
+                    "node_role": "resource",
+                    "code": "account_has_parent",
+                    "item": {
+                      "member_id": "81da9991f6484684bfb295ed409b7f47",
+                      "resource_id": "olt_996c3d1be0a5407e",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 11,
+                      "name": "科目上级",
+                      "code": "account_has_parent"
+                    }
+                  }
+                ]
+              },
+              {
+                "category_id": "dacf3a14957c467d",
+                "name": "对比关系",
+                "node_role": "folder",
+                "code": "comparison__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "91911681aa804bd0",
+                    "name": "预算对比实际",
+                    "node_role": "resource",
+                    "code": "budget_compared_to_actual",
+                    "item": {
+                      "member_id": "eb92af5f1ed14ab7b7a705163d58d618",
+                      "resource_id": "olt_7228404c192a4889",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 14,
+                      "name": "预算对比实际",
+                      "code": "budget_compared_to_actual"
+                    }
+                  }
+                ]
+              },
+              {
+                "category_id": "6746da9d329744de",
+                "name": "分析归因",
+                "node_role": "folder",
+                "code": "analysis__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "a984077b504340da",
+                    "name": "分析归因项目",
+                    "node_role": "resource",
+                    "code": "analysis_by_project",
+                    "item": {
+                      "member_id": "257a17830fc94eac9a90a0e4aea9b6fd",
+                      "resource_id": "olt_de6047a32a3746ee",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 6,
+                      "name": "分析归因项目",
+                      "code": "analysis_by_project"
+                    }
+                  },
+                  {
+                    "category_id": "55b68380b72b4743",
+                    "name": "利润归因项目",
+                    "node_role": "resource",
+                    "code": "profit_analysis_by_project",
+                    "item": {
+                      "member_id": "56b942ed18914a39b8f278b790efda9a",
+                      "resource_id": "olt_0de644a727914493",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 12,
+                      "name": "利润归因项目",
+                      "code": "profit_analysis_by_project"
+                    }
+                  },
+                  {
+                    "category_id": "6a480573e5ba4c3a",
+                    "name": "利润归因科目",
+                    "node_role": "resource",
+                    "code": "profit_analysis_by_account",
+                    "item": {
+                      "member_id": "625732419c6d4319ab890a3930731ddc",
+                      "resource_id": "olt_9da56336bbc94c2d",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 13,
+                      "name": "利润归因科目",
+                      "code": "profit_analysis_by_account"
+                    }
+                  }
+                ]
+              },
+              {
+                "category_id": "079c80bd54df4d8c",
+                "name": "归属关系",
+                "node_role": "folder",
+                "code": "belongs__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "b98b56e3b6df4614",
+                    "name": "成本归属项目",
+                    "node_role": "resource",
+                    "code": "cost_for_project",
+                    "item": {
+                      "member_id": "79e7a3d361f246e1b4f637a7561efd04",
+                      "resource_id": "olt_fd11ab68dbb84dd1",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 0,
+                      "name": "成本归属项目",
+                      "code": "cost_for_project"
+                    }
+                  },
+                  {
+                    "category_id": "4642a06f376348d6",
+                    "name": "产值归属项目",
+                    "node_role": "resource",
+                    "code": "output_for_project",
+                    "item": {
+                      "member_id": "d8aa16f0df6e4ab4a5fedeef69968364",
+                      "resource_id": "olt_545c1eb765cb4d17",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 1,
+                      "name": "产值归属项目",
+                      "code": "output_for_project"
+                    }
+                  },
+                  {
+                    "category_id": "1326d003e70d4b97",
+                    "name": "项目归属组织",
+                    "node_role": "resource",
+                    "code": "project_belongs_org",
+                    "item": {
+                      "member_id": "a382342983854f8b8c8f1daa64420cc8",
+                      "resource_id": "olt_4e2a1cf43e8b4d87",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 2,
+                      "name": "项目归属组织",
+                      "code": "project_belongs_org"
+                    }
+                  },
+                  {
+                    "category_id": "42633f98d1db472f",
+                    "name": "成本归属科目",
+                    "node_role": "resource",
+                    "code": "cost_has_type",
+                    "item": {
+                      "member_id": "cba884b32ff04f9a89022b666d24188a",
+                      "resource_id": "olt_deaead543a7a4fbc",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 4,
+                      "name": "成本归属科目",
+                      "code": "cost_has_type"
+                    }
+                  },
+                  {
+                    "category_id": "2744637f0dd341db",
+                    "name": "成本映射损益科目",
+                    "node_role": "resource",
+                    "code": "cost_maps_account",
+                    "item": {
+                      "member_id": "9e478946df004422913f3158782894cb",
+                      "resource_id": "olt_11c46f4bbd2a48ba",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 7,
+                      "name": "成本映射损益科目",
+                      "code": "cost_maps_account"
+                    }
+                  },
+                  {
+                    "category_id": "48d2caebb25047b8",
+                    "name": "营收归属项目",
+                    "node_role": "resource",
+                    "code": "revenue_belongs_project",
+                    "item": {
+                      "member_id": "71ea37f65b524310b8c498163f12be1f",
+                      "resource_id": "olt_20dabc765ccb46d6",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 8,
+                      "name": "营收归属项目",
+                      "code": "revenue_belongs_project"
+                    }
+                  },
+                  {
+                    "category_id": "f703db19f8b64cf7",
+                    "name": "预算对应科目",
+                    "node_role": "resource",
+                    "code": "budget_for_account",
+                    "item": {
+                      "member_id": "f79b09bd5786471ea217ef3d75780cf7",
+                      "resource_id": "olt_74aa323773f64aea",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 9,
+                      "name": "预算对应科目",
+                      "code": "budget_for_account"
+                    }
+                  },
+                  {
+                    "category_id": "a738d5a5c7504167",
+                    "name": "预算对应项目",
+                    "node_role": "resource",
+                    "code": "budget_for_project",
+                    "item": {
+                      "member_id": "b14538cc5a4b4a069fc3ac0fdad635b1",
+                      "resource_id": "olt_10ec4b035abc4c62",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 10,
+                      "name": "预算对应项目",
+                      "code": "budget_for_project"
+                    }
+                  }
+                ]
+              }
+            ],
+            "uncategorized": [],
+            "count": 15
+          },
+          {
+            "kind": "function",
+            "items": [
+              {
+                "member_id": "c998b69534b945349d379ed3fafad533",
+                "resource_id": "ofn_def6483b0a3a4445",
+                "pinned": false,
+                "note": null,
+                "sort_order": 0,
+                "name": "semantic.query_aggregate",
+                "code": "semantic.query_aggregate",
+                "subtitle": "semantic.query_aggregate",
+                "enabled": true,
+                "script_id": null
+              },
+              {
+                "member_id": "5761de0d815243e6bc2f46d09e9ad87f",
+                "resource_id": "ofn_9f12ccc358814b97",
+                "pinned": false,
+                "note": null,
+                "sort_order": 1,
+                "name": "空间总览汇总",
+                "code": "onto_engine.fn.get_summary",
+                "subtitle": "dazi_script.ontology_function",
+                "enabled": true,
+                "script_id": "54ee641c-74f9-4405-bb68-4d6aaa4c654d"
+              },
+              {
+                "member_id": "53d747bda2094cb58bd1c0c5c81561e2",
+                "resource_id": "ofn_759e266e9ff74b0c",
+                "pinned": false,
+                "note": null,
+                "sort_order": 2,
+                "name": "项目成本产值汇总",
+                "code": "onto_engine.fn.project_summary",
+                "subtitle": "dazi_script.ontology_function",
+                "enabled": true,
+                "script_id": "704626d2-a7ba-4adf-8a8e-069197cb4271"
+              },
+              {
+                "member_id": "a78b8a84a50441faae44f1af7ace490a",
+                "resource_id": "ofn_39650f2fd1f74a14",
+                "pinned": false,
+                "note": null,
+                "sort_order": 3,
+                "name": "项目预实对比",
+                "code": "onto_engine.fn.budget_vs_actual",
+                "subtitle": "dazi_script.ontology_function",
+                "enabled": true,
+                "script_id": "ffba9faf-9bc8-4b34-8d02-83760634d9f4"
+              },
+              {
+                "member_id": "b276eff5d75f4c6398df776fcc6066e8",
+                "resource_id": "ofn_31cdb4608cff465e",
+                "pinned": false,
+                "note": null,
+                "sort_order": 4,
+                "name": "成本科目结构",
+                "code": "onto_engine.fn.cost_structure",
+                "subtitle": "dazi_script.ontology_function",
+                "enabled": true,
+                "script_id": "cdbb26bc-59a1-4af6-8153-055accd46d14"
+              },
+              {
+                "member_id": "88bbe6fcd8044af79cef81dfc7dbf76a",
+                "resource_id": "ofn_fe06934073744b46",
+                "pinned": false,
+                "note": null,
+                "sort_order": 5,
+                "name": "片区成本汇总",
+                "code": "onto_engine.fn.region_cost",
+                "subtitle": "dazi_script.ontology_function",
+                "enabled": true,
+                "script_id": "52ba8e28-b5f2-4424-95d6-8a11953c084c"
+              },
+              {
+                "member_id": "e8d31303266245ddae3817fd9f5f1f0d",
+                "resource_id": "ofn_42e94f0ab8494d35",
+                "pinned": false,
+                "note": null,
+                "sort_order": 6,
+                "name": "成本 Top-N 项目",
+                "code": "onto_engine.fn.top_cost_projects",
+                "subtitle": "dazi_script.ontology_function",
+                "enabled": true,
+                "script_id": "93ff6353-356b-4c46-ade5-a5e5d7bba77b"
+              },
+              {
+                "member_id": "a263338ca8c5437d8fc8bec08b5de476",
+                "resource_id": "ofn_cbc10fd7aa4f4f41",
+                "pinned": false,
+                "note": null,
+                "sort_order": 8,
+                "name": "成本极值与差值",
+                "code": "onto_engine.fn.cost_extremes",
+                "subtitle": "dazi_script.ontology_function",
+                "enabled": true,
+                "script_id": "ea232682-571a-4d05-b692-d830db0871ad"
+              },
+              {
+                "member_id": "b4b4110a8058473bab5beabf0bf60b1e",
+                "resource_id": "ofn_269d009b457a4a44",
+                "pinned": false,
+                "note": null,
+                "sort_order": 9,
+                "name": "profit01.fn.cost_type_breakdown",
+                "code": "profit01.fn.cost_type_breakdown",
+                "subtitle": "dazi_script.ontology_function",
+                "enabled": true,
+                "script_id": "973ae915-547c-4d9f-adb6-69d60f0af1f8"
+              },
+              {
+                "member_id": "17aa2d92e0b24c82ad0afc451b8d8856",
+                "resource_id": "ofn_e04d73c3eacb4bd8",
+                "pinned": false,
+                "note": null,
+                "sort_order": 10,
+                "name": "profit01.fn.project_profit",
+                "code": "profit01.fn.project_profit",
+                "subtitle": "dazi_script.ontology_function",
+                "enabled": true,
+                "script_id": "bb28eed0-4d4c-4342-815b-74dd9c4b48dd"
+              },
+              {
+                "member_id": "148c443247694ef0a9d173149027b1f3",
+                "resource_id": "ofn_3d1111d2cffd4393",
+                "pinned": false,
+                "note": null,
+                "sort_order": 11,
+                "name": "profit01.fn.region_profit",
+                "code": "profit01.fn.region_profit",
+                "subtitle": "dazi_script.ontology_function",
+                "enabled": true,
+                "script_id": "d7bbae62-7db0-4142-8c82-515ec8055949"
+              },
+              {
+                "member_id": "adc212a679474b04963f5f0e7c8c587b",
+                "resource_id": "ofn_82e7df6f0a974ab4",
+                "pinned": false,
+                "note": null,
+                "sort_order": 19,
+                "name": "profit01.fn.get_summary",
+                "code": "profit01.fn.get_summary",
+                "subtitle": "dazi_script.ontology_function",
+                "enabled": true,
+                "script_id": "45956104-a8be-4fc2-93ac-22914af2724c"
+              },
+              {
+                "member_id": "b27bdf02ae5647ada21d8d49cead133d",
+                "resource_id": "ofn_f064cbb5dad44a42",
+                "pinned": false,
+                "note": null,
+                "sort_order": 20,
+                "name": "profit01.fn.account_breakdown",
+                "code": "profit01.fn.account_breakdown",
+                "subtitle": "dazi_script.ontology_function",
+                "enabled": true,
+                "script_id": "f2efab5d-aaa9-419a-ace1-908aca1397b0"
+              },
+              {
+                "member_id": "8ef139c917ae49c8983f2b600b96d1de",
+                "resource_id": "ofn_760a24abe2d94561",
+                "pinned": false,
+                "note": null,
+                "sort_order": 21,
+                "name": "profit01.fn.budget_vs_actual",
+                "code": "profit01.fn.budget_vs_actual",
+                "subtitle": "dazi_script.ontology_function",
+                "enabled": true,
+                "script_id": "fcf51f31-dedb-4a03-9eb3-e3b117a8cc57"
+              },
+              {
+                "member_id": "e43e98e28ff4499f9a6e955cce1cce5a",
+                "resource_id": "ofn_7c36882bfd814e39",
+                "pinned": false,
+                "note": null,
+                "sort_order": 22,
+                "name": "profit01.fn.org_profit",
+                "code": "profit01.fn.org_profit",
+                "subtitle": "dazi_script.ontology_function",
+                "enabled": true,
+                "script_id": "da5a0464-41ad-4a3b-8b6b-d619003ab962"
+              }
+            ],
+            "categories": [
+              {
+                "category_id": "869680b1a0f74424",
+                "name": "结构分析",
+                "node_role": "folder",
+                "code": "breakdown__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "32802340c63b4327",
+                    "name": "onto_engine.fn.top_cost_projects",
+                    "node_role": "resource",
+                    "code": "onto_engine.fn.top_cost_projects",
+                    "item": {
+                      "member_id": "e8d31303266245ddae3817fd9f5f1f0d",
+                      "resource_id": "ofn_42e94f0ab8494d35",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 6,
+                      "name": "成本 Top-N 项目",
+                      "code": "onto_engine.fn.top_cost_projects",
+                      "subtitle": "dazi_script.ontology_function",
+                      "enabled": true,
+                      "script_id": "93ff6353-356b-4c46-ade5-a5e5d7bba77b"
+                    }
+                  },
+                  {
+                    "category_id": "85e6d7637faa45eb",
+                    "name": "onto_engine.fn.cost_structure",
+                    "node_role": "resource",
+                    "code": "onto_engine.fn.cost_structure",
+                    "item": {
+                      "member_id": "b276eff5d75f4c6398df776fcc6066e8",
+                      "resource_id": "ofn_31cdb4608cff465e",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 4,
+                      "name": "成本科目结构",
+                      "code": "onto_engine.fn.cost_structure",
+                      "subtitle": "dazi_script.ontology_function",
+                      "enabled": true,
+                      "script_id": "cdbb26bc-59a1-4af6-8153-055accd46d14"
+                    }
+                  },
+                  {
+                    "category_id": "b749ac75d2de4016",
+                    "name": "onto_engine.fn.cost_extremes",
+                    "node_role": "resource",
+                    "code": "onto_engine.fn.cost_extremes",
+                    "item": {
+                      "member_id": "a263338ca8c5437d8fc8bec08b5de476",
+                      "resource_id": "ofn_cbc10fd7aa4f4f41",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 8,
+                      "name": "成本极值与差值",
+                      "code": "onto_engine.fn.cost_extremes",
+                      "subtitle": "dazi_script.ontology_function",
+                      "enabled": true,
+                      "script_id": "ea232682-571a-4d05-b692-d830db0871ad"
+                    }
+                  },
+                  {
+                    "category_id": "b07b511763b64f3e",
+                    "name": "profit01.fn.project_profit",
+                    "node_role": "resource",
+                    "code": "profit01.fn.project_profit",
+                    "item": {
+                      "member_id": "17aa2d92e0b24c82ad0afc451b8d8856",
+                      "resource_id": "ofn_e04d73c3eacb4bd8",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 10,
+                      "name": "profit01.fn.project_profit",
+                      "code": "profit01.fn.project_profit",
+                      "subtitle": "dazi_script.ontology_function",
+                      "enabled": true,
+                      "script_id": "bb28eed0-4d4c-4342-815b-74dd9c4b48dd"
+                    }
+                  },
+                  {
+                    "category_id": "e8805fda55624b86",
+                    "name": "profit01.fn.account_breakdown",
+                    "node_role": "resource",
+                    "code": "profit01.fn.account_breakdown",
+                    "item": {
+                      "member_id": "b27bdf02ae5647ada21d8d49cead133d",
+                      "resource_id": "ofn_f064cbb5dad44a42",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 20,
+                      "name": "profit01.fn.account_breakdown",
+                      "code": "profit01.fn.account_breakdown",
+                      "subtitle": "dazi_script.ontology_function",
+                      "enabled": true,
+                      "script_id": "f2efab5d-aaa9-419a-ace1-908aca1397b0"
+                    }
+                  },
+                  {
+                    "category_id": "13ddb85976104673",
+                    "name": "profit01.fn.cost_type_breakdown",
+                    "node_role": "resource",
+                    "code": "profit01.fn.cost_type_breakdown",
+                    "item": {
+                      "member_id": "b4b4110a8058473bab5beabf0bf60b1e",
+                      "resource_id": "ofn_269d009b457a4a44",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 9,
+                      "name": "profit01.fn.cost_type_breakdown",
+                      "code": "profit01.fn.cost_type_breakdown",
+                      "subtitle": "dazi_script.ontology_function",
+                      "enabled": true,
+                      "script_id": "973ae915-547c-4d9f-adb6-69d60f0af1f8"
+                    }
+                  }
+                ]
+              },
+              {
+                "category_id": "c5ff072071644cf0",
+                "name": "预实分析",
+                "node_role": "folder",
+                "code": "comparison__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "3811a38be14d49f8",
+                    "name": "onto_engine.fn.budget_vs_actual",
+                    "node_role": "resource",
+                    "code": "onto_engine.fn.budget_vs_actual",
+                    "item": {
+                      "member_id": "a78b8a84a50441faae44f1af7ace490a",
+                      "resource_id": "ofn_39650f2fd1f74a14",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 3,
+                      "name": "项目预实对比",
+                      "code": "onto_engine.fn.budget_vs_actual",
+                      "subtitle": "dazi_script.ontology_function",
+                      "enabled": true,
+                      "script_id": "ffba9faf-9bc8-4b34-8d02-83760634d9f4"
+                    }
+                  },
+                  {
+                    "category_id": "9b3960ebd3254798",
+                    "name": "profit01.fn.budget_vs_actual",
+                    "node_role": "resource",
+                    "code": "profit01.fn.budget_vs_actual",
+                    "item": {
+                      "member_id": "8ef139c917ae49c8983f2b600b96d1de",
+                      "resource_id": "ofn_760a24abe2d94561",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 21,
+                      "name": "profit01.fn.budget_vs_actual",
+                      "code": "profit01.fn.budget_vs_actual",
+                      "subtitle": "dazi_script.ontology_function",
+                      "enabled": true,
+                      "script_id": "fcf51f31-dedb-4a03-9eb3-e3b117a8cc57"
+                    }
+                  }
+                ]
+              },
+              {
+                "category_id": "8a7c3aefc0e54f93",
+                "name": "总览分析",
+                "node_role": "folder",
+                "code": "summary__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "b7412c09fd274cbb",
+                    "name": "onto_engine.fn.get_summary",
+                    "node_role": "resource",
+                    "code": "onto_engine.fn.get_summary",
+                    "item": {
+                      "member_id": "5761de0d815243e6bc2f46d09e9ad87f",
+                      "resource_id": "ofn_9f12ccc358814b97",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 1,
+                      "name": "空间总览汇总",
+                      "code": "onto_engine.fn.get_summary",
+                      "subtitle": "dazi_script.ontology_function",
+                      "enabled": true,
+                      "script_id": "54ee641c-74f9-4405-bb68-4d6aaa4c654d"
+                    }
+                  },
+                  {
+                    "category_id": "6abcab9723fc4dfd",
+                    "name": "profit01.fn.get_summary",
+                    "node_role": "resource",
+                    "code": "profit01.fn.get_summary",
+                    "item": {
+                      "member_id": "adc212a679474b04963f5f0e7c8c587b",
+                      "resource_id": "ofn_82e7df6f0a974ab4",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 19,
+                      "name": "profit01.fn.get_summary",
+                      "code": "profit01.fn.get_summary",
+                      "subtitle": "dazi_script.ontology_function",
+                      "enabled": true,
+                      "script_id": "45956104-a8be-4fc2-93ac-22914af2724c"
+                    }
+                  }
+                ]
+              },
+              {
+                "category_id": "86f961c30f014a7e",
+                "name": "组织分析",
+                "node_role": "folder",
+                "code": "org__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "9236b06f2b914954",
+                    "name": "onto_engine.fn.project_summary",
+                    "node_role": "resource",
+                    "code": "onto_engine.fn.project_summary",
+                    "item": {
+                      "member_id": "53d747bda2094cb58bd1c0c5c81561e2",
+                      "resource_id": "ofn_759e266e9ff74b0c",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 2,
+                      "name": "项目成本产值汇总",
+                      "code": "onto_engine.fn.project_summary",
+                      "subtitle": "dazi_script.ontology_function",
+                      "enabled": true,
+                      "script_id": "704626d2-a7ba-4adf-8a8e-069197cb4271"
+                    }
+                  },
+                  {
+                    "category_id": "a657b856976c4623",
+                    "name": "onto_engine.fn.region_cost",
+                    "node_role": "resource",
+                    "code": "onto_engine.fn.region_cost",
+                    "item": {
+                      "member_id": "88bbe6fcd8044af79cef81dfc7dbf76a",
+                      "resource_id": "ofn_fe06934073744b46",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 5,
+                      "name": "片区成本汇总",
+                      "code": "onto_engine.fn.region_cost",
+                      "subtitle": "dazi_script.ontology_function",
+                      "enabled": true,
+                      "script_id": "52ba8e28-b5f2-4424-95d6-8a11953c084c"
+                    }
+                  },
+                  {
+                    "category_id": "5457755571e04497",
+                    "name": "profit01.fn.region_profit",
+                    "node_role": "resource",
+                    "code": "profit01.fn.region_profit",
+                    "item": {
+                      "member_id": "148c443247694ef0a9d173149027b1f3",
+                      "resource_id": "ofn_3d1111d2cffd4393",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 11,
+                      "name": "profit01.fn.region_profit",
+                      "code": "profit01.fn.region_profit",
+                      "subtitle": "dazi_script.ontology_function",
+                      "enabled": true,
+                      "script_id": "d7bbae62-7db0-4142-8c82-515ec8055949"
+                    }
+                  },
+                  {
+                    "category_id": "f9b357758a1f4911",
+                    "name": "profit01.fn.org_profit",
+                    "node_role": "resource",
+                    "code": "profit01.fn.org_profit",
+                    "item": {
+                      "member_id": "e43e98e28ff4499f9a6e955cce1cce5a",
+                      "resource_id": "ofn_7c36882bfd814e39",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 22,
+                      "name": "profit01.fn.org_profit",
+                      "code": "profit01.fn.org_profit",
+                      "subtitle": "dazi_script.ontology_function",
+                      "enabled": true,
+                      "script_id": "da5a0464-41ad-4a3b-8b6b-d619003ab962"
+                    }
+                  }
+                ]
+              }
+            ],
+            "uncategorized": [
+              {
+                "member_id": "c998b69534b945349d379ed3fafad533",
+                "resource_id": "ofn_def6483b0a3a4445",
+                "pinned": false,
+                "note": null,
+                "sort_order": 0,
+                "name": "semantic.query_aggregate",
+                "code": "semantic.query_aggregate",
+                "subtitle": "semantic.query_aggregate",
+                "enabled": true,
+                "script_id": null
+              }
+            ],
+            "count": 15
+          },
+          {
+            "kind": "action",
+            "items": [],
+            "categories": [],
+            "uncategorized": [],
+            "count": 0
+          },
+          {
+            "kind": "rule",
+            "items": [
+              {
+                "member_id": "1d0df3f5e25f4bca8d006cdf35d1e8ed",
+                "resource_id": "or_0e186f2473c44842",
+                "pinned": false,
+                "note": null,
+                "sort_order": 0,
+                "name": "成本排名 Top-N",
+                "code": "rank_cost_topn",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "8dbab71f121442d1b16cdac3e5d34000",
+                "resource_id": "or_e4793bcabc45412e",
+                "pinned": false,
+                "note": null,
+                "sort_order": 1,
+                "name": "成本超支预警",
+                "code": "cost_overrun_alert",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "f00fd7d2ac2a44ac8e93cd5785693533",
+                "resource_id": "or_e74b955a9d4e4e5d",
+                "pinned": false,
+                "note": null,
+                "sort_order": 2,
+                "name": "华东超支高风险",
+                "code": "high_cost_risk_l2",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "df7c771066b84beea504cf347085c821",
+                "resource_id": "or_e393cd2bbdaf4d5f",
+                "pinned": false,
+                "note": null,
+                "sort_order": 3,
+                "name": "成本排名冲突规则",
+                "code": "cost_priority_conflict",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "19fdf3f1dce342ea83eedb16b09ddd4c",
+                "resource_id": "or_91390cca3fef409e",
+                "pinned": false,
+                "note": null,
+                "sort_order": 4,
+                "name": "预实对比函数提示",
+                "code": "fn_hint_budget_vs_actual",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "dac7a06c6ebe46ea881b50d49605b26e",
+                "resource_id": "or_f546310c6bec4af0",
+                "pinned": false,
+                "note": null,
+                "sort_order": 5,
+                "name": "项目汇总函数提示",
+                "code": "fn_hint_project_summary",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "c0630c4692744d7fa500aa68fa8d3117",
+                "resource_id": "or_769f45e3fbe04e01",
+                "pinned": false,
+                "note": null,
+                "sort_order": 6,
+                "name": "科目结构函数提示",
+                "code": "fn_hint_cost_structure",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "a53dd1fb53e14701b0f46fdd8e549e8a",
+                "resource_id": "or_124bb5cafc0840d1",
+                "pinned": false,
+                "note": null,
+                "sort_order": 11,
+                "name": "片区分析函数提示",
+                "code": "fn_hint_region_cost",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "a187a0a0f6464859970cf0a3094bceec",
+                "resource_id": "or_2dff1a7ad1984f82",
+                "pinned": false,
+                "note": null,
+                "sort_order": 16,
+                "name": "成本极值差值函数提示",
+                "code": "fn_hint_cost_extremes",
+                "subtitle": "decision"
+              }
+            ],
+            "categories": [],
+            "uncategorized": [
+              {
+                "member_id": "1d0df3f5e25f4bca8d006cdf35d1e8ed",
+                "resource_id": "or_0e186f2473c44842",
+                "pinned": false,
+                "note": null,
+                "sort_order": 0,
+                "name": "成本排名 Top-N",
+                "code": "rank_cost_topn",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "8dbab71f121442d1b16cdac3e5d34000",
+                "resource_id": "or_e4793bcabc45412e",
+                "pinned": false,
+                "note": null,
+                "sort_order": 1,
+                "name": "成本超支预警",
+                "code": "cost_overrun_alert",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "f00fd7d2ac2a44ac8e93cd5785693533",
+                "resource_id": "or_e74b955a9d4e4e5d",
+                "pinned": false,
+                "note": null,
+                "sort_order": 2,
+                "name": "华东超支高风险",
+                "code": "high_cost_risk_l2",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "df7c771066b84beea504cf347085c821",
+                "resource_id": "or_e393cd2bbdaf4d5f",
+                "pinned": false,
+                "note": null,
+                "sort_order": 3,
+                "name": "成本排名冲突规则",
+                "code": "cost_priority_conflict",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "19fdf3f1dce342ea83eedb16b09ddd4c",
+                "resource_id": "or_91390cca3fef409e",
+                "pinned": false,
+                "note": null,
+                "sort_order": 4,
+                "name": "预实对比函数提示",
+                "code": "fn_hint_budget_vs_actual",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "dac7a06c6ebe46ea881b50d49605b26e",
+                "resource_id": "or_f546310c6bec4af0",
+                "pinned": false,
+                "note": null,
+                "sort_order": 5,
+                "name": "项目汇总函数提示",
+                "code": "fn_hint_project_summary",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "c0630c4692744d7fa500aa68fa8d3117",
+                "resource_id": "or_769f45e3fbe04e01",
+                "pinned": false,
+                "note": null,
+                "sort_order": 6,
+                "name": "科目结构函数提示",
+                "code": "fn_hint_cost_structure",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "a53dd1fb53e14701b0f46fdd8e549e8a",
+                "resource_id": "or_124bb5cafc0840d1",
+                "pinned": false,
+                "note": null,
+                "sort_order": 11,
+                "name": "片区分析函数提示",
+                "code": "fn_hint_region_cost",
+                "subtitle": "decision"
+              },
+              {
+                "member_id": "a187a0a0f6464859970cf0a3094bceec",
+                "resource_id": "or_2dff1a7ad1984f82",
+                "pinned": false,
+                "note": null,
+                "sort_order": 16,
+                "name": "成本极值差值函数提示",
+                "code": "fn_hint_cost_extremes",
+                "subtitle": "decision"
+              }
+            ],
+            "count": 9
+          }
+        ]
+      },
+      {
+        "group": "data",
+        "name": "数据",
+        "kinds": [
+          {
+            "kind": "table",
+            "items": [
+              {
+                "member_id": "042069cff4ac4092a95dc4d0603d2fa5",
+                "resource_id": "d8e720737b65411c",
+                "pinned": false,
+                "note": null,
+                "sort_order": 0,
+                "name": "日期维表",
+                "code": "dim_date",
+                "subtitle": null
+              },
+              {
+                "member_id": "8a3cb58f7d1c4c11bd5b39f299a4fe89",
+                "resource_id": "ee6409ce5f62440f",
+                "pinned": false,
+                "note": null,
+                "sort_order": 1,
+                "name": "组织维表",
+                "code": "dim_org",
+                "subtitle": null
+              },
+              {
+                "member_id": "48b30c839ff0498fa15ea8b28adb45f9",
+                "resource_id": "8f5a388d2e3545aa",
+                "pinned": false,
+                "note": null,
+                "sort_order": 2,
+                "name": "项目维表",
+                "code": "dim_project",
+                "subtitle": null
+              },
+              {
+                "member_id": "6bb84afed3b24da6b8af53eb8e20f546",
+                "resource_id": "9c37ea22fdbd4755",
+                "pinned": false,
+                "note": null,
+                "sort_order": 3,
+                "name": "成本科目维表",
+                "code": "dim_cost_type",
+                "subtitle": null
+              },
+              {
+                "member_id": "5d143c77ec704c4385d0114fc5414471",
+                "resource_id": "94a1fe312c7f4b36",
+                "pinned": false,
+                "note": null,
+                "sort_order": 4,
+                "name": "成本事实表",
+                "code": "fact_cost",
+                "subtitle": null
+              },
+              {
+                "member_id": "d2536f87ff81497d8ba4abc066fc1ce6",
+                "resource_id": "3215e395c987484d",
+                "pinned": false,
+                "note": null,
+                "sort_order": 5,
+                "name": "产值事实表",
+                "code": "fact_output",
+                "subtitle": null
+              },
+              {
+                "member_id": "e18680c05d95468383f65b3327fbf883",
+                "resource_id": "368994c1941d41b2",
+                "pinned": false,
+                "note": null,
+                "sort_order": 12,
+                "name": "损益科目维表",
+                "code": "dim_account",
+                "subtitle": null
+              },
+              {
+                "member_id": "3e687728a8b8456ba1d2683d5c492ee8",
+                "resource_id": "83619756582348b2",
+                "pinned": false,
+                "note": null,
+                "sort_order": 13,
+                "name": "成本科目映射表",
+                "code": "bridge_cost_type_account",
+                "subtitle": null
+              },
+              {
+                "member_id": "2dd1e1ef6a2344579266700a1a13a0f3",
+                "resource_id": "4f3b2e217c614998",
+                "pinned": false,
+                "note": null,
+                "sort_order": 14,
+                "name": "利润预算明细",
+                "code": "fact_pl_budget",
+                "subtitle": null
+              },
+              {
+                "member_id": "10f4fbf738974db4a2ddb133678c2f43",
+                "resource_id": "d847cce3ad894de9",
+                "pinned": false,
+                "note": null,
+                "sort_order": 15,
+                "name": "项目利润快照",
+                "code": "fact_project_profit",
+                "subtitle": null
+              }
+            ],
+            "categories": [
+              {
+                "category_id": "ffed35fdceee492b",
+                "name": "时间维",
+                "node_role": "folder",
+                "code": "dim_date__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "65d9823b0aee4fab",
+                    "name": "日期维表",
+                    "node_role": "resource",
+                    "code": "dim_date",
+                    "item": {
+                      "member_id": "042069cff4ac4092a95dc4d0603d2fa5",
+                      "resource_id": "d8e720737b65411c",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 0,
+                      "name": "日期维表",
+                      "code": "dim_date",
+                      "subtitle": null
+                    }
+                  }
+                ]
+              },
+              {
+                "category_id": "33ca43607a764b9a",
+                "name": "事实表",
+                "node_role": "folder",
+                "code": "fact__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "76f24af10ebb48df",
+                    "name": "成本事实表",
+                    "node_role": "resource",
+                    "code": "fact_cost",
+                    "item": {
+                      "member_id": "5d143c77ec704c4385d0114fc5414471",
+                      "resource_id": "94a1fe312c7f4b36",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 4,
+                      "name": "成本事实表",
+                      "code": "fact_cost",
+                      "subtitle": null
+                    }
+                  },
+                  {
+                    "category_id": "ea5707fce512498a",
+                    "name": "产值事实表",
+                    "node_role": "resource",
+                    "code": "fact_output",
+                    "item": {
+                      "member_id": "d2536f87ff81497d8ba4abc066fc1ce6",
+                      "resource_id": "3215e395c987484d",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 5,
+                      "name": "产值事实表",
+                      "code": "fact_output",
+                      "subtitle": null
+                    }
+                  },
+                  {
+                    "category_id": "387bfb708c024eeb",
+                    "name": "利润预算明细",
+                    "node_role": "resource",
+                    "code": "fact_pl_budget",
+                    "item": {
+                      "member_id": "2dd1e1ef6a2344579266700a1a13a0f3",
+                      "resource_id": "4f3b2e217c614998",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 14,
+                      "name": "利润预算明细",
+                      "code": "fact_pl_budget",
+                      "subtitle": null
+                    }
+                  },
+                  {
+                    "category_id": "eb4b3d2e224a4f08",
+                    "name": "项目利润快照",
+                    "node_role": "resource",
+                    "code": "fact_project_profit",
+                    "item": {
+                      "member_id": "10f4fbf738974db4a2ddb133678c2f43",
+                      "resource_id": "d847cce3ad894de9",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 15,
+                      "name": "项目利润快照",
+                      "code": "fact_project_profit",
+                      "subtitle": null
+                    }
+                  }
+                ]
+              },
+              {
+                "category_id": "b25b9c4b1ed94bfa",
+                "name": "维度表",
+                "node_role": "folder",
+                "code": "dim__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "3fe78ec96acb44b3",
+                    "name": "组织维表",
+                    "node_role": "resource",
+                    "code": "dim_org",
+                    "item": {
+                      "member_id": "8a3cb58f7d1c4c11bd5b39f299a4fe89",
+                      "resource_id": "ee6409ce5f62440f",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 1,
+                      "name": "组织维表",
+                      "code": "dim_org",
+                      "subtitle": null
+                    }
+                  },
+                  {
+                    "category_id": "a5fe4e3d9fbb4aa3",
+                    "name": "项目维表",
+                    "node_role": "resource",
+                    "code": "dim_project",
+                    "item": {
+                      "member_id": "48b30c839ff0498fa15ea8b28adb45f9",
+                      "resource_id": "8f5a388d2e3545aa",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 2,
+                      "name": "项目维表",
+                      "code": "dim_project",
+                      "subtitle": null
+                    }
+                  },
+                  {
+                    "category_id": "c1889f5cfcec432c",
+                    "name": "成本科目维表",
+                    "node_role": "resource",
+                    "code": "dim_cost_type",
+                    "item": {
+                      "member_id": "6bb84afed3b24da6b8af53eb8e20f546",
+                      "resource_id": "9c37ea22fdbd4755",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 3,
+                      "name": "成本科目维表",
+                      "code": "dim_cost_type",
+                      "subtitle": null
+                    }
+                  },
+                  {
+                    "category_id": "46f844bdba0240d3",
+                    "name": "损益科目维表",
+                    "node_role": "resource",
+                    "code": "dim_account",
+                    "item": {
+                      "member_id": "e18680c05d95468383f65b3327fbf883",
+                      "resource_id": "368994c1941d41b2",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 12,
+                      "name": "损益科目维表",
+                      "code": "dim_account",
+                      "subtitle": null
+                    }
+                  },
+                  {
+                    "category_id": "6ad01e94c4a04e1c",
+                    "name": "成本科目映射表",
+                    "node_role": "resource",
+                    "code": "bridge_cost_type_account",
+                    "item": {
+                      "member_id": "3e687728a8b8456ba1d2683d5c492ee8",
+                      "resource_id": "83619756582348b2",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 13,
+                      "name": "成本科目映射表",
+                      "code": "bridge_cost_type_account",
+                      "subtitle": null
+                    }
+                  }
+                ]
+              }
+            ],
+            "uncategorized": [],
+            "count": 10
+          },
+          {
+            "kind": "relation",
+            "items": [
+              {
+                "member_id": "1bde559033094fd3857f3db122c6b80e",
+                "resource_id": "8544ad0bcdae444f",
+                "pinned": false,
+                "note": null,
+                "sort_order": 0,
+                "name": "8544ad0bcdae444f",
+                "from_table_id": "94a1fe312c7f4b36",
+                "to_table_id": "d8e720737b65411c"
+              },
+              {
+                "member_id": "81d4483b973545a5a09fb95b9989cbf1",
+                "resource_id": "8fadbf1d5f4f4528",
+                "pinned": false,
+                "note": null,
+                "sort_order": 1,
+                "name": "8fadbf1d5f4f4528",
+                "from_table_id": "94a1fe312c7f4b36",
+                "to_table_id": "8f5a388d2e3545aa"
+              },
+              {
+                "member_id": "d0cd7e25cec949499c8e4e43870e27c6",
+                "resource_id": "c0bd3324a8354706",
+                "pinned": false,
+                "note": null,
+                "sort_order": 2,
+                "name": "c0bd3324a8354706",
+                "from_table_id": "94a1fe312c7f4b36",
+                "to_table_id": "ee6409ce5f62440f"
+              },
+              {
+                "member_id": "f129fec9c4384de1906b9adbd7264f46",
+                "resource_id": "18136dfde8c441f7",
+                "pinned": false,
+                "note": null,
+                "sort_order": 3,
+                "name": "18136dfde8c441f7",
+                "from_table_id": "94a1fe312c7f4b36",
+                "to_table_id": "9c37ea22fdbd4755"
+              },
+              {
+                "member_id": "ebb68894f2604685a558902ee0638c1b",
+                "resource_id": "142a9528d4744e00",
+                "pinned": false,
+                "note": null,
+                "sort_order": 4,
+                "name": "142a9528d4744e00",
+                "from_table_id": "3215e395c987484d",
+                "to_table_id": "d8e720737b65411c"
+              },
+              {
+                "member_id": "28ba22c43a1847439331dfd6216ef2e0",
+                "resource_id": "ad25ee5c2aa64ad4",
+                "pinned": false,
+                "note": null,
+                "sort_order": 5,
+                "name": "ad25ee5c2aa64ad4",
+                "from_table_id": "3215e395c987484d",
+                "to_table_id": "8f5a388d2e3545aa"
+              },
+              {
+                "member_id": "7752c5d6709043b197a8faa7b648f593",
+                "resource_id": "a103174bb0d9404c",
+                "pinned": false,
+                "note": null,
+                "sort_order": 6,
+                "name": "a103174bb0d9404c",
+                "from_table_id": "3215e395c987484d",
+                "to_table_id": "ee6409ce5f62440f"
+              },
+              {
+                "member_id": "17ae29d1aa7146fc849e7257fc0943e5",
+                "resource_id": "a2e7ca1ecd11428e",
+                "pinned": false,
+                "note": null,
+                "sort_order": 7,
+                "name": "a2e7ca1ecd11428e",
+                "from_table_id": "8f5a388d2e3545aa",
+                "to_table_id": "ee6409ce5f62440f"
+              },
+              {
+                "member_id": "294228d7943a4b65af7052d7e246fe05",
+                "resource_id": "c0a822401ce74c45",
+                "pinned": false,
+                "note": null,
+                "sort_order": 8,
+                "name": "c0a822401ce74c45",
+                "from_table_id": "ee6409ce5f62440f",
+                "to_table_id": "ee6409ce5f62440f"
+              },
+              {
+                "member_id": "a0d2c6409fe543c5aa905898ea5f019d",
+                "resource_id": "486232c65a324a52",
+                "pinned": false,
+                "note": null,
+                "sort_order": 9,
+                "name": "486232c65a324a52",
+                "from_table_id": "9c37ea22fdbd4755",
+                "to_table_id": "9c37ea22fdbd4755"
+              },
+              {
+                "member_id": "8cecbd68957e48b4839137b0153de8f1",
+                "resource_id": "d3201f3ad71d45fd",
+                "pinned": false,
+                "note": null,
+                "sort_order": 20,
+                "name": "d3201f3ad71d45fd",
+                "from_table_id": "4f3b2e217c614998",
+                "to_table_id": "d8e720737b65411c"
+              },
+              {
+                "member_id": "cba33fb5e4564c4389a01f550ea2842a",
+                "resource_id": "66ef982497c84fa6",
+                "pinned": false,
+                "note": null,
+                "sort_order": 21,
+                "name": "66ef982497c84fa6",
+                "from_table_id": "4f3b2e217c614998",
+                "to_table_id": "8f5a388d2e3545aa"
+              },
+              {
+                "member_id": "b4c94cedc3de493985a7e495a76bcf6e",
+                "resource_id": "8807aaefae304af0",
+                "pinned": false,
+                "note": null,
+                "sort_order": 22,
+                "name": "8807aaefae304af0",
+                "from_table_id": "4f3b2e217c614998",
+                "to_table_id": "ee6409ce5f62440f"
+              },
+              {
+                "member_id": "1d6a0780a93b48089918f845d9138ea0",
+                "resource_id": "6b794f2db79d43f6",
+                "pinned": false,
+                "note": null,
+                "sort_order": 23,
+                "name": "6b794f2db79d43f6",
+                "from_table_id": "4f3b2e217c614998",
+                "to_table_id": "368994c1941d41b2"
+              },
+              {
+                "member_id": "5d6ce8e0bb714a2f86e4a9ca72f930ba",
+                "resource_id": "16dc44913e624df0",
+                "pinned": false,
+                "note": null,
+                "sort_order": 24,
+                "name": "16dc44913e624df0",
+                "from_table_id": "83619756582348b2",
+                "to_table_id": "9c37ea22fdbd4755"
+              },
+              {
+                "member_id": "8286c64c7ddb4a51acd72b364c2cb5ac",
+                "resource_id": "b4d365af8cb74ad8",
+                "pinned": false,
+                "note": null,
+                "sort_order": 25,
+                "name": "b4d365af8cb74ad8",
+                "from_table_id": "83619756582348b2",
+                "to_table_id": "368994c1941d41b2"
+              },
+              {
+                "member_id": "7c4399cef6b243edba5b70aff0a86bc9",
+                "resource_id": "d2170c4941a047be",
+                "pinned": false,
+                "note": null,
+                "sort_order": 26,
+                "name": "d2170c4941a047be",
+                "from_table_id": "368994c1941d41b2",
+                "to_table_id": "368994c1941d41b2"
+              },
+              {
+                "member_id": "0d414b8b5c0f48989ee1aa0a85cf4382",
+                "resource_id": "5f82a3a6df37490f",
+                "pinned": false,
+                "note": null,
+                "sort_order": 27,
+                "name": "5f82a3a6df37490f",
+                "from_table_id": "d847cce3ad894de9",
+                "to_table_id": "d8e720737b65411c"
+              },
+              {
+                "member_id": "db4f899ad13040c1ae436c952499027d",
+                "resource_id": "ebe7301d6adc45f2",
+                "pinned": false,
+                "note": null,
+                "sort_order": 28,
+                "name": "ebe7301d6adc45f2",
+                "from_table_id": "d847cce3ad894de9",
+                "to_table_id": "8f5a388d2e3545aa"
+              },
+              {
+                "member_id": "c9fa7e54b5b74089882c1584028ed3f4",
+                "resource_id": "edccb8ca632f467b",
+                "pinned": false,
+                "note": null,
+                "sort_order": 29,
+                "name": "edccb8ca632f467b",
+                "from_table_id": "d847cce3ad894de9",
+                "to_table_id": "ee6409ce5f62440f"
+              }
+            ],
+            "categories": [
+              {
+                "category_id": "582d2418034841dd",
+                "name": "层级自关联",
+                "node_role": "folder",
+                "code": "hierarchy__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "60789a1eaa1647b9",
+                    "name": "dim_org → dim_org",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "294228d7943a4b65af7052d7e246fe05",
+                      "resource_id": "c0a822401ce74c45",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 8,
+                      "name": "c0a822401ce74c45",
+                      "from_table_id": "ee6409ce5f62440f",
+                      "to_table_id": "ee6409ce5f62440f"
+                    }
+                  },
+                  {
+                    "category_id": "0fbee56d2a4d4551",
+                    "name": "dim_cost_type → dim_cost_type",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "a0d2c6409fe543c5aa905898ea5f019d",
+                      "resource_id": "486232c65a324a52",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 9,
+                      "name": "486232c65a324a52",
+                      "from_table_id": "9c37ea22fdbd4755",
+                      "to_table_id": "9c37ea22fdbd4755"
+                    }
+                  },
+                  {
+                    "category_id": "3aab16fa3b5f4b0e",
+                    "name": "dim_account → dim_account",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "7c4399cef6b243edba5b70aff0a86bc9",
+                      "resource_id": "d2170c4941a047be",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 26,
+                      "name": "d2170c4941a047be",
+                      "from_table_id": "368994c1941d41b2",
+                      "to_table_id": "368994c1941d41b2"
+                    }
+                  }
+                ]
+              },
+              {
+                "category_id": "1fd410075ea24c97",
+                "name": "时间关联",
+                "node_role": "folder",
+                "code": "time__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "17176de9e5b647a2",
+                    "name": "fact_cost → dim_date",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "1bde559033094fd3857f3db122c6b80e",
+                      "resource_id": "8544ad0bcdae444f",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 0,
+                      "name": "8544ad0bcdae444f",
+                      "from_table_id": "94a1fe312c7f4b36",
+                      "to_table_id": "d8e720737b65411c"
+                    }
+                  },
+                  {
+                    "category_id": "22094f6b3b3c4f5c",
+                    "name": "fact_output → dim_date",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "ebb68894f2604685a558902ee0638c1b",
+                      "resource_id": "142a9528d4744e00",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 4,
+                      "name": "142a9528d4744e00",
+                      "from_table_id": "3215e395c987484d",
+                      "to_table_id": "d8e720737b65411c"
+                    }
+                  },
+                  {
+                    "category_id": "7d67c0eb2e244ca2",
+                    "name": "fact_pl_budget → dim_date",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "8cecbd68957e48b4839137b0153de8f1",
+                      "resource_id": "d3201f3ad71d45fd",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 20,
+                      "name": "d3201f3ad71d45fd",
+                      "from_table_id": "4f3b2e217c614998",
+                      "to_table_id": "d8e720737b65411c"
+                    }
+                  },
+                  {
+                    "category_id": "d35274c46dbb4f54",
+                    "name": "fact_project_profit → dim_date",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "0d414b8b5c0f48989ee1aa0a85cf4382",
+                      "resource_id": "5f82a3a6df37490f",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 27,
+                      "name": "5f82a3a6df37490f",
+                      "from_table_id": "d847cce3ad894de9",
+                      "to_table_id": "d8e720737b65411c"
+                    }
+                  }
+                ]
+              },
+              {
+                "category_id": "383d111c27bf46cc",
+                "name": "主数据关联",
+                "node_role": "folder",
+                "code": "master__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "c5fb74ff3f6d4fc5",
+                    "name": "fact_cost → dim_project",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "81d4483b973545a5a09fb95b9989cbf1",
+                      "resource_id": "8fadbf1d5f4f4528",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 1,
+                      "name": "8fadbf1d5f4f4528",
+                      "from_table_id": "94a1fe312c7f4b36",
+                      "to_table_id": "8f5a388d2e3545aa"
+                    }
+                  },
+                  {
+                    "category_id": "2082470e866441a8",
+                    "name": "fact_cost → dim_org",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "d0cd7e25cec949499c8e4e43870e27c6",
+                      "resource_id": "c0bd3324a8354706",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 2,
+                      "name": "c0bd3324a8354706",
+                      "from_table_id": "94a1fe312c7f4b36",
+                      "to_table_id": "ee6409ce5f62440f"
+                    }
+                  },
+                  {
+                    "category_id": "39eb3b74446047c0",
+                    "name": "fact_cost → dim_cost_type",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "f129fec9c4384de1906b9adbd7264f46",
+                      "resource_id": "18136dfde8c441f7",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 3,
+                      "name": "18136dfde8c441f7",
+                      "from_table_id": "94a1fe312c7f4b36",
+                      "to_table_id": "9c37ea22fdbd4755"
+                    }
+                  },
+                  {
+                    "category_id": "4775e303e8ca4f2b",
+                    "name": "fact_output → dim_project",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "28ba22c43a1847439331dfd6216ef2e0",
+                      "resource_id": "ad25ee5c2aa64ad4",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 5,
+                      "name": "ad25ee5c2aa64ad4",
+                      "from_table_id": "3215e395c987484d",
+                      "to_table_id": "8f5a388d2e3545aa"
+                    }
+                  },
+                  {
+                    "category_id": "3c643c201a554be0",
+                    "name": "fact_output → dim_org",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "7752c5d6709043b197a8faa7b648f593",
+                      "resource_id": "a103174bb0d9404c",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 6,
+                      "name": "a103174bb0d9404c",
+                      "from_table_id": "3215e395c987484d",
+                      "to_table_id": "ee6409ce5f62440f"
+                    }
+                  },
+                  {
+                    "category_id": "20b5e8569b42406a",
+                    "name": "dim_project → dim_org",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "17ae29d1aa7146fc849e7257fc0943e5",
+                      "resource_id": "a2e7ca1ecd11428e",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 7,
+                      "name": "a2e7ca1ecd11428e",
+                      "from_table_id": "8f5a388d2e3545aa",
+                      "to_table_id": "ee6409ce5f62440f"
+                    }
+                  },
+                  {
+                    "category_id": "4f6683f0faf74b6e",
+                    "name": "fact_pl_budget → dim_project",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "cba33fb5e4564c4389a01f550ea2842a",
+                      "resource_id": "66ef982497c84fa6",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 21,
+                      "name": "66ef982497c84fa6",
+                      "from_table_id": "4f3b2e217c614998",
+                      "to_table_id": "8f5a388d2e3545aa"
+                    }
+                  },
+                  {
+                    "category_id": "9a957fa5e2be4ee2",
+                    "name": "fact_pl_budget → dim_org",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "b4c94cedc3de493985a7e495a76bcf6e",
+                      "resource_id": "8807aaefae304af0",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 22,
+                      "name": "8807aaefae304af0",
+                      "from_table_id": "4f3b2e217c614998",
+                      "to_table_id": "ee6409ce5f62440f"
+                    }
+                  },
+                  {
+                    "category_id": "d559eb74cdb948d8",
+                    "name": "fact_pl_budget → dim_account",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "1d6a0780a93b48089918f845d9138ea0",
+                      "resource_id": "6b794f2db79d43f6",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 23,
+                      "name": "6b794f2db79d43f6",
+                      "from_table_id": "4f3b2e217c614998",
+                      "to_table_id": "368994c1941d41b2"
+                    }
+                  },
+                  {
+                    "category_id": "fb79a132a1034712",
+                    "name": "bridge_cost_type_account → dim_cost_type",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "5d6ce8e0bb714a2f86e4a9ca72f930ba",
+                      "resource_id": "16dc44913e624df0",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 24,
+                      "name": "16dc44913e624df0",
+                      "from_table_id": "83619756582348b2",
+                      "to_table_id": "9c37ea22fdbd4755"
+                    }
+                  },
+                  {
+                    "category_id": "afef7f7dad464e34",
+                    "name": "bridge_cost_type_account → dim_account",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "8286c64c7ddb4a51acd72b364c2cb5ac",
+                      "resource_id": "b4d365af8cb74ad8",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 25,
+                      "name": "b4d365af8cb74ad8",
+                      "from_table_id": "83619756582348b2",
+                      "to_table_id": "368994c1941d41b2"
+                    }
+                  },
+                  {
+                    "category_id": "5eeeefc613064bde",
+                    "name": "fact_project_profit → dim_project",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "db4f899ad13040c1ae436c952499027d",
+                      "resource_id": "ebe7301d6adc45f2",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 28,
+                      "name": "ebe7301d6adc45f2",
+                      "from_table_id": "d847cce3ad894de9",
+                      "to_table_id": "8f5a388d2e3545aa"
+                    }
+                  },
+                  {
+                    "category_id": "02e8eab40f9b4d5c",
+                    "name": "fact_project_profit → dim_org",
+                    "node_role": "resource",
+                    "code": null,
+                    "item": {
+                      "member_id": "c9fa7e54b5b74089882c1584028ed3f4",
+                      "resource_id": "edccb8ca632f467b",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 29,
+                      "name": "edccb8ca632f467b",
+                      "from_table_id": "d847cce3ad894de9",
+                      "to_table_id": "ee6409ce5f62440f"
+                    }
+                  }
+                ]
+              }
+            ],
+            "uncategorized": [],
+            "count": 20
+          },
+          {
+            "kind": "cube",
+            "items": [
+              {
+                "member_id": "48dfbd9e9314477a9ba048fe705d668a",
+                "resource_id": "eabbe9fab31d47bd",
+                "pinned": false,
+                "note": null,
+                "sort_order": 0,
+                "name": "成本分析Cube",
+                "code": "CostCube"
+              },
+              {
+                "member_id": "c2d31c5cd4e14106a350a513bd587d0a",
+                "resource_id": "23946a564a224522",
+                "pinned": false,
+                "note": null,
+                "sort_order": 1,
+                "name": "产值分析Cube",
+                "code": "OutputCube"
+              },
+              {
+                "member_id": "6cbeb167229c43a3bd961f1da618e93c",
+                "resource_id": "ced8f81585ba42ae",
+                "pinned": false,
+                "note": null,
+                "sort_order": 4,
+                "name": "损益科目成本Cube",
+                "code": "AccountCostCube"
+              },
+              {
+                "member_id": "24e89725b76544ff80606ddcbd64971c",
+                "resource_id": "d4405763b3614430",
+                "pinned": false,
+                "note": null,
+                "sort_order": 5,
+                "name": "利润预算Cube",
+                "code": "BudgetPlCube"
+              },
+              {
+                "member_id": "012afa94a96d43a9b39a97d8ad91c84d",
+                "resource_id": "f2a0470b14bf42f0",
+                "pinned": false,
+                "note": null,
+                "sort_order": 6,
+                "name": "项目利润Cube",
+                "code": "ProjectProfitCube"
+              },
+              {
+                "member_id": "ec1b537264e740ae9653891bee4f21d0",
+                "resource_id": "f1c3e482e2384b3f",
+                "pinned": false,
+                "note": null,
+                "sort_order": 7,
+                "name": "预实对比Cube",
+                "code": "BudgetVsActualCube"
+              }
+            ],
+            "categories": [
+              {
+                "category_id": "409c104a5ac54815",
+                "name": "对比型",
+                "node_role": "folder",
+                "code": "comparison__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "92fca08834be4ad4",
+                    "name": "项目利润Cube",
+                    "node_role": "resource",
+                    "code": "ProjectProfitCube",
+                    "item": {
+                      "member_id": "012afa94a96d43a9b39a97d8ad91c84d",
+                      "resource_id": "f2a0470b14bf42f0",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 6,
+                      "name": "项目利润Cube",
+                      "code": "ProjectProfitCube"
+                    }
+                  },
+                  {
+                    "category_id": "f4be9185b2664a7a",
+                    "name": "预实对比Cube",
+                    "node_role": "resource",
+                    "code": "BudgetVsActualCube",
+                    "item": {
+                      "member_id": "ec1b537264e740ae9653891bee4f21d0",
+                      "resource_id": "f1c3e482e2384b3f",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 7,
+                      "name": "预实对比Cube",
+                      "code": "BudgetVsActualCube"
+                    }
+                  }
+                ]
+              },
+              {
+                "category_id": "f41cb4982d544780",
+                "name": "流程型",
+                "node_role": "folder",
+                "code": "process__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "1bd83da4ef61456e",
+                    "name": "成本分析Cube",
+                    "node_role": "resource",
+                    "code": "CostCube",
+                    "item": {
+                      "member_id": "48dfbd9e9314477a9ba048fe705d668a",
+                      "resource_id": "eabbe9fab31d47bd",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 0,
+                      "name": "成本分析Cube",
+                      "code": "CostCube"
+                    }
+                  },
+                  {
+                    "category_id": "bc58a3c58054413b",
+                    "name": "产值分析Cube",
+                    "node_role": "resource",
+                    "code": "OutputCube",
+                    "item": {
+                      "member_id": "c2d31c5cd4e14106a350a513bd587d0a",
+                      "resource_id": "23946a564a224522",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 1,
+                      "name": "产值分析Cube",
+                      "code": "OutputCube"
+                    }
+                  },
+                  {
+                    "category_id": "946af87a9ef143e9",
+                    "name": "利润预算Cube",
+                    "node_role": "resource",
+                    "code": "BudgetPlCube",
+                    "item": {
+                      "member_id": "24e89725b76544ff80606ddcbd64971c",
+                      "resource_id": "d4405763b3614430",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 5,
+                      "name": "利润预算Cube",
+                      "code": "BudgetPlCube"
+                    }
+                  }
+                ]
+              },
+              {
+                "category_id": "e8032cbbbe8e4757",
+                "name": "主体型",
+                "node_role": "folder",
+                "code": "subject__space__onto_engine_test",
+                "children": [
+                  {
+                    "category_id": "2391d5af32fc4ada",
+                    "name": "产值分析Cube",
+                    "node_role": "resource",
+                    "code": "OutputCube",
+                    "item": {
+                      "member_id": "c2d31c5cd4e14106a350a513bd587d0a",
+                      "resource_id": "23946a564a224522",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 1,
+                      "name": "产值分析Cube",
+                      "code": "OutputCube"
+                    }
+                  },
+                  {
+                    "category_id": "2e098146eda94fb4",
+                    "name": "损益科目成本Cube",
+                    "node_role": "resource",
+                    "code": "AccountCostCube",
+                    "item": {
+                      "member_id": "6cbeb167229c43a3bd961f1da618e93c",
+                      "resource_id": "ced8f81585ba42ae",
+                      "pinned": false,
+                      "note": null,
+                      "sort_order": 4,
+                      "name": "损益科目成本Cube",
+                      "code": "AccountCostCube"
+                    }
+                  }
+                ]
+              }
+            ],
+            "uncategorized": [],
+            "count": 6
+          },
+          {
+            "kind": "query",
+            "items": [
+              {
+                "member_id": "81a6387380a94d11bcff643c838e33e2",
+                "resource_id": "dsq__634769",
+                "pinned": false,
+                "note": null,
+                "sort_order": 0,
+                "name": "6月项目成本",
+                "subtitle": "clickhouse"
+              }
+            ],
+            "categories": [],
+            "uncategorized": [
+              {
+                "member_id": "81a6387380a94d11bcff643c838e33e2",
+                "resource_id": "dsq__634769",
+                "pinned": false,
+                "note": null,
+                "sort_order": 0,
+                "name": "6月项目成本",
+                "subtitle": "clickhouse"
+              }
+            ],
+            "count": 1
+          },
+          {
+            "kind": "synonym",
+            "items": [
+              {
+                "resource_id": "d4ff4611-c792-4016-9b55-c2245f5afd8d",
+                "derived": true,
+                "name": "地区 → CostCube.region",
+                "code": "CostCube.region"
+              },
+              {
+                "resource_id": "1f5a49be-427c-4d32-8023-c5fdf96f132d",
+                "derived": true,
+                "name": "片区 → CostCube.region",
+                "code": "CostCube.region"
+              },
+              {
+                "resource_id": "c91fed97-85dd-4532-9e7e-8a287cb08034",
+                "derived": true,
+                "name": "产值额 → OutputCube.output_amount_total",
+                "code": "OutputCube.output_amount_total"
+              },
+              {
+                "resource_id": "40bc6164-2f89-4f8d-a251-c471b6c5a737",
+                "derived": true,
+                "name": "营收 → OutputCube.output_amount_total",
+                "code": "OutputCube.output_amount_total"
+              }
+            ],
+            "categories": [],
+            "uncategorized": [
+              {
+                "resource_id": "d4ff4611-c792-4016-9b55-c2245f5afd8d",
+                "derived": true,
+                "name": "地区 → CostCube.region",
+                "code": "CostCube.region"
+              },
+              {
+                "resource_id": "1f5a49be-427c-4d32-8023-c5fdf96f132d",
+                "derived": true,
+                "name": "片区 → CostCube.region",
+                "code": "CostCube.region"
+              },
+              {
+                "resource_id": "c91fed97-85dd-4532-9e7e-8a287cb08034",
+                "derived": true,
+                "name": "产值额 → OutputCube.output_amount_total",
+                "code": "OutputCube.output_amount_total"
+              },
+              {
+                "resource_id": "40bc6164-2f89-4f8d-a251-c471b6c5a737",
+                "derived": true,
+                "name": "营收 → OutputCube.output_amount_total",
+                "code": "OutputCube.output_amount_total"
+              }
+            ],
+            "count": 4
+          },
+          {
+            "kind": "concept_group",
+            "items": [],
+            "categories": [],
+            "uncategorized": [],
+            "count": 0
+          },
+          {
+            "kind": "dimension_hierarchy",
+            "items": [
+              {
+                "resource_id": "fdfe50db-1caf-4a6e-80e8-be71e85351ab",
+                "derived": true,
+                "name": "CostCube.cost_type_id → CostCube.parent_cost_type_id",
+                "subtitle": "科目层级"
+              },
+              {
+                "resource_id": "9b3688b0-e6c9-4e2c-a596-efb8c9c71a1b",
+                "derived": true,
+                "name": "CostCube.org_id → CostCube.parent_org_id",
+                "subtitle": "组织层级"
+              },
+              {
+                "resource_id": "03ed05b8-3343-4911-ad76-7e8b0f091d5a",
+                "derived": true,
+                "name": "CostCube.project_id → CostCube.region",
+                "subtitle": "地域层级"
+              }
+            ],
+            "categories": [],
+            "uncategorized": [
+              {
+                "resource_id": "fdfe50db-1caf-4a6e-80e8-be71e85351ab",
+                "derived": true,
+                "name": "CostCube.cost_type_id → CostCube.parent_cost_type_id",
+                "subtitle": "科目层级"
+              },
+              {
+                "resource_id": "9b3688b0-e6c9-4e2c-a596-efb8c9c71a1b",
+                "derived": true,
+                "name": "CostCube.org_id → CostCube.parent_org_id",
+                "subtitle": "组织层级"
+              },
+              {
+                "resource_id": "03ed05b8-3343-4911-ad76-7e8b0f091d5a",
+                "derived": true,
+                "name": "CostCube.project_id → CostCube.region",
+                "subtitle": "地域层级"
+              }
+            ],
+            "count": 3
+          }
+        ]
+      },
+      {
+        "group": "app",
+        "name": "应用",
+        "kinds": [
+          {
+            "kind": "workflow",
+            "items": [],
+            "categories": [],
+            "uncategorized": [],
+            "count": 0
+          },
+          {
+            "kind": "component",
+            "items": [],
+            "categories": [],
+            "uncategorized": [],
+            "count": 0
+          }
+        ]
+      },
+      {
+        "group": "script",
+        "name": "脚本",
+        "kinds": [
+          {
+            "kind": "script",
+            "items": [
+              {
+                "member_id": "42b590e69f404403a6a86ed28ea729d4",
+                "resource_id": "00f699d7-51fe-4b51-be09-213a09a47225",
+                "pinned": false,
+                "note": null,
+                "sort_order": 0,
+                "name": "onto_engine_test_engine_verify_advanced",
+                "subtitle": "data"
+              },
+              {
+                "member_id": "c3c25845b9274ec89a6e483a45808609",
+                "resource_id": "ea65410b-7ce1-4e9d-981b-1bd5ab1a071c",
+                "pinned": false,
+                "note": null,
+                "sort_order": 1,
+                "name": "onto_engine_test_graph_verify",
+                "subtitle": "data"
+              },
+              {
+                "member_id": "200e91830b8e4382a6e8ae46c0e62959",
+                "resource_id": "4a99c437-bf52-435b-ad0a-f59817e0c790",
+                "pinned": false,
+                "note": null,
+                "sort_order": 2,
+                "name": "onto_engine_test_ontology_init",
+                "subtitle": "setup"
+              },
+              {
+                "member_id": "10cd45acc94b484f8a9081805ebd968e",
+                "resource_id": "fcd34e2f-587a-4a39-bc61-6722fe318fe9",
+                "pinned": false,
+                "note": null,
+                "sort_order": 3,
+                "name": "onto_engine_test_seed_data",
+                "subtitle": "data"
+              },
+              {
+                "member_id": "416ed015119d44e1813ce3246aed6de7",
+                "resource_id": "a62a12d8-6a23-42da-a885-270ac85975ee",
+                "pinned": false,
+                "note": null,
+                "sort_order": 4,
+                "name": "onto_engine_test_meta_seed",
+                "subtitle": "data"
+              },
+              {
+                "member_id": "8243b1c6e315412da0c158b243e6fdc2",
+                "resource_id": "f2094284-8724-4335-8b2e-9a38663a482d",
+                "pinned": false,
+                "note": null,
+                "sort_order": 5,
+                "name": "onto_engine_test_category_mount",
+                "subtitle": "setup"
+              },
+              {
+                "member_id": "5452545caa634de3986d8e08cf48122a",
+                "resource_id": "62372f98-810e-49be-a0b2-f910202719a1",
+                "pinned": false,
+                "note": null,
+                "sort_order": 6,
+                "name": "onto_engine_test_engine_verify",
+                "subtitle": "data"
+              },
+              {
+                "member_id": "2f79e85eb38f44958675d48c624799d6",
+                "resource_id": "cdbb26bc-59a1-4af6-8153-055accd46d14",
+                "pinned": false,
+                "note": null,
+                "sort_order": 9,
+                "name": "onto_engine_fn_cost_structure",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "55a31f21a9df46f4bb88df3c8de03036",
+                "resource_id": "70f91c40-19d1-437c-948e-964fc950f1e8",
+                "pinned": false,
+                "note": null,
+                "sort_order": 10,
+                "name": "onto_engine_test_functions_register",
+                "subtitle": "setup"
+              },
+              {
+                "member_id": "f3323a2f85f34d44ac434f447e01c8ed",
+                "resource_id": "52ba8e28-b5f2-4424-95d6-8a11953c084c",
+                "pinned": false,
+                "note": null,
+                "sort_order": 11,
+                "name": "onto_engine_fn_region_cost",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "0ee52ddf01754c15b5d21b6163c37fc7",
+                "resource_id": "25551e91-ccfa-41fc-9b4f-f4e323eb5eeb",
+                "pinned": false,
+                "note": null,
+                "sort_order": 12,
+                "name": "onto_engine_test_function_rules_seed",
+                "subtitle": "data"
+              },
+              {
+                "member_id": "724e2a3d41a14315addf352465ee1979",
+                "resource_id": "54ee641c-74f9-4405-bb68-4d6aaa4c654d",
+                "pinned": false,
+                "note": null,
+                "sort_order": 13,
+                "name": "onto_engine_fn_get_summary",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "e0744763953b4e128d46a828b1b08f4d",
+                "resource_id": "704626d2-a7ba-4adf-8a8e-069197cb4271",
+                "pinned": false,
+                "note": null,
+                "sort_order": 14,
+                "name": "onto_engine_fn_project_summary",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "8b539ed83e004b488017125e6b6b31fc",
+                "resource_id": "ffba9faf-9bc8-4b34-8d02-83760634d9f4",
+                "pinned": false,
+                "note": null,
+                "sort_order": 15,
+                "name": "onto_engine_fn_budget_vs_actual",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "f36da0048d7f44e580110938cb3c55cf",
+                "resource_id": "93ff6353-356b-4c46-ade5-a5e5d7bba77b",
+                "pinned": false,
+                "note": null,
+                "sort_order": 16,
+                "name": "onto_engine_fn_top_cost_projects",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "74a658f902234a3489d5105d9b53d347",
+                "resource_id": "ea232682-571a-4d05-b692-d830db0871ad",
+                "pinned": false,
+                "note": null,
+                "sort_order": 25,
+                "name": "onto_engine_fn_cost_extremes",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "4cf8297de4a24d25a43d510b78b32fe8",
+                "resource_id": "94b2e5c0-c2aa-4219-b1a5-5b068022ce2c",
+                "pinned": false,
+                "note": null,
+                "sort_order": 30,
+                "name": "profit01_ontology_init",
+                "subtitle": "setup"
+              },
+              {
+                "member_id": "a3121a8443aa43809407312a607cd439",
+                "resource_id": "ad509779-bb83-4dd3-b7e1-540a7e779c4a",
+                "pinned": false,
+                "note": null,
+                "sort_order": 31,
+                "name": "profit01_seed_data",
+                "subtitle": "data"
+              },
+              {
+                "member_id": "f192b3d70d804cbbb1e97e1d30e2d729",
+                "resource_id": "45956104-a8be-4fc2-93ac-22914af2724c",
+                "pinned": false,
+                "note": null,
+                "sort_order": 33,
+                "name": "profit01_fn_get_summary",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "6119c9df08c24d7b8477af3c42a6f466",
+                "resource_id": "f2efab5d-aaa9-419a-ace1-908aca1397b0",
+                "pinned": false,
+                "note": null,
+                "sort_order": 34,
+                "name": "profit01_fn_account_breakdown",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "0cd6077b06cd49a881e32720e0315516",
+                "resource_id": "fcf51f31-dedb-4a03-9eb3-e3b117a8cc57",
+                "pinned": false,
+                "note": null,
+                "sort_order": 35,
+                "name": "profit01_fn_budget_vs_actual",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "a0b4a147b712493db8ce8cf30345c47e",
+                "resource_id": "da5a0464-41ad-4a3b-8b6b-d619003ab962",
+                "pinned": false,
+                "note": null,
+                "sort_order": 36,
+                "name": "profit01_fn_org_profit",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "9991219c09af4af3abd82be99b30086b",
+                "resource_id": "bb28eed0-4d4c-4342-815b-74dd9c4b48dd",
+                "pinned": false,
+                "note": null,
+                "sort_order": 38,
+                "name": "profit01_fn_project_profit",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "3fc2d606bb99499490d2abdddc6d5c44",
+                "resource_id": "973ae915-547c-4d9f-adb6-69d60f0af1f8",
+                "pinned": false,
+                "note": null,
+                "sort_order": 39,
+                "name": "profit01_fn_cost_type_breakdown",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "1c442d4ef43a413e9425ac4f54c3b176",
+                "resource_id": "d7bbae62-7db0-4142-8c82-515ec8055949",
+                "pinned": false,
+                "note": null,
+                "sort_order": 40,
+                "name": "profit01_fn_region_profit",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "e0e41fabd6d24c5c95b162006b680eae",
+                "resource_id": "43308cd6-d612-4a8f-bcca-6da0f12fcaa0",
+                "pinned": false,
+                "note": null,
+                "sort_order": 41,
+                "name": "profit01_category_mount",
+                "subtitle": "setup"
+              }
+            ],
+            "categories": [],
+            "uncategorized": [
+              {
+                "member_id": "42b590e69f404403a6a86ed28ea729d4",
+                "resource_id": "00f699d7-51fe-4b51-be09-213a09a47225",
+                "pinned": false,
+                "note": null,
+                "sort_order": 0,
+                "name": "onto_engine_test_engine_verify_advanced",
+                "subtitle": "data"
+              },
+              {
+                "member_id": "c3c25845b9274ec89a6e483a45808609",
+                "resource_id": "ea65410b-7ce1-4e9d-981b-1bd5ab1a071c",
+                "pinned": false,
+                "note": null,
+                "sort_order": 1,
+                "name": "onto_engine_test_graph_verify",
+                "subtitle": "data"
+              },
+              {
+                "member_id": "200e91830b8e4382a6e8ae46c0e62959",
+                "resource_id": "4a99c437-bf52-435b-ad0a-f59817e0c790",
+                "pinned": false,
+                "note": null,
+                "sort_order": 2,
+                "name": "onto_engine_test_ontology_init",
+                "subtitle": "setup"
+              },
+              {
+                "member_id": "10cd45acc94b484f8a9081805ebd968e",
+                "resource_id": "fcd34e2f-587a-4a39-bc61-6722fe318fe9",
+                "pinned": false,
+                "note": null,
+                "sort_order": 3,
+                "name": "onto_engine_test_seed_data",
+                "subtitle": "data"
+              },
+              {
+                "member_id": "416ed015119d44e1813ce3246aed6de7",
+                "resource_id": "a62a12d8-6a23-42da-a885-270ac85975ee",
+                "pinned": false,
+                "note": null,
+                "sort_order": 4,
+                "name": "onto_engine_test_meta_seed",
+                "subtitle": "data"
+              },
+              {
+                "member_id": "8243b1c6e315412da0c158b243e6fdc2",
+                "resource_id": "f2094284-8724-4335-8b2e-9a38663a482d",
+                "pinned": false,
+                "note": null,
+                "sort_order": 5,
+                "name": "onto_engine_test_category_mount",
+                "subtitle": "setup"
+              },
+              {
+                "member_id": "5452545caa634de3986d8e08cf48122a",
+                "resource_id": "62372f98-810e-49be-a0b2-f910202719a1",
+                "pinned": false,
+                "note": null,
+                "sort_order": 6,
+                "name": "onto_engine_test_engine_verify",
+                "subtitle": "data"
+              },
+              {
+                "member_id": "2f79e85eb38f44958675d48c624799d6",
+                "resource_id": "cdbb26bc-59a1-4af6-8153-055accd46d14",
+                "pinned": false,
+                "note": null,
+                "sort_order": 9,
+                "name": "onto_engine_fn_cost_structure",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "55a31f21a9df46f4bb88df3c8de03036",
+                "resource_id": "70f91c40-19d1-437c-948e-964fc950f1e8",
+                "pinned": false,
+                "note": null,
+                "sort_order": 10,
+                "name": "onto_engine_test_functions_register",
+                "subtitle": "setup"
+              },
+              {
+                "member_id": "f3323a2f85f34d44ac434f447e01c8ed",
+                "resource_id": "52ba8e28-b5f2-4424-95d6-8a11953c084c",
+                "pinned": false,
+                "note": null,
+                "sort_order": 11,
+                "name": "onto_engine_fn_region_cost",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "0ee52ddf01754c15b5d21b6163c37fc7",
+                "resource_id": "25551e91-ccfa-41fc-9b4f-f4e323eb5eeb",
+                "pinned": false,
+                "note": null,
+                "sort_order": 12,
+                "name": "onto_engine_test_function_rules_seed",
+                "subtitle": "data"
+              },
+              {
+                "member_id": "724e2a3d41a14315addf352465ee1979",
+                "resource_id": "54ee641c-74f9-4405-bb68-4d6aaa4c654d",
+                "pinned": false,
+                "note": null,
+                "sort_order": 13,
+                "name": "onto_engine_fn_get_summary",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "e0744763953b4e128d46a828b1b08f4d",
+                "resource_id": "704626d2-a7ba-4adf-8a8e-069197cb4271",
+                "pinned": false,
+                "note": null,
+                "sort_order": 14,
+                "name": "onto_engine_fn_project_summary",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "8b539ed83e004b488017125e6b6b31fc",
+                "resource_id": "ffba9faf-9bc8-4b34-8d02-83760634d9f4",
+                "pinned": false,
+                "note": null,
+                "sort_order": 15,
+                "name": "onto_engine_fn_budget_vs_actual",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "f36da0048d7f44e580110938cb3c55cf",
+                "resource_id": "93ff6353-356b-4c46-ade5-a5e5d7bba77b",
+                "pinned": false,
+                "note": null,
+                "sort_order": 16,
+                "name": "onto_engine_fn_top_cost_projects",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "74a658f902234a3489d5105d9b53d347",
+                "resource_id": "ea232682-571a-4d05-b692-d830db0871ad",
+                "pinned": false,
+                "note": null,
+                "sort_order": 25,
+                "name": "onto_engine_fn_cost_extremes",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "4cf8297de4a24d25a43d510b78b32fe8",
+                "resource_id": "94b2e5c0-c2aa-4219-b1a5-5b068022ce2c",
+                "pinned": false,
+                "note": null,
+                "sort_order": 30,
+                "name": "profit01_ontology_init",
+                "subtitle": "setup"
+              },
+              {
+                "member_id": "a3121a8443aa43809407312a607cd439",
+                "resource_id": "ad509779-bb83-4dd3-b7e1-540a7e779c4a",
+                "pinned": false,
+                "note": null,
+                "sort_order": 31,
+                "name": "profit01_seed_data",
+                "subtitle": "data"
+              },
+              {
+                "member_id": "f192b3d70d804cbbb1e97e1d30e2d729",
+                "resource_id": "45956104-a8be-4fc2-93ac-22914af2724c",
+                "pinned": false,
+                "note": null,
+                "sort_order": 33,
+                "name": "profit01_fn_get_summary",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "6119c9df08c24d7b8477af3c42a6f466",
+                "resource_id": "f2efab5d-aaa9-419a-ace1-908aca1397b0",
+                "pinned": false,
+                "note": null,
+                "sort_order": 34,
+                "name": "profit01_fn_account_breakdown",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "0cd6077b06cd49a881e32720e0315516",
+                "resource_id": "fcf51f31-dedb-4a03-9eb3-e3b117a8cc57",
+                "pinned": false,
+                "note": null,
+                "sort_order": 35,
+                "name": "profit01_fn_budget_vs_actual",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "a0b4a147b712493db8ce8cf30345c47e",
+                "resource_id": "da5a0464-41ad-4a3b-8b6b-d619003ab962",
+                "pinned": false,
+                "note": null,
+                "sort_order": 36,
+                "name": "profit01_fn_org_profit",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "9991219c09af4af3abd82be99b30086b",
+                "resource_id": "bb28eed0-4d4c-4342-815b-74dd9c4b48dd",
+                "pinned": false,
+                "note": null,
+                "sort_order": 38,
+                "name": "profit01_fn_project_profit",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "3fc2d606bb99499490d2abdddc6d5c44",
+                "resource_id": "973ae915-547c-4d9f-adb6-69d60f0af1f8",
+                "pinned": false,
+                "note": null,
+                "sort_order": 39,
+                "name": "profit01_fn_cost_type_breakdown",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "1c442d4ef43a413e9425ac4f54c3b176",
+                "resource_id": "d7bbae62-7db0-4142-8c82-515ec8055949",
+                "pinned": false,
+                "note": null,
+                "sort_order": 40,
+                "name": "profit01_fn_region_profit",
+                "subtitle": "ontology_function"
+              },
+              {
+                "member_id": "e0e41fabd6d24c5c95b162006b680eae",
+                "resource_id": "43308cd6-d612-4a8f-bcca-6da0f12fcaa0",
+                "pinned": false,
+                "note": null,
+                "sort_order": 41,
+                "name": "profit01_category_mount",
+                "subtitle": "setup"
+              }
+            ],
+            "count": 26
+          }
+        ]
+      }
+    ]
+  }
+}

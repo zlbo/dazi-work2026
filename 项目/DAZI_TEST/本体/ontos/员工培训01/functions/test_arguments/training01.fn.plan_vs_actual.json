@@ -1,0 +1,9 @@
+{
+  "v": 1,
+  "arguments": {
+    "fiscal_year": 2025,
+    "fiscal_period": 0,
+    "plan_version": "2025年度培训计划"
+  },
+  "object_type_code": "TrainingPlan"
+}

@@ -13,6 +13,7 @@
 | **日常开发**（推荐） | `<工作区根>/项目/<业务名>/本体/ontos/<实现名>/setup/*.py`（初始化、灌数）                                   |
 |                      | `<工作区根>/项目/<业务名>/本体/ontos/<实现名>/functions/*.py`（本体函数、动作）                           |
 | **空间 ID**          | `项目/<业务名>/本体/ontos/<实现名>/README.md` 中的数据空间 ID                                              |
+| **本体域**           | `快速启动_<实现名>.md` §1 的 **本体域 code / ID**（`dazi onto domain ensure` 或侧栏同步）                  |
 | **参考示例**         | **`资源/examples/onto/利润示例/`**、**`资源/examples/onto/销售示例/`**（侧栏 **帮助 → 示例** 或 `dazi examples sync`；总览 `onto/README.md`） |
 | **本文档**           | `资源/docs/onto/dazi_script_sdk_reference.md`（`dazi docs sync` 后）                                        |
 
@@ -39,6 +40,7 @@
 - `s.ontology`：对象中心能力（objects/features）
 - `s.ontology_rules`：规则集与规则
 - `s.scripts`：脚本记录管理
+- `s.domain`：本体域成员挂载（`ontology_domain_members`；与 `s.categories` **不同**，见 §5.7）
 - `output`：打印与成功提示（`output.print` / `output.success`）
 
 命名规范（便于 LLM 推断）：
@@ -193,21 +195,86 @@ s.tables.add_relationship(..., category_347="主数据关联")
 s.onto.define_link_type("order_contains_product", "...", ..., category_347="归属关系")
 ```
 
-### 5.7 `s.ontology` / `s.ontology_rules` / `s.scripts`
+### 5.7 `s.domain`（本体域成员挂载）
+
+将表/Cube/对象/链接/函数等资源挂入 **本体域**（写入 `ontology_domain_members`），供管理端 **本体域详情树** 展示。与 §5.6 **平台分类**（`ads_categories`）是**两套独立机制**：
+
+| 维度 | `s.categories` | `s.domain` |
+| ---- | -------------- | ---------- |
+| 存储 | 平台分类桥表 | `ontology_domain_members` |
+| 前端 | 空间侧栏分类视图 | **本体域**详情（各 kind 的 count / 树） |
+| 脚本时机 | `*_category_mount.py` | **category_mount 之后**（同脚本末尾或独立 `*_domain_mount.py`） |
+
+**域 code / ID**：从实现单元 `快速启动_<名>.md` §1 读取（扩展创建或 `dazi onto domain ensure` 后回写）。`function_id` 前缀建议与 **本体域 code** 一致（如 `profit01.fn.get_summary`）。
+
+- `s.domain.ensure(code, name, ...)` — 幂等创建/更新域（通常扩展已 ensure，脚本内可省略）
+- `s.domain.mount(domain_code_or_id, kind, keys, pinned=False, strict=True)` — 按业务键挂成员
+- `s.domain.apply_registry(DOMAIN_REGISTRY, strict=False)` — 批量入域（推荐）
+- `s.domain.unmount(domain, kind, keys)` — 按业务键移除
+- `s.domain.tree(domain)` — 域树（调试）
+- `s.domain.list()` — 空间内域列表
+- `s.domain.backfill_default(code=..., name=...)` — **存量回填**（整空间资源挂入指定域；共享空间慎用）
+
+**`DOMAIN_REGISTRY` 结构**（members 的 kind 用 SDK 规范名；`object` / `link` 会自动归一为 `object_type` / `link_type`）：
+
+```python
+DOMAIN_CODE = "profit01"  # 与快速启动 §1 本体域 code 一致
+
+DOMAIN_REGISTRY = {
+    "code": DOMAIN_CODE,
+    "name": "利润分析01",
+    "members": {
+        "table": ["dim_account", "fact_pl_budget"],
+        "cube": ["ProjectProfitCube", "BudgetVsActualCube"],
+        "object_type": ["Account", "Project", "ProfitAnalysis"],
+        "link_type": ["budget_for_project", "profit_analysis_by_project"],
+        "function": ["profit01.fn.get_summary", "profit01.fn.project_profit"],
+        # "relation"：域成员键为 relationship 主键，非 (from_table, to_table) 元组；可暂省略
+    },
+}
+
+s.domain.apply_registry(DOMAIN_REGISTRY, strict=False)
+```
+
+**从 `CATEGORY_REGISTRY` 生成 members**（附录 B 与域成员资源集一致时，可在 `*_category_mount.py` 末尾追加）：
+
+```python
+def _flatten_for_domain(reg):
+    kind_map = {"object": "object_type", "link": "link_type"}
+    members = {}
+    for kind, cats in reg.items():
+        if kind == "relation":
+            continue
+        dk = kind_map.get(kind, kind)
+        keys = [x for items in cats.values() for x in items if not isinstance(x, tuple)]
+        if keys:
+            members[dk] = keys
+    return members
+
+s.domain.apply_registry(
+    {"code": DOMAIN_CODE, "name": DOMAIN_NAME, "members": _flatten_for_domain(CATEGORY_REGISTRY)},
+    strict=False,
+)
+```
+
+**验收**：管理端打开 §1 的 **本体域 ID** → 表/对象/Cube/函数 kind **count > 0** 且可展开；或 `dazi onto domain show --domain-id <id>`。
+
+### 5.8 `s.ontology` / `s.ontology_rules` / `s.scripts`
 
 见上文；规则：`ensure_rule_set` + `upsert_rule`；脚本记录：`create` / `ensure` / `list` 等。
 
 ## 6. 标准初始化流程（建议）
 
-1. 确认 `space_id`（实现单元 README）
+1. 确认 `space_id`（实现单元 README）与 **本体域 code/ID**（快速启动 §1；未同步则 `dazi onto domain ensure`）
 2. 建表与灌数（`s.sql`；灌数规范见 seed 指南）
 3. `s.tables.register_with_meta`（`TABLE_REGISTRY` 含表/列 `display_name`、`description`）
 4. **`s.tables.add_relationship`**（与规划「表间关系」一致；**勿省略**）
 5. `s.register_cube`
 6. `s.onto` 定义对象、属性、链接
 7. 注册函数/动作：`dazi onto script publish ... --register-function-id`（可选 `--register-platform-category`）；**发布后** `save-test-arguments`
-8. 函数齐后 run `*_category_mount.py`（全量分类；或依赖步骤 7 内联 `--register-platform-category`）
-9. 配置规则（如需要）
+8. 函数齐后 run `*_category_mount.py`（全量 **平台分类**；或依赖步骤 7 内联 `--register-platform-category`）
+9. **同脚本末尾或独立脚本**：`s.domain.apply_registry(DOMAIN_REGISTRY)`（**本体域成员**；见 §5.7）
+10. 配置规则（如需要）
 
 ## 7. 在 dazi-vscode 中发布与运行
 

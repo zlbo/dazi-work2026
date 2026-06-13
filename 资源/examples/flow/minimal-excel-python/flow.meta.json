@@ -1,0 +1,23 @@
+{
+  "flowId": "<平台 flowId>",
+  "flowName": "minimal-excel-python",
+  "nodes": {
+    "00000000-0000-4000-8000-000000000001": {
+      "nodeId": "start-node",
+      "nodeType": "start"
+    },
+    "00000000-0000-4000-8000-000000000002": {
+      "nodeId": "n-excel-demo",
+      "nodeType": "excel-python",
+      "dir": "节点/Excel示例",
+      "codeFile": "code.py",
+      "codeLanguage": "python",
+      "codeHash": ""
+    },
+    "00000000-0000-4000-8000-000000000003": {
+      "nodeId": "end-node",
+      "nodeType": "end"
+    }
+  },
+  "graphFingerprint": "sha1:example"
+}

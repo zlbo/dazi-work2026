@@ -18,6 +18,6 @@
 ## 使用
 
 - **规划阶段**：通读 `plans/*.md`；与 [销售示例](../销售示例/) 对照时写清差异说明
-- **实施阶段**：init **不含** `apply_registry`；分类在 `profit_category_mount.py`（最后执行）
+- **实施阶段**：init **不含** `apply_registry`；最后 run `profit_category_mount.py`（**平台分类** + **`s.domain` 域成员**；域 code = `profit`）
 
 规范指南：`资源/docs/onto/本体规划指南.md`

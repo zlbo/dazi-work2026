@@ -1,0 +1,9 @@
+{
+  "kind": "domain_backed",
+  "sourceDomainId": "3dc87cac8ba94dad9d4b6b5460bf1494",
+  "domainCode": "default",
+  "domainName": "本体引擎测试",
+  "spaceId": "space__onto_engine_test",
+  "materializedAt": "2026-06-13T12:22:27.211Z",
+  "lastSnapshotAt": "2026-06-13T12:22:27.211Z"
+}

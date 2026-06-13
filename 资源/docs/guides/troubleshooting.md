@@ -84,7 +84,7 @@ dazi doctor --workspace-root D:\path\to\dazi-work
 检查 `.cursor/mcp.json` 配置。MCP 需能调用 bundled CLI，示例：
 
 ```powershell
-$env:DAZI_BUNDLED_DIR = "$env:USERPROFILE\.cursor\extensions\dazitech.dazi-vscode-3.1.1\bundled\clis"
+$env:DAZI_BUNDLED_DIR = "$env:USERPROFILE\.cursor\extensions\dazitech.dazi-vscode-3.1.4\bundled\clis"
 node "$env:DAZI_BUNDLED_DIR\dazi.js" mcp stdio
 ```
 
