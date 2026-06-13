@@ -18,6 +18,6 @@
 ## 使用
 
 - **规划阶段**：通读 `plans/*.md` 学结构；在本项目 `plans/` **独立撰写** + 差异说明
-- **实施阶段**：`plans/` 定稿后对照 `setup/`、`functions/` API 写法或复制改造
+- **实施阶段**：`plans/` 定稿后对照 `setup/`、`functions/`；最后 run `sales_category_mount.py`（**平台分类** + **`s.domain` 域成员**；域 code = `sales`）
 
 规范指南：`资源/docs/onto/本体规划指南.md`

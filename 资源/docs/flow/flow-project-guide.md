@@ -1,7 +1,7 @@
 # 数据流程项目开发指南
 
 **文档 ID**: `flow/flow-project-guide`  
-**适用**: `dazi-vscode` v3.1.1+、`dazi-work` 工作区、业务项目 `项目/<业务名>/`
+**适用**: `dazi-vscode` v3.1.4+、`dazi-work` 工作区、业务项目 `项目/<业务名>/`
 
 ---
 

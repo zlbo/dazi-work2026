@@ -1,14 +1,19 @@
-"""利润分析本体 — 平台分类挂载（CATEGORY_REGISTRY）
+"""利润分析本体 — 平台分类 + 本体域成员挂载
 
-与灌数脚本类似，**独立步骤、放在实施流程最后**：
-init → seed → 发布全部函数 → **本脚本**。
+init → seed → 发布全部函数 → **本脚本**（含 `s.categories` 与 `s.domain`）。
 
 放置：资源/examples/onto/利润示例/setup/profit_category_mount.py
 发布：dazi onto script publish <item-path>/setup/profit_category_mount.py --space <space-id> --type setup
 规划对照：资源/examples/onto/利润示例/plans/规划示例_利润分析本体方案.md 附录 B
+
+本体域 code 与 function_id 前缀一致（`profit.fn.*`）；复制到业务项目时改为快速启动 §1 的本体域 code。
 """
 
 import json
+
+SPACE_ID = "space__misc_01"
+DOMAIN_CODE = "profit"
+DOMAIN_NAME = "利润分析示例"
 
 # 与规划附录 B 一一对应；category 值必须是平台标准分类中文名
 CATEGORY_REGISTRY = {
@@ -64,22 +69,52 @@ CATEGORY_REGISTRY = {
 }
 
 
-def main():
-    space_id = "space__misc_01"
-    s = space.get(space_id)
+def _flatten_for_domain(reg):
+    """CATEGORY_REGISTRY → DOMAIN_REGISTRY members（relation 元组暂跳过）。"""
+    kind_map = {"object": "object_type", "link": "link_type"}
+    members = {}
+    for kind, cats in reg.items():
+        if kind == "relation":
+            continue
+        dk = kind_map.get(kind, kind)
+        keys = []
+        for items in cats.values():
+            for item in items:
+                if isinstance(item, tuple):
+                    continue
+                keys.append(item)
+        if keys:
+            members[dk] = keys
+    return members
 
-    output.print("=== 利润分析 — 平台分类挂载 ===")
-    output.print(f"空间: {space_id}")
+
+def main():
+    s = space.get(SPACE_ID)
+
+    output.print("=== 利润分析 — 平台分类 + 本体域成员 ===")
+    output.print(f"空间: {SPACE_ID} · 域: {DOMAIN_CODE}")
 
     cat_counts = s.categories.apply_registry(CATEGORY_REGISTRY, skip_missing=True)
     for kind, cnt in cat_counts.items():
         if cnt:
             output.print(f"OK 分类[{kind}] 挂载 {cnt} 项")
 
+    domain_summary = s.domain.apply_registry(
+        {
+            "code": DOMAIN_CODE,
+            "name": DOMAIN_NAME,
+            "members": _flatten_for_domain(CATEGORY_REGISTRY),
+        },
+        strict=False,
+    )
+    output.print(f"OK 本体域成员 kinds: {json.dumps(domain_summary.get('kinds', {}), ensure_ascii=True, default=str)}")
+
     summary = {
         "ok": True,
-        "space_id": space_id,
+        "space_id": SPACE_ID,
+        "domain_code": DOMAIN_CODE,
         "category_mounts": cat_counts,
+        "domain_mounts": domain_summary.get("kinds", {}),
     }
-    output.success("平台分类挂载完成")
+    output.success("平台分类与本体域成员挂载完成")
     output.print("__JSON_SUMMARY__" + json.dumps(summary, ensure_ascii=True, default=str))

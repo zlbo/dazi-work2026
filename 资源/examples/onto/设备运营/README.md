@@ -19,6 +19,6 @@
 ## 使用
 
 - **规划阶段**：推荐阅读（含 Cube + 冗余字段策略 + 11 函数清单）
-- **实施阶段**：init 不含 `apply_registry`；见 `equip_ops_category_mount.py`
+- **实施阶段**：init 不含 `apply_registry`；最后 run `equip_ops_category_mount.py`（**平台分类** + **`s.domain` 域成员**；域 code = `equip_ops`）
 
 规范指南：`资源/docs/onto/本体规划指南.md`

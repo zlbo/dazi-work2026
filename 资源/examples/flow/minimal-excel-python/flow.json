@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "start-node",
+      "type": "custom",
+      "position": { "x": 50, "y": 250 },
+      "data": { "label": "开始", "type": "start" },
+      "deletable": false,
+      "node_uuid": "00000000-0000-4000-8000-000000000001"
+    },
+    {
+      "id": "n-excel-demo",
+      "type": "custom",
+      "position": { "x": 310, "y": 250 },
+      "data": {
+        "label": "Excel示例",
+        "type": "excel-python",
+        "managed_file_id": "<平台文件 UUID>",
+        "output_variable_name": "示例输出表"
+      },
+      "node_uuid": "00000000-0000-4000-8000-000000000002"
+    },
+    {
+      "id": "end-node",
+      "type": "custom",
+      "position": { "x": 850, "y": 250 },
+      "data": { "label": "结束", "type": "end" },
+      "deletable": false,
+      "node_uuid": "00000000-0000-4000-8000-000000000003"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "start-node",
+      "sourceHandle": "r",
+      "target": "n-excel-demo",
+      "targetHandle": "l"
+    },
+    {
+      "id": "e2",
+      "source": "n-excel-demo",
+      "sourceHandle": "r",
+      "target": "end-node",
+      "targetHandle": "l"
+    }
+  ]
+}

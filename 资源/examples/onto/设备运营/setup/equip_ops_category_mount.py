@@ -1,11 +1,19 @@
-"""化工设备运营分析 — 347 分类挂载（init + seed + 全部函数 publish 之后执行）
+"""化工设备运营分析 — 平台分类 + 本体域成员挂载
 
-放置：项目/DAZI_TEST/本体/ontos/设备运营/setup/equip_ops_category_mount.py
-发布：dazi onto script publish 项目/DAZI_TEST/本体/ontos/设备运营/setup/equip_ops_category_mount.py --space space_cate_test01 --type setup
-规划对照：项目/DAZI_TEST/本体/ontos/设备运营/plans/化工设备运营分析本体方案.md 附录 B
+init → seed → 发布全部函数 → **本脚本**（含 `s.categories` 与 `s.domain`）。
+
+放置：资源/examples/onto/设备运营/setup/equip_ops_category_mount.py
+发布：dazi onto script publish <路径>/setup/equip_ops_category_mount.py --space space_cate_test01 --type setup
+规划对照：plans/化工设备运营分析本体方案.md 附录 B
+
+本体域 code 与 function_id 前缀一致（`equip_ops.fn.*`）；复制到业务项目时改为快速启动 §1 的本体域 code。
 """
 
 import json
+
+SPACE_ID = "space_cate_test01"
+DOMAIN_CODE = "equip_ops"
+DOMAIN_NAME = "化工设备运营分析"
 
 CATEGORY_REGISTRY = {
     "table": {
@@ -96,11 +104,51 @@ CATEGORY_REGISTRY = {
 }
 
 
+def _flatten_for_domain(reg):
+    """CATEGORY_REGISTRY → DOMAIN_REGISTRY members（relation 元组暂跳过）。"""
+    kind_map = {"object": "object_type", "link": "link_type"}
+    members = {}
+    for kind, cats in reg.items():
+        if kind == "relation":
+            continue
+        dk = kind_map.get(kind, kind)
+        keys = []
+        for items in cats.values():
+            for item in items:
+                if isinstance(item, tuple):
+                    continue
+                keys.append(item)
+        if keys:
+            members[dk] = keys
+    return members
+
+
 def main():
-    space_id = "space_cate_test01"
-    s = space.get(space_id)
-    output.print("=== 化工设备运营分析 — 347 分类挂载 ===")
+    s = space.get(SPACE_ID)
+    output.print("=== 化工设备运营分析 — 平台分类 + 本体域成员 ===")
+    output.print(f"空间: {SPACE_ID} · 域: {DOMAIN_CODE}")
+
     cat_counts = s.categories.apply_registry(CATEGORY_REGISTRY, skip_missing=True)
-    output.print(f"OK 分类挂载: {json.dumps(cat_counts, ensure_ascii=True)}")
-    output.success("分类挂载完成")
-    output.print("__JSON_SUMMARY__" + json.dumps({"ok": True, "category_mounts": cat_counts}, ensure_ascii=True, default=str))
+    for kind, cnt in cat_counts.items():
+        if cnt:
+            output.print(f"OK 分类[{kind}] 挂载 {cnt} 项")
+
+    domain_summary = s.domain.apply_registry(
+        {
+            "code": DOMAIN_CODE,
+            "name": DOMAIN_NAME,
+            "members": _flatten_for_domain(CATEGORY_REGISTRY),
+        },
+        strict=False,
+    )
+    output.print(f"OK 本体域成员 kinds: {json.dumps(domain_summary.get('kinds', {}), ensure_ascii=True, default=str)}")
+
+    summary = {
+        "ok": True,
+        "space_id": SPACE_ID,
+        "domain_code": DOMAIN_CODE,
+        "category_mounts": cat_counts,
+        "domain_mounts": domain_summary.get("kinds", {}),
+    }
+    output.success("平台分类与本体域成员挂载完成")
+    output.print("__JSON_SUMMARY__" + json.dumps(summary, ensure_ascii=True, default=str))

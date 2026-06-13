@@ -1,0 +1,14 @@
+{
+  "_readonly": "示例文件；真实流程由 pull / repair-meta 生成",
+  "node_uuid": "00000000-0000-4000-8000-000000000002",
+  "nodeId": "n-excel-demo",
+  "nodeType": "excel-python",
+  "label": "Excel示例",
+  "codeFile": "code.py",
+  "codeLanguage": "python",
+  "data": {
+    "type": "excel-python",
+    "managed_file_id": "<平台文件 UUID>",
+    "output_variable_name": "示例输出表"
+  }
+}

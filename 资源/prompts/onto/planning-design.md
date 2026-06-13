@@ -160,7 +160,7 @@ dazi onto space get <space-id>   # 可选：现网资产
 
 
 
-定稿前勾选 [规划完整性自检清单](资源/docs/onto/本体规划指南.md)（含 Cube 层、6a–6e 分类）。
+定稿前勾选 [规划完整性自检清单](资源/docs/onto/本体规划指南.md)（含 Cube 层、6a–6e 平台分类、**6f 本体域成员**）。
 
 
 
@@ -202,7 +202,7 @@ dazi onto space get <space-id>   # 可选：现网资产
 
 
 
-实施顺序：**init → seed → 发布全部函数 → `*_category_mount.py`**（类灌数，含附录 B 全量六类）。可选：各 publish 带 `--register-platform-category` 与 category_mount 幂等并存。
+实施顺序：**init → seed → 发布全部函数 → `*_category_mount.py`**（平台分类，附录 B）→ **同脚本末尾 `s.domain.apply_registry`**（本体域成员；域 code = 快速启动 §1）。可选：各 publish 带 `--register-platform-category` 与 category_mount 幂等并存。
 
 
 

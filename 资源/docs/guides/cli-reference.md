@@ -58,6 +58,18 @@ dazi examples onto show equip-ops --plan
 | `dazi onto action list/update-code/delete`                 | 动作管理         |
 | `dazi onto rule list/run-seed/delete`                      | 规则管理         |
 | `dazi onto script sync/publish/publish-preview/run/dedupe` | 脚本管理         |
+| `dazi onto script publish … --mount-domain auto`           | 发布成功后挂载 script/function 到本体域（默认 auto） |
+| `dazi onto domain ensure`                                  | 幂等创建域 + 回写快速启动 §1 domainId（**不**挂成员） |
+| `dazi onto domain materialize --domain-id <id>`              | 基于平台域创建 domain-backed 本地实现 + `context/` |
+| `dazi onto domain materialize … --pull-gaps`                 | materialize 后自动拉取 open gap → `plans/training/` |
+| `dazi onto domain snapshot-pull --onto-dir <path>`           | 刷新已有实现的域环境快照 |
+| `dazi onto domain show --domain-id <id>`                     | 域树（调试）；后端亦提供 `workspace-export` |
+| `dazi onto training gaps list --domain-id <id> [--status open]` | 列出域下 gap 待办 |
+| `dazi onto training gaps pull --domain-id <id> [--onto-dir]` | 批量下载 gap 到 `plans/training/` + 骨架（`functions/`、`test_arguments/`） |
+| `dazi onto training gap pull <id> --onto-dir <path>`         | 下载单条 gap（默认含骨架；`--skip-skeleton` 跳过） |
+| `dazi onto domain list [--space]`                          | 列域             |
+| `dazi onto domain show [--domain-id \| --onto-dir]`        | 域树（调试）     |
+| `dazi onto domain backfill [--onto-dir]`                   | 存量回填域成员（整空间；共享空间慎用） |
 | `dazi onto mcp serve`                                      | 启动本体 MCP     |
 
 ## 流程（`dazi flow ...`）
@@ -72,6 +84,7 @@ dazi examples onto show equip-ops --plan
 | ----------------------------------------------------- | ------------------------------------------- |
 | `dazi flow project pull --flow <id> --dir <流程目录>` | 拉取 snapshot 并拆分为 flow.json + 节点代码 |
 | `dazi flow project push --dir <dir> [--canvas]`       | 提交脏代码节点；**配置变更必须** `--canvas`   |
+| `dazi flow project push … --mount-domain auto`        | 推送成功后挂载 **workflow** 到同业务项目本体域（by-key 用 flowName） |
 | `dazi flow project doctor --dir <dir>`                | 检查 flow.json / meta / 节点/ 一致性        |
 | `dazi flow project repair-meta --dir <dir>`           | 修复 flow.meta.json 索引                    |
 | `dazi flow project status --dir <dir>`                | 本地代码改动                                |
@@ -107,6 +120,7 @@ dazi examples onto show equip-ops --plan
 | `pnpm run dazi-app -- init ...`                                      | 初始化应用       |
 | `pnpm run dazi-app -- build`                                         | 构建应用         |
 | `pnpm run dazi-app -- upload --space <id>`                           | 上传应用         |
+| `dazi app upload … --mount-domain auto`                              | 上传成功后挂载 **component**（manifest appId）到本体域 |
 | `pnpm run dazi-app -- release list`                                  | 发布管理         |
 | `pnpm run dazi-app -- asset list`                                    | drap-assets 列表 |
 | `pnpm run dazi-app -- manifest validate --cwd apps/<app> --scan-src` | 校验 manifest    |
